@@ -103,6 +103,9 @@
 
 <body>
 
+  <x-navbar />
+
+
   <section class="px-3 py-5 bg-neutral-100 lg:py-10 mt-20">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-2 ">
       <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
@@ -348,8 +351,7 @@
       </div>
   </section>
 
-
-
+  <x-footer />
 
   <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
