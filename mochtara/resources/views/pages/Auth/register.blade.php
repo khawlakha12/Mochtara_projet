@@ -39,7 +39,7 @@
               <button type="submit">Create Account</button>
             </div>
             <div class="additional">
-              <p>Already have an account ? <span>Log In</span></p>
+              <p>Already have an account ?</p> <a href="#"><span>Log In</span></a>
             </div>
           </form>
           <div class="or">
