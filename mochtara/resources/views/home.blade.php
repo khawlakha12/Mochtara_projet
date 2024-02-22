@@ -1,105 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>interface</title>
-  <style>
-    img:hover {
-      filter: grayscale(100%);
-    }
-
-    button {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      outline: none;
-      border: 0;
-      vertical-align: middle;
-      text-decoration: none;
-      background: transparent;
-      padding: 0;
-      font-size: inherit;
-      font-family: inherit;
-    }
-
-    button.learn-more {
-      width: 12rem;
-      height: auto;
-    }
-
-    button.learn-more .circle {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: relative;
-      display: block;
-      margin: 0;
-      width: 3rem;
-      height: 3rem;
-      background: #040404;
-      border-radius: 1.625rem;
-    }
-
-    button.learn-more .circle .icon {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background: #fff;
-    }
-
-    button.learn-more .circle .icon.arrow {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      left: 0.625rem;
-      width: 1.125rem;
-      height: 0.125rem;
-      background: none;
-    }
-
-    button.learn-more .circle .icon.arrow::before {
-      position: absolute;
-      content: "";
-      top: -0.29rem;
-      right: 0.0625rem;
-      width: 0.625rem;
-      height: 0.625rem;
-      border-top: 0.125rem solid #fff;
-      border-right: 0.125rem solid #fff;
-      transform: rotate(45deg);
-    }
-
-    button.learn-more .button-text {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.75rem 0;
-      margin: 0 0 0 1.85rem;
-      color: #050505;
-      font-weight: 700;
-      line-height: 1.6;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    button:hover .circle {
-      width: 100%;
-    }
-
-    button:hover .circle .icon.arrow {
-      background: #fff;
-      transform: translate(1rem, 0);
-    }
-
-    button:hover .button-text {
-      color: #fff;
-    }
-  </style>
-</head>
+<x-link_home />
 
 <body>
 
@@ -287,7 +186,7 @@
             <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div> 
           </div>
           <div class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-            <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
+            <button class="flex h-10 w-10 items-center justify-center bg-black text-white transition hover:bg-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
               </svg>
