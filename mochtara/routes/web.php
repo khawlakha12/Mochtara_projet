@@ -17,5 +17,5 @@ Route::get('/home', function () {
     return view('pages.home');
 });
 Route::get('/', function() {
-    return view('pages.Auth.login');
+    return view('pages.Auth.register');
 });
