@@ -19,3 +19,6 @@ Route::get('/home', function () {
 Route::get('/', function() {
     return view('pages.Auth.register');
 });
+Route::get('/', function() {
+    return view('pages.Auth.login');
+});
