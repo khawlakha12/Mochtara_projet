@@ -39,7 +39,7 @@
               <button type="submit">Create Account</button>
             </div>
             <div class="additional">
-              <p>Already have an account ?</p> <a href="#"><span>Log In</span></a>
+              <p>Already have an account ?</p> <a href="{{ route('SignIn') }}"><span>Log In</span></a>
             </div>
           </form>
           <div class="or">

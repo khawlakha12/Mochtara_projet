@@ -24,10 +24,6 @@
         <div class="form">
           <form>
             <div class="inputbox">
-              <label>Full Name</label>
-              <input type="text" placeholder="Enter your Name" required>
-            </div>
-            <div class="inputbox">
               <label>Email</label>
               <input type="email" placeholder="Enter your Email ID" required>
             </div>

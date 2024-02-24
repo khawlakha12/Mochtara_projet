@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +20,7 @@ Route::get('/home', function () {
 Route::get('/', function() {
     return view('pages.Auth.register');
 });
-Route::get('/login', function() {
-    return view('pages.Auth.login');
+Route::get('/SignIn', function() {
+    return view('pages.Auth.SignIn');
 });
+Route::get('/SignIn', [AuthController::class, 'showLoginForm'])->name('SignIn');
