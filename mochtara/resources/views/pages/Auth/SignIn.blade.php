@@ -13,7 +13,7 @@
     <div class="content">
   
       <div class="left">
-        <img src="https://i.postimg.cc/8CCmX23W/icon.png" alt="icon">
+        <img src="{{ asset('img/m.png') }}" alt="icon">
         <h1>Mochtara</h1>
       </div>
   
@@ -30,6 +30,10 @@
             <div class="inputbox">
               <label>Password</label>
               <input type="password" placeholder="Enter your Password" required>
+            </div>
+            <div class="forgot-password">
+             
+              <a href="#">Forgot your password?</a>
             </div>
             <div class="create">
               <button type="submit">Create Account</button>

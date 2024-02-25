@@ -13,7 +13,7 @@
     <div class="content">
   
       <div class="left">
-        <img src="https://i.postimg.cc/8CCmX23W/icon.png" alt="icon">
+        <img src="{{ asset('img/m.png') }}" alt="icon">
         <h1>Mochtara</h1>
       </div>
   
