@@ -20,7 +20,11 @@ Route::get('/home', function () {
 Route::get('/', function() {
     return view('pages.Auth.register');
 });
-Route::get('/SignIn', function() {
-    return view('pages.Auth.SignIn');
-});
-Route::get('/SignIn', [AuthController::class, 'showLoginForm'])->name('SignIn');
+
+
+Route::get('/sigin', [AuthController::class, 'SignIn'])->name('login.show');
+Route::post('/sigin', [AuthController::class, 'SignInPost'])->name('SignIn');
+
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+

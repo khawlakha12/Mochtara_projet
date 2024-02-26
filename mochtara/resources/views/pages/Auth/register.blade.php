@@ -21,25 +21,36 @@
         <div class="title">
           <h2>Welcome to Mochtara</h2>
         </div>
+        @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
         <div class="form">
-          <form>
+          <form method="POST" action="{{ route('register') }}" id="registrationForm">
+            @csrf
             <div class="inputbox">
               <label>Full Name</label>
-              <input type="text" placeholder="Enter your Name" required>
+              <input type="text" name="name" placeholder="Enter your Name" required>
             </div>
             <div class="inputbox">
               <label>Email</label>
-              <input type="email" placeholder="Enter your Email ID" required>
+              <input type="email" name="email" placeholder="Enter your Email ID" required>
             </div>
             <div class="inputbox">
               <label>Password</label>
-              <input type="password" placeholder="Enter your Password" required>
+              <input type="password" name="password" placeholder="Enter your Password" required>
             </div>
             <div class="create">
               <button type="submit">Create Account</button>
             </div>
             <div class="additional">
-              <p>Already have an account ?</p> <a href="{{ route('SignIn') }}"><span>Log In</span></a>
+              <p>Already have an account ?</p> <a href="{{ route('login.show') }}"><span>Log In</span></a>
             </div>
           </form>
           <div class="or">
@@ -58,6 +69,7 @@
   
     </div>
   </section>
-  
+
+    
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

@@ -21,22 +21,33 @@
         <div class="title">
           <h2>Welcome to Mochtara</h2>
         </div>
+        @if (session('error'))
+        <div class="alert alert-danger" role="alert">
+            {{ session('error') }}
+        </div>
+    @endif
+    @if (session('success'))
+        <div class="alert alert-success" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
         <div class="form">
-          <form>
+          <form action="{{ route('SignIn') }}" method="POST" class="signin-form">
+            @csrf
             <div class="inputbox">
               <label>Email</label>
-              <input type="email" placeholder="Enter your Email ID" required>
+              <input type="email" name="email" placeholder="Enter your Email ID" required>
             </div>
             <div class="inputbox">
               <label>Password</label>
-              <input type="password" placeholder="Enter your Password" required>
+              <input type="password" name="password" placeholder="Enter your Password" required>
             </div>
             <div class="forgot-password">
              
               <a href="#">Forgot your password?</a>
             </div>
             <div class="create">
-              <button type="submit">Create Account</button>
+              <button type="submit">Login</button>
             </div>
             <div class="additional">
               <p>I don't have account <span>Register</span></p>
