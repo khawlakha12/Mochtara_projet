@@ -18,9 +18,9 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
+                            <img src="{{ asset('img/m.png') }}" style="height: 30px; width:30px" alt="Mochtara">
                         </span>
-                        <span class="title">Brand Name</span>
+                        <span class="title">ochtara</span>
                     </a>
                 </li>
 
