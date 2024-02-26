@@ -23,6 +23,9 @@ Route::get('/', function() {
 Route::get('/admin', function() {
     return view('pages.Admin.Dashboard');
 });
+Route::get('/shop', function() {
+    return view('pages.shop');
+});
 
 
 Route::get('/sigin', [AuthController::class, 'SignIn'])->name('login.show');
