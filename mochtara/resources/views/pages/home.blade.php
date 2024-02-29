@@ -1,167 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <title>interface</title>
-  <style>
-    img:hover {
-      filter: grayscale(100%);
-    }
-
-    button {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      outline: none;
-      border: 0;
-      vertical-align: middle;
-      text-decoration: none;
-      background: transparent;
-      padding: 0;
-      font-size: inherit;
-      font-family: inherit;
-    }
-
-    button.learn-more {
-      width: 12rem;
-      height: auto;
-    }
-
-    button.learn-more .circle {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: relative;
-      display: block;
-      margin: 0;
-      width: 3rem;
-      height: 3rem;
-      background: #040404;
-      border-radius: 1.625rem;
-    }
-
-    button.learn-more .circle .icon {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      margin: auto;
-      background: #fff;
-    }
-
-    button.learn-more .circle .icon.arrow {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      left: 0.625rem;
-      width: 1.125rem;
-      height: 0.125rem;
-      background: none;
-    }
-
-    button.learn-more .circle .icon.arrow::before {
-      position: absolute;
-      content: "";
-      top: -0.29rem;
-      right: 0.0625rem;
-      width: 0.625rem;
-      height: 0.625rem;
-      border-top: 0.125rem solid #fff;
-      border-right: 0.125rem solid #fff;
-      transform: rotate(45deg);
-    }
-
-    button.learn-more .button-text {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      padding: 0.75rem 0;
-      margin: 0 0 0 1.85rem;
-      color: #050505;
-      font-weight: 700;
-      line-height: 1.6;
-      text-align: center;
-      text-transform: uppercase;
-    }
-
-    button:hover .circle {
-      width: 100%;
-    }
-
-    button:hover .circle .icon.arrow {
-      background: #fff;
-      transform: translate(1rem, 0);
-    }
-
-    button:hover .button-text {
-      color: #fff;
-    }
-  </style>
-</head>
+<x-link_home />
 
 <body>
-  <nav class="bg-gray-100 border-gray-200 py-2.5 dark:bg-gray-900">
-    <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-      <a href="#" class="flex items-center">
-        <img src="img/logo2.png" class="h-6 mr-3 sm:h-9" alt="mochtara Logo">
-      </a>
-      <div class="flex items-center lg:order-2">
-        <div class="mt-2 mr-4 sm:inline-block">
-          <span></span>
-        </div>
-        <div class="flex grid-cols-2 gap-5">
-        <button href="#" class="">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-          </svg>
-          
-        </button>
-        <a href="login/login.html"
-          class="text-white bg-black hover:bg-gray-700 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-base px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-black dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-purple-800">
-          sign-up</a>
-        <button data-collapse-toggle="mobile-menu-2" type="button"
-          class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="mobile-menu-2" aria-expanded="true">
-          <span class="sr-only">Open main menu</span>
-          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <svg class="hidden w-6 h-6 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd"
-              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </button>
-      </div>
-      </div>
-      <div class="items-center justify-between w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
-        <ul class="flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0">
-          <li>
-            <a href="index.html"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b text-base border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700"
-              aria-current="page">Home</a>
-          </li>
-          <li>
-            <a href="shop.html"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b text-base border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Shop</a>
-          </li>
-          <li>
-            <a href="design.html"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b text-base border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Design</a>
-          </li>
-          <li>
-            <a href="contact.html"
-              class="block py-2 pl-3 pr-4 text-gray-700 border-b text-base border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-purple-700 lg:p-0 dark:text-gray-400 lg:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white lg:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-          </li>
 
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <x-navbar />
+
+
   <section class="px-3 py-5 bg-neutral-100 lg:py-10 mt-20">
     <div class="grid lg:grid-cols-2 items-center justify-items-center gap-2 ">
       <div class="order-2 lg:order-1 flex flex-col justify-center items-center">
@@ -232,7 +75,7 @@
   </h2>
   <section class="mb-8 mt-6">
     <div class="justify-center flex flex-wrap">
-      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md ml-2 mr-6 ">
         <a class="relative flex h-60 overflow-hidden" href="#">
           <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80" alt="product image" />
           <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
@@ -266,7 +109,7 @@
           </button>
         </div>
       </div>
-      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md ml-2 mr-6">
         <a class="relative flex h-60 overflow-hidden" href="#">
           <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80" alt="product image" />
           <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
@@ -300,7 +143,7 @@
           </button>
         </div>
       </div>
-      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md ml-2 mr-6">
         <a class="relative flex h-60 overflow-hidden" href="#">
           <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80" alt="product image" />
           <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
@@ -334,7 +177,7 @@
           </button>
         </div>
       </div>
-      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md">
+      <div class="group my-12 flex w-full max-w-xs flex-col overflow-hidden border border-gray-100 bg-white shadow-md ml-2 mr-6">
         <a class="relative flex h-60 overflow-hidden" href="#">
           <img class="absolute top-0 right-0 h-full w-full object-cover" src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80" alt="product image" />
           <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
@@ -343,7 +186,7 @@
             <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div> 
           </div>
           <div class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-            <button class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
+            <button class="flex h-10 w-10 items-center justify-center bg-black text-white transition hover:bg-gray-700">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd" />
               </svg>
@@ -407,86 +250,7 @@
       </div>
   </section>
 
-  <footer>
-    <div class="bg-gray-100 py-4 text-black-400">
-      <div class="container px-4 mx-auto">
-        <div class="-mx-4 flex flex-wrap justify-between">
-          <div class="px-4 my-4 xl:w-1/5">
-            <img src="img/logo2.png" alt="logo" class="w-48">
-            <p class="text-lg">
-              @2024
-            </p>
-          </div>
-
-          <div class="px-4 my-4 w-full sm:w-auto">
-            <div>
-              <h2 class="inline-block text-2xl pb-4 mb-4">Company</h2>
-            </div>
-            <ul class="leading-8">
-              <li><a href="#" class="hover:text-blue-400">Home</a></li>
-              <li><a href="#" class="hover:text-blue-400">Shop</a></li>
-              <li><a href="#" class="hover:text-blue-400">Design</a></li>
-              <li><a href="#" class="hover:text-blue-400">Contact </a></li>
-            </ul>
-          </div>
-          <div class="px-4 my-4 w-full sm:w-auto">
-            <div>
-              <h2 class="inline-block text-2xl pb-4 mb-4 ">Categories</h2>
-            </div>
-            <ul class="leading-8">
-              <li><a href="#" class="hover:text-blue-400">T-shirts تيشيرت</a></li>
-              <li><a href="#" class="hover:text-blue-400">Hoodies هوديي</a></li>
-              <li><a href="#" class="hover:text-blue-400">Sweatshirts تيشيرت بالأكمام</a></li>
-
-            </ul>
-          </div>
-          <div class="px-4 my-4 w-full sm:w-auto xl:w-1/5">
-            <div>
-              <h2 class="inline-block text-2xl pb-4 mb-4 ">Connect Us</h2>
-            </div>
-            <a href="#"
-              class="inline-flex items-center justify-center h-12 w-12 border border-gray-100 rounded-full mr-1 hover:text-black hover:border-black">
-              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                <path
-                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z">
-                </path>
-              </svg>
-            </a>
-           
-            <a href="#"
-              class="inline-flex items-center justify-center h-12 w-12 border border-gray-100 rounded-full mr-1 hover:text-black hover:border-black">
-              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                <path
-                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-                </path>
-              </svg>
-            </a>
-            <a href="#"
-              class="inline-flex items-center justify-center h-12 w-12 border border-gray-100 rounded-full mr-1 hover:text-black hover:border-black">
-              <svg class="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
-                <path
-                  d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z">
-                </path>
-              </svg>
-            </a>
-            <p class="text-base italic mt-4"><a href="#">kharbouchi@gmail.com</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="bg-gray-200 py-4 text-black-100">
-      <div class="container mx-auto px-4">
-        <div class="-mx-4 flex flex-wrap justify-between">
-          <div class="px-4 w-full text-center sm:w-auto sm:text-left">
-            Copyright © 2024
-            Mochtara. All Rights Reserved.
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </footer>
-
+  <x-footer />
 
   <script src="https://unpkg.com/flowbite@1.4.1/dist/flowbite.js"></script>
 </body>
