@@ -8,7 +8,7 @@
   <title>interface</title>
   <style>
     img:hover {
-      filter: grayscale(100%);
+      /* filter: grayscale(100%); */
     }
 
     button {
