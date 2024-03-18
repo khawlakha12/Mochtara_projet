@@ -14,15 +14,16 @@
   <div class="flex justify-around mt-8 gap-x-12">
       <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
           <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">khawla</h3>
+          <h3 class="text-white ml-4">T-shirts تيشيرت</h3>
       </div>
       <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
           <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">khawla</h3>
+          <h3 class="text-white ml-4">Hoodies هوديي</h3>
       </div>
       <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
           <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">khawla</h3>
+          <h3 class="text-white ml-4">
+            Sweatshirts تيشيرت بالأكمام</h3>
       </div>
   </div>
   
