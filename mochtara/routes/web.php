@@ -24,6 +24,9 @@ Route::get('/admin', function() {
 Route::get('/shop', function() {
     return view('pages.shop');
 });
+Route::get('/design', function() {
+    return view('pages.design');
+});
 
 
 
