@@ -4,21 +4,43 @@
 
     <x-navbar />
 
-    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
-        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-        <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
-        <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
-    </article>
+    <div class="flex ml-10 justify-center items-center h-screen gap-x-10 ">
+        <div id="scroll-container" style="max-height:600px; overflow:hidden">
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48 mt-4">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                    alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+            </article>
+            <article
+            class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48 mt-4">
+            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+            <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+            <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+        </article>
 
-    <article class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto mt-24">
-        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a" alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-        <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
-        <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
-    </article>
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48  mt-4">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                    alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+            </article>
 
-    <div class="flex justify-center  items-center h-screen gap-x-40 ">
+            <article
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48  mt-4">
+                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                    alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
+                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
+            </article>
+        </div>
         <div class="flex flex-col justify-center  items-center">
             <button class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center mt-4 "
                 onclick="backToTop()">
@@ -109,17 +131,80 @@
                             </svg>
                         </button>
                     </div>
-                    
+
                 </div>
-                
+
             </div>
             <a class="relative mt-8" href="#">
                 <span class="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black"></span>
-                <span class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 dark:bg-transparent">Print</span>
+                <span
+                    class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 dark:bg-transparent">Print</span>
             </a>
         </div>
-
-
-
+        <div class="flex flex-col gap-y-4">
+                    <a href="javascript:;"
+                        class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
+                        <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
+                        <div
+                            class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
+                            <div class="flex items-center justify-between mb-2 mt-2">
+                                <p class="font-semibold px-1  text-indigo-600 text-right">MAD 100</p>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="javascript:;"
+                        class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
+                        <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
+                        <div
+                            class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
+                            <div class="flex items-center justify-between mb-2 mt-2">
+                                <p class="font-semibold px-1  text-indigo-600 text-right">MAD 100</p>
+                            </div>
+                        </div>
+                    </a>
+                     <a href="javascript:;"
+                        class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
+                        <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
+                        <div
+                            class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
+                            <div class="flex items-center justify-between mb-2 mt-2">
+                                <p class="font-semibold px-1  text-indigo-600 text-right">MAD 100</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
     </div>
-    <x-footer />
+<footer>
+    <div class="bg-gray-200 py-4 text-black-100">
+        <div class="container mx-auto px-4">
+            <div class="-mx-4 flex flex-wrap justify-between">
+                <div class="px-4 w-full text-center sm:w-auto sm:text-left">
+                    Copyright © 2024
+                    Mochtara. All Rights Reserved.
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+<script>
+    function autoScroll() {
+    const container = document.getElementById('scroll-container');
+    
+    const scrollStep = 1; 
+    const scrollInterval = 40; 
+    const scroll = () => {
+        if (container.scrollTop < container.scrollHeight - container.clientHeight) {
+            container.scrollBy(0, scrollStep);
+        } else {
+           
+            container.scrollTop = 0;
+        }
+    };
+
+    setInterval(scroll, scrollInterval);
+}
+autoScroll();
+
+
+</script>
