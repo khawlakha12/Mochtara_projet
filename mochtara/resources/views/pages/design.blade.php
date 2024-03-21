@@ -2,77 +2,80 @@
 
 <body>
 
-    <x-navbar />
-
-    <div class="flex ml-10 justify-center items-center h-screen gap-x-20 ">
-        <div id="scroll-container" style="max-height:600px; overflow:hidden">
+    <nav class="bg-indigo-600 text-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <!-- Logo et lien vers la page d'accueil -->
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-lg">Nom de la Marque</span>
+                        </a>
+                    </div>
+                    <!-- Liens de la navbar -->
+                    <div class="hidden md:flex items-center space-x-1">
+                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Accueil</a>
+                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Produits</a>
+                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">À propos</a>
+                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Contact</a>
+                    </div>
+                </div>
+                <!-- Boutons de connexion/inscription -->
+                <div class="md:flex items-center space-x-3">
+                    <a href="#" class="py-2 px-2 font-medium text-white rounded hover:bg-indigo-700">Connexion</a>
+                    <a href="#" class="py-2 px-2 font-medium text-indigo-600 bg-white rounded hover:bg-indigo-50">Inscription</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+<section class="">
+    <div class="flex justify-center items-center h-screen gap-x-40 ml-10">
+        <div id="scroll-container" style="max-height:700px; overflow:hidden">
             <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48 mt-4">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-48 h-48 mt-4">
+                <img src="img/hoodies-catégorie.webp"
                     alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <h3 class="z-10 mt-3 text-xl font-bold text-white">hoodies</h3>
                 <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
             </article>
             <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48 mt-4">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-48 h-48 mt-4">
+                <img src="img/sweatshirt.webp"
                     alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <h3 class="z-10 mt-3 text-xl font-bold text-white">Sweatshirts</h3>
                 <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
             </article>
 
             <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48  mt-4">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-48 h-48  mt-4">
+                <img src="img/tshirt.webp"
                     alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <h3 class="z-10 mt-3 text-xl font-bold text-white">t-shirts</h3>
                 <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
             </article>
 
             <article
-                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-64 h-48  mt-4">
-                <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a"
+                class="relative isolate flex flex-col justify-end overflow-hidden rounded-2xl px-8 pb-8 pt-40 max-w-sm mx-auto w-48 h-48  mt-4">
+                <img src="img/pillow.webp"
                     alt="University of Southern California" class="absolute inset-0 h-full w-full object-cover">
                 <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40"></div>
-                <h3 class="z-10 mt-3 text-3xl font-bold text-white">Paris</h3>
+                <h3 class="z-10 mt-3 text-xl font-bold text-white">Pillows</h3>
                 <div class="z-10 gap-y-1 overflow-hidden text-sm leading-6 text-gray-300">City of love</div>
             </article>
         </div>
-        <div class="flex flex-col justify-center  items-center ">
-            <button class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center mt-4 "
-                onclick="backToTop()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
-                    </path>
-                </svg>
-            </button>
-            <img src="img/9obya.png" alt="" class="border-2 border-black h-24 w-24 mb-4 mt-4 rounded-lg">
-            <img src="img/9obya.png" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
-            <img src="img/9obya.png" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
-            <img src="img/9obya.png" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
-            <button class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
-                onclick="backToTop()">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18">
-                    </path>
-                </svg>
-            </button>
-        </div>
 
-        <div class="flex flex-col items-center justify-center" style="height: 70%; width: 40%;">
-            <div class="flex gap-x-6 mb-6">
+        <div class="flex flex-col items-center justify-center gap-y-2" style="height: 70%; width: 40%;">
+            <div class="flex gap-x-6 ">
                 <div class="border-2 rounded-full h-7 w-7 bg-yellow-400 border-indigo-600"></div>
                 <div class="border-2 rounded-full h-7 w-7 bg-red-400 border-indigo-600"></div>
                 <div class="border-2 rounded-full h-7 w-7 bg-fuchsia-500 border-indigo-600"></div>
                 <div class="border-2 rounded-full h-7 w-7 bg-indigo-600 border-indigo-600"></div>
             </div>
             <div
-                class="border-2 border-black flex justify-center items-center bg-black rounded-lg relative w-full h-full">
+                class="border-2 border-black flex justify-center items-center bg-black rounded-lg relative" style="height: 100%;width:100%;">
                 <div class="flex flex-col justify-center items-center h-full w-full">
                     <img src="img/t-short for design.png" class="h-96 w-96" alt="">
                     <div class="absolute bottom-0 right-0 mb-4 mr-4">
@@ -135,17 +138,41 @@
                 </div>
 
             </div>
+            <div class="flex justify-center  items-center gap-x-4 ">
+                <button class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center "
+                    onclick="backToTop()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18">
+                        </path>
+                    </svg>
+                </button>
+                <img src="img/design.webp" alt="" class="border-2 border-black h-24 w-24 mb-4  rounded-lg">
+                <img src="img/design.webp" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
+                <img src="img/design.webp" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
+                <img src="img/design.webp" alt="" class="border-2 border-black h-24 w-24 mb-4 rounded-lg">
+                <button class="bg-black text-white rounded-full w-10 h-10 flex items-center justify-center"
+                    onclick="backToTop()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M5 10l7-7m0 0l7 7m-7-7v18">
+                        </path>
+                    </svg>
+                </button>
+            </div>
             <a class="relative mt-8" href="#">
                 <span class="absolute top-0 left-0 mt-1 ml-1 h-full w-full rounded bg-black"></span>
                 <span
                     class="fold-bold relative inline-block h-full w-full rounded border-2 border-black bg-white px-3 py-1 text-base font-bold text-black transition duration-100 hover:bg-yellow-400 hover:text-gray-900 dark:bg-transparent">Print</span>
             </a>
         </div>
-        <div class="flex flex-col gap-y-4">
+        <div class="flex flex-col gap-y-4" >
            
             <a href="javascript:;"
                 class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
-                <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
+                <img src="img/t-shirt.webp" alt="Denim jacket image">
                 <div
                     class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
                     <div class="flex items-center justify-between mb-2 mt-2">
@@ -155,7 +182,7 @@
             </a>
             <a href="javascript:;"
                 class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
-                <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
+                <img src="img/t-shirt.webp" alt="Denim jacket image">
                 <div
                     class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
                     <div class="flex items-center justify-between mb-2 mt-2">
@@ -164,30 +191,19 @@
                 </div>
             </a>
             <a href="javascript:;"
-            class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
-            <img src="https://pagedone.io/asset/uploads/1700732027.png" alt="Denim jacket image">
-            <div
-                class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
-                <div class="flex items-center justify-between mb-2 mt-2">
-                    <p class="font-semibold px-1  text-indigo-600 text-right">MAD 100</p>
+                class="relative bg-cover group rounded-2xl bg-center overflow-hidden mx-auto sm:ml-0 xl:mx-auto h-69 w-48 cursor-pointer">
+                <img src="img/t-shirt.webp" alt="Denim jacket image">
+                <div
+                    class="absolute bottom-3 left-0 mx-3  bg-white w-[calc(100%-24px)] rounded-xl shadow-sm shadow-transparent transition-all duration-500 group-hover:shadow-indigo-200 group-hover:bg-indigo-50">
+                    <div class="flex items-center justify-between mb-2 mt-2">
+                        <p class="font-semibold px-1  text-indigo-600 text-right">MAD 100</p>
+                    </div>
                 </div>
-            </div>
-        </a>
+            </a>
+            
         </div>
     </div>
-    <footer>
-        <div class="bg-gray-200 py-4 text-black-100">
-            <div class="container mx-auto px-4">
-                <div class="-mx-4 flex flex-wrap justify-between">
-                    <div class="px-4 w-full text-center sm:w-auto sm:text-left">
-                        Copyright © 2024
-                        Mochtara. All Rights Reserved.
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </footer>
+</section>
     <script>
         function autoScroll() {
             const container = document.getElementById('scroll-container');
@@ -207,4 +223,3 @@
         }
         autoScroll();
     </script>
- 
