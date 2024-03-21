@@ -1,33 +1,8 @@
 <x-link_home />
 
 <body>
+    <x-navbar />
 
-    <nav class="bg-indigo-600 text-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div>
-                        <!-- Logo et lien vers la page d'accueil -->
-                        <a href="#" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-lg">Nom de la Marque</span>
-                        </a>
-                    </div>
-                    <!-- Liens de la navbar -->
-                    <div class="hidden md:flex items-center space-x-1">
-                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Accueil</a>
-                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Produits</a>
-                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">À propos</a>
-                        <a href="#" class="py-4 px-2 text-white hover:bg-indigo-700">Contact</a>
-                    </div>
-                </div>
-                <!-- Boutons de connexion/inscription -->
-                <div class="md:flex items-center space-x-3">
-                    <a href="#" class="py-2 px-2 font-medium text-white rounded hover:bg-indigo-700">Connexion</a>
-                    <a href="#" class="py-2 px-2 font-medium text-indigo-600 bg-white rounded hover:bg-indigo-50">Inscription</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 <section class="">
     <div class="flex justify-center items-center h-screen gap-x-40 ml-10">
         <div id="scroll-container" style="max-height:700px; overflow:hidden">
@@ -75,9 +50,9 @@
                 <div class="border-2 rounded-full h-7 w-7 bg-indigo-600 border-indigo-600"></div>
             </div>
             <div
-                class="border-2 border-black flex justify-center items-center bg-black rounded-lg relative" style="height: 100%;width:100%;">
-                <div class="flex flex-col justify-center items-center h-full w-full">
-                    <img src="img/t-short for design.png" class="h-96 w-96" alt="">
+                class=" flex justify-center items-center rounded-lg relative">
+                <div class="flex flex-col justify-center items-center ">
+                    <img src="img/div design-t-shirt.png" class="rounded-xl" style="height: 400px; width : 600px;" alt="">
                     <div class="absolute bottom-0 right-0 mb-4 mr-4">
                         <button class="bg-white text-white rounded-full w-10 h-10 flex items-center justify-center">
                             <svg fill="#000000" height="65%" width="65%" version="1.1" id="Capa_1"
