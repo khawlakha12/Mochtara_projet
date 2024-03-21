@@ -1,433 +1,283 @@
-<x-link_home />
-<style>
-  #imagee{
-    width: 70%;
-    height: 300px;
-  }
-</style>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>PhotoFolio Bootstrap Template - Index</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: PhotoFolio
+  * Template URL: https://bootstrapmade.com/photofolio-bootstrap-photography-website-template/
+  * Updated: Mar 17 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
 <body>
 
-    <x-navbar />
-    <div class="flex justify-center items-center  mt-8">
-      <img class="rounded-lg" id="imagee" src="img/promo.png" alt="">
-  </div>
-  <div class="flex justify-around mt-8 gap-x-12">
-      <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
-          <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">T-shirts تيشيرت</h3>
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center  me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <i class="bi bi-camera"></i>
+        <h1>PhotoFolio</h1>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown"><a href="#"><span>Gallery</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+            <ul>
+              <li><a href="gallery.html">Nature</a></li>
+              <li><a href="gallery.html">People</a></li>
+              <li><a href="gallery.html">Architecture</a></li>
+              <li><a href="gallery.html">Animals</a></li>
+              <li><a href="gallery.html">Sports</a></li>
+              <li><a href="gallery.html">Travel</a></li>
+              <li class="dropdown"><a href="#"><span>Sub Menu</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+                <ul>
+                  <li><a href="#">Sub Menu 1</a></li>
+                  <li><a href="#">Sub Menu 2</a></li>
+                  <li><a href="#">Sub Menu 3</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav><!-- .navbar -->
+
+      <div class="header-social-links">
+        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
       </div>
-      <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
-          <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">Hoodies هوديي</h3>
-      </div>
-      <div class="border rounded-lg bg-black h-24 w-80 flex items-center">
-          <img src="https://tecdn.b-cdn.net/img/new/avatars/2.webp" class="ml-6 border border-dashed rounded-full" style=" height:50%;" alt="">
-          <h3 class="text-white ml-4">
-            Sweatshirts تيشيرت بالأكمام</h3>
-      </div>
-  </div>
-  
-   
-    <div class="flex  grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center mt-5 mb-5">
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-        </div>
-        <div
-            class="group my-10 flex w-64 h-80 max-w-xs flex-col overflow-hidden border border-gray-100 bg-white rounded-lg shadow-md">
-            <a class="relative flex h-48
-       overflow-hidden" href="#">
-                <img class="absolute top-0 right-0 h-full w-full object-cover"
-                    src="https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1072&q=80"
-                    alt="product image" />
-                <div class="absolute bottom-0 mb-4 flex w-full justify-center space-x-4">
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-white"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                    <div class="h-3 w-3 rounded-full border-2 border-white bg-transparent"></div>
-                </div>
-                <div
-                    class="absolute -right-16 bottom-0 mr-2 mb-4 space-y-2 transition-all duration-300 group-hover:right-0">
-                    <button
-                        class="flex h-10 w-10 items-center justify-center bg-gray-900 text-white transition hover:bg-gray-700">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20"
-                            fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            </a>
-            <div class="mt-4 px-5 pb-5">
-                <a href="#">
-                    <h5 class="tracking-tight text-slate-900">Lululemon Comfort Tee - White</h5>
-                </a>
-                <div class="mt-2 mb-5 flex items-center justify-between">
-                    <p>
-                        <span class="text-xl font-bold text-slate-900">$79</span>
-                        <span class="text-sm text-slate-900 line-through">$99</span>
-                    </p>
-                </div>
-                <button
-                    class="flex border border- items-center justify-center bg-black px-2 py-1 text-sm text-white rounded-xl transition hover:bg-white hover:text-black ">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="mr-2 h-5 w-5" viewBox="0 0 20 20"
-                        fill="currentColor">
-                        <path
-                            d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
-                    </svg>
-                    Add to cart
-                </button>
-            </div>
-            
-        </div>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+
     </div>
-    <div class="container mx-auto px-4 mb-8">
-      <nav class="flex flex-row flex-nowrap justify-between md:justify-center items-center" aria-label="Pagination">
-          <a class="flex w-10 h-10 mr-1 justify-center items-center rounded-full border border-gray-200 bg-black dark:bg-gray-800 text-white dark:text-white hover:border-gray-300 dark:hover:border-gray-600"
-              href="#" title="Previous Page">
-              <span class="sr-only">Previous Page</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="block w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-          </a>
-        
-          <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white  text-black dark:text-white hover:border-gray-300 dark:hover:border-gray-600"
-              href="#" title="Page 2">
-              1
-          </a>
-          <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-black dark:border-white dark:bg-black dark:text-white pointer-events-none"
-              href="#" aria-current="page" title="Page 3">
-              2
-          </a>
-          <a class="hidden md:flex w-10 h-10 mx-1 justify-center items-center rounded-full border border-gray-200 bg-white  text-black dark:text-white hover:border-gray-300 dark:hover:border-gray-600"
-              href="#" title="Page 4">
-              3
-        
-          <!-- Next Page Button -->
-          <a class="flex w-10 h-10 ml-1 justify-center items-center rounded-full border border-gray-200 bg-black dark:bg-gray-800 text-white dark:text-white hover:border-gray-300 dark:hover:border-gray-600"
-              href="#" title="Next Page">
-              <span class="sr-only">Next Page</span>
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                  stroke="currentColor" class="block w-5 h-5">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-          </a>
-      </nav>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade" data-aos-delay="1500">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 text-center">
+          <h2>I'm <span>Jenny Wilson</span> a Professional Photographer from New York City</h2>
+          <p>Blanditiis praesentium aliquam illum tempore incidunt debitis dolorem magni est deserunt sed qui libero. Qui voluptas amet.</p>
+          <a href="contact.html" class="btn-get-started">Available for hire</a>
+        </div>
+      </div>
+    </div>
+  </section><!-- End Hero Section -->
+
+  <main id="main" data-aos="fade" data-aos-delay="1500">
+
+    <!-- ======= Gallery Section ======= -->
+    <section id="gallery" class="gallery">
+      <div class="container-fluid">
+
+        <div class="row gy-4 justify-content-center">
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-1.jpg" title="Gallery 1" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-2.jpg" title="Gallery 2" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-3.jpg" title="Gallery 3" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-4.jpg" title="Gallery 4" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-5.jpg" title="Gallery 5" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-6.jpg" title="Gallery 6" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-7.jpg" title="Gallery 7" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-8.jpg" title="Gallery 8" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-9.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-9.jpg" title="Gallery 9" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-10.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-10.jpg" title="Gallery 10" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-11.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-11.jpg" title="Gallery 11" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-12.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-12.jpg" title="Gallery 12" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-13.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-13.jpg" title="Gallery 13" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-14.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-14.jpg" title="Gallery 14" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-15.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-15.jpg" title="Gallery 15" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+          <div class="col-xl-3 col-lg-4 col-md-6">
+            <div class="gallery-item h-100">
+              <img src="assets/img/gallery/gallery-16.jpg" class="img-fluid" alt="">
+              <div class="gallery-links d-flex align-items-center justify-content-center">
+                <a href="assets/img/gallery/gallery-16.jpg" title="Gallery 16" class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
+                <a href="gallery-single.html" class="details-link"><i class="bi bi-link-45deg"></i></a>
+              </div>
+            </div>
+          </div><!-- End Gallery Item -->
+
+        </div>
+
+      </div>
+    </section><!-- End Gallery Section -->
+
+  </main><!-- End #main -->
+
+  <x-footer />
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <div id="preloader">
+    <div class="line"></div>
   </div>
-    <x-footer />
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

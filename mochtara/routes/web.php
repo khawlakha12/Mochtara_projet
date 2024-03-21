@@ -27,6 +27,13 @@ Route::get('/shop', function() {
 Route::get('/design', function() {
     return view('pages.design');
 });
+Route::get('/contact', function() {
+    return view('pages.contact');
+});
+Route::get('/ser', function() {
+    return view('pages.service');
+});
+
 
 
 
