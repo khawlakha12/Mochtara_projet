@@ -41,9 +41,9 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="#">Home</a></li>
+          <li><a href="/">Home</a></li>
           <li><a href="#">About</a></li>
-          <li class="dropdown"><a href="#"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="/shop"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Hoodies</a></li>
               <li><a href="#">T-shirts</a></li>
@@ -51,8 +51,8 @@
               <li><a href="#">Pillows</a></li>
             </ul>
           </li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#" class="active">Contact</a></li>
+          <li><a href="/ser">Services</a></li>
+          <li><a href="/contact" class="active">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
