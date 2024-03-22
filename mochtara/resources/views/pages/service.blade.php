@@ -8,10 +8,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
             <h2>Services</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-
-            <a class="cta-btn" href="contact.html">Available for hire</a>
-
+            <p>Ne laissez pas passer l'occasion de transformer vos idées en chefs-d'œuvre ! Visitez dès maintenant notre section "Services" pour découvrir une sélection variée de services de design d'impression, tous accompagnés de promotions alléchantes. Qu'il s'agisse de donner vie à une nouvelle identité visuelle ou d'ajouter une touche professionnelle à vos projets, nos offres sur mesure sont conçues pour vous élever vers de nouveaux sommets créatifs. Plongez dans un monde où la qualité rencontre l'innovation, et où chaque service est une porte ouverte vers l'excellence. Votre prochaine grande idée commence ici, avec nous.</p>
           </div>
         </div>
       </div>
@@ -34,7 +31,7 @@
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
               <i class="bi bi-bounding-box-circles"></i>
-              <h4><a href="" class="stretched-link">Sed ut perspici</a></h4>
+              <h4><a href="" class="stretched-link">Print</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
           </div><!-- End Service Item -->
@@ -42,7 +39,7 @@
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
               <i class="bi bi-calendar4-week"></i>
-              <h4><a href="" class="stretched-link">Magni Dolores</a></h4>
+              <h4><a href="" class="stretched-link">Shop</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
             </div>
           </div><!-- End Service Item -->
