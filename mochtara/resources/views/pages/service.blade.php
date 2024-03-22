@@ -74,42 +74,42 @@
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Portrait Photography</h3>
-              <h4>$160.00</h4>
+              <h4>MAD 160.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Fashion Photography</h3>
-              <h4>$300.00</h4>
+              <h4>MAD 300.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Sports Photography</h3>
-              <h4>$200.00</h4>
+              <h4>MAD 200.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Still Life Photography</h3>
-              <h4>$120.00</h4>
+              <h4>MAD 120.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Wedding Photography</h3>
-              <h4>$500.00</h4>
+              <h4>MAD 500.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
           <div class="col-lg-6">
             <div class="pricing-item d-flex justify-content-between">
               <h3>Photojournalism</h3>
-              <h4>$200.00</h4>
+              <h4>MAD 200.00</h4>
             </div>
           </div><!-- End Pricing Item -->
 
