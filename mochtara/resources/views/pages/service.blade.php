@@ -30,7 +30,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
-              <i class="bi bi-bounding-box-circles"></i>
+              <i class="bi bi-brush"></i>
               <h4><a href="" class="stretched-link">Print</a></h4>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
             </div>
@@ -38,7 +38,7 @@
 
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
-              <i class="bi bi-calendar4-week"></i>
+              <i class="bi bi-shop"></i>
               <h4><a href="" class="stretched-link">Shop</a></h4>
               <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
             </div>
