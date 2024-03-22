@@ -18,13 +18,13 @@
     <section id="services" class="services">
       <div class="container">
 
-        <div class="row gy-4">
+        <div class="row gy-3 justify-content-center">
 
           <div class="col-xl-3 col-md-6 d-flex">
             <div class="service-item position-relative">
-              <i class="bi bi-activity"></i>
-              <h4><a href="" class="stretched-link">Lorem Ipsum</a></h4>
-              <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
+              <i class="bi bi-graph-up"></i>
+              <h4><a href="" class="stretched-link">Trending</a></h4>
+              <p>Découvrez les dernières tendances en matière de design et laissez-vous inspirer par notre sélection unique, conçue pour apporter une touche de modernité et d'innovation</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -32,7 +32,7 @@
             <div class="service-item position-relative">
               <i class="bi bi-brush"></i>
               <h4><a href="" class="stretched-link">Print</a></h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore</p>
+              <p>Plongez dans l'univers du print design : une fusion entre tradition et innovation</p>
             </div>
           </div><!-- End Service Item -->
 
@@ -40,20 +40,10 @@
             <div class="service-item position-relative">
               <i class="bi bi-shop"></i>
               <h4><a href="" class="stretched-link">Shop</a></h4>
-              <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia</p>
+              <p>Explorez notre boutique : un espace où qualité et créativité se rencontrent pour vous offrir une gamme de produits design exclusifs,</p>
             </div>
           </div><!-- End Service Item -->
-
-          <div class="col-xl-3 col-md-6 d-flex">
-            <div class="service-item position-relative">
-              <i class="bi bi-broadcast"></i>
-              <h4><a href="" class="stretched-link">Nemo Enim</a></h4>
-              <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis</p>
-            </div>
-          </div><!-- End Service Item -->
-
         </div>
-
       </div>
     </section><!-- End Services Section -->
 
