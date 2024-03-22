@@ -13,7 +13,7 @@
 
 <main id="main" data-aos="fade" data-aos-delay="1500">
     <section class="sample-page">
-        <div class="container" data-aos="fade-up" style="margin-top: 100px;">
+        <div class="container" data-aos="fade-up" style="margin-top: 100px; margin-bottom:100px;">
             <div class="row align-items-center">
                 <!-- Image on the Left -->
                 <div class="col-md-6">
