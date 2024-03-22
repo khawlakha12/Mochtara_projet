@@ -8,7 +8,7 @@
         <div class="row d-flex justify-content-center">
           <div class="col-lg-6 text-center">
             <h2>Contact</h2>
-            <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
+            <p>Si vous rencontrez des problèmes avec votre commande de design d'impression, n'hésitez pas à contacter notre équipe <em>" MOCHTARA "</em> Nous sommes là pour vous aider à résoudre tout souci ou interrogation que vous pourriez avoir concernant votre commande. Pour une assistance rapide et efficace.</p>
 
           </div>
         </div>
@@ -56,7 +56,7 @@
         <div class="row justify-content-center mt-4">
 
           <div class="col-lg-9">
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form action="#" method="post" role="form" class="php-email-form">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
