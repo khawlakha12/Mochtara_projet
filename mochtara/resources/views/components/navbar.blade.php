@@ -43,7 +43,7 @@
         <ul>
           <li><a href="/">Home</a></li>
           <li><a href="#">About</a></li>
-          <li class="dropdown"><a href="/shop"><span>Category</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
+          <li class="dropdown"><a href="/shop"><span>shop</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Hoodies</a></li>
               <li><a href="#">T-shirts</a></li>
@@ -52,7 +52,7 @@
             </ul>
           </li>
           <li><a href="/ser">Services</a></li>
-          <li><a href="/contact" class="active">Contact</a></li>
+          <li><a href="/contact" class="">Contact</a></li>
         </ul>
       </nav><!-- .navbar -->
 
