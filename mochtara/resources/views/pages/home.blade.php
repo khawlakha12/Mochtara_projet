@@ -1,3 +1,14 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+<style>
+  .bilingual-btn {
+    
+    font-weight: bold; 
+    padding: 10px 20px; 
+    font-size: 16px; 
+    font-style: italic;
+    
+}
+</style>
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500">
@@ -11,13 +22,16 @@
                     <img src="img/home.png" class="img-fluid" alt="design">
                 </div>
                 <!-- Text on the Right -->
-                <div class="col-md-6 text-center">
+                <div class="col-md-6 text-center" style="margin-top: 40px;">
                     <h2><em>Welcome to Mochtara</em></h2>
-                    <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas
-                        consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione
-                        sint. Sit quaerat ipsum dolorem.</p>
-                    <a class="cta-btn" href="contact.html">Available for hire</a>
-                    <p>You can duplicate this sample page and create any number of inner pages you like!</p>
+                    <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">أول موقع مغربي يمكن من خلاله وضع أي
+                      تصميم لديك (صورة ,شعار ,رسمة أو مقولة…الخ) على تيشرت ذو جودة عالية وذالك عبر ستديو يتيح لك اختيار نوع و قياس
+                      و لون التيشرت</p>
+                    <p>Design at Mochtara is simple. Start
+                      with a t-shirt/hoodie/sweatshirt/etc. from our broad inventory and quickly personalize itusing our intuitive
+                      Design Studio.Upload your artwork or your design,and design templates to make your own shirt in no time.</p>
+                      <a class="btn bilingual-btn" style="background: #27a776;" href="/design" role="button"> اطبع الان Print Now </a>
+                      
                 </div>
             </div>
         </div>
