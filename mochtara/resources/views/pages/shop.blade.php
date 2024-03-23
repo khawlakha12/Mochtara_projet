@@ -21,6 +21,35 @@
         transform: translateX(-100%);
     }
 }
+.search input{
+
+  border: 2px solid grey;
+  border-radius: 30px;
+  color: #999;
+  height: 40px;
+  padding-left: 40px;
+  width: 30%;
+ color: black;
+}
+
+.contenu {
+  background-image: url();
+  background-position: center;
+  background-size: cover;
+  height: 300px;
+  padding: 0 20px;
+  text-align: center;
+  width: 110%;
+}
+
+.recherche {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 610px;
+  margin: 0 auto;
+}
+
 </style>
 <x-navbar />
 
@@ -46,53 +75,38 @@
             <div class="row gy-4 justify-content-center gallery-auto-scroll" style="margin-right:10px;margin-left:10px;">
                 <div class="col-xl-3 col-lg-4 col-md-6" style=" width: 300px;margin-right: 20px; ">
                     <div class="gallery-item  h-100" id="scroll">
-                        <img src="img/design1.png" class="img-fluid" style="width: 300px;height:300px;" alt="">
-                        <div class="gallery-links d-flex align-items-center justify-content-center">
-                            <a href="#" title="Gallery 1"
-                                class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                          
-                        </div>
+                        <img src="img/design1.png" class="img-fluid" style="width: 300px;height:250px;" alt="">
                     </div>
                 </div><!-- End Gallery Item -->
                 <div class="col-xl-3 col-lg-4 col-md-6 "style=" width: 300px;margin-right: 20px; ">
                     <div class="gallery-item  h-100" id="scroll">
-                        <img src="img/design2.png" class="img-fluid" style="width: 300px;height:300px;" alt="">
-                        <div class="gallery-links d-flex align-items-center justify-content-center">
-                            <a href="#" title="Gallery 2"
-                                class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                          
-                        </div>
+                        <img src="img/design2.png" class="img-fluid" style="width: 300px;height:250px;" alt="">
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-6" style=" width: 300px;margin-right: 20px; ">
                   <div class="gallery-item  h-100" id="scroll">
-                      <img src="img/design3.png" class="img-fluid" style="width: 300px;height:300px;" alt="">
-                      <div class="gallery-links d-flex align-items-center justify-content-center">
-                          <a href="#" title="Gallery 1"
-                              class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                        
-                      </div>
+                      <img src="img/design3.png" class="img-fluid" style="width: 300px;height:250px;" alt="">
                   </div>
               </div>
               <div class="col-xl-3 col-lg-4 col-md-6" style=" width: 300px;margin-right: 20px; ">
                 <div class="gallery-item  h-100" id="scroll">
-                    <img src="img/design1.png" class="img-fluid" style="width: 300px;height:300px;">
-                    <div class="gallery-links d-flex align-items-center justify-content-center">
-                        <a href="#" title="Gallery 1"
-                            class="glightbox preview-link"><i class="bi bi-arrows-angle-expand"></i></a>
-                      
-                    </div>
+                   <img src="img/design1.png" class="img-fluid" style="width: 300px;height:250px;">
                 </div>
             </div>
-
         </div>
     </section>
     <!-- ======= Gallery Section ======= -->
+    <section class="mt-3 mb-2">
+      <div class="search d-flex justify-content-center align-items-center">
+        <img class="loupe" src="https://www.icone-png.com/png/35/34747.png" width="3%"/>
+        <input type="search" placeholder="Besoin d'aide ?"/>
+         </div>
+    </section>
     <section id="gallery" class="gallery">
         <div class="container-fluid">
 
             <div class="row gy-4 justify-content-center">
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-1.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -102,7 +116,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-2.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -112,7 +126,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-3.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -122,7 +136,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-4.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -132,7 +146,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-5.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -142,7 +156,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-6.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -152,7 +166,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-7.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -162,7 +176,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-8.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -172,7 +186,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-9.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -182,7 +196,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-10.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -192,7 +206,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-11.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
@@ -202,7 +216,7 @@
                         </div>
                     </div>
                 </div><!-- End Gallery Item -->
-                <div class="col-xl-3 col-lg-4 col-md-6">
+                <div class="col-xl-3 col-lg-4 col-md-6"style="width: 300px;">
                     <div class="gallery-item h-100">
                         <img src="assets/img/gallery/gallery-12.jpg" class="img-fluid" alt="">
                         <div class="gallery-links d-flex align-items-center justify-content-center">
