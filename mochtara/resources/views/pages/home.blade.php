@@ -50,6 +50,7 @@
 <div id="preloader">
     <div class="line"></div>
 </div>
+<x-register />
 <x-link_script />
 </body>
 
