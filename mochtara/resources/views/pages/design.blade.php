@@ -15,19 +15,11 @@
               </div>
             </div>
           </div>
-        </div><!-- End Page Header -->
+        </div>
     
-        <section class="sample-page">
-          <div class="container" data-aos="fade-up">
+      
     
-            <p>
-              You can duplicate this sample page and create any number of inner pages you like!
-            </p>
-    
-          </div>
-        </section>
-    
-      </main><!-- End #main -->
+      </main>
 
       <x-link_script />
 
