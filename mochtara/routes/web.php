@@ -33,6 +33,9 @@ Route::get('/contact', function() {
 Route::get('/ser', function() {
     return view('pages.service');
 });
+Route::get('/form', function() {
+    return view('pages.form');
+});
 
 
 
