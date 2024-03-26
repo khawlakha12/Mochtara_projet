@@ -41,6 +41,7 @@
     </section>
 </main>
 <!-- End #main -->
+
 <!-- ======= Footer ======= -->
 <x-footer />
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
