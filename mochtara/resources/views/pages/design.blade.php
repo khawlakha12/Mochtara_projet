@@ -6,11 +6,11 @@
         <div class="page-header d-flex align-items-center">
           <div class="container position-relative">
             <div class="row justify-content-center">
-              <div class="col-md-4 d-flex align-items-center">
+              <div class="col-md-4 d-flex justify-content-center">
                 <div class="card">
                     <div class="card-body">
                         <form>
-                            <div class="mb-3">
+                            <div class="mb-3" style="height: 60%; width:60%;">
                                 <input class="form-control" type="file" id="image-upload" accept="image/*">
                             </div>
                         </form>
