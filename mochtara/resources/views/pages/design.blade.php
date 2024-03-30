@@ -5,14 +5,21 @@
         <!-- ======= End Page Header ======= -->
         <div class="page-header d-flex align-items-center">
           <div class="container position-relative">
-            <div class="row d-flex justify-content-center">
-              <div class="col-lg-6 text-center">
-                <h2>Sample Inner Page</h2>
-                <p>Odio et unde deleniti. Deserunt numquam exercitationem. Officiis quo odio sint voluptas consequatur ut a odio voluptatem. Sit dolorum debitis veritatis natus dolores. Quasi ratione sint. Sit quaerat ipsum dolorem.</p>
-    
-                <a class="cta-btn" href="contact.html">Available for hire</a>
-    
-              </div>
+            <div class="row justify-content-center">
+              <div class="col-md-4 d-flex align-items-center">
+                <div class="card">
+                    <div class="card-body">
+                        <form>
+                            <div class="mb-3">
+                                <input class="form-control" type="file" id="image-upload" accept="image/*">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img  src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp" alt="Description de la grande image" class="img-fluid">
+            </div>
             </div>
           </div>
         </div>
