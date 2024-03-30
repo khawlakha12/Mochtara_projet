@@ -6,13 +6,13 @@
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
-                <div class="col-md-5 d-flex justify-content-center align-items-center">
+                <div class="col-md-5 d-flex justify-content-center align-items-center me-md-4">
+                  
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
                             <h1 class="text-black rounded"
                                 style="border:2px dashed black; padding: 10px 40px; height:50%;">add text</h1>
-                            <!-- Bouton circulaire en bas à droite -->
                             <button type="submit" class="position-absolute"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -37,9 +37,9 @@
                 <div class="col-md-6 justify-content-center">
                     <img src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp"
                         alt="Description de la grande image" class="img-fluid">
-                        <div class="d-flex justify-content-center">
+                    <div class="d-flex justify-content-center">
                         <x-size />
-                      </div>
+                    </div>
                 </div>
             </div>
         </div>
