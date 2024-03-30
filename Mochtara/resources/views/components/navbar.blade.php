@@ -42,7 +42,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="/">Home</a></li>
-          <li><a href="#">Design</a></li>
+          <li><a href="/design">Design</a></li>
           <li class="dropdown"><a href="/shop"><span>shop</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               <li><a href="#">Hoodies</a></li>
