@@ -34,13 +34,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 justify-content-center">
                     <img src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp"
                         alt="Description de la grande image" class="img-fluid">
+                        <div class="d-flex justify-content-center">
+                        <x-size />
+                      </div>
                 </div>
             </div>
         </div>
     </div>
+
 </main>
 <x-footer />
 <x-link_script />
