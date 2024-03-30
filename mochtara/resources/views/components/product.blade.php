@@ -152,8 +152,6 @@
             </div>
         </a>
     </div>
-
-
 </section>
 </body>
 </html>
