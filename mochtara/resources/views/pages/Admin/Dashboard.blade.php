@@ -215,7 +215,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg-6 col-md-12">
+                    <div class="col-lg-6 col-12">
                         <div class="card card-tasks">
                             <div class="card-header ">
                                 <h6 class="title d-inline">Roles</h6>
