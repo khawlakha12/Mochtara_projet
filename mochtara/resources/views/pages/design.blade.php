@@ -7,7 +7,7 @@
         <div class="container position-relative">
             <div class="row justify-content-center">
                 <div class="col-md-5 d-flex justify-content-center align-items-center me-md-4">
-                  
+                  <x-designs />
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
