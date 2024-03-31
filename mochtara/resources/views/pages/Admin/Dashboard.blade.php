@@ -276,7 +276,7 @@
                                     </table>
                                      {{-- ----------- Modal Change role ---------- --}}
                                      <dialog id="myDialog" style="position : relative;top: 50%;left: 50%;transform: translate(-50%, -50%);border: 1px solid #ccc;" >
-                                      <input type="search" id="form-1-input" class="search-field form-control form-control-lg" placeholder="Search..." value="" name="s" />
+                                      <input type="search" id="form-1-input" class="search-field form-control form-control-lg" placeholder="Search..." value="" name="s" style="color: black;"/>
                                       <div class="d-flex">
                                         <button class="btn btn-success"> Save </button>
                                         <button class="btn btn-danger" onclick="closeDialog()"> Close </button>
@@ -284,51 +284,6 @@
                                     </dialog>
 
                                     {{-- ---------------------------------------- --}}
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12">
-                        <div class="card ">
-                            <div class="card-header">
-                                <h4 class="card-title"> Simple Table</h4>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
-                                        <thead class=" text-primary">
-                                            <tr>
-                                                <th>
-                                                    Name
-                                                </th>
-                                                <th>
-                                                    Country
-                                                </th>
-                                                <th>
-                                                    City
-                                                </th>
-                                                <th class="text-center">
-                                                    Salary
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>
-                                                    Dakota Rice
-                                                </td>
-                                                <td>
-                                                    Niger
-                                                </td>
-                                                <td>
-                                                    Oud-Turnhout
-                                                </td>
-                                                <td class="text-center">
-                                                    $36,738
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
                                 </div>
                             </div>
                         </div>
