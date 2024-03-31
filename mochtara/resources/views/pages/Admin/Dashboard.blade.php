@@ -248,16 +248,6 @@
                                                     </button>
                                                 </td>
                                             </tr>
-                                            {{-- ----------- Modal Change role ---------- --}}
-                                            <dialog id="myDialog" style="top: 50%;left: 50%;border: 1px solid #ccc;" >
-                                              <input type="search" id="form-1-input" class="search-field form-control form-control-lg" placeholder="Search..." value="" name="s" />
-                                              <div class="d-flex">
-                                                <button class="btn btn-success"> Save </button>
-                                                <button class="btn btn-danger" onclick="closeDialog()"> Close </button>
-                                              </div>
-                                            </dialog>
-
-                                            {{-- ---------------------------------------- --}}
                                             <tr>
                                                 <td>
                                                     <div class="form-check">
@@ -284,6 +274,16 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                                     {{-- ----------- Modal Change role ---------- --}}
+                                     <dialog id="myDialog" style="position : relative;top: 50%;left: 50%;transform: translate(-50%, -50%);border: 1px solid #ccc;" >
+                                      <input type="search" id="form-1-input" class="search-field form-control form-control-lg" placeholder="Search..." value="" name="s" />
+                                      <div class="d-flex">
+                                        <button class="btn btn-success"> Save </button>
+                                        <button class="btn btn-danger" onclick="closeDialog()"> Close </button>
+                                      </div>
+                                    </dialog>
+
+                                    {{-- ---------------------------------------- --}}
                                 </div>
                             </div>
                         </div>
