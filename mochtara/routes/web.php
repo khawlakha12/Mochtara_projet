@@ -36,6 +36,15 @@ Route::get('/ser', function() {
 Route::get('/form', function() {
     return view('pages.form');
 });
+Route::get('/profil', function() {
+    return view('pages.Admin.user');
+});
+Route::get('/liste_clients', function() {
+    return view('pages.Admin.tables');
+});
+Route::get('/arabe', function() {
+    return view('pages.Admin.rtl');
+});
 
 
 
