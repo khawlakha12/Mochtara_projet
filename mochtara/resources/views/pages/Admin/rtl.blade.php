@@ -43,7 +43,7 @@
           <li>
             <a href="/liste_clients">
               <i class="tim-icons icon-puzzle-10"></i>
-              <p>قائمة الزبائن</p>
+              <p>قائمة الزبائن/الطلبيات</p>
             </a>
           </li>
           <li class="active">

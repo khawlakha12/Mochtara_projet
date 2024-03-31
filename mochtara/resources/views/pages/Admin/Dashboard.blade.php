@@ -43,7 +43,7 @@
           <li>
             <a href="/liste_clients">
               <i class="tim-icons icon-puzzle-10"></i>
-              <p>Table List</p>
+              <p>Table Clients/Commande</p>
             </a>
           </li>
           <li>
