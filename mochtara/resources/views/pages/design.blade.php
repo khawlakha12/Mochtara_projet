@@ -6,7 +6,7 @@
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
-                <div class="col-md-5 d-flex justify-content-center align-items-center me-md-4">
+                <div class="col-md-6 d-flex justify-content-center align-items-center me-md-4">
                   <x-designs />
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 justify-content-center">
+                <div class="col-md-5 justify-content-center">
                     <img src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp"
                         alt="Description de la grande image" class="img-fluid">
                     <div class="d-flex justify-content-center">

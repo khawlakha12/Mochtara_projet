@@ -11,11 +11,10 @@
     </style>
 </head>
 <body>
-    <div class="flex flex-row flex-wrap">
-        <img src="img/design3.png" alt="" class="mr-2 mb-2">
-        <img src="img/design3.png" alt="" class="mr-2 mb-2">
-        <img src="img/design3.png" alt="" class="mr-2 mb-2">
-        <img src="img/design3.png" alt="" class="mr-2 mb-2">
+    <div class="flex flex-col">
+        <img src="img/design3.png" alt="" class="mr-2 mb-2 h-24 w-24">
+        <img src="img/design3.png" alt="" class="mr-2 mb-2 h-24 w-24">
+        <img src="img/design3.png" alt="" class="mr-2 mb-2 h-24 w-24">
     </div>
 </body>
 </html>
