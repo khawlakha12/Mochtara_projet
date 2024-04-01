@@ -28,30 +28,36 @@
                 </div>
                 <ul class="nav">
                     <li>
-                        <a href="/admin">
-                            <i class="tim-icons icon-chart-pie-36"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/profil">
-                            <i class="tim-icons icon-single-02"></i>
-                            <p>User Profile</p>
-                        </a>
+                      <a href="/admin">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>Dashboard</p>
+                      </a>
                     </li>
                     <li class="active ">
-                        <a href="/liste_clients">
-                            <i class="tim-icons icon-puzzle-10"></i>
-                            <p>Liste Clients/Commande</p>
-                        </a>
+                      <a href="/profil">
+                        <i class="tim-icons icon-single-02"></i>
+                        <p>User Profile</p>
+                      </a>
                     </li>
                     <li>
-                        <a href="/arabe">
-                            <i class="tim-icons icon-world"></i>
-                            <p>RTL Support</p>
-                        </a>
+                      <a href="/Categories">
+                        <i class="tim-icons icon-puzzle-10"></i>
+                        <p>Categories</p>
+                      </a>
                     </li>
-                </ul>
+                    <li>
+                      <a href="/liste_clients">
+                        <i class="tim-icons icon-puzzle-10"></i>
+                        <p>Table Clients/Commande</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="/arabe">
+                        <i class="tim-icons icon-world"></i>
+                        <p>RTL Support</p>
+                      </a>
+                    </li>
+                  </ul>
             </div>
         </div>
         <div class="main-panel">
