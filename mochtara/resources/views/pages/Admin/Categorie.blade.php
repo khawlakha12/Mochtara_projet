@@ -135,7 +135,7 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header">
-                                <h4 class="card-title">Table cliens</h4>
+                                <h4 class="card-title">Table produits</h4>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -143,29 +143,45 @@
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
-                                                    Name
+                                                    image
                                                 </th>
                                                 <th class="text-center">
-                                                    email
+                                                    name 
                                                 </th>
                                                 <th class="text-center">
-                                                    Commende
+                                                    Couleurs
                                                 </th>
                                                 <th class="text-center">
-                                                    Supprime
+                                                    Sizes
+                                                </th>
+                                                <th class="text-center">
+                                                    Supprimer
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <tr>
                                                 <td class="text-center">
-                                                    Dakota Rice
+                                                    <img src="img/9obya.png" class="rounded-circle" alt="Cinque Terre" style="height:50px;width:50px;">
                                                 </td>
                                                 <td class="text-center">
-                                                    khawlakha@gmail.com
+                                                    Hoodies
                                                 </td>
                                                 <td class="text-center">
-                                                    3
+                                                    <select class="selectpicker">
+                                                        <optgroup label="Picnic">
+                                                          <option>Mustard</option>
+                                                          <option>Ketchup</option>
+                                                          <option>Relish</option>
+                                                        </optgroup>
+                                                </td>
+                                                <td class="text-center">
+                                                    <select class="selectpicker">
+                                                        <optgroup label="Picnic">
+                                                          <option>Mustard</option>
+                                                          <option>Ketchup</option>
+                                                          <option>Relish</option>
+                                                        </optgroup>
                                                 </td>
                                                 <td class="text-center">
                                                     <button class="btn btn-danger btn-block"> Supprimer </button>
