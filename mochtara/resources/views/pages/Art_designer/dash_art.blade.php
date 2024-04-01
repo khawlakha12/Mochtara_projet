@@ -15,7 +15,69 @@
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
     <style>
-        
+        .box {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.border-blur::before,
+.border-blur::after {
+  border-radius: 50%;
+  height: 400px !important;
+  width: 500px !important;
+}
+.box::after,
+.border-blur::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #d400d4
+  );
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+.box::before,
+.border-blur::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #00ccff
+  );
+  animation: animate 4s linear infinite;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.box span {
+  position: absolute;
+  inset: 5px;
+  border-radius: 16px;
+  background: #ffff;
+  z-index: 1;
+}
+
+
     </style>
 </head>
 
@@ -127,8 +189,10 @@
                     <div class="col-md-12 d-flex justify-content-center align-items-center" >
                         <div class="card "style="height: 80vh;width:50vw;background:#ffff;" >     
                             <div class="card-body d-flex justify-content-center align-items-center">
-                                <div class="border border-black rounded " style="height:50%;width:50%;">
-
+                                <div class="box" style="height:50%;width:50%;">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
                                 </div>
 
                             </div>
