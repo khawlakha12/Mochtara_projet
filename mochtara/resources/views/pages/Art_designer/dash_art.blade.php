@@ -79,14 +79,14 @@
 .secondary {
   height: 35px;
     width:35px ;
-  border: 2px solid #e74c3c;
+  border: 2px solid #d400d4;
   border-radius: 90px;
-  color: #e74c3c;
+  color: #d400d4;
   background-color: #fff;
 }
 
 .secondary:hover {
-  background-color: #e74c3c;
+  background-color: #d400d4;
   color: #fff;
 }
     </style>
@@ -199,6 +199,7 @@
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
+                            
                             <div class="card-body d-flex justify-content-center align-items-center" style="position: relative;">
                                 <div class="box" style="height: 50%; width: 50%;">
                                     <span></span>
@@ -206,10 +207,10 @@
                                     <span></span>
                                     <span></span>
                                 </div>
-                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 10px; right: 10px;">
+                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
                                 </a>
-                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 10px; left: 10px;">
+                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 20px; left: 20px;">
                                     <i class="fas fa-pen"></i>
                                 </a>
                             </div>
