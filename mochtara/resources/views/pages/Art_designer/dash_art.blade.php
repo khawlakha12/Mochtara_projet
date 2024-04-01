@@ -14,6 +14,9 @@
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
+    <style>
+        
+    </style>
 </head>
 
 <body class="">
@@ -120,174 +123,14 @@
             </div>
             <!-- End Navbar -->
             <div class="content">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="card ">
-                            <div class="card-header d-flex justify-content-between align-items-center">
-                                <h4 class="card-title mb-0">Table produits</h4>
-                                <button type="button" class="btn btn-info btn-circle btn-xl" data-toggle="modal"
-                                    data-target="#exampleModal">
-                                    <i class="fa fa-plus"></i>
-                                </button>
-                            </div>
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Ajouter Produit</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div>
-                                                <div class="mb-4 d-flex justify-content-center">
-                                                    <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                    alt="example placeholder" style="width: 300px;" />
-                                                </div>
-                                                <div class="d-flex justify-content-center">
-                                                    <div class="btn btn-primary btn-rounded">
-                                                        <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                                        <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1" style="color:black">Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" style="color: black;">
-                                                  </div>
-                                                  <div class="d-flex flex-row justify-content-between">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="Option1" id="flexCheckDefault1">
-                                                        <label class="form-check-label" for="flexCheckDefault1">
-                                                            Option 1
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="Option2" id="flexCheckDefault2">
-                                                        <label class="form-check-label" for="flexCheckDefault2">
-                                                            Option 2
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Ajouter Produit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row ">
+                    <div class="col-md-12 d-flex justify-content-center align-items-center" >
+                        <div class="card "style="height: 80vh;width:50vw;background:#ffff;" >     
+                            <div class="card-body d-flex justify-content-center align-items-center">
+                                <div class="border border-black rounded " style="height:50%;width:50%;">
 
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
-                                        <thead class=" text-primary">
-                                            <tr>
-                                                <th class="text-center">
-                                                    image
-                                                </th>
-                                                <th class="text-center">
-                                                    name
-                                                </th>
-                                                <th class="text-center">
-                                                    Couleurs
-                                                </th>
-                                                <th class="text-center">
-                                                    Sizes
-                                                </th>
-                                                <th class="text-center">
-                                                    Supprimer
-                                                </th>
+                                </div>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <img src="img/9obya.png" class="" alt="Cinque Terre"
-                                                        style="height:50px;width:50px;">
-                                                </td>
-                                                <td class="text-center">
-                                                    Hoodies
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="selectpicker">
-                                                        <optgroup label="Couleurs">
-                                                            <option>Mustard</option>
-                                                            <option>Ketchup</option>
-                                                            <option>Relish</option>
-                                                        </optgroup>
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="selectpicker">
-                                                        <optgroup label="Sizes">
-                                                            <option>Mustard</option>
-                                                            <option>Ketchup</option>
-                                                            <option>Relish</option>
-                                                        </optgroup>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="card ">
-                            <div class="card-header">
-                                <h4 class="card-title">Table designs</h4>
-                                <button type="button" class="btn btn-info btn-circle btn-xl" data-toggle="modal"
-                                data-target="#exampleModal">
-                                <i class="fa fa-plus"></i>
-                            </button>
-                            </div>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
-                                        <thead class=" text-primary">
-                                            <tr>
-                                                <th class="text-center">
-                                                    Id Design
-                                                </th>
-                                                <th class="text-center">
-                                                    image
-                                                </th>
-                                                <th class="text-center">
-                                                    title
-                                                </th>
-                                                <th class="text-center">
-                                                    Supprime
-                                                </th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">
-                                                    1
-                                                </td>
-                                                <td class="text-center">
-                                                    <img src="img/design2.png" class="" alt="Cinque Terre"
-                                                        style="height:50px;width:50px;">
-                                                </td>
-                                                <td class="text-center">
-                                                    Design1
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
                         </div>
                     </div>
