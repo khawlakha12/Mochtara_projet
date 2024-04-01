@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/Categ">
+                    <a href="/categ">
                         <i class="fas fa-tshirt"></i>
                         <p>Categories</p>
                     </a>
