@@ -11,6 +11,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+
+<!-- Lien CDN pour le JavaScript de Bootstrap Select -->
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
@@ -30,36 +33,36 @@
                 </div>
                 <ul class="nav">
                     <li class="active ">
-                      <a href="/admin">
-                        <i class="tim-icons icon-chart-pie-36"></i>
-                        <p>Dashboard</p>
-                      </a>
+                        <a href="/admin">
+                            <i class="tim-icons icon-chart-pie-36"></i>
+                            <p>Dashboard</p>
+                        </a>
                     </li>
                     <li>
-                      <a href="/profil">
-                        <i class="tim-icons icon-single-02"></i>
-                        <p>User Profile</p>
-                      </a>
+                        <a href="/profil">
+                            <i class="tim-icons icon-single-02"></i>
+                            <p>User Profile</p>
+                        </a>
                     </li>
                     <li>
                         <a href="/Categories">
                             <i class="fas fa-tshirt"></i>
                             <p>Categories</p>
-                      </a>
+                        </a>
                     </li>
                     <li>
-                      <a href="/liste_clients">
-                        <i class="tim-icons icon-puzzle-10"></i>
-                        <p>Table Clients/Commande</p>
-                      </a>
+                        <a href="/liste_clients">
+                            <i class="tim-icons icon-puzzle-10"></i>
+                            <p>Table Clients/Commande</p>
+                        </a>
                     </li>
                     <li>
-                      <a href="/arabe">
-                        <i class="tim-icons icon-world"></i>
-                        <p>RTL Support</p>
-                      </a>
+                        <a href="/arabe">
+                            <i class="tim-icons icon-world"></i>
+                            <p>RTL Support</p>
+                        </a>
                     </li>
-                  </ul>
+                </ul>
             </div>
         </div>
         <div class="main-panel">
@@ -249,8 +252,8 @@
                                                 </td>
                                                 <td class="td-actions text-right">
                                                     <button type="button" rel="tooltip" title=""
-                                                        onclick="showDialog()" class="btn btn-link"
-                                                        data-original-title="Edit Task">
+                                                        data-toggle="modal" data-target="#exampleModal"
+                                                        class="btn btn-link" data-original-title="Edit Task">
                                                         <i class="tim-icons icon-pencil"></i>
                                                     </button>
                                                 </td>
@@ -281,16 +284,35 @@
                                             </tr>
                                         </tbody>
                                     </table>
-                                     {{-- ----------- Modal Change role ---------- --}}
-                                     <dialog id="myDialog" style="position : relative;top: 50%;left: 50%;transform: translate(-50%, -50%);border: 1px solid #ccc;" >
-                                      <input type="search" id="form-1-input" class="search-field form-control form-control-lg" placeholder="Search..." value="" name="s" style="color: black;"/>
-                                      <div class="d-flex">
-                                        <button class="btn btn-success"> Save </button>
-                                        <button class="btn btn-danger" onclick="closeDialog()"> Close </button>
-                                      </div>
-                                    </dialog>
-
-                                    {{-- ---------------------------------------- --}}
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Changer le role
+                                                    </h5>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <select class="my-select selectpicker" data-container="body">
+                                                        <option>Mustard</option>
+                                                        <option>Ketchup</option>
+                                                        <option>Barbecue</option>
+                                                    </select>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save
+                                                        changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -324,6 +346,7 @@
     <!-- Control Center for Black Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script><!-- Black Dashboard DEMO methods, don't include it in your project! -->
     <script src="assets-dash/demo/demo.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
     <script>
         $(document).ready(function() {
             $().ready(function() {
@@ -447,18 +470,7 @@
                 application: "black-dashboard-free"
             });
     </script>
-    {{-- script modal --}}
-    <script>
-        const dialog = document.getElementById("myDialog");
 
-        function showDialog() {
-            dialog.show();
-        }
-
-        function closeDialog() {
-            dialog.close();
-        }
-    </script>
 </body>
 
 </html>
