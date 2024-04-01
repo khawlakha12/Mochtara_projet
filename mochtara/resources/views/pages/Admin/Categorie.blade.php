@@ -134,9 +134,13 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card ">
-                            <div class="card-header">
-                                <h4 class="card-title">Table produits</h4>
+                            <div class="card-header d-flex justify-content-between align-items-center">
+                                <h4 class="card-title mb-0">Table produits</h4> 
+                                <button type="button" class="btn btn-info btn-circle btn-xl">
+                                    <i class="fa fa-plus"></i>
+                                </button>
                             </div>
+                            
                             <div class="card-body">
                                 <div class="table-responsive">
                                     <table class="table tablesorter " id="">
@@ -157,6 +161,7 @@
                                                 <th class="text-center">
                                                     Supprimer
                                                 </th>
+
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -196,7 +201,7 @@
                     <div class="col-md-12">
                       <div class="card ">
                         <div class="card-header">
-                            <h4 class="card-title">Table Commende</h4>
+                            <h4 class="card-title">Table designs</h4>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -204,32 +209,32 @@
                                     <thead class=" text-primary">
                                         <tr>
                                             <th class="text-center">
-                                                Client
-                                            </th>
-                                            <th class="text-center">
-                                                Date
-                                            </th>
-                                            <th class="text-center">
-                                                Category
-                                            </th>
-                                            <th class="text-center">
                                                 Id Design
+                                            </th>
+                                            <th class="text-center">
+                                                image
+                                            </th>
+                                            <th class="text-center">
+                                                title
+                                            </th>
+                                            <th class="text-center">
+                                                Supprime
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
                                             <td class="text-center">
-                                                Dakota Rice
+                                                1
                                             </td>
                                             <td class="text-center">
-                                                12/12/2024
+                                                <img src="img/9obya.png" class="" alt="Cinque Terre" style="height:50px;width:50px;">  
                                             </td>
                                             <td class="text-center">
-                                                Hoodie
+                                                Design1
                                             </td>
                                             <td class="text-center">
-                                                 2
+                                                <button class="btn btn-danger btn-block"> Supprimer </button>
                                             </td>
                                         </tr>
                                     </tbody>
