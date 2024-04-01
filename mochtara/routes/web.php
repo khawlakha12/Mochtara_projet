@@ -49,6 +49,15 @@ Route::get('/Categories', function() {
     return view('pages.Admin.Categorie');
 });
 
+Route::get('/categ', function() {
+    return view('pages.Art_designer.Cate_art');
+});
+Route::get('/new_design', function() {
+    return view('pages.Art_designer.dash_art');
+});
+Route::get('/profile_designer', function() {
+    return view('pages.Art_designer.profile');
+});
 
 
 
