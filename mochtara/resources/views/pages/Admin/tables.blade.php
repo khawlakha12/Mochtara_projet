@@ -9,6 +9,7 @@
     <title>Mochtara</title>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
@@ -33,19 +34,19 @@
                         <p>Dashboard</p>
                       </a>
                     </li>
-                    <li class="active ">
+                    <li>
                       <a href="/profil">
                         <i class="tim-icons icon-single-02"></i>
                         <p>User Profile</p>
                       </a>
                     </li>
                     <li>
-                      <a href="/Categories">
-                        <i class="tim-icons icon-puzzle-10"></i>
-                        <p>Categories</p>
+                        <a href="/Categories">
+                            <i class="fas fa-tshirt"></i>
+                            <p>Categories</p>
                       </a>
                     </li>
-                    <li>
+                    <li class="active ">
                       <a href="/liste_clients">
                         <i class="tim-icons icon-puzzle-10"></i>
                         <p>Table Clients/Commande</p>
