@@ -174,7 +174,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <select class="selectpicker">
-                                                        <optgroup label="Picnic">
+                                                        <optgroup label="Couleurs">
                                                           <option>Mustard</option>
                                                           <option>Ketchup</option>
                                                           <option>Relish</option>
@@ -182,7 +182,7 @@
                                                 </td>
                                                 <td class="text-center">
                                                     <select class="selectpicker">
-                                                        <optgroup label="Picnic">
+                                                        <optgroup label="Sizes">
                                                           <option>Mustard</option>
                                                           <option>Ketchup</option>
                                                           <option>Relish</option>
@@ -228,7 +228,7 @@
                                                 1
                                             </td>
                                             <td class="text-center">
-                                                <img src="img/9obya.png" class="" alt="Cinque Terre" style="height:50px;width:50px;">  
+                                                <img src="img/design2.png" class="" alt="Cinque Terre" style="height:50px;width:50px;">  
                                             </td>
                                             <td class="text-center">
                                                 Design1
