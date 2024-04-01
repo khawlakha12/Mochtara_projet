@@ -168,15 +168,28 @@
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1" style="color:black">Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" style="color: black;">
                                                   </div>
-                                                
+                                                  <div class="d-flex flex-row justify-content-between">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="Option1" id="flexCheckDefault1">
+                                                        <label class="form-check-label" for="flexCheckDefault1">
+                                                            Option 1
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="checkbox" value="Option2" id="flexCheckDefault2">
+                                                        <label class="form-check-label" for="flexCheckDefault2">
+                                                            Option 2
+                                                        </label>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Save changes</button>
+                                            <button type="button" class="btn btn-primary">Ajouter Produit</button>
                                         </div>
                                     </div>
                                 </div>
