@@ -45,6 +45,9 @@ Route::get('/liste_clients', function() {
 Route::get('/arabe', function() {
     return view('pages.Admin.rtl');
 });
+Route::get('/Categories', function() {
+    return view('pages.Admin.Categori');
+});
 
 
 
