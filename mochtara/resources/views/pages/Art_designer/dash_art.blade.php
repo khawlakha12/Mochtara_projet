@@ -10,85 +10,89 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
     <style>
         .box {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-.border-blur::before,
-.border-blur::after {
-  border-radius: 50%;
-  height: 400px !important;
-  width: 500px !important;
-}
-.box::after,
-.border-blur::after {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background-image: conic-gradient(
-    transparent,
-    transparent,
-    transparent,
-    #d400d4
-  );
-  animation: animate 4s linear infinite;
-  animation-delay: -2s;
-}
-.box::before,
-.border-blur::before {
-  content: "";
-  position: absolute;
-  width: 500px;
-  height: 500px;
-  background-image: conic-gradient(
-    transparent,
-    transparent,
-    transparent,
-    #00ccff
-  );
-  animation: animate 4s linear infinite;
-}
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-.box span {
-  position: absolute;
-  inset: 5px;
-  border-radius: 16px;
-  background: #ffff;
-  z-index: 1;
-}
-.secondary {
-  height: 35px;
-    width:35px ;
-  border: 2px solid #d400d4;
-  border-radius: 90px;
-  color: #d400d4;
-  background-color: #fff;
-}
+            position: relative;
+            width: 300px;
+            height: 400px;
+            background: rgba(0, 0, 0, 0.75);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
 
-.secondary:hover {
-  background-color: #d400d4;
-  color: #fff;
-}
+        .border-blur::before,
+        .border-blur::after {
+            border-radius: 50%;
+            height: 400px !important;
+            width: 500px !important;
+        }
+
+        .box::after,
+        .border-blur::after {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #d400d4);
+            animation: animate 4s linear infinite;
+            animation-delay: -2s;
+        }
+
+        .box::before,
+        .border-blur::before {
+            content: "";
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background-image: conic-gradient(transparent,
+                    transparent,
+                    transparent,
+                    #00ccff);
+            animation: animate 4s linear infinite;
+        }
+
+        @keyframes animate {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .box span {
+            position: absolute;
+            inset: 5px;
+            border-radius: 16px;
+            background: #ffff;
+            z-index: 1;
+        }
+
+        .secondary {
+            height: 35px;
+            width: 35px;
+            border: 2px solid #d400d4;
+            border-radius: 90px;
+            color: #d400d4;
+            background-color: #fff;
+        }
+
+        .secondary:hover {
+            background-color: #d400d4;
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -105,7 +109,7 @@
                     </a>
                 </div>
                 <ul class="nav">
-                    <li  class="active ">
+                    <li class="active ">
                         <a href="/new_design">
                             <i class="tim-icons icon-chart-pie-36"></i>
                             <p>Dashboard</p>
@@ -198,150 +202,159 @@
             <div class="content">
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
-                        <div class="image-group d-flex flex-column" style="position: absolute; left: 20px; top: 20px; bottom: 20px; 
-                        margin-right:20px;margin-left:12px;">
-                            <img src="img/9obya.png" alt="Image 1"  style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 2" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
+                        <div class="image-group d-flex flex-column mr-3">
+                            <img src="img/9obya.png" alt="Image 1"
+                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 2"
+                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3"
+                                style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 4"
+                                style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                         </div>
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
-                            
-                            <div class="card-body d-flex justify-content-center align-items-center" style="position: relative;">
-                                
+                            <div class="card-body d-flex justify-content-center align-items-center"
+                                style="position: relative;">
                                 <div class="box" style="height: 50%; width: 50%;">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                 </div>
-                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 20px; right: 20px;">
+                                <a href="#"
+                                    class="button secondary d-flex justify-content-center align-items-center"
+                                    style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
                                 </a>
-                                <a href="#" class="button secondary d-flex justify-content-center align-items-center" style="position: absolute; bottom: 20px; left: 20px;">
+                                <a href="#"
+                                    class="button secondary d-flex justify-content-center align-items-center"
+                                    style="position: absolute; bottom: 20px; left: 20px;">
                                     <i class="fas fa-pen"></i>
                                 </a>
                             </div>
-                            
                         </div>
                         <div class="image-group d-flex flex-column" style="margin-left: 10px;">
-                            <img src="img/9obya.png" alt="Image 5" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 6" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 7" style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 8" style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 5"
+                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 6"
+                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 7"
+                                style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 8"
+                                style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                         </div>
                     </div>
-                    
+
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    <div class="copyright">
+                        ©
+                        <script></script>2024 made with <i class="tim-icons icon-heart-2"></i> by
+                        <a href="javascript:void(0)" target="_blank">Mochtara</a> for a better web.
                     </div>
                 </div>
-                <footer class="footer">
-                    <div class="container-fluid">
-                        <div class="copyright">
-                            ©
-                            <script></script>2024 made with <i class="tim-icons icon-heart-2"></i> by
-                            <a href="javascript:void(0)" target="_blank">Mochtara</a> for a better web.
-                        </div>
-                    </div>
-                </footer>
-                <!--   Core JS Files   -->
-                <script src="assets-dash/js/core/jquery.min.js"></script>
-                <script src="assets-dash/js/core/popper.min.js"></script>
-                <script src="assets-dash/js/core/bootstrap.min.js"></script>
-                <script src="assets-dash/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-                <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
-                <script src="assets-dash/demo/demo.js"></script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        $().ready(function() {
-                            $sidebar = $('.sidebar');
-                            $navbar = $('.navbar');
-                            $main_panel = $('.main-panel');
-                            $full_page = $('.full-page');
-                            $sidebar_responsive = $('body > .navbar-collapse');
-                            sidebar_mini_active = true;
-                            white_color = false;
-                            window_width = $(window).width();
-                            fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-                            $('.fixed-plugin a').click(function(event) {
-                                if ($(this).hasClass('switch-trigger')) {
-                                    if (event.stopPropagation) {
-                                        event.stopPropagation();
-                                    } else if (window.event) {
-                                        window.event.cancelBubble = true;
-                                    }
+            </footer>
+            <!--   Core JS Files   -->
+            <script src="assets-dash/js/core/jquery.min.js"></script>
+            <script src="assets-dash/js/core/popper.min.js"></script>
+            <script src="assets-dash/js/core/bootstrap.min.js"></script>
+            <script src="assets-dash/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+            <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
+            <script src="assets-dash/demo/demo.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+            <script>
+                $(document).ready(function() {
+                    $().ready(function() {
+                        $sidebar = $('.sidebar');
+                        $navbar = $('.navbar');
+                        $main_panel = $('.main-panel');
+                        $full_page = $('.full-page');
+                        $sidebar_responsive = $('body > .navbar-collapse');
+                        sidebar_mini_active = true;
+                        white_color = false;
+                        window_width = $(window).width();
+                        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+                        $('.fixed-plugin a').click(function(event) {
+                            if ($(this).hasClass('switch-trigger')) {
+                                if (event.stopPropagation) {
+                                    event.stopPropagation();
+                                } else if (window.event) {
+                                    window.event.cancelBubble = true;
                                 }
-                            });
-                            $('.fixed-plugin .background-color span').click(function() {
-                                $(this).siblings().removeClass('active');
-                                $(this).addClass('active');
-                                var new_color = $(this).data('color');
-                                if ($sidebar.length != 0) {
-                                    $sidebar.attr('data', new_color);
-                                }
-                                if ($main_panel.length != 0) {
-                                    $main_panel.attr('data', new_color);
-                                }
-                                if ($full_page.length != 0) {
-                                    $full_page.attr('filter-color', new_color);
-                                }
-                                if ($sidebar_responsive.length != 0) {
-                                    $sidebar_responsive.attr('data', new_color);
-                                }
-                            });
-                            $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-                                var $btn = $(this);
-                                if (sidebar_mini_active == true) {
-                                    $('body').removeClass('sidebar-mini');
-                                    sidebar_mini_active = false;
-                                    blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-                                } else {
-                                    $('body').addClass('sidebar-mini');
-                                    sidebar_mini_active = true;
-                                    blackDashboard.showSidebarMessage('Sidebar mini activated...');
-                                }
-                                var simulateWindowResize = setInterval(function() {
-                                    window.dispatchEvent(new Event('resize'));
-                                }, 180);
+                            }
+                        });
+                        $('.fixed-plugin .background-color span').click(function() {
+                            $(this).siblings().removeClass('active');
+                            $(this).addClass('active');
+                            var new_color = $(this).data('color');
+                            if ($sidebar.length != 0) {
+                                $sidebar.attr('data', new_color);
+                            }
+                            if ($main_panel.length != 0) {
+                                $main_panel.attr('data', new_color);
+                            }
+                            if ($full_page.length != 0) {
+                                $full_page.attr('filter-color', new_color);
+                            }
+                            if ($sidebar_responsive.length != 0) {
+                                $sidebar_responsive.attr('data', new_color);
+                            }
+                        });
+                        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+                            var $btn = $(this);
+                            if (sidebar_mini_active == true) {
+                                $('body').removeClass('sidebar-mini');
+                                sidebar_mini_active = false;
+                                blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+                            } else {
+                                $('body').addClass('sidebar-mini');
+                                sidebar_mini_active = true;
+                                blackDashboard.showSidebarMessage('Sidebar mini activated...');
+                            }
+                            var simulateWindowResize = setInterval(function() {
+                                window.dispatchEvent(new Event('resize'));
+                            }, 180);
+                            setTimeout(function() {
+                                clearInterval(simulateWindowResize);
+                            }, 1000);
+                        });
+                        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+                            var $btn = $(this);
+                            if (white_color == true) {
+                                $('body').addClass('change-background');
                                 setTimeout(function() {
-                                    clearInterval(simulateWindowResize);
-                                }, 1000);
-                            });
-                            $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-                                var $btn = $(this);
-                                if (white_color == true) {
-                                    $('body').addClass('change-background');
-                                    setTimeout(function() {
-                                        $('body').removeClass('change-background');
-                                        $('body').removeClass('white-content');
-                                    }, 900);
-                                    white_color = false;
-                                } else {
-                                    $('body').addClass('change-background');
-                                    setTimeout(function() {
-                                        $('body').removeClass('change-background');
-                                        $('body').addClass('white-content');
-                                    }, 900);
-                                    white_color = true;
-                                }
-                            });
-                            $('.light-badge').click(function() {
-                                $('body').addClass('white-content');
-                            });
-                            $('.dark-badge').click(function() {
-                                $('body').removeClass('white-content');
-                            });
+                                    $('body').removeClass('change-background');
+                                    $('body').removeClass('white-content');
+                                }, 900);
+                                white_color = false;
+                            } else {
+                                $('body').addClass('change-background');
+                                setTimeout(function() {
+                                    $('body').removeClass('change-background');
+                                    $('body').addClass('white-content');
+                                }, 900);
+                                white_color = true;
+                            }
+                        });
+                        $('.light-badge').click(function() {
+                            $('body').addClass('white-content');
+                        });
+                        $('.dark-badge').click(function() {
+                            $('body').removeClass('white-content');
                         });
                     });
-                </script>
-                <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-                <script>
-                    window.TrackJS &&
-                        TrackJS.install({
-                            token: "ee6fab19c5a04ac1a32a645abde4613a",
-                            application: "black-dashboard-free"
-                        });
-                </script>
+                });
+            </script>
+            <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+            <script>
+                window.TrackJS &&
+                    TrackJS.install({
+                        token: "ee6fab19c5a04ac1a32a645abde4613a",
+                        application: "black-dashboard-free"
+                    });
+            </script>
 </body>
 
 </html>
