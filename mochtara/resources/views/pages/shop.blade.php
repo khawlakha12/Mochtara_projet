@@ -108,7 +108,7 @@
         </div>
     </section>
     <!-- ======= Gallery Section ======= -->
-    <x-product />
+<x-product />
 </main>
 <x-footer />
 

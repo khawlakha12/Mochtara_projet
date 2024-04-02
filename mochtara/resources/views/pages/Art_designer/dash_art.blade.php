@@ -199,11 +199,11 @@
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
                         <div class="image-group d-flex flex-column" style="position: absolute; left: 20px; top: 20px; bottom: 20px; 
-                        margin-right:20px;">
-                            <img src="img/9obya.png" alt="Image 1"  style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 2" style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
+                        margin-right:20px;margin-left:12px;">
+                            <img src="img/9obya.png" alt="Image 1"  style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 2" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                         </div>
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                             
@@ -222,12 +222,13 @@
                                     <i class="fas fa-pen"></i>
                                 </a>
                             </div>
+                            
                         </div>
-                        <div class="image-group d-flex flex-column" style="position: absolute; left: 20px; top: 20px; bottom: 20px;">
-                            <img src="img/9obya.png" alt="Image 1"  style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 2" style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
+                        <div class="image-group d-flex flex-column" style="margin-left: 10px;">
+                            <img src="img/9obya.png" alt="Image 5" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 6" style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 7" style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 8" style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                         </div>
                     </div>
                     
