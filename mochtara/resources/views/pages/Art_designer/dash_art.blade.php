@@ -247,7 +247,7 @@
             <div class="content">
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
-                        <div class="image-group d-flex flex-column mr-3">
+                        <div class="image-group d-flex flex-column mr-2">
                             <img src="img/9obya.png" alt="Image 1"
                                 style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
                             <img src="img/9obya.png" alt="Image 2"
