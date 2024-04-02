@@ -198,9 +198,17 @@
             <div class="content">
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
+                        <div class="image-group d-flex flex-column" style="position: absolute; left: 20px; top: 20px; bottom: 20px; 
+                        margin-right:20px;">
+                            <img src="img/9obya.png" alt="Image 1"  style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 2" style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
+                        </div>
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                             
                             <div class="card-body d-flex justify-content-center align-items-center" style="position: relative;">
+                                
                                 <div class="box" style="height: 50%; width: 50%;">
                                     <span></span>
                                     <span></span>
@@ -214,6 +222,12 @@
                                     <i class="fas fa-pen"></i>
                                 </a>
                             </div>
+                        </div>
+                        <div class="image-group d-flex flex-column" style="position: absolute; left: 20px; top: 20px; bottom: 20px;">
+                            <img src="img/9obya.png" alt="Image 1"  style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 2" style="width: 100px; height: 100px; object-fit: cover; margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
+                            <img src="img/9obya.png" alt="Image 3" style="width: 100px; height: 100px; object-fit: cover;margin-bottom: 10px;">
                         </div>
                     </div>
                     
