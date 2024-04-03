@@ -12,11 +12,10 @@
   grid-template-columns: repeat(6, 1fr);
   column-gap: 1.5rem;
   margin: 0 auto;
-  transition: transform 0.4s ease-in;
-  padding: 0 1rem;
+
 }
 .wiper-item {
-  width: 200px;
+  width: 250px;
   height: 300px;
   position: relative;
   transition: scale 0.2s linear;
@@ -34,6 +33,7 @@
 }
 .active-swipe {
   transform: scale(1.1);
+  
 }
 .wiper-button {
   margin: 0 1rem;
@@ -48,8 +48,9 @@
 }
 .wiper-button__left {
   right: 0;
-  transform: translateY(-50%) rotate(180deg);
-  color: #ffff;
+}
+.wiper-button__right{
+transform: translateY(-50%) rotate(180deg);
 }
 .wiper__image-button {
   right: 50%;
@@ -64,10 +65,16 @@
   cursor: pointer;
 }
 .wiper-wrapper {
-  max-width: 660px;
+  max-width: 830px;
+  width: 100%; 
+  height: 400px; 
   overflow: hidden;
   padding: 2rem 0.5rem;
   margin: 0 auto;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center; 
+  align-items: center;
 }
 .swiper__image-button {
   right: 50%;
@@ -95,55 +102,47 @@
 }
     </style>
 </head>
-
 <body>
-
     <div class="wiper">
         <button class="wiper-button wiper-button__right">
-            <img src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="left" />
+            <img src="svg_icon/1904671-.png" alt="left" style="height:40px;width:40px;background: #27a776;border-radius:30px;"/>
         </button>
         <div class="wiper-wrapper">
             <ul class="wiper-track">
-                <li class="wiper-item">
+                <li class="wiper-item" style="">
                     <img class="wiper__image"
-                        src="https://images.pexels.com/photos/19682307/pexels-photo-19682307/free-photo-of-pink-flowers-on-a-shrub.jpeg"
+                        src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/6762a332a8df4f4895aeaf2c0093904b_9366/IC7640_21_model.jpg"
                         alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
+                    <button class="swiper__image-button">Shop</button>
                 </li>
                 <li class="wiper-item active-swipe">
                     <img class="wiper__image"
-                        src="https://images.pexels.com/photos/17617625/pexels-photo-17617625/free-photo-of-pink-chrysanthemum-flowers.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                        src="https://contents.mediadecathlon.com/p1962363/k$8221dddd52ee031463ec655e322a64ae/t-shirt-coton-extensible-fitness-slim-blanc.jpg?&f=452x452"
                         alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
+                    <button class="swiper__image-button">Shop</button>
                 </li>
                 <li class="wiper-item">
                     <img class="wiper__image"
-                        src="https://images.pexels.com/photos/19598202/pexels-photo-19598202/free-photo-of-pink-hyndrangea-flowers.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                        src="https://dynamic.zacdn.com/SrWMQqjBt-558I_SowwnPE1cvcY=/filters:quality(70):format(webp):proportion(0.2)/https://static-ph.zacdn.com/p/mango-man-0618-5813023-1.jpg"
                         alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
+                    <button class="swiper__image-button">Shop</button>
                 </li>
                 <li class="wiper-item">
                     <img class="wiper__image"
-                        src="https://images.pexels.com/photos/17024197/pexels-photo-17024197/free-photo-of-a-pink-anemone-on-a-white-background.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
+                        src="https://www.gluestore.com.au/cdn/shop/products/20221020-IMG_7796_1600x.jpg?v=1666317739"
                         alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
+                    <button class="swiper__image-button">Shop</button>
                 </li>
                 <li class="wiper-item">
                     <img class="wiper__image"
-                        src="https://images.pexels.com/photos/19682307/pexels-photo-19682307/free-photo-of-pink-flowers-on-a-shrub.jpeg"
+                        src="https://media.boohoo.com/i/boohoo/mzz52998_sage%20silver_xl/masculin-sage%20silver-t-shirt-oversize-ras-du-cou/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
                         alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
-                </li>
-                <li class="wiper-item">
-                    <img class="wiper__image"
-                        src="https://images.pexels.com/photos/17617625/pexels-photo-17617625/free-photo-of-pink-chrysanthemum-flowers.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load"
-                        alt="background-image" />
-                    <button class="swiper__image-button">Click me</button>
+                    <button class="swiper__image-button">Shop</button>
                 </li>
             </ul>
         </div>
         <button class="wiper-button wiper-button__left">
-            <img src="https://www.iconpacks.net/icons/2/free-arrow-left-icon-3099-thumb.png" alt="right" />
+            <img src="svg_icon/1904671-.png" alt="right"style="height:40px;width:40px;background: #27a776;border-radius:30px;" />
         </button>
     </div>
     <div style="height: 20px"></div>
