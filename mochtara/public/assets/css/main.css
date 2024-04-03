@@ -695,9 +695,6 @@ h6 {
 /*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
-.gallery {
-  margin-top: 40px;
-}
 
 .gallery .gallery-item {
   position: relative;
@@ -1171,7 +1168,6 @@ h6 {
 }
 
 .hero h2 {
-  margin: 0 0 10px 0;
   font-size: 38px;
   font-weight: 700;
   color: #fff;
@@ -1198,7 +1194,6 @@ h6 {
 
 .hero p {
   color: rgba(255, 255, 255, 0.6);
-  margin-bottom: 30px;
   font-size: 18px;
 }
 
