@@ -58,6 +58,9 @@ Route::get('/new_design', function() {
 Route::get('/profile_designer', function() {
     return view('pages.Art_designer.profile');
 });
+Route::get('/register', function() {
+    return view('pages.Auth.register');
+});
 
 
 
