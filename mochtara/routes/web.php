@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\loginController;
 
 
 /*
@@ -63,7 +64,7 @@ Route::get('/profile_designer', function() {
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
 //---------------------------Login---------------------------------//
-Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::get('/', [loginController::class, 'showLoginForm'])->name('login');
 
 
 
