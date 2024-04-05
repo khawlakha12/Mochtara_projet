@@ -26,10 +26,6 @@
 						<input type="text" placeholder="Last Name" class="form-control">
 					</div>
 					<div class="form-wrapper">
-						<input type="text" placeholder="Username" class="form-control">
-						<i class="zmdi zmdi-account"></i>
-					</div>
-					<div class="form-wrapper">
 						<input type="text" placeholder="Email Address" class="form-control">
 						<i class="zmdi zmdi-email"></i>
 					</div>
@@ -46,6 +42,7 @@
 						<input type="password" placeholder="Password" class="form-control">
 						<i class="zmdi zmdi-lock"></i>
 					</div>
+                    <span>I have <a href="">Account</a></span>
 					<button>Register
 						<i class="zmdi zmdi-arrow-right"></i>
 					</button>
