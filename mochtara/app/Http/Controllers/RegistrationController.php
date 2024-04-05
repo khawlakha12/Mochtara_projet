@@ -15,23 +15,22 @@ class RegistrationController extends Controller
     }
 
     public function register(Request $request)
-    {
+{
+    $request->validate([
+        'first_name' => 'required|string|max:255',
+        'last_name' => 'required|string|max:255',
+        'email' => 'required|string|email|max:255|unique:users',
+        'password' => 'required|string|min:8',
+        'gender' => 'required|string',
+    ]);
 
-        $validatedData = $request->validate([
-            'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:8|confirmed',
-        ]);
+    $user = User::create([
+        'name' => $request->first_name . ' ' . $request->last_name,
+        'email' => $request->email,
+        'password' => Hash::make($request->password),
+        'gender' => $request->gender == 'femal' ? 'female' : $request->gender,
+    ]);
 
-        $fullName = $request->first_name . ' ' . $request->last_name;
-
-        $user = User::create([
-            'name' => $fullName,
-            'email' => $validatedData['email'],
-            'password' => Hash::make($validatedData['password']),
-        ]);
-
-        return redirect()->route('login')->with('success', 'Account created successfully.');
-    }
+    return redirect()->route('home')->with('success', 'Registration successful.');
+}
 }

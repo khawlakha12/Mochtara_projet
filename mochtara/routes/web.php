@@ -16,10 +16,9 @@ use App\Http\Controllers\RegistrationController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/home', function () {
     return view('pages.home');
-});
-
+})->name('home');
 Route::get('/admin', function() {
     return view('pages.Admin.Dashboard');
 });
@@ -61,8 +60,8 @@ Route::get('/profile_designer', function() {
     return view('pages.Art_designer.profile');
 });
 //---------------------------Register---------------------------------//
-Route::get('register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
-Route::post('register', [RegistrationController::class, 'register'])->name('register.submit');
+Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
 
 
 
