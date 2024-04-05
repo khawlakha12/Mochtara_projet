@@ -68,9 +68,11 @@ Route::post('/register', [RegistrationController::class, 'register'])->name('reg
 //---------------------------Login---------------------------------//
 Route::get('/', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [loginController::class, 'login'])->name('login.submit');
-//---------------------------Forgot Password---------------------------------//
+//-----------------------------Forgot Password---------------------------------//
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+//-----------------------------Shop---------------------------------//
 
+//-----------------------------Contact---------------------------------//
