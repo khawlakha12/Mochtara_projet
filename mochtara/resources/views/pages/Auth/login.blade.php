@@ -31,7 +31,7 @@
                 </button>
             </form>
             <div class="image-holder">
-                <img src="Auth/images/hoodies.webp" alt="">
+                <img src="Auth/images/login.webp" alt="">
             </div>
             
         </div>
