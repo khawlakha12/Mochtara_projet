@@ -14,12 +14,9 @@
     <div class="wrapper"
         style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
         <div class="inner">
-            <div class="image-holder">
-                <img src="Auth/images/hoodies.webp" alt="">
-            </div>
-            <form action="{{ route('register.submit') }}" method="POST">
+            <form action="#" method="POST">
                 @csrf
-                <h3>Register</h3>
+                <h3>Login</h3>
                 <div class="form-group">
                     <input type="text" name ="first_name" placeholder="First Name" class="form-control">
                     <input type="text" name ="last_name" placeholder="Last Name" class="form-control">
@@ -48,10 +45,14 @@
                     </div>
                 @endif
                 <span>I have <a href="">Account</a></span>
-                <button type="submit">Register
+                <button type="submit">login
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>
             </form>
+            <div class="image-holder">
+                <img src="Auth/images/hoodies.webp" alt="">
+            </div>
+            
         </div>
     </div>
 

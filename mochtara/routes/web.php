@@ -62,7 +62,8 @@ Route::get('/profile_designer', function() {
 //---------------------------Register---------------------------------//
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
-
+//---------------------------Login---------------------------------//
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 
 
 
