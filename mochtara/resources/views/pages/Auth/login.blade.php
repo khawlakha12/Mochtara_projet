@@ -8,17 +8,17 @@
     <link rel="stylesheet" href="Auth/css/style.css">
 </head>
 <body>
+    @if($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
     <div class="wrapper" style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
         <div class="inner">
-            @if($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-            @endif
             <form action="{{ route('login.submit') }}" method="POST">
                 @csrf
                 <h3>Login</h3>
@@ -29,6 +29,9 @@
                 <div class="form-wrapper">
                     <input type="password" name="password" placeholder="Password" class="form-control">
                     <i class="zmdi zmdi-lock"></i>
+                </div>
+                <div class="form-wrapper">
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
                 </div>
                 <span>I don't have <a href="/register">Account</a></span>
                 <button type="submit">login
