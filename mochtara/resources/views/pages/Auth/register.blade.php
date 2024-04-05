@@ -47,7 +47,7 @@
                         <strong>Success!</strong> {{ session('success') }}
                     </div>
                 @endif
-                <span>I have <a href="/">Account</a></span>
+                <span>I have <a href="/log">Account</a></span>
                 <button type="submit">Register
                     <i class="zmdi zmdi-arrow-right"></i>
                 </button>

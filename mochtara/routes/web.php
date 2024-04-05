@@ -19,7 +19,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 |
 */
 
-Route::get('/home', function () {
+Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 Route::get('/admin', function() {
@@ -66,8 +66,8 @@ Route::get('/profile_designer', function() {
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
 //---------------------------Login---------------------------------//
-Route::get('/', [loginController::class, 'showLoginForm'])->name('login');
-Route::post('/', [loginController::class, 'login'])->name('login.submit');
+Route::get('/log', [loginController::class, 'showLoginForm'])->name('login');
+Route::post('/log', [loginController::class, 'login'])->name('login.submit');
 //-----------------------------Forgot Password---------------------------------//
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');

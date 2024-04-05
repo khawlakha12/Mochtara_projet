@@ -33,7 +33,7 @@
                     <i class="zmdi zmdi-lock"></i>
                 </div>
                 <div class="form-wrapper">
-                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                    <a href="{{ route('password.request') }}" class="forgot-password">Mot de passe oublié ?</a>
                 </div>
                 <span>I don't have <a href="/register">Account</a></span>
                 <button type="submit">login
