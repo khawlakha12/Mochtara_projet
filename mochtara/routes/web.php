@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\loginController;
+use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\Auth\ResetPasswordController;
 
 
 /*
@@ -66,6 +68,9 @@ Route::post('/register', [RegistrationController::class, 'register'])->name('reg
 //---------------------------Login---------------------------------//
 Route::get('/', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/', [loginController::class, 'login'])->name('login.submit');
-
-
+//---------------------------Forgot Password---------------------------------//
+Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
 
