@@ -2,22 +2,22 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>RegistrationForm_v1 by Colorlib</title>
+		<title>Mochtara</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		
 		<!-- MATERIAL DESIGN ICONIC FONT -->
-		<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+		<link rel="stylesheet" href="Auth/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 
 		<!-- STYLE CSS -->
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="Auth/css/style.css">
 	</head>
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('images/bg-registration-form-1.jpg');">
+		<div class="wrapper" style="background-image: url('Auth/images/bg-registration-form-1.jpg');">
 			<div class="inner">
 				<div class="image-holder">
-					<img src="images/registration-form-1.jpg" alt="">
+					<img src="Auth/images/registration-form-1.jpg" alt="">
 				</div>
 				<form action="">
 					<h3>Registration Form</h3>
@@ -57,5 +57,5 @@
 			</div>
 		</div>
 		
-	</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+	</body>
 </html>
