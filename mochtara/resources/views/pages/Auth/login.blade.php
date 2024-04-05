@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title>Mochtara</title>
@@ -8,13 +7,19 @@
     <link rel="stylesheet" href="Auth/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="Auth/css/style.css">
 </head>
-
 <body>
-
-    <div class="wrapper"
-        style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
+    <div class="wrapper" style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
         <div class="inner">
-            <form action="#" method="POST">
+            @if($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            <form action="{{ route('login.submit') }}" method="POST">
                 @csrf
                 <h3>Login</h3>
                 <div class="form-wrapper">
@@ -22,7 +27,7 @@
                     <i class="zmdi zmdi-email"></i>
                 </div>
                 <div class="form-wrapper">
-                    <input type="password" name="password"placeholder="Password" class="form-control">
+                    <input type="password" name="password" placeholder="Password" class="form-control">
                     <i class="zmdi zmdi-lock"></i>
                 </div>
                 <span>I don't have <a href="/register">Account</a></span>
@@ -33,10 +38,7 @@
             <div class="image-holder">
                 <img src="Auth/images/login.webp" alt="">
             </div>
-            
         </div>
     </div>
-
 </body>
-
 </html>

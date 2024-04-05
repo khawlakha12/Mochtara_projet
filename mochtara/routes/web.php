@@ -65,6 +65,7 @@ Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
 //---------------------------Login---------------------------------//
 Route::get('/', [loginController::class, 'showLoginForm'])->name('login');
+Route::post('/', [loginController::class, 'login'])->name('login.submit');
 
 
 
