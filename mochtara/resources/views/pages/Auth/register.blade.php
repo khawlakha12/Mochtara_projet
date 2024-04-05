@@ -14,13 +14,13 @@
 
 	<body>
 
-		<div class="wrapper" style="background-image: url('Auth/images/bg-registration-form-1.jpg');">
+		<div class="wrapper" style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
 			<div class="inner">
 				<div class="image-holder">
-					<img src="Auth/images/registration-form-1.jpg" alt="">
+					<img src="Auth/images/hoodies.webp" alt="">
 				</div>
 				<form action="">
-					<h3>Registration Form</h3>
+					<h3>Register</h3>
 					<div class="form-group">
 						<input type="text" placeholder="First Name" class="form-control">
 						<input type="text" placeholder="Last Name" class="form-control">
@@ -44,10 +44,6 @@
 					</div>
 					<div class="form-wrapper">
 						<input type="password" placeholder="Password" class="form-control">
-						<i class="zmdi zmdi-lock"></i>
-					</div>
-					<div class="form-wrapper">
-						<input type="password" placeholder="Confirm Password" class="form-control">
 						<i class="zmdi zmdi-lock"></i>
 					</div>
 					<button>Register
