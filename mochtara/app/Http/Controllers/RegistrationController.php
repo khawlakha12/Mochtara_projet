@@ -31,6 +31,6 @@ class RegistrationController extends Controller
         'gender' => $request->gender == 'femal' ? 'female' : $request->gender,
     ]);
 
-    return redirect()->route('home')->with('success', 'Registration successful.');
+    return redirect()->route('register')->with('success', 'Registration successful.');
 }
 }

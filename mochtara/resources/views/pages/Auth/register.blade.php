@@ -9,14 +9,15 @@
 	</head>
 
 	<body>
-		@if (Session::has('success'))
-		<div class="alert alert-success">
-			{{ Session::get('success') }}
-		</div>
-	@endif
 	
 		<div class="wrapper" style="background-image: url('https://m.media-amazon.com/images/I/81XAj109p1L._AC_UY1100_.jpg');">
 			<div class="inner">
+				@if(session('success'))
+<div class="alert alert-success">
+  <strong>Success!</strong> {{ session('success') }}
+</div> 
+@endif
+
 				<div class="image-holder">
 					<img src="Auth/images/hoodies.webp" alt="">
 				</div>
