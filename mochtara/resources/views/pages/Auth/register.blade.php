@@ -15,11 +15,12 @@
 				<div class="image-holder">
 					<img src="Auth/images/hoodies.webp" alt="">
 				</div>
-				<form action="" method="POST">
+				<form action="{{ route('register.submit') }}" method="POST">
+					@csrf
 					<h3>Register</h3>
 					<div class="form-group">
-						<input type="text" name ="name" placeholder="First Name" class="form-control">
-						<input type="text" name ="name" placeholder="Last Name" class="form-control">
+						<input type="text" name ="first_name" placeholder="First Name" class="form-control">
+						<input type="text" name ="last_name" placeholder="Last Name" class="form-control">
 					</div>
 					<div class="form-wrapper">
 						<input type="email" name="email" placeholder="Email Address" class="form-control">
