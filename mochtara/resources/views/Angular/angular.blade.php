@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Ma Page AngularJS dans Laravel</title>
+    <title>Test AngularJS dans Laravel</title>
 </head>
 <body>
     <div ng-app="">
