@@ -95,7 +95,9 @@
                     </div>
                     <div class="d-flex justify-content-center">
                         <x-size />
+
                     </div>
+                    
                 </div>
             </div>
         </div>

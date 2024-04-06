@@ -81,8 +81,7 @@
                     >label {
                         padding-inline: var(--size-3);
                         padding-block: var(--size-1);
-
-                        border: var(--border-size-2) solid white;
+                        border: var(--border-size-1) solid white;
                         border-radius: var(--radius-round);
                         cursor: pointer;
                         transition: 0.1s var(--ease-3);
@@ -91,7 +90,7 @@
                     >input {
                         appearance: none;
                         background: none;
-                        border: none;
+                        border: none 1px solide #ffff;
                         inline-size: 100%;
                         block-size: 100%;
                         border-radius: var(--radius-round);
