@@ -76,3 +76,10 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 //-----------------------------Shop---------------------------------//
 
 //-----------------------------Contact---------------------------------//
+
+
+//-----------------------------Test Angular---------------------------------//
+Route::get('/angular', function() {
+    return view('Angular.angular');
+});
+//----
