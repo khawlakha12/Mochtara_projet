@@ -6,7 +6,7 @@
         height: 80vh;
     }
 
-    .styled-element {
+    .styled-elements {
         border: 2px dashed black;
         padding: 10px 40px;
         height: 50%;
@@ -16,43 +16,41 @@
         margin: 10px 0;
     }
 
-    input.styled-element {
+    input.styled-elements {
         width: calc(100% - 80px);
         box-sizing: border-box;
     }
 
-    h1.styled-element {
-        margin-top: 0;
-    }
-
     .container {
-        display: flex;
-        /* Utilisation de Flexbox */
-        flex-direction: column;
-        /* Les éléments s'alignent verticalement */
-        align-items: center;
-        /* Centre les éléments horizontalement */
-        text-align: center;
-        /* Centrage du texte pour tous les éléments textuels */
-    }
+            position: relative; 
+            text-align: center; 
+            width: fit-content; 
+            margin: auto; 
+        }
 
-    .styled-element {
-        border: 2px dashed black;
-        padding: 10px 40px;
-        color: black;
-        background-color: white;
-        margin: 10px 0;
-        /* Espacement entre les éléments */
-        width: 80%;
-        /* Largeur pour permettre le centrage */
-    }
+        .container h1 {
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%); 
+            color: white; 
+            margin: 0; 
+        }
 
-    img.img-fluid {
-        max-width: 100%;
-        /* S'assure que l'image est responsive */
-        height: auto;
-        /* Maintient l'aspect ratio de l'image */
-    }
+        .styled-element {
+            border: 2px dashed black; 
+            padding: 10px 40px; 
+            background-color: rgba(0, 0, 0, 0.5); 
+            color: white; 
+            width: auto; 
+            box-sizing: border-box; 
+        }
+
+        img.img-fluid {
+            display: block; 
+            width: 100%; 
+            height: auto; 
+        }
 </style>
 <x-navbar />
 
@@ -66,7 +64,7 @@
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
                                 <input type="text" ng-model="Your_text" placeholder="Enter Your text her"
-                                    class="styled-element">
+                                    class="styled-elements">
                             <button type="submit" class="position-absolute"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -90,9 +88,9 @@
                 </div>
                 <div class="col-md-5 justify-content-center">
                         <div class="container">
-                            <h1 class="styled-element">@{{ Your_text }}</h1>
-                            <img src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp"
-                                alt="Description de la grande image" class="img-fluid">
+                            <h1 class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
+                            <img src="img/pa_tshirt.png"
+                                alt="image" class="img-fluid">
                         </div>
                     </div>
                     <div class="d-flex justify-content-center">
