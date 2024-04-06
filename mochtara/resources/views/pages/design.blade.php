@@ -57,7 +57,6 @@
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500" ng-app="">
-
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
@@ -68,7 +67,6 @@
                             style="height: 100%;">
                                 <input type="text" ng-model="Your_text" placeholder="Enter Your text her"
                                     class="styled-element">
-                                <h1 class="styled-element">@{{ Your_text }}</h1>
                             <button type="submit" class="position-absolute"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -91,8 +89,8 @@
                     </div>
                 </div>
                 <div class="col-md-5 justify-content-center">
-                    <div ng-app="">
                         <div class="container">
+                            <h1 class="styled-element">@{{ Your_text }}</h1>
                             <img src="https://raw.githubusercontent.com/mobalti/open-props-interfaces/main/product-details/images/img-1.webp"
                                 alt="Description de la grande image" class="img-fluid">
                         </div>
