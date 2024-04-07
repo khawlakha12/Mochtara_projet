@@ -63,9 +63,9 @@
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
-                            <input type="text" ng-model="Your_text" placeholder="Enter Your text her"
+                            <input type="text" contenteditable="true" ng-model="Your_text" placeholder="Enter Your text her" id="yourTextInput"
                                 class="styled-elements">
-                            <button type="submit" class="position-absolute"
+                            <button type="submit" class="position-absolute" id="styleButton"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -84,7 +84,32 @@
                                 </svg>
                             </button>
                         </div>
+                       
                     </div>
+                    <div id="styleOptions" style="display:none;">
+                        <button onclick="applyStyle('bold')">Bold</button>
+                        <button onclick="applyStyle('italic')">Italic</button>
+                        <button onclick="applyStyle('underline')">Underline</button>
+                    </div>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', (event) => {
+                            document.getElementById('styleButton').addEventListener('click', function() {
+                                document.getElementById('styleOptions').style.display = 'block';
+                            });
+                        });
+                    
+                        function applyStyle(style) {
+                            var textInput = document.getElementById('yourTextInput');
+                    
+                            if (style === 'bold') {
+                                textInput.style.fontWeight = 'bold';
+                            } else if (style === 'italic') {
+                                textInput.style.fontStyle = 'italic';
+                            } else if (style === 'underline') {
+                                textInput.style.textDecoration = 'underline';
+                            }
+                        }
+                    </script>
                 </div>
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
