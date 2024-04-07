@@ -84,41 +84,12 @@
                                 </svg>
                             </button>
                         </div>
-                       
                     </div>
                     <div id="styleOptions" style="display:none;">
                         <button onclick="applyStyle('bold')">Bold</button>
                         <button onclick="applyStyle('italic')">Italic</button>
                         <button onclick="applyStyle('underline')">Underline</button>
                     </div>
-                    <script>
-                        document.addEventListener('DOMContentLoaded', (event) => {
-                            document.getElementById('styleButton').addEventListener('click', function() {
-                                document.getElementById('styleOptions').style.display = 'block';
-                            });
-                        });
-                    
-                        function applyStyle(style) {
-                            var textInput = document.getElementById('yourTextInput');
-                            var styledText = document.getElementById('styledText');
-                    
-                            if (style === 'bold') {
-                                textInput.style.fontWeight = 'bold';
-                                styledText.style.fontWeight = 'bold';
-                            } else if (style === 'italic') {
-                                textInput.style.fontStyle = 'italic';
-                                styledText.style.fontStyle = 'italic';
-                            } else if (style === 'underline') {
-                                textInput.style.textDecoration = 'underline';
-                                styledText.style.textDecoration = 'underline';
-                            }
-                        }
-                    
-                        function updateText() {
-                            var textInput = document.getElementById('yourTextInput');
-                            document.getElementById('styledText').innerText = textInput.innerText;
-                        }
-                    </script>
                 </div>
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
@@ -136,7 +107,34 @@
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <x-link_script />
+<script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+        document.getElementById('styleButton').addEventListener('click', function() {
+            document.getElementById('styleOptions').style.display = 'block';
+        });
+    });
 
+    function applyStyle(style) {
+        var textInput = document.getElementById('yourTextInput');
+        var styledText = document.getElementById('styledText');
+
+        if (style === 'bold') {
+            textInput.style.fontWeight = 'bold';
+            styledText.style.fontWeight = 'bold';
+        } else if (style === 'italic') {
+            textInput.style.fontStyle = 'italic';
+            styledText.style.fontStyle = 'italic';
+        } else if (style === 'underline') {
+            textInput.style.textDecoration = 'underline';
+            styledText.style.textDecoration = 'underline';
+        }
+    }
+
+    function updateText() {
+        var textInput = document.getElementById('yourTextInput');
+        document.getElementById('styledText').innerText = textInput.innerText;
+    }
+</script>
 </body>
 
 </html>
