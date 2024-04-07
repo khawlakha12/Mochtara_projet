@@ -9,7 +9,7 @@
     .styled-elements {
         border: 2px dashed black;
         padding: 10px 40px;
-        height: 50%;
+        height: 60%;
         color: black;
         background-color: white;
         display: block;
@@ -17,40 +17,40 @@
     }
 
     input.styled-elements {
-        width: calc(100% - 80px);
+        width: calc(70% - 80px);
         box-sizing: border-box;
     }
 
     .container {
-            position: relative; 
-            text-align: center; 
-            width: fit-content; 
-            margin: auto; 
-        }
+        position: relative;
+        text-align: center;
+        width: fit-content;
+        margin: auto;
+    }
 
-        .container h1 {
-            position: absolute;
-            top: 50%; 
-            left: 50%; 
-            transform: translate(-50%, -50%); 
-            color: white; 
-            margin: 0; 
-        }
+    .container h1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        margin: 0;
+    }
 
-        .styled-element {
-            border: 2px dashed black; 
-            padding: 10px 40px; 
-            background-color: rgba(0, 0, 0, 0.5); 
-            color: white; 
-            width: auto; 
-            box-sizing: border-box; 
-        }
+    .styled-element {
+        border: 2px dashed black;
+        padding: 10px 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        width: auto;
+        box-sizing: border-box;
+    }
 
-        img.img-fluid {
-            display: block; 
-            width: 100%; 
-            height: auto; 
-        }
+    img.img-fluid {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
 </style>
 <x-navbar />
 
@@ -63,8 +63,8 @@
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
-                                <input type="text" ng-model="Your_text" placeholder="Enter Your text her"
-                                    class="styled-elements">
+                            <input type="text" ng-model="Your_text" placeholder="Enter Your text her"
+                                class="styled-elements">
                             <button type="submit" class="position-absolute"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -87,20 +87,17 @@
                     </div>
                 </div>
                 <div class="col-md-5 justify-content-center">
-                        <div class="container">
-                            <h1 class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
-                            <img src="img/pa_tshirt.png"
-                                alt="image" class="img-fluid">
-                        </div>
+                    <div class="container">
+                        <h1 class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
+                        <img src="img/pa_tshirt.png" alt="image" class="img-fluid">
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <x-size />
-                    </div>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <x-size />
                 </div>
             </div>
         </div>
     </div>
-
 </main>
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
