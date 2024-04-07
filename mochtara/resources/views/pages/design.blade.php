@@ -83,12 +83,12 @@
                                        l55.921,55.921l-83.786,27.866L66.55,326.731z M141.411,373.307l-65.516-65.516L299.316,84.37l65.516,65.517L141.411,373.307z" />
                                 </svg>
                             </button>
+                            <div id="styleOptions" class="position-absolute" style="display:none; flex-direction: column; right: 0px; border-radius: 5px; padding: 10px;" >
+                                <button onclick="applyStyle('bold')" style ="background:#27a776;margin-top:10px; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0; color:black;">B</button>
+                                <button onclick="applyStyle('italic')" style ="background:#27a776;margin-top:10px; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0; color:black;">I</button>
+                                <button onclick="applyStyle('underline')" style ="background:#27a776;margin-top:10px; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0; color:black;">U</button>
+                            </div>
                         </div>
-                    </div>
-                    <div id="styleOptions" style="display:none;">
-                        <button onclick="applyStyle('bold')">Bold</button>
-                        <button onclick="applyStyle('italic')">Italic</button>
-                        <button onclick="applyStyle('underline')">Underline</button>
                     </div>
                 </div>
                 <div class="col-md-5 justify-content-center">
