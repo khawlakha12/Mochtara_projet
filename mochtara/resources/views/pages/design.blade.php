@@ -110,31 +110,36 @@
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('styleButton').addEventListener('click', function() {
-            document.getElementById('styleOptions').style.display = 'block';
+            var styleOptions = document.getElementById('styleOptions');
+            styleOptions.style.display = styleOptions.style.display === 'none' || styleOptions.style.display === '' ? 'flex' : 'none';
         });
     });
-
+    
     function applyStyle(style) {
         var textInput = document.getElementById('yourTextInput');
         var styledText = document.getElementById('styledText');
-
-        if (style === 'bold') {
-            textInput.style.fontWeight = 'bold';
-            styledText.style.fontWeight = 'bold';
-        } else if (style === 'italic') {
-            textInput.style.fontStyle = 'italic';
-            styledText.style.fontStyle = 'italic';
-        } else if (style === 'underline') {
-            textInput.style.textDecoration = 'underline';
-            styledText.style.textDecoration = 'underline';
+    
+        switch(style) {
+            case 'bold':
+                textInput.style.fontWeight = textInput.style.fontWeight === 'bold' ? '' : 'bold';
+                styledText.style.fontWeight = styledText.style.fontWeight === 'bold' ? '' : 'bold';
+                break;
+            case 'italic':
+                textInput.style.fontStyle = textInput.style.fontStyle === 'italic' ? '' : 'italic';
+                styledText.style.fontStyle = styledText.style.fontStyle === 'italic' ? '' : 'italic';
+                break;
+            case 'underline':
+                textInput.style.textDecoration = textInput.style.textDecoration === 'underline' ? '' : 'underline';
+                styledText.style.textDecoration = styledText.style.textDecoration === 'underline' ? '' : 'underline';
+                break;
         }
     }
-
+    
     function updateText() {
         var textInput = document.getElementById('yourTextInput');
-        document.getElementById('styledText').innerText = textInput.innerText;
+        document.getElementById('styledText').innerText = textInput.value; // Use value for <input>, innerText for contenteditable
     }
-</script>
+    </script>
 </body>
 
 </html>
