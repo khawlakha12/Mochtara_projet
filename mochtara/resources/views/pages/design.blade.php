@@ -100,20 +100,29 @@
                     
                         function applyStyle(style) {
                             var textInput = document.getElementById('yourTextInput');
+                            var styledText = document.getElementById('styledText');
                     
                             if (style === 'bold') {
                                 textInput.style.fontWeight = 'bold';
+                                styledText.style.fontWeight = 'bold';
                             } else if (style === 'italic') {
                                 textInput.style.fontStyle = 'italic';
+                                styledText.style.fontStyle = 'italic';
                             } else if (style === 'underline') {
                                 textInput.style.textDecoration = 'underline';
+                                styledText.style.textDecoration = 'underline';
                             }
+                        }
+                    
+                        function updateText() {
+                            var textInput = document.getElementById('yourTextInput');
+                            document.getElementById('styledText').innerText = textInput.innerText;
                         }
                     </script>
                 </div>
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
-                        <h1 class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
+                        <h1 id="styledText" class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
                         <img src="img/pa_tshirt.png" alt="image" class="img-fluid">
                     </div>
                 </div>
