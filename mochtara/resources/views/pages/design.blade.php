@@ -71,7 +71,8 @@
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
-                            <div id="inputOrImageContainer" style="display: flex; justify-content: center; align-items: center; height: 100%;width:90%;">
+                            <div id="inputOrImageContainer"
+                                style="display: flex; justify-content: center; align-items: center; height: 100%;width:90%;">
                                 <input type="text" contenteditable="true" ng-model="Your_text"
                                     placeholder="Enter Your text her" id="yourTextInput" class="styled-elements">
                             </div>
@@ -93,6 +94,14 @@
                                        l55.921,55.921l-83.786,27.866L66.55,326.731z M141.411,373.307l-65.516-65.516L299.316,84.37l65.516,65.517L141.411,373.307z" />
                                 </svg>
                             </button>
+                            <button type="button" class="position-absolute" id="changeButton"
+                                style="background:#27a776; margin-left:10px; margin-bottom:10px; bottom: 0; left: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
+                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
+                                    style="height:15px;width:15px;">
+                                    <path
+                                        d="M256 48l0 64c88.4 0 160 71.6 160 160s-71.6 160-160 160l0 -64c52.9 0 96-43.1 96-96s-43.1-96-96-96l-96 0 64 -64 -128 0 0 128 64 -64 -64 0c0 106 86 192 192 192s192-86 192-192S362 48 256 48z" />
+                                </svg>
+                            </button>
                             <div id="styleOptions" class="position-absolute"
                                 style="display:none; flex-direction: column; right: 0px; border-radius: 5px; padding: 10px;">
                                 <button onclick="applyStyle('bold')"
@@ -107,7 +116,8 @@
                 </div>
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
-                        <h1 id="styledText" class="styled-element" style="height: 40%;width:27%;color:#ffff;text-align:center;">@{{ Your_text }}
+                        <h1 id="styledText" class="styled-element"
+                            style="height: 40%;width:27%;color:#ffff;text-align:center;">@{{ Your_text }}
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
                             style="height: 40%;width:27%;text-align: center;"></h1>
@@ -124,7 +134,7 @@
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <x-link_script />
-{{--------------------------------styled text----------------------------}}
+{{-- ------------------------------styled text-------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('styleButton').addEventListener('click', function() {
@@ -159,7 +169,7 @@
         document.getElementById('styledText').innerText = textInput.value;
     }
 </script>
-{{----------------------------------afficher l'image dans le div ----------------------------}}
+{{-- --------------------------------afficher l'image dans le div -------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -176,7 +186,7 @@
         });
     });
 </script>
-{{----------------------------------afficher l'image dans le t-shirt ----------------------------}}
+{{-- --------------------------------afficher l'image dans le t-shirt -------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.image-select').forEach(image => {
@@ -186,7 +196,7 @@
 
                 const selectedImage = document.createElement('img');
                 selectedImage.src = this.src;
-                selectedImage.classList.add('h-40', 'w-48');
+                selectedImage.classList.add('h-32', 'w-48');
 
                 imageContainer.appendChild(selectedImage);
                 imageContainer.style.display = 'block';
@@ -196,6 +206,29 @@
         });
     });
 </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('changeButton').addEventListener('click', function() {
+            const inputContainer = document.getElementById('inputOrImageContainer');
+            const imageContainer = document.getElementById('imageContainer');
+            if (inputContainer.querySelector('input')) {
+                inputContainer.innerHTML = '';
+                imageContainer.style.display = 'block';
+            } else {
+                inputContainer.innerHTML = `
+                    <input type="text" contenteditable="true" placeholder="Enter Your text here" id="yourTextInput" class="styled-elements">
+                `;
+                imageContainer.style.display = 'none';
+            }
+        });
+    });
+</script>
+
+
+
+
 
 
 
