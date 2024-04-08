@@ -60,11 +60,18 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 d-flex justify-content-center align-items-center me-md-4">
                     <x-designs />
+                    <div class="flex flex-col">
+                        <img src="https://ih1.redbubble.net/image.118280665.8973/sticker,375x360.u2.png" alt="" class="image-select mr-2 mb-2 h-24 w-24">
+                        <img src="https://ih1.redbubble.net/image.1608462008.4940/raf,360x360,075,t,fafafa:ca443f4786.jpg" alt="" class="image-select mr-2 mb-2 h-24 w-24">
+                        <img src="https://w7.pngwing.com/pngs/212/521/png-transparent-long-sleeved-t-shirt-sticker-stickers-text-fashion-unisex.png" alt="" class="image-select mr-2 mb-2 h-24 w-24">
+                    </div>
                     <div class="card-body bg-white rounded" style="height: 70%;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
+                            <div id="inputOrImageContainer">
                             <input type="text" contenteditable="true" ng-model="Your_text" placeholder="Enter Your text her" id="yourTextInput"
                                 class="styled-elements">
+                            </div>
                             <button type="submit" class="position-absolute" id="styleButton"
                                 style="background:#27a776;margin-right:10px;margin-bottom:10px;bottom: 0; right: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
                                 <svg fill="#000000" height="800px" width="800px" version="1.1" id="Capa_1"
@@ -137,9 +144,27 @@
     
     function updateText() {
         var textInput = document.getElementById('yourTextInput');
-        document.getElementById('styledText').innerText = textInput.value; // Use value for <input>, innerText for contenteditable
+        document.getElementById('styledText').innerText = textInput.value; 
     }
     </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            document.querySelectorAll('.image-select').forEach(image => {
+                image.addEventListener('click', function() {
+                    const selectedImage = document.createElement('img');
+                    selectedImage.src = this.src;
+                    selectedImage.classList.add('mr-2', 'mb-2', 'h-48', 'w-48'); 
+        
+                    const container = document.getElementById('inputOrImageContainer');
+                    container.innerHTML = ''; 
+                    container.appendChild(selectedImage);
+                });
+            });
+        });
+        </script>
+
+   
 </body>
 
 </html>
