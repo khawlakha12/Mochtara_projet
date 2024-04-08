@@ -39,8 +39,6 @@
 
     .styled-element {
         border: 2px dashed black;
-        padding: 10px 40px;
-        background-color: rgba(0, 0, 0, 0.5);
         color: white;
         width: auto;
         box-sizing: border-box;
@@ -96,11 +94,7 @@
                             </button>
                             <button type="button" class="position-absolute" id="changeButton"
                                 style="background:#27a776; margin-left:10px; margin-bottom:10px; bottom: 0; left: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
-                                <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" fill="#FFFFFF"
-                                    style="height:15px;width:15px;">
-                                    <path
-                                        d="M256 48l0 64c88.4 0 160 71.6 160 160s-71.6 160-160 160l0 -64c52.9 0 96-43.1 96-96s-43.1-96-96-96l-96 0 64 -64 -128 0 0 128 64 -64 -64 0c0 106 86 192 192 192s192-86 192-192S362 48 256 48z" />
-                                </svg>
+                                <img src="https://cdn-icons-png.flaticon.com/512/5953/5953659.png " alt="" title="" class="img-small" style="width: 20px; height: 20px;">
                             </button>
                             <div id="styleOptions" class="position-absolute"
                                 style="display:none; flex-direction: column; right: 0px; border-radius: 5px; padding: 10px;">
@@ -117,10 +111,10 @@
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
                         <h1 id="styledText" class="styled-element"
-                            style="height: 40%;width:27%;color:#ffff;text-align:center;">@{{ Your_text }}
+                            style="height: 32%;width:27%;color:#000000;text-align:center;">@{{ Your_text }}
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
-                            style="height: 40%;width:27%;text-align: center;"></h1>
+                            style="height: 32%;width:27%;text-align: center;background-position: center center;"></h1>
                         <img src="img/pa_tshirt.png" alt="image" class="img-fluid">
                     </div>
                 </div>
@@ -210,21 +204,52 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const inputContainer = document.getElementById('inputOrImageContainer');
+        const imageContainer = document.getElementById('imageContainer');
+        const styledText = document.getElementById('styledText');
+    
         document.getElementById('changeButton').addEventListener('click', function() {
-            const inputContainer = document.getElementById('inputOrImageContainer');
-            const imageContainer = document.getElementById('imageContainer');
-            if (inputContainer.querySelector('input')) {
-                inputContainer.innerHTML = '';
-                imageContainer.style.display = 'block';
-            } else {
-                inputContainer.innerHTML = `
-                    <input type="text" contenteditable="true" placeholder="Enter Your text here" id="yourTextInput" class="styled-elements">
-                `;
+            if (imageContainer.innerHTML !== '') {
+                imageContainer.innerHTML = '';
                 imageContainer.style.display = 'none';
+                if (!inputContainer.querySelector('input')) {
+                    inputContainer.innerHTML = `
+                        <input type="text" contenteditable="true" ng-model="Your_text"
+                        placeholder="Enter Your text here" id="yourTextInput" class="styled-elements">
+                    `;
+                }
+                inputContainer.style.display = 'flex';
+                styledText.style.display = 'block';
             }
         });
+        document.getElementById('yourTextInput')?.addEventListener('input', function() {
+            styledText.innerText = this.value;
+        });
     });
-</script>
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.image-select').forEach(image => {
+                image.addEventListener('click', function() {
+                    const styledText = document.getElementById('styledText');
+                    styledText.style.backgroundImage = `url('${this.src}')`;
+                    styledText.innerText = '';
+                });
+            });
+            document.getElementById('changeButton').addEventListener('click', function() {
+                const styledText = document.getElementById('styledText');
+                if (styledText.style.backgroundImage !== '') {
+                    styledText.style.backgroundImage = ''; 
+                    styledText.innerText = '@{{ Your_text }}'; 
+                }
+            });
+        });
+        </script>
+        
+    
+
+
+
 
 
 
