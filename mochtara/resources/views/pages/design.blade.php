@@ -101,6 +101,7 @@
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
                         <h1 id="styledText" class="styled-element" style="height: 40%;width:27%;">@{{ Your_text }}</h1>
+                        <h1 id="imageContainer" class="styled-element" style="height: 40%;width:27%;text-align: center;"></h1>
                         <img src="img/pa_tshirt.png" alt="image" class="img-fluid">
                     </div>
                 </div>
@@ -163,7 +164,26 @@
             });
         });
         </script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.image-select').forEach(image => {
+            image.addEventListener('click', function() {
+                const imageContainer = document.getElementById('imageContainer');
+                imageContainer.innerHTML = ''; 
+                
+                const selectedImage = document.createElement('img');
+                selectedImage.src = this.src;
+                selectedImage.classList.add('mr-2', 'mb-2', 'h-24', 'w-48');
+    
+                imageContainer.appendChild(selectedImage);
+                imageContainer.style.display = 'block'; 
 
+                document.getElementById('styledText').style.display = 'none';
+            });
+        });
+    });
+    </script>
+    
    
 </body>
 
