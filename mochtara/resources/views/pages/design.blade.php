@@ -240,22 +240,12 @@
                 const styledText = document.getElementById('styledText');
                 if (styledText.style.backgroundImage !== '') {
                     styledText.style.backgroundImage = ''; 
-                    styledText.innerText = '@{{ Your_text }}'; 
+                    styledText.innerHTML = "@{{ Your_text }} "; 
                 }
             });
         });
         </script>
         
-    
-
-
-
-
-
-
-
-
-
 
 </body>
 
