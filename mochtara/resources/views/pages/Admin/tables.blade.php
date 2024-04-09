@@ -157,12 +157,13 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach($users as $user)
                                             <tr>
                                                 <td class="text-center">
-                                                    Dakota Rice
+                                                    {{ $user->name }}
                                                 </td>
                                                 <td class="text-center">
-                                                    khawlakha@gmail.com
+                                                    {{ $user->email }}
                                                 </td>
                                                 <td class="text-center">
                                                     3
@@ -171,6 +172,7 @@
                                                     <button class="btn btn-danger btn-block"> Supprimer </button>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

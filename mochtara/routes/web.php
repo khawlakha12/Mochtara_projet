@@ -6,7 +6,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\loginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
-
+use App\Http\Controllers\DashController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,9 +43,7 @@ Route::get('/form', function() {
 Route::get('/profil', function() {
     return view('pages.Admin.user');
 });
-Route::get('/liste_clients', function() {
-    return view('pages.Admin.tables');
-});
+
 Route::get('/arabe', function() {
     return view('pages.Admin.rtl');
 });
@@ -82,4 +80,5 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 Route::get('/angular', function() {
     return view('Angular.angular');
 });
-//-----------------------------Test Angular---------------------------------//
+//-----------------------------Crud Users---------------------------------//
+Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
