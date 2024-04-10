@@ -179,26 +179,26 @@
                                                         placeholder="Enter Name" style="color: black;">
                                                 </div>
                                                 <!-- Multi Select for Colors -->
-                                                <div class="form-group mt-3">
-                                                    <label for="colorSelect" style="color:black">Color</label>
+                                                <div class="form-group">
+                                                    <label for="colorSelect" style="color:black">Colors</label>
                                                     <select class="form-control" id="colorSelect"
-                                                        style="color: black;" multiple>
-                                                        <option>Red</option>
+                                                        style="color: black;width:100%;" multiple>
+                                                        <option>Black</option>
                                                         <option>Blue</option>
-                                                        <option>Green</option>
+                                                        <option>withe</option>
                                                         <option>Yellow</option>
                                                     </select>
                                                 </div>
-
                                                 <!-- Multi Select for Sizes -->
                                                 <div class="form-group mt-3">
-                                                    <label for="sizeSelect" style="color:black">Size</label>
+                                                    <label for="sizeSelect" style="color:black">Sizes</label>
                                                     <select class="form-control" id="sizeSelect"
-                                                        style="color: black;" multiple>
-                                                        <option>Small</option>
-                                                        <option>Medium</option>
-                                                        <option>Large</option>
-                                                        <option>Extra Large</option>
+                                                        style="color: black;width:100%;" multiple>
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        <option>XL</option>
+                                                        <option>2XL</option>
                                                     </select>
                                                 </div>
                                             </div>
