@@ -42,10 +42,9 @@
           <li><a href="/design">Design</a></li>
           <li class="dropdown"><a href="/shop"><span>shop</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
-              <li><a href="#">Hoodies</a></li>
-              <li><a href="#">T-shirts</a></li>
-              <li><a href="#">Sweatshirts</a></li>
-              <li><a href="#">Pillows</a></li>
+              @foreach($categories as $category)
+              <li><a href="#">{{ $category->name }}</a></li>
+              @endforeach
             </ul>
           </li>
           <li><a href="/ser">Services</a></li>
