@@ -169,7 +169,10 @@
                                                     3
                                                 </td>
                                                 <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
+                                                    <form action="{{ route('user.delete', $user->id) }}" method="GET">
+                                                        @csrf
+                                                    <button type="submit" class="btn btn-danger btn-block"> Supprimer </button>
+                                                </form>
                                                 </td>
                                             </tr>
                                             @endforeach

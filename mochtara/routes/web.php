@@ -82,3 +82,4 @@ Route::get('/angular', function() {
 });
 //-----------------------------Crud Users---------------------------------//
 Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
+Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('user.delete');
