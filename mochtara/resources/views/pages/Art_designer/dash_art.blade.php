@@ -271,7 +271,7 @@
                                     style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
                                 </a>
-                                <a href="#"
+                                <a href="#" id="editTrigger"
                                     class="button secondary d-flex justify-content-center align-items-center"
                                     style="position: absolute; bottom: 20px; left: 20px;">
                                     <i class="fas fa-pen"></i>
@@ -420,6 +420,30 @@
                         imageBox.innerHTML = '';
                     };
                     reader.readAsDataURL(event.target.files[0]);
+                });
+            </script>
+
+            <script>
+                document.getElementById('editTrigger').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    let input = document.getElementById('editInput');
+                    if (!input) {
+                        input = document.createElement('input');
+                        input.setAttribute('type', 'text');
+                        input.setAttribute('id', 'editInput');
+                        input.style.position = 'absolute';
+                        input.style.top = '0';
+                        input.style.left = '0';
+                        input.style.height = '100%';
+                        input.style.width = '100%';
+                        input.style.opacity = '0.5';
+                        input.style.zIndex = '10';
+                        const imageBox = document.getElementById('imageBox');
+                        imageBox.style.position = 'relative';
+                        imageBox.appendChild(input);
+
+                        input.focus();
+                    }
                 });
             </script>
 
