@@ -10,7 +10,9 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
@@ -157,32 +159,47 @@
                                         <div class="modal-body">
                                             <div>
                                                 <div class="mb-4 d-flex justify-content-center">
-                                                    <img id="selectedImage" src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                    alt="example placeholder" style="width: 300px;" />
+                                                    <img id="selectedImage"
+                                                        src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                        alt="example placeholder" style="width: 300px;" />
                                                 </div>
                                                 <div class="d-flex justify-content-center">
                                                     <div class="btn btn-primary btn-rounded">
-                                                        <label class="form-label text-white m-1" for="customFile1">Choose file</label>
-                                                        <input type="file" class="form-control d-none" id="customFile1" onchange="displaySelectedImage(event, 'selectedImage')" />
+                                                        <label class="form-label text-white m-1"
+                                                            for="customFile1">Choose file</label>
+                                                        <input type="file" class="form-control d-none"
+                                                            id="customFile1"
+                                                            onchange="displaySelectedImage(event, 'selectedImage')" />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="exampleInputEmail1" style="color:black">Name</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Name" style="color: black;">
-                                                  </div>
-                                                  <div class="d-flex flex-row justify-content-between">
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="Option1" id="flexCheckDefault1">
-                                                        <label class="form-check-label" for="flexCheckDefault1">
-                                                            Option 1
-                                                        </label>
-                                                    </div>
-                                                    <div class="form-check">
-                                                        <input class="form-check-input" type="checkbox" value="Option2" id="flexCheckDefault2">
-                                                        <label class="form-check-label" for="flexCheckDefault2">
-                                                            Option 2
-                                                        </label>
-                                                    </div>
+                                                    <input type="text" class="form-control"
+                                                        id="exampleInputEmail1" aria-describedby="emailHelp"
+                                                        placeholder="Enter Name" style="color: black;">
+                                                </div>
+                                                <!-- Multi Select for Colors -->
+                                                <div class="form-group mt-3">
+                                                    <label for="colorSelect" style="color:black">Color</label>
+                                                    <select class="form-control" id="colorSelect"
+                                                        style="color: black;" multiple>
+                                                        <option>Red</option>
+                                                        <option>Blue</option>
+                                                        <option>Green</option>
+                                                        <option>Yellow</option>
+                                                    </select>
+                                                </div>
+
+                                                <!-- Multi Select for Sizes -->
+                                                <div class="form-group mt-3">
+                                                    <label for="sizeSelect" style="color:black">Size</label>
+                                                    <select class="form-control" id="sizeSelect"
+                                                        style="color: black;" multiple>
+                                                        <option>Small</option>
+                                                        <option>Medium</option>
+                                                        <option>Large</option>
+                                                        <option>Extra Large</option>
+                                                    </select>
                                                 </div>
                                             </div>
                                         </div>
@@ -317,6 +334,14 @@
                 <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
                 <script src="assets-dash/demo/demo.js"></script>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                        $('#colorSelect').select2();
+                        $('#sizeSelect').select2();
+                    });
+                </script>
                 <script>
                     $(document).ready(function() {
                         $().ready(function() {

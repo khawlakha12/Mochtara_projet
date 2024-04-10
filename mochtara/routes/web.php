@@ -47,9 +47,6 @@ Route::get('/profil', function() {
 Route::get('/arabe', function() {
     return view('pages.Admin.rtl');
 });
-Route::get('/Categories', function() {
-    return view('pages.Admin.Categorie');
-});
 
 Route::get('/categ', function() {
     return view('pages.Art_designer.Cate_art');
@@ -83,3 +80,7 @@ Route::get('/angular', function() {
 //-----------------------------Crud Users---------------------------------//
 Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
 Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('user.delete');
+//-----------------------------Crud categories---------------------------------//
+Route::get('/Categories', function() {
+    return view('pages.Admin.Categorie');
+});
