@@ -423,29 +423,35 @@
                 });
             </script>
 
-            <script>
-                document.getElementById('editTrigger').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    let input = document.getElementById('editInput');
-                    if (!input) {
-                        input = document.createElement('input');
-                        input.setAttribute('type', 'text');
-                        input.setAttribute('id', 'editInput');
-                        input.style.position = 'absolute';
-                        input.style.top = '0';
-                        input.style.left = '0';
-                        input.style.height = '100%';
-                        input.style.width = '100%';
-                        input.style.opacity = '0.5';
-                        input.style.zIndex = '10';
-                        const imageBox = document.getElementById('imageBox');
-                        imageBox.style.position = 'relative';
-                        imageBox.appendChild(input);
+<script>
+    document.getElementById('editTrigger').addEventListener('click', function(event) {
+        event.preventDefault();
+        let input = document.getElementById('editInput');
+        if (!input) {
+            input = document.createElement('input');
+            input.setAttribute('type', 'text');
+            input.setAttribute('id', 'editInput');
+            input.style.position = 'absolute';
+            input.style.top = '0';
+            input.style.left = '0';
+            input.style.right = '0'; 
+            input.style.height = '100%';
+            input.style.width = '100%';
+            input.style.opacity = '0.5';
+            input.style.zIndex = '10';
+            input.style.color = 'black'; 
+            input.style.paddingLeft = '20px';
+            input.style.paddingRight = '20px';
+            input.style.backgroundColor = 'rgba(255, 255, 255, 0)'; 
+            const imageBox = document.getElementById('imageBox');
+            imageBox.style.position = 'relative';
+            imageBox.appendChild(input);
 
-                        input.focus();
-                    }
-                });
-            </script>
+            input.focus();
+        }
+    });
+</script>
+
 
 </body>
 
