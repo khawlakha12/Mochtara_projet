@@ -260,13 +260,13 @@
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                             <div class="card-body d-flex justify-content-center align-items-center"
                                 style="position: relative;">
-                                <div class="box" style="height: 50%; width: 50%;">
+                                <div id="imageBox" class="box" style="height: 50%; width: 50%;">
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                     <span></span>
                                 </div>
-                                <a href="#"
+                                <a href="#" id="uploadTrigger"
                                     class="button secondary d-flex justify-content-center align-items-center"
                                     style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
@@ -278,6 +278,7 @@
                                 </a>
                             </div>
                         </div>
+                        <input type="file" id="fileUpload" style="display: none;" />
                         <div class="image-group d-flex flex-column" style="margin-left: 10px;">
                             <img src="img/9obya.png" alt="Image 5"
                                 style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
@@ -293,7 +294,7 @@
                         <a href="#"><button class="bn30">Save</button></a>
                     </div>
                 </div>
-                
+
             </div>
             <footer class="footer">
                 <div class="container-fluid">
@@ -403,6 +404,25 @@
                         application: "black-dashboard-free"
                     });
             </script>
+            <script>
+                document.getElementById('uploadTrigger').addEventListener('click', function() {
+                    document.getElementById('fileUpload').click();
+                });
+
+                document.getElementById('fileUpload').addEventListener('change', function(event) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageBox = document.getElementById('imageBox');
+                        imageBox.style.backgroundImage = `url('${e.target.result}')`;
+                        imageBox.style.backgroundSize = 'cover';
+                        imageBox.style.backgroundPosition = 'center';
+                        // Effacer le contenu précédent si nécessaire
+                        imageBox.innerHTML = '';
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                });
+            </script>
+
 </body>
 
 </html>

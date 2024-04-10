@@ -51,9 +51,7 @@ Route::get('/arabe', function() {
 Route::get('/Categ', function() {
     return view('pages.Art_designer.Cate_art');
 });
-Route::get('/new_design', function() {
-    return view('pages.Art_designer.dash_art');
-});
+
 Route::get('/profile_designer', function() {
     return view('pages.Art_designer.profile');
 });
@@ -84,3 +82,7 @@ Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('
 Route::post('/add-category', [DashController::class, 'addCategory'])->name('add.categorie');
 Route::get('/Categories', [DashController::class, 'ShowCategorie'])->name('categorie');
 Route::delete('/categories/{category}', [DashController::class, 'deleteCategory'])->name('categories.delete');
+//-----------------------------Design---------------------------------//
+Route::get('/new_design', function() {
+    return view('pages.Art_designer.dash_art');
+});
