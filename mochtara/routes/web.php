@@ -81,6 +81,6 @@ Route::get('/angular', function() {
 Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
 Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('user.delete');
 //-----------------------------Crud categories---------------------------------//
-Route::get('/Categories', function() {
-    return view('pages.Admin.Categorie');
-});
+Route::post('/add-category', [DashController::class, 'addCategory'])->name('add.categorie');
+Route::get('/Categories', [DashController::class, 'ShowCategorie'])->name('categorie');
+Route::delete('/categories/{category}', [DashController::class, 'deleteCategory'])->name('categories.delete');

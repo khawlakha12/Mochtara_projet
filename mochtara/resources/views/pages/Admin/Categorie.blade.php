@@ -148,67 +148,72 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Ajouter Produit</h5>
-                                            <button type="button" class="close" data-dismiss="modal"
-                                                aria-label="Close">
-                                                <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div>
-                                                <div class="mb-4 d-flex justify-content-center">
-                                                    <img id="selectedImage"
-                                                        src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
-                                                        alt="example placeholder" style="width: 300px;" />
-                                                </div>
-                                                <div class="d-flex justify-content-center">
-                                                    <div class="btn btn-primary btn-rounded">
-                                                        <label class="form-label text-white m-1"
-                                                            for="customFile1">Choose file</label>
-                                                        <input type="file" class="form-control d-none"
-                                                            id="customFile1"
-                                                            onchange="displaySelectedImage(event, 'selectedImage')" />
+                                    <form action="{{ route('add.categorie') }}" method="POST" enctype="multipart/form-data">
+                                        @csrf
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Ajouter Produit</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div>
+                                                    <div class="mb-4 d-flex justify-content-center">
+                                                        <img id="selectedImage"
+                                                            src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                                            alt="example placeholder" style="width: 300px;" />
+                                                    </div>
+                                                    <div class="d-flex justify-content-center">
+                                                        <div class="btn btn-primary btn-rounded">
+                                                            <label class="form-label text-white m-1"
+                                                                for="customFile1">Choose file</label>
+                                                            <input type="file" class="form-control d-none"
+                                                                id="customFile1" name="image"
+                                                                onchange="displaySelectedImage(event, 'selectedImage')" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label for="exampleInputEmail1"
+                                                            style="color:black">Name</label>
+                                                        <input type="text" class="form-control"
+                                                            id="exampleInputEmail1" name="name" aria-describedby="emailHelp"
+                                                            placeholder="Enter Name" style="color: black;">
+                                                    </div>
+                                                    <!-- Multi Select for Colors -->
+                                                    <div class="form-group">
+                                                        <label for="colorSelect" style="color:black">Colors</label>
+                                                        <select class="form-control" id="colorSelect" name="colors[]"
+                                                            style="color: black;width:100%;" multiple>
+                                                            <option>Black</option>
+                                                            <option>Blue</option>
+                                                            <option>withe</option>
+                                                            <option>Yellow</option>
+                                                        </select>
+                                                    </div>
+                                                    <!-- Multi Select for Sizes -->
+                                                    <div class="form-group mt-3">
+                                                        <label for="sizeSelect" style="color:black">Sizes</label>
+                                                        <select class="form-control" id="sizeSelect" name="sizes[]"
+                                                            style="color: black;width:100%;" multiple>
+                                                            <option>S</option>
+                                                            <option>M</option>
+                                                            <option>L</option>
+                                                            <option>XL</option>
+                                                            <option>2XL</option>
+                                                        </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
-                                                    <label for="exampleInputEmail1" style="color:black">Name</label>
-                                                    <input type="text" class="form-control"
-                                                        id="exampleInputEmail1" aria-describedby="emailHelp"
-                                                        placeholder="Enter Name" style="color: black;">
-                                                </div>
-                                                <!-- Multi Select for Colors -->
-                                                <div class="form-group">
-                                                    <label for="colorSelect" style="color:black">Colors</label>
-                                                    <select class="form-control" id="colorSelect"
-                                                        style="color: black;width:100%;" multiple>
-                                                        <option>Black</option>
-                                                        <option>Blue</option>
-                                                        <option>withe</option>
-                                                        <option>Yellow</option>
-                                                    </select>
-                                                </div>
-                                                <!-- Multi Select for Sizes -->
-                                                <div class="form-group mt-3">
-                                                    <label for="sizeSelect" style="color:black">Sizes</label>
-                                                    <select class="form-control" id="sizeSelect"
-                                                        style="color: black;width:100%;" multiple>
-                                                        <option>S</option>
-                                                        <option>M</option>
-                                                        <option>L</option>
-                                                        <option>XL</option>
-                                                        <option>2XL</option>
-                                                    </select>
-                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary"
+                                                    data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Ajouter
+                                                    Produit</button>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary"
-                                                data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Ajouter Produit</button>
-                                        </div>
-                                    </div>
+                                    </form>
                                 </div>
                             </div>
 
@@ -234,37 +239,43 @@
                                                 </th>
 
                                             </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">
-                                                    <img src="img/9obya.png" class="" alt="Cinque Terre"
-                                                        style="height:50px;width:50px;">
-                                                </td>
-                                                <td class="text-center">
-                                                    Hoodies
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="selectpicker">
-                                                        <optgroup label="Couleurs">
-                                                            <option>Mustard</option>
-                                                            <option>Ketchup</option>
-                                                            <option>Relish</option>
-                                                        </optgroup>
-                                                </td>
-                                                <td class="text-center">
-                                                    <select class="selectpicker">
-                                                        <optgroup label="Sizes">
-                                                            <option>Mustard</option>
-                                                            <option>Ketchup</option>
-                                                            <option>Relish</option>
-                                                        </optgroup>
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
-                                                </td>
-                                            </tr>
-                                        </tbody>
+                                        </thead>               
+                                            <tbody>
+                                                @foreach($categories as $category)
+                                                <tr>
+                                                    <td class="text-center">
+                                                        <img src="{{ asset('storage/' . $category->image) }}" class="" alt="{{ $category->name }}"
+                                                            style="height:50px;width:50px;">
+                                                    </td>
+                                                    <td class="text-center">{{ $category->name }}</td>
+                                                    <td class="text-center">
+                                                        <select class="selectpicker">
+                                                            <optgroup label="Colors">
+                                                                @foreach(json_decode($category->colors) as $color)
+                                                                <option>{{ $color }}</option>
+                                                                @endforeach
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <select class="selectpicker">
+                                                            <optgroup label="Sizes">
+                                                                @foreach(json_decode($category->sizes) as $size)
+                                                                <option>{{ $size }}</option>
+                                                                @endforeach
+                                                            </optgroup>
+                                                        </select>
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <form action="{{ route('categories.delete', $category) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?');">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger btn-block"> Supprimer </button>
+                                                        </form>
+                                                    </td>
+                                                </tr>
+                                                @endforeach
+                                            </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -433,7 +444,7 @@
                             application: "black-dashboard-free"
                         });
                 </script>
-{{-- --------------------------------- script de change image ----------------------------------- --}}
+                {{-- --------------------------------- script de change image ----------------------------------- --}}
                 <script>
                     function displaySelectedImage(event, imgElementId) {
                         const selectedImageElement = document.getElementById(imgElementId);

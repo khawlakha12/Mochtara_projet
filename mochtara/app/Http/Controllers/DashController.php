@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -18,5 +19,37 @@ public function deleteUser($id)
     $user->delete();
 
     return Redirect::back()->with('success', 'Utilisateur supprimé avec succès.');
+}
+public function addCategory(Request $request)
+{
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'image' => 'nullable|image',
+        'sizes' => 'required|array',
+        'colors' => 'required|array',
+    ]);
+
+    $path = $request->file('image') ? $request->file('image')->store('categories', 'public') : null;
+
+    $category = Category::create([
+        'name' => $request->name,
+        'image' => $path,
+        'sizes' => json_encode($request->sizes),
+        'colors' => json_encode($request->colors),
+    ]);
+
+    return redirect()->back()->with('success', 'Catégorie ajoutée avec succès.');
+}
+public function ShowCategorie()
+{
+    $categories = Category::all(); 
+
+    return view('pages.Admin.Categorie', compact('categories'));
+}
+public function deleteCategory(Category $category)
+{
+    $category->delete();
+
+    return back()->with('success', 'Catégorie supprimée avec succès.');
 }
 }
