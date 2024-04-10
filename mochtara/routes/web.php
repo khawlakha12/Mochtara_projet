@@ -48,7 +48,7 @@ Route::get('/arabe', function() {
     return view('pages.Admin.rtl');
 });
 
-Route::get('/categ', function() {
+Route::get('/Categ', function() {
     return view('pages.Art_designer.Cate_art');
 });
 Route::get('/new_design', function() {
