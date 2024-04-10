@@ -433,6 +433,21 @@
                             application: "black-dashboard-free"
                         });
                 </script>
+{{-- --------------------------------- script de change image ----------------------------------- --}}
+                <script>
+                    function displaySelectedImage(event, imgElementId) {
+                        const selectedImageElement = document.getElementById(imgElementId);
+                        if (event.target.files && event.target.files[0]) {
+                            const reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                selectedImageElement.src = e.target.result;
+                            }
+                            reader.readAsDataURL(event.target.files[0]);
+                        }
+                    }
+                </script>
+
 </body>
 
 </html>
