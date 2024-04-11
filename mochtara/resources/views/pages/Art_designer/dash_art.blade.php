@@ -138,6 +138,17 @@
         .bn30:hover .text {
             background-image: linear-gradient(-45deg, #4568dc, #b06ab3);
         }
+
+        #imageGroupContainer {
+            display: flex;
+            /* Aligns children (images) inline */
+            overflow-x: auto;
+            /* Enables horizontal scrolling */
+            white-space: nowrap;
+            /* Ensures no line breaks among children */
+            scroll-behavior: smooth;
+            /* Optional: Smoothens the scrolling */
+        }
     </style>
 </head>
 
@@ -248,16 +259,13 @@
                 <form action="{{ route('designs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row ">
-                        <div class="col-md-12 d-flex justify-content-center align-items-center">
-                            <div class="image-group d-flex flex-column mr-2">
-                                <img src="img/9obya.png" alt="Image 1"
-                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 2"
-                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 3"
-                                    style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 4"
-                                    style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
+                        <div class="col-md-12 d-flex flex-column justify-content-center align-items-center">
+                            <div id="imageGroupContainer" class="image-group d-flex  mr-2"
+                                style="overflow-x: auto; white-space: nowrap; width: 60%; height: 120px;margin-bottom:10px;">
+                                @foreach($designs as $design)
+                                <img src="{{ Storage::url($design->img) }}" alt="Image 1"
+                                    style="width:100px; height:100px; object-fit: cover; margin-left: 10px;">
+                                    @endforeach
                             </div>
                             <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                                 <div class="card-body d-flex justify-content-center align-items-center"
@@ -301,16 +309,6 @@
                                         </select>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="image-group d-flex flex-column" style="margin-left: 10px;">
-                                <img src="img/9obya.png" alt="Image 5"
-                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 6"
-                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 7"
-                                    style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                                <img src="img/9obya.png" alt="Image 8"
-                                    style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                             </div>
                         </div>
                         <div class="d-flex justify-content-center" style="width: 100%;">
@@ -525,39 +523,46 @@
                 input.style.fontSize = e.target.value;
             });
         </script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
 
 
         <script>
-         document.getElementById('saveButton').addEventListener('click', function() {
-    // Ici, vous pouvez avoir une logique pour décider si vous capturez une image ou un texte.
-    // Dans cet exemple, je vais capturer le conteneur de texte.
-    html2canvas(document.querySelector("#textContainer")).then(canvas => {
-        canvas.toBlob(function(blob) {
-            var formData = new FormData();
-            formData.append('image', blob, 'textImage.png');
+            document.getElementById('saveButton').addEventListener('click', function() {
+                html2canvas(document.querySelector("#textContainer")).then(canvas => {
+                    canvas.toBlob(function(blob) {
+                        var formData = new FormData();
+                        formData.append('image', blob, 'textImage.png');
+                        fetch('{{ route('designs.store') }}', {
+                                method: 'POST',
+                                body: formData,
+                                headers: {
+                                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                                    'Accept': 'application/json'
+                                },
+                            })
+                            .then(response => {
+                                if (!response.ok) throw new Error('Network response was not ok');
+                                return response.json();
+                            })
+                            .then(data => console.log(data))
+                            .catch(error => console.error('Error:', error));
+                    });
+                });
+            });
+        </script>
+ {{-- -----------------------------script de caroussel------------------------------ --}}
+<script>
+    function scrollImages() {
+        const container = document.getElementById('imageGroupContainer');
+        container.scrollLeft += 2;
+        if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+            container.scrollLeft = 0;
+        }
+        requestAnimationFrame(scrollImages);
+    }
+    scrollImages();
+</script>
 
-            // Envoi au serveur
-            fetch('{{ route("designs.store") }}', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
-                    'Accept': 'application/json'
-                },
-            })
-            .then(response => {
-                if (!response.ok) throw new Error('Network response was not ok');
-                return response.json();
-            })
-            .then(data => console.log(data))
-            .catch(error => console.error('Error:', error));
-        });
-    });
-});
-
-            </script>
-            
 
 
 </body>
