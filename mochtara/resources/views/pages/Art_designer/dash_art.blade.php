@@ -245,6 +245,8 @@
             </div>
             <!-- End Navbar -->
             <div class="content">
+                <form action="{{ route('designs.store') }}" method="POST" enctype="multipart/form-data">
+                    @csrf
                 <div class="row ">
                     <div class="col-md-12 d-flex justify-content-center align-items-center">
                         <div class="image-group d-flex flex-column mr-2">
@@ -257,6 +259,7 @@
                             <img src="img/9obya.png" alt="Image 4"
                                 style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                         </div>
+
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                             <div class="card-body d-flex justify-content-center align-items-center"
                                 style="position: relative;">
@@ -278,7 +281,7 @@
                                     style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
                                 </a>
-                                <input type="file" id="fileUpload" style="display: none;" />
+                                <input type="file" id="fileUpload" name="image" style="display: none;" />
                                 <a href="#" id="editTrigger"
                                     class="button secondary d-flex justify-content-center align-items-center"
                                     style="position: absolute; bottom: 20px; left: 20px;">
@@ -298,8 +301,9 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center" style="width: 100%;">
-                        <a href="#"><button class="bn30">Save</button></a>
+                        <a href="#"><button type="submit" class="bn30">Save</button></a>
                     </div>
+                </form>
                 </div>
 
             </div>
@@ -411,37 +415,31 @@
                         application: "black-dashboard-free"
                     });
             </script>
-{{-- -----------------------------upload image------------------------------ --}}
+            {{-- -----------------------------upload image------------------------------ --}}
             <script>
-               document.getElementById('uploadTrigger').addEventListener('click', function() {
-    // Effacez seulement le contenu de l'input de texte s'il existe
-    const editTextInput = document.getElementById('editInput');
-    if (editTextInput) {
-        editTextInput.value = ''; // Effacez le texte
-    }
+                document.getElementById('uploadTrigger').addEventListener('click', function() {
+                    const editTextInput = document.getElementById('editInput');
+                    if (editTextInput) {
+                        editTextInput.value = '';
+                    }
+                    document.getElementById('fileUpload').click();
+                });
+                document.getElementById('fileUpload').addEventListener('change', function(event) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const newImage = new Image();
+                        newImage.src = e.target.result;
+                        newImage.style.maxWidth = '100%';
+                        newImage.style.maxHeight = '100%';
 
-    // Déclenchez le clic sur l'input de fichier caché
-    document.getElementById('fileUpload').click();
-});
-
-document.getElementById('fileUpload').addEventListener('change', function(event) {
-    const reader = new FileReader();
-    reader.onload = function(e) {
-        // Créez et ajoutez la nouvelle image
-        const newImage = new Image();
-        newImage.src = e.target.result;
-        newImage.style.maxWidth = '100%';
-        newImage.style.maxHeight = '100%';
-
-        const imageContainer = document.getElementById('uploadedImageContainer');
-        imageContainer.innerHTML = ''; // Assurez-vous que le conteneur est vide avant d'ajouter la nouvelle image
-        imageContainer.appendChild(newImage);
-    };
-    reader.readAsDataURL(event.target.files[0]);
-});
-
+                        const imageContainer = document.getElementById('uploadedImageContainer');
+                        imageContainer.innerHTML = '';
+                        imageContainer.appendChild(newImage);
+                    };
+                    reader.readAsDataURL(event.target.files[0]);
+                });
             </script>
-{{-- -----------------------------écrire text------------------------------ --}}
+            {{-- -----------------------------écrire text------------------------------ --}}
             <script>
                 document.getElementById('editTrigger').addEventListener('click', function(event) {
                     event.preventDefault();
@@ -469,7 +467,6 @@ document.getElementById('fileUpload').addEventListener('change', function(event)
                         const imageBox = document.getElementById('imageBox');
                         imageBox.style.position = 'relative';
                         imageBox.appendChild(input);
-
                         input.focus();
                     }
                 });

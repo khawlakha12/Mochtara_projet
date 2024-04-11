@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
+use App\Models\Design;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -51,5 +52,18 @@ public function deleteCategory(Category $category)
     $category->delete();
 
     return back()->with('success', 'Catégorie supprimée avec succès.');
+}
+// -----------------------------designs------------------------------ //
+public function store(Request $request)
+{
+    if ($request->hasFile('image')) {
+        $path = $request->file('image')->store('designs', 'public');
+        Design::create([
+            'img' => $path
+        ]);
+        return back()->with('success', 'Design saved successfully.');
+    } else {
+        return back()->with('error', 'No image was uploaded.');
+    }
 }
 }
