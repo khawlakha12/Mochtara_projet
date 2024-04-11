@@ -283,18 +283,24 @@
                                         style="position: absolute; bottom: 20px; left: 20px;">
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <div id="textStyleControls" style="position: absolute; bottom: 70px; left: 20px; display: flex; flex-direction: column; display:none;">
-                                        <button class="button secondary" style="margin-bottom: 5px;" id="boldText">G</button>
-                                        <button class="button secondary" style="margin-bottom: 5px;" id="italicText">I</button>
-                                        <button class="button secondary" style="margin-bottom: 5px;" id="underlineText">S</button>
-                                        <input class="button secondary" style="margin-bottom: 5px;" type="color" id="textColorPicker">
-                                        <select class="button secondary" style="margin-bottom: 5px;" id="fontSizeSelector">
+                                    <div id="textStyleControls"
+                                        style="position: absolute; bottom: 70px; left: 20px; display: flex; flex-direction: column; display:none;">
+                                        <button class="button secondary" style="margin-bottom: 5px;"
+                                            id="boldText">G</button>
+                                        <button class="button secondary" style="margin-bottom: 5px;"
+                                            id="italicText">I</button>
+                                        <button class="button secondary" style="margin-bottom: 5px;"
+                                            id="underlineText">S</button>
+                                        <input class="button secondary" style="margin-bottom: 5px;" type="color"
+                                            id="textColorPicker">
+                                        <select class="button secondary" style="margin-bottom: 5px;"
+                                            id="fontSizeSelector">
                                             <option value="16px">Petit</option>
                                             <option value="24px">Moyen</option>
                                             <option value="32px">Grand</option>
                                         </select>
                                     </div>
-                                    
+
                                 </div>
                             </div>
                             <div class="image-group d-flex flex-column" style="margin-left: 10px;">
@@ -485,32 +491,30 @@
                 input.style.paddingRight = '20px';
                 input.style.backgroundColor = 'rgba(255, 255, 255, 0)';
             }
-
-            document.getElementById('boldText').addEventListener('click', () => {
+            document.getElementById('boldText').addEventListener('click', function(event) {
+                event.preventDefault();
                 const input = document.getElementById('editInput');
-                input.style.fontWeight = input.style.fontWeight === 'bold' ? 'normal' : 'bold';
+                input.style.fontWeight = input.style.fontWeight === 'bold' ? '' : 'bold';
             });
-
-            document.getElementById('italicText').addEventListener('click', () => {
+            document.getElementById('italicText').addEventListener('click', function(event) {
+                event.preventDefault();
                 const input = document.getElementById('editInput');
-                input.style.fontStyle = input.style.fontStyle === 'italic' ? 'normal' : 'italic';
+                input.style.fontStyle = input.style.fontStyle === 'italic' ? '' : 'italic';
             });
-
-            document.getElementById('underlineText').addEventListener('click', () => {
+            document.getElementById('underlineText').addEventListener('click', function(event) {
+                event.preventDefault();
                 const input = document.getElementById('editInput');
-                input.style.textDecoration = input.style.textDecoration === 'underline' ? 'none' : 'underline';
+                input.style.textDecoration = input.style.textDecoration === 'underline' ? '' : 'underline';
             });
-
-            document.getElementById('textColorPicker').addEventListener('change', (e) => {
+            document.getElementById('textColorPicker').addEventListener('change', function(event) {
+                event.preventDefault();
                 const input = document.getElementById('editInput');
-                input.style.color = e.target.value;
+                input.style.color = event.target.value;
             });
-
             document.getElementById('fontSizeSelector').addEventListener('change', (e) => {
                 const input = document.getElementById('editInput');
                 input.style.fontSize = e.target.value;
             });
-
         </script>
 
 </body>
