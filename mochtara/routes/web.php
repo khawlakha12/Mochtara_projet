@@ -55,6 +55,9 @@ Route::get('/Categ', function() {
 Route::get('/profile_designer', function() {
     return view('pages.Art_designer.profile');
 });
+Route::get('/new_product', function() {
+    return view('pages.Art_designer.product');
+});
 //---------------------------Register---------------------------------//
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
