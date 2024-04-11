@@ -283,12 +283,12 @@
                                         style="position: absolute; bottom: 20px; left: 20px;">
                                         <i class="fas fa-pen"></i>
                                     </a>
-                                    <div id="textStyleControls" style="position: absolute; top: 100%; left: 0; width: 100%; display: none; justify-content: space-around; padding: 10px 0;">
-                                        <button id="boldText">Gras</button>
-                                        <button id="italicText">Italique</button>
-                                        <button id="underlineText">Souligné</button>
-                                        <input type="color" id="textColorPicker">
-                                        <select id="fontSizeSelector">
+                                    <div id="textStyleControls" style="position: absolute; bottom: 70px; left: 20px; display: flex; flex-direction: column; display:none;">
+                                        <button class="button secondary" style="margin-bottom: 5px;" id="boldText">G</button>
+                                        <button class="button secondary" style="margin-bottom: 5px;" id="italicText">I</button>
+                                        <button class="button secondary" style="margin-bottom: 5px;" id="underlineText">S</button>
+                                        <input class="button secondary" style="margin-bottom: 5px;" type="color" id="textColorPicker">
+                                        <select class="button secondary" style="margin-bottom: 5px;" id="fontSizeSelector">
                                             <option value="16px">Petit</option>
                                             <option value="24px">Moyen</option>
                                             <option value="32px">Grand</option>
@@ -510,6 +510,7 @@
                 const input = document.getElementById('editInput');
                 input.style.fontSize = e.target.value;
             });
+
         </script>
 
 </body>
