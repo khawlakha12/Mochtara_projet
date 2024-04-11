@@ -111,7 +111,7 @@
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
                         <h1 id="styledText" class="styled-element"
-                            style="height: 32%;width:27%;color:#000000;text-align:center;">@{{ Your_text }}
+                            style="height: 32%;width:27%;color:#000000;text-align:center;text-wrap: balance;">@{{ Your_text }}
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
                             style="height: 32%;width:27%;text-align: center;background-position: center center;"></h1>

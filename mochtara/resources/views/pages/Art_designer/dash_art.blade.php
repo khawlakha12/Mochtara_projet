@@ -300,7 +300,6 @@
                                             <option value="32px">Grand</option>
                                         </select>
                                     </div>
-
                                 </div>
                             </div>
                             <div class="image-group d-flex flex-column" style="margin-left: 10px;">
@@ -455,29 +454,28 @@
         </script>
         {{-- -----------------------------écrire text------------------------------ --}}
         <script>
-          document.getElementById('editTrigger').addEventListener('click', function(event) {
-    event.preventDefault();
+            document.getElementById('editTrigger').addEventListener('click', function(event) {
+                event.preventDefault();
 
-    const textStyleControls = document.getElementById('textStyleControls');
+                const textStyleControls = document.getElementById('textStyleControls');
 
-    // Toggle la visibilité des contrôles de style de texte
-    textStyleControls.style.display = textStyleControls.style.display === 'flex' ? 'none' : 'flex';
+                textStyleControls.style.display = textStyleControls.style.display === 'flex' ? 'none' : 'flex';
 
-    let input = document.getElementById('editInput');
-    if (!input) {
-        input = createTextInput();
-        document.getElementById('imageBox').appendChild(input);
-        input.focus();
-    }
-});
+                let input = document.getElementById('editInput');
+                if (!input) {
+                    input = createTextInput();
+                    document.getElementById('imageBox').appendChild(input);
+                    input.focus();
+                }
+            });
 
-function createTextInput() {
-    const input = document.createElement('input');
-    input.setAttribute('type', 'text');
-    input.setAttribute('id', 'editInput');
-    applyDefaultInputStyles(input);
-    return input;
-}
+            function createTextInput() {
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('id', 'editInput');
+                applyDefaultInputStyles(input);
+                return input;
+            }
 
             function createTextInput() {
                 const input = document.createElement('input');
@@ -488,6 +486,8 @@ function createTextInput() {
             }
 
             function applyDefaultInputStyles(input) {
+                input.style.whiteSpace = 'pre-wrap';
+                input.style.overflowWrap = 'break-word';
                 input.style.position = 'absolute';
                 input.style.top = '0';
                 input.style.left = '0';
@@ -524,9 +524,41 @@ function createTextInput() {
                 const input = document.getElementById('editInput');
                 input.style.fontSize = e.target.value;
             });
-
         </script>
-       
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+
+        <script>
+         document.getElementById('saveButton').addEventListener('click', function() {
+    // Ici, vous pouvez avoir une logique pour décider si vous capturez une image ou un texte.
+    // Dans cet exemple, je vais capturer le conteneur de texte.
+    html2canvas(document.querySelector("#textContainer")).then(canvas => {
+        canvas.toBlob(function(blob) {
+            var formData = new FormData();
+            formData.append('image', blob, 'textImage.png');
+
+            // Envoi au serveur
+            fetch('{{ route("designs.store") }}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                    'Accept': 'application/json'
+                },
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(data => console.log(data))
+            .catch(error => console.error('Error:', error));
+        });
+    });
+});
+
+            </script>
+            
+
 
 </body>
 

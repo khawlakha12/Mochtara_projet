@@ -67,15 +67,16 @@ public function store(Request $request)
     }
 }
 public function show_design()
-{
-    $designs = Design::all();
-    return view('pages.Art_designer.Cate_art', compact('designs')); 
-}
+    {
+        $designs = Design::all();
+        return view('pages.Art_designer.Cate_art', compact('designs')); 
+    }
     public function destroy_design($id)
-{
-    $design = Design::findOrFail($id);
-    $design->delete();
-
-    return back()->with('success', 'Design successfully deleted.');
-}
+    {
+        $design = Design::findOrFail($id);
+        $design->delete();
+    
+        return back()->with('success', 'Design successfully deleted.');
+    }
+    
 }
