@@ -105,20 +105,6 @@
                     </div>
                 </div>
             </nav>
-            <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
-                aria-labelledby="searchModal" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <input type="text" class="form-control" id="inlineFormInputGroup"
-                                placeholder="SEARCH">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <i class="tim-icons icon-simple-remove"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <!-- End Navbar -->
             <div class="content">
                 <div class="row">
@@ -126,10 +112,9 @@
                         <div class="card ">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title">Table designs</h4>
-                                <button type="button" class="btn btn-info btn-circle btn-xl" data-toggle="modal"
-                                    data-target="#exampleModal">
+                                <a href="/new_design"><button type="button" class="btn btn-info btn-circle btn-xl" >
                                     <i class="fa fa-plus"></i>
-                                </button>
+                                </button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
