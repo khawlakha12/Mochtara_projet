@@ -247,231 +247,270 @@
             <div class="content">
                 <form action="{{ route('designs.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
-                <div class="row ">
-                    <div class="col-md-12 d-flex justify-content-center align-items-center">
-                        <div class="image-group d-flex flex-column mr-2">
-                            <img src="img/9obya.png" alt="Image 1"
-                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 2"
-                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 3"
-                                style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 4"
-                                style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
-                        </div>
-
-                        <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
-                            <div class="card-body d-flex justify-content-center align-items-center"
-                                style="position: relative;">
-
-                                <div id="imageBox" class="box" style="height: 50%; width: 50%;">
-
-                                    <span></span>
-                                    <span></span>
-                                    <span></span>
-                                    <span>
-                                        <div id="uploadedImageContainer"
-                                            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center;">
-                                        </div>
-                                    </span>
+                    <div class="row ">
+                        <div class="col-md-12 d-flex justify-content-center align-items-center">
+                            <div class="image-group d-flex flex-column mr-2">
+                                <img src="img/9obya.png" alt="Image 1"
+                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 2"
+                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 3"
+                                    style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 4"
+                                    style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
+                            </div>
+                            <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
+                                <div class="card-body d-flex justify-content-center align-items-center"
+                                    style="position: relative;">
+                                    <div id="imageBox" class="box" style="height: 50%; width: 50%;">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span>
+                                            <div id="uploadedImageContainer"
+                                                style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center;">
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <a href="#" id="uploadTrigger"
+                                        class="button secondary d-flex justify-content-center align-items-center"
+                                        style="position: absolute; bottom: 20px; right: 20px;">
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                    <input type="file" id="fileUpload" name="image" style="display: none;" />
+                                    <a href="#" id="editTrigger"
+                                        class="button secondary d-flex justify-content-center align-items-center"
+                                        style="position: absolute; bottom: 20px; left: 20px;">
+                                        <i class="fas fa-pen"></i>
+                                    </a>
+                                    <div id="textStyleControls" style="position: absolute; top: 100%; left: 0; width: 100%; display: none; justify-content: space-around; padding: 10px 0;">
+                                        <button id="boldText">Gras</button>
+                                        <button id="italicText">Italique</button>
+                                        <button id="underlineText">Souligné</button>
+                                        <input type="color" id="textColorPicker">
+                                        <select id="fontSizeSelector">
+                                            <option value="16px">Petit</option>
+                                            <option value="24px">Moyen</option>
+                                            <option value="32px">Grand</option>
+                                        </select>
+                                    </div>
+                                    
                                 </div>
-
-                                <a href="#" id="uploadTrigger"
-                                    class="button secondary d-flex justify-content-center align-items-center"
-                                    style="position: absolute; bottom: 20px; right: 20px;">
-                                    <i class="fas fa-plus"></i>
-                                </a>
-                                <input type="file" id="fileUpload" name="image" style="display: none;" />
-                                <a href="#" id="editTrigger"
-                                    class="button secondary d-flex justify-content-center align-items-center"
-                                    style="position: absolute; bottom: 20px; left: 20px;">
-                                    <i class="fas fa-pen"></i>
-                                </a>
+                            </div>
+                            <div class="image-group d-flex flex-column" style="margin-left: 10px;">
+                                <img src="img/9obya.png" alt="Image 5"
+                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 6"
+                                    style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 7"
+                                    style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
+                                <img src="img/9obya.png" alt="Image 8"
+                                    style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
                             </div>
                         </div>
-                        <div class="image-group d-flex flex-column" style="margin-left: 10px;">
-                            <img src="img/9obya.png" alt="Image 5"
-                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 6"
-                                style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 7"
-                                style="width:120px; height:120px; object-fit: cover;margin-bottom: 10px;">
-                            <img src="img/9obya.png" alt="Image 8"
-                                style="width:120px; height: 120px; object-fit: cover;margin-bottom: 10px;">
+                        <div class="d-flex justify-content-center" style="width: 100%;">
+                            <a href="#"><button type="submit" class="bn30">Save</button></a>
                         </div>
-                    </div>
-                    <div class="d-flex justify-content-center" style="width: 100%;">
-                        <a href="#"><button type="submit" class="bn30">Save</button></a>
-                    </div>
                 </form>
-                </div>
-
             </div>
-            <footer class="footer">
-                <div class="container-fluid">
-                    <div class="copyright">
-                        ©
-                        <script></script>2024 made with <i class="tim-icons icon-heart-2"></i> by
-                        <a href="javascript:void(0)" target="_blank">Mochtara</a> for a better web.
-                    </div>
+
+        </div>
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright">
+                    ©
+                    <script></script>2024 made with <i class="tim-icons icon-heart-2"></i> by
+                    <a href="javascript:void(0)" target="_blank">Mochtara</a> for a better web.
                 </div>
-            </footer>
-            <!--   Core JS Files   -->
-            <script src="assets-dash/js/core/jquery.min.js"></script>
-            <script src="assets-dash/js/core/popper.min.js"></script>
-            <script src="assets-dash/js/core/bootstrap.min.js"></script>
-            <script src="assets-dash/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-            <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
-            <script src="assets-dash/demo/demo.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
-            <script>
-                $(document).ready(function() {
-                    $().ready(function() {
-                        $sidebar = $('.sidebar');
-                        $navbar = $('.navbar');
-                        $main_panel = $('.main-panel');
-                        $full_page = $('.full-page');
-                        $sidebar_responsive = $('body > .navbar-collapse');
-                        sidebar_mini_active = true;
-                        white_color = false;
-                        window_width = $(window).width();
-                        fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-                        $('.fixed-plugin a').click(function(event) {
-                            if ($(this).hasClass('switch-trigger')) {
-                                if (event.stopPropagation) {
-                                    event.stopPropagation();
-                                } else if (window.event) {
-                                    window.event.cancelBubble = true;
-                                }
+            </div>
+        </footer>
+        <!--   Core JS Files   -->
+        <script src="assets-dash/js/core/jquery.min.js"></script>
+        <script src="assets-dash/js/core/popper.min.js"></script>
+        <script src="assets-dash/js/core/bootstrap.min.js"></script>
+        <script src="assets-dash/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+        <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
+        <script src="assets-dash/demo/demo.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $().ready(function() {
+                    $sidebar = $('.sidebar');
+                    $navbar = $('.navbar');
+                    $main_panel = $('.main-panel');
+                    $full_page = $('.full-page');
+                    $sidebar_responsive = $('body > .navbar-collapse');
+                    sidebar_mini_active = true;
+                    white_color = false;
+                    window_width = $(window).width();
+                    fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
+                    $('.fixed-plugin a').click(function(event) {
+                        if ($(this).hasClass('switch-trigger')) {
+                            if (event.stopPropagation) {
+                                event.stopPropagation();
+                            } else if (window.event) {
+                                window.event.cancelBubble = true;
                             }
-                        });
-                        $('.fixed-plugin .background-color span').click(function() {
-                            $(this).siblings().removeClass('active');
-                            $(this).addClass('active');
-                            var new_color = $(this).data('color');
-                            if ($sidebar.length != 0) {
-                                $sidebar.attr('data', new_color);
-                            }
-                            if ($main_panel.length != 0) {
-                                $main_panel.attr('data', new_color);
-                            }
-                            if ($full_page.length != 0) {
-                                $full_page.attr('filter-color', new_color);
-                            }
-                            if ($sidebar_responsive.length != 0) {
-                                $sidebar_responsive.attr('data', new_color);
-                            }
-                        });
-                        $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-                            var $btn = $(this);
-                            if (sidebar_mini_active == true) {
-                                $('body').removeClass('sidebar-mini');
-                                sidebar_mini_active = false;
-                                blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-                            } else {
-                                $('body').addClass('sidebar-mini');
-                                sidebar_mini_active = true;
-                                blackDashboard.showSidebarMessage('Sidebar mini activated...');
-                            }
-                            var simulateWindowResize = setInterval(function() {
-                                window.dispatchEvent(new Event('resize'));
-                            }, 180);
+                        }
+                    });
+                    $('.fixed-plugin .background-color span').click(function() {
+                        $(this).siblings().removeClass('active');
+                        $(this).addClass('active');
+                        var new_color = $(this).data('color');
+                        if ($sidebar.length != 0) {
+                            $sidebar.attr('data', new_color);
+                        }
+                        if ($main_panel.length != 0) {
+                            $main_panel.attr('data', new_color);
+                        }
+                        if ($full_page.length != 0) {
+                            $full_page.attr('filter-color', new_color);
+                        }
+                        if ($sidebar_responsive.length != 0) {
+                            $sidebar_responsive.attr('data', new_color);
+                        }
+                    });
+                    $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
+                        var $btn = $(this);
+                        if (sidebar_mini_active == true) {
+                            $('body').removeClass('sidebar-mini');
+                            sidebar_mini_active = false;
+                            blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
+                        } else {
+                            $('body').addClass('sidebar-mini');
+                            sidebar_mini_active = true;
+                            blackDashboard.showSidebarMessage('Sidebar mini activated...');
+                        }
+                        var simulateWindowResize = setInterval(function() {
+                            window.dispatchEvent(new Event('resize'));
+                        }, 180);
+                        setTimeout(function() {
+                            clearInterval(simulateWindowResize);
+                        }, 1000);
+                    });
+                    $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
+                        var $btn = $(this);
+                        if (white_color == true) {
+                            $('body').addClass('change-background');
                             setTimeout(function() {
-                                clearInterval(simulateWindowResize);
-                            }, 1000);
-                        });
-                        $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-                            var $btn = $(this);
-                            if (white_color == true) {
-                                $('body').addClass('change-background');
-                                setTimeout(function() {
-                                    $('body').removeClass('change-background');
-                                    $('body').removeClass('white-content');
-                                }, 900);
-                                white_color = false;
-                            } else {
-                                $('body').addClass('change-background');
-                                setTimeout(function() {
-                                    $('body').removeClass('change-background');
-                                    $('body').addClass('white-content');
-                                }, 900);
-                                white_color = true;
-                            }
-                        });
-                        $('.light-badge').click(function() {
-                            $('body').addClass('white-content');
-                        });
-                        $('.dark-badge').click(function() {
-                            $('body').removeClass('white-content');
-                        });
+                                $('body').removeClass('change-background');
+                                $('body').removeClass('white-content');
+                            }, 900);
+                            white_color = false;
+                        } else {
+                            $('body').addClass('change-background');
+                            setTimeout(function() {
+                                $('body').removeClass('change-background');
+                                $('body').addClass('white-content');
+                            }, 900);
+                            white_color = true;
+                        }
+                    });
+                    $('.light-badge').click(function() {
+                        $('body').addClass('white-content');
+                    });
+                    $('.dark-badge').click(function() {
+                        $('body').removeClass('white-content');
                     });
                 });
-            </script>
-            <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
-            <script>
-                window.TrackJS &&
-                    TrackJS.install({
-                        token: "ee6fab19c5a04ac1a32a645abde4613a",
-                        application: "black-dashboard-free"
-                    });
-            </script>
-            {{-- -----------------------------upload image------------------------------ --}}
-            <script>
-                document.getElementById('uploadTrigger').addEventListener('click', function() {
-                    const editTextInput = document.getElementById('editInput');
-                    if (editTextInput) {
-                        editTextInput.value = '';
-                    }
-                    document.getElementById('fileUpload').click();
+            });
+        </script>
+        <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+        <script>
+            window.TrackJS &&
+                TrackJS.install({
+                    token: "ee6fab19c5a04ac1a32a645abde4613a",
+                    application: "black-dashboard-free"
                 });
-                document.getElementById('fileUpload').addEventListener('change', function(event) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const newImage = new Image();
-                        newImage.src = e.target.result;
-                        newImage.style.maxWidth = '100%';
-                        newImage.style.maxHeight = '100%';
+        </script>
+        {{-- -----------------------------upload image------------------------------ --}}
+        <script>
+            document.getElementById('uploadTrigger').addEventListener('click', function() {
+                const editTextInput = document.getElementById('editInput');
+                if (editTextInput) {
+                    editTextInput.value = '';
+                }
+                document.getElementById('fileUpload').click();
+            });
+            document.getElementById('fileUpload').addEventListener('change', function(event) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const newImage = new Image();
+                    newImage.src = e.target.result;
+                    newImage.style.maxWidth = '100%';
+                    newImage.style.maxHeight = '100%';
 
-                        const imageContainer = document.getElementById('uploadedImageContainer');
-                        imageContainer.innerHTML = '';
-                        imageContainer.appendChild(newImage);
-                    };
-                    reader.readAsDataURL(event.target.files[0]);
-                });
-            </script>
-            {{-- -----------------------------écrire text------------------------------ --}}
-            <script>
-                document.getElementById('editTrigger').addEventListener('click', function(event) {
-                    event.preventDefault();
-                    const imageBox = document.getElementById('imageBox');
-                    const images = imageBox.querySelectorAll('img');
-                    images.forEach(img => img.remove());
+                    const imageContainer = document.getElementById('uploadedImageContainer');
+                    imageContainer.innerHTML = '';
+                    imageContainer.appendChild(newImage);
+                };
+                reader.readAsDataURL(event.target.files[0]);
+            });
+        </script>
+        {{-- -----------------------------écrire text------------------------------ --}}
+        <script>
+            document.getElementById('editTrigger').addEventListener('click', function(event) {
+                event.preventDefault();
 
-                    let input = document.getElementById('editInput');
-                    if (!input) {
-                        input = document.createElement('input');
-                        input.setAttribute('type', 'text');
-                        input.setAttribute('id', 'editInput');
-                        input.style.position = 'absolute';
-                        input.style.top = '0';
-                        input.style.left = '0';
-                        input.style.right = '0';
-                        input.style.height = '100%';
-                        input.style.width = '100%';
-                        input.style.opacity = '0.5';
-                        input.style.zIndex = '10';
-                        input.style.color = 'black';
-                        input.style.paddingLeft = '20px';
-                        input.style.paddingRight = '20px';
-                        input.style.backgroundColor = 'rgba(255, 255, 255, 0)';
-                        const imageBox = document.getElementById('imageBox');
-                        imageBox.style.position = 'relative';
-                        imageBox.appendChild(input);
-                        input.focus();
-                    }
-                });
-            </script>
+                const imageBox = document.getElementById('imageBox');
+                let input = document.getElementById('editInput');
 
+                if (!input) {
+                    input = createTextInput();
+                    imageBox.appendChild(input);
+                }
+                const textStyleControls = document.getElementById('textStyleControls');
+                textStyleControls.style.display = 'flex';
+                input.focus();
+            });
+
+            function createTextInput() {
+                const input = document.createElement('input');
+                input.setAttribute('type', 'text');
+                input.setAttribute('id', 'editInput');
+                applyDefaultInputStyles(input);
+                return input;
+            }
+
+            function applyDefaultInputStyles(input) {
+                input.style.position = 'absolute';
+                input.style.top = '0';
+                input.style.left = '0';
+                input.style.height = '100%';
+                input.style.width = '100%';
+                input.style.opacity = '0.5';
+                input.style.zIndex = '10';
+                input.style.color = 'black';
+                input.style.paddingLeft = '20px';
+                input.style.paddingRight = '20px';
+                input.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+            }
+
+            document.getElementById('boldText').addEventListener('click', () => {
+                const input = document.getElementById('editInput');
+                input.style.fontWeight = input.style.fontWeight === 'bold' ? 'normal' : 'bold';
+            });
+
+            document.getElementById('italicText').addEventListener('click', () => {
+                const input = document.getElementById('editInput');
+                input.style.fontStyle = input.style.fontStyle === 'italic' ? 'normal' : 'italic';
+            });
+
+            document.getElementById('underlineText').addEventListener('click', () => {
+                const input = document.getElementById('editInput');
+                input.style.textDecoration = input.style.textDecoration === 'underline' ? 'none' : 'underline';
+            });
+
+            document.getElementById('textColorPicker').addEventListener('change', (e) => {
+                const input = document.getElementById('editInput');
+                input.style.color = e.target.value;
+            });
+
+            document.getElementById('fontSizeSelector').addEventListener('change', (e) => {
+                const input = document.getElementById('editInput');
+                input.style.fontSize = e.target.value;
+            });
+        </script>
 
 </body>
 
