@@ -66,4 +66,16 @@ public function store(Request $request)
         return back()->with('error', 'No image was uploaded.');
     }
 }
+public function show_design()
+{
+    $designs = Design::all();
+    return view('pages.Art_designer.Cate_art', compact('designs')); 
+}
+    public function destroy_design($id)
+{
+    $design = Design::findOrFail($id);
+    $design->delete();
+
+    return back()->with('success', 'Design successfully deleted.');
+}
 }

@@ -151,21 +151,27 @@
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($designs as $design)
                                             <tr>
                                                 <td class="text-center">
-                                                    1
+                                                    {{ $loop->iteration }}
                                                 </td>
                                                 <td class="text-center">
-                                                    <img src="img/design2.png" class="" alt="Cinque Terre"
+                                                    <img src="{{ asset('storage/' . $design->img) }}" class="" alt="Cinque Terre"
                                                         style="height:50px;width:50px;">
                                                 </td>
                                                 <td class="text-center">
                                                     Design1
                                                 </td>
                                                 <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
+                                                    <form action="{{ route('designs.destroy', $design->id) }}" method="POST">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-block"> Supprimer </button>
+                                                </form>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

@@ -83,6 +83,8 @@ Route::post('/add-category', [DashController::class, 'addCategory'])->name('add.
 Route::get('/Categories', [DashController::class, 'ShowCategorie'])->name('categorie');
 Route::delete('/categories/{category}', [DashController::class, 'deleteCategory'])->name('categories.delete');
 //-----------------------------Design---------------------------------//
+Route::get('/Categ', [DashController::class, 'show_design']);
+Route::delete('/new_design/{id}', [DashController::class, 'destroy_design'])->name('designs.destroy');
 Route::get('/new_design', function() {
     return view('pages.Art_designer.dash_art');
 });
