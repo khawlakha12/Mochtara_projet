@@ -180,7 +180,7 @@
                     <li>
                         <a href="/Categ">
                             <i class="fas fa-tshirt"></i>
-                            <p>Categories</p>
+                            <p>Designs</p>
                         </a>
                     </li>
                 </ul>

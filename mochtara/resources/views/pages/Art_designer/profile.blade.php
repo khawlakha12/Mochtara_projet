@@ -43,7 +43,7 @@
                 <li>
                     <a href="/categ">
                         <i class="fas fa-tshirt"></i>
-                        <p>Categories</p>
+                        <p>Designs</p>
                     </a>
                 </li>
             </ul>
