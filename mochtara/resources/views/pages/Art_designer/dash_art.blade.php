@@ -455,20 +455,29 @@
         </script>
         {{-- -----------------------------écrire text------------------------------ --}}
         <script>
-            document.getElementById('editTrigger').addEventListener('click', function(event) {
-                event.preventDefault();
+          document.getElementById('editTrigger').addEventListener('click', function(event) {
+    event.preventDefault();
 
-                const imageBox = document.getElementById('imageBox');
-                let input = document.getElementById('editInput');
+    const textStyleControls = document.getElementById('textStyleControls');
 
-                if (!input) {
-                    input = createTextInput();
-                    imageBox.appendChild(input);
-                }
-                const textStyleControls = document.getElementById('textStyleControls');
-                textStyleControls.style.display = 'flex';
-                input.focus();
-            });
+    // Toggle la visibilité des contrôles de style de texte
+    textStyleControls.style.display = textStyleControls.style.display === 'flex' ? 'none' : 'flex';
+
+    let input = document.getElementById('editInput');
+    if (!input) {
+        input = createTextInput();
+        document.getElementById('imageBox').appendChild(input);
+        input.focus();
+    }
+});
+
+function createTextInput() {
+    const input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    input.setAttribute('id', 'editInput');
+    applyDefaultInputStyles(input);
+    return input;
+}
 
             function createTextInput() {
                 const input = document.createElement('input');
@@ -515,7 +524,9 @@
                 const input = document.getElementById('editInput');
                 input.style.fontSize = e.target.value;
             });
+
         </script>
+       
 
 </body>
 
