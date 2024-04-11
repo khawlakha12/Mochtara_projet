@@ -260,17 +260,25 @@
                         <div class="card" style="height: 80vh; width: 50vw; background: #ffff;">
                             <div class="card-body d-flex justify-content-center align-items-center"
                                 style="position: relative;">
+
                                 <div id="imageBox" class="box" style="height: 50%; width: 50%;">
+
                                     <span></span>
                                     <span></span>
                                     <span></span>
-                                    <span></span>
+                                    <span>
+                                        <div id="uploadedImageContainer"
+                                            style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; justify-content: center; align-items: center;">
+                                        </div>
+                                    </span>
                                 </div>
+
                                 <a href="#" id="uploadTrigger"
                                     class="button secondary d-flex justify-content-center align-items-center"
                                     style="position: absolute; bottom: 20px; right: 20px;">
                                     <i class="fas fa-plus"></i>
                                 </a>
+                                <input type="file" id="fileUpload" style="display: none;" />
                                 <a href="#" id="editTrigger"
                                     class="button secondary d-flex justify-content-center align-items-center"
                                     style="position: absolute; bottom: 20px; left: 20px;">
@@ -278,7 +286,6 @@
                                 </a>
                             </div>
                         </div>
-                        <input type="file" id="fileUpload" style="display: none;" />
                         <div class="image-group d-flex flex-column" style="margin-left: 10px;">
                             <img src="img/9obya.png" alt="Image 5"
                                 style="width:120px; height:120px; object-fit: cover; margin-bottom: 10px;">
@@ -404,53 +411,69 @@
                         application: "black-dashboard-free"
                     });
             </script>
+{{-- -----------------------------upload image------------------------------ --}}
             <script>
-                document.getElementById('uploadTrigger').addEventListener('click', function() {
-                    document.getElementById('fileUpload').click();
-                });
+               document.getElementById('uploadTrigger').addEventListener('click', function() {
+    // Effacez seulement le contenu de l'input de texte s'il existe
+    const editTextInput = document.getElementById('editInput');
+    if (editTextInput) {
+        editTextInput.value = ''; // Effacez le texte
+    }
 
-                document.getElementById('fileUpload').addEventListener('change', function(event) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
+    // Déclenchez le clic sur l'input de fichier caché
+    document.getElementById('fileUpload').click();
+});
+
+document.getElementById('fileUpload').addEventListener('change', function(event) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+        // Créez et ajoutez la nouvelle image
+        const newImage = new Image();
+        newImage.src = e.target.result;
+        newImage.style.maxWidth = '100%';
+        newImage.style.maxHeight = '100%';
+
+        const imageContainer = document.getElementById('uploadedImageContainer');
+        imageContainer.innerHTML = ''; // Assurez-vous que le conteneur est vide avant d'ajouter la nouvelle image
+        imageContainer.appendChild(newImage);
+    };
+    reader.readAsDataURL(event.target.files[0]);
+});
+
+            </script>
+{{-- -----------------------------écrire text------------------------------ --}}
+            <script>
+                document.getElementById('editTrigger').addEventListener('click', function(event) {
+                    event.preventDefault();
+                    const imageBox = document.getElementById('imageBox');
+                    const images = imageBox.querySelectorAll('img');
+                    images.forEach(img => img.remove());
+
+                    let input = document.getElementById('editInput');
+                    if (!input) {
+                        input = document.createElement('input');
+                        input.setAttribute('type', 'text');
+                        input.setAttribute('id', 'editInput');
+                        input.style.position = 'absolute';
+                        input.style.top = '0';
+                        input.style.left = '0';
+                        input.style.right = '0';
+                        input.style.height = '100%';
+                        input.style.width = '100%';
+                        input.style.opacity = '0.5';
+                        input.style.zIndex = '10';
+                        input.style.color = 'black';
+                        input.style.paddingLeft = '20px';
+                        input.style.paddingRight = '20px';
+                        input.style.backgroundColor = 'rgba(255, 255, 255, 0)';
                         const imageBox = document.getElementById('imageBox');
-                        imageBox.style.backgroundImage = `url('${e.target.result}')`;
-                        imageBox.style.backgroundSize = 'cover';
-                        imageBox.style.backgroundPosition = 'center';
-                        // Effacer le contenu précédent si nécessaire
-                        imageBox.innerHTML = '';
-                    };
-                    reader.readAsDataURL(event.target.files[0]);
+                        imageBox.style.position = 'relative';
+                        imageBox.appendChild(input);
+
+                        input.focus();
+                    }
                 });
             </script>
-
-<script>
-    document.getElementById('editTrigger').addEventListener('click', function(event) {
-        event.preventDefault();
-        let input = document.getElementById('editInput');
-        if (!input) {
-            input = document.createElement('input');
-            input.setAttribute('type', 'text');
-            input.setAttribute('id', 'editInput');
-            input.style.position = 'absolute';
-            input.style.top = '0';
-            input.style.left = '0';
-            input.style.right = '0'; 
-            input.style.height = '100%';
-            input.style.width = '100%';
-            input.style.opacity = '0.5';
-            input.style.zIndex = '10';
-            input.style.color = 'black'; 
-            input.style.paddingLeft = '20px';
-            input.style.paddingRight = '20px';
-            input.style.backgroundColor = 'rgba(255, 255, 255, 0)'; 
-            const imageBox = document.getElementById('imageBox');
-            imageBox.style.position = 'relative';
-            imageBox.appendChild(input);
-
-            input.focus();
-        }
-    });
-</script>
 
 
 </body>
