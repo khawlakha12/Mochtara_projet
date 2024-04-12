@@ -402,29 +402,26 @@
             }
         }
     </script>
-
+{{-- ------------------------------modifier name------------------------------------- --}}
 <script>
     $(document).ready(function() {
         $('form[id^="editForm"]').on('submit', function(e) {
             e.preventDefault();
             var formId = this.id;
-            var productId = formId.replace('editForm', ''); // Extract the product ID
+            var productId = formId.replace('editForm', ''); 
             var newName = $('#name' + productId).val();
-    
             $.ajax({
-                url: '/products/' + productId + '/update', // Adjust URL as needed
+                url: '/products/' + productId + '/update', 
                 method: 'POST',
                 data: {
                     _token: '{{ csrf_token() }}',
                     name: newName,
                 },
                 success: function(response) {
-                    // Handle success - maybe close modal and show a success message
                     $('#editModal' + productId).modal('hide');
                     alert('Product updated successfully!');
                 },
                 error: function(response) {
-                    // Handle error
                     alert('Error updating product');
                 }
             });
