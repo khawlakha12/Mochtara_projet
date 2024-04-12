@@ -133,6 +133,9 @@
                         <div class="card ">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title">Table Product</h4>
+                                <a href="#"><button type="button" class="btn btn-info btn-circle btn-xl" >
+                                    <i class="fa fa-plus"></i>
+                                </button></a>
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
@@ -140,44 +143,37 @@
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
-                                                    Id Design
+                                                    Id Produit
                                                 </th>
                                                 <th class="text-center">
                                                     image
                                                 </th>
                                                 <th class="text-center">
-                                                    Catégories
+                                                    Name
                                                 </th>
                                                 <th class="text-center">
-                                                  Validé
+                                                  Prix
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach ($designs as $design)
+                                          
                                             <tr>
                                                 <td class="text-center">
-                                                    {{ $loop->iteration }}
+                                                    1
                                                 </td>
                                                 <td class="text-center">
-                                                    <img src="{{ asset('storage/' . $design->img) }}" class="" alt="Cinque Terre"
+                                                    <img src="#" class="" alt="Cinque Terre"
                                                         style="height:50px;width:50px;">
                                                 </td>
                                                 <td class="text-center">
-                                                    <div class="container mt-5">
-                                                        <select class="selectpicker" multiple aria-label="Default select example" data-live-search="true">
-                                                            @foreach($categories as $category)
-                                                          <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                                          @endforeach
-                                                        </select>
-                                                      </div>
+                                                    ddddd
                                                 </td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn btn-labeled btn-success">
-                                                        <span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Success</button>
+                                                   100MAD
                                                 </td>
                                             </tr>
-                                            @endforeach
+                                            
                                         </tbody>
                                     </table>
                                 </div>
