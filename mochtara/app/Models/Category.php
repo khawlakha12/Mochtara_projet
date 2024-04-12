@@ -9,5 +9,8 @@ class Category extends Model
 {
     use HasFactory;
     protected $fillable = ['name', 'image', 'sizes', 'colors'];
-
+    public function products()
+    {
+        return $this->hasMany('App\Models\Product', 'category_id', 'id');
+    }
 }

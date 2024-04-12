@@ -79,7 +79,8 @@ Route::get('/search/products', [ProductController::class, 'search'])->name('sear
 
 //-----------------------------Contact---------------------------------//
 
-
+Route::post('/new_product', [ProductController::class, 'addProduct'])->name('addProduct');
+Route::get('/new_product', [ProductController::class, 'showProducts'])->name('showProducts');
 //-----------------------------Test Angular---------------------------------//
 Route::get('/angular', function() {
     return view('Angular.angular');

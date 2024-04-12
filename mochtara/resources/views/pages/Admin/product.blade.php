@@ -128,12 +128,76 @@
             </div>
             <!-- End Navbar -->
             <div class="content">
+                  <!-- Modal -->
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                          <div class="modal-content">
+                              <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalLabel">Ajouter Produit</h5>
+                                  <button type="button" class="close" data-dismiss="modal"
+                                      aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                <form action="{{ route('addProduct') }}" method="post" enctype="multipart/form-data">
+                                    @csrf
+                                  <div>
+                                      <div class="mb-4 d-flex justify-content-center">
+                                          <img id="selectedImage"
+                                              src="https://mdbootstrap.com/img/Photos/Others/placeholder.jpg"
+                                              alt="example placeholder" style="width: 300px;" />
+                                      </div>
+                                      <div class="d-flex justify-content-center">
+                                          <div class="btn btn-primary btn-rounded">
+                                              <label class="form-label text-white m-1"
+                                                  for="customFile1">Choose file</label>
+                                              <input type="file" class="form-control d-none"
+                                                  id="customFile1" name="image"
+                                                  onchange="displaySelectedImage(event, 'selectedImage')" />
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label for="exampleInputEmail1"
+                                              style="color:black">Name</label>
+                                          <input type="text" class="form-control"
+                                              id="exampleInputEmail1" name="name" aria-describedby="emailHelp"
+                                              placeholder="Enter Name" style="color: black;">
+                                      </div>
+                                      <div class="form-group">
+                                        <label for="categorySelect" style="color: black;">Category</label>
+                                        <select class="form-control" id="categorySelect" name="category_id">
+                                            <option value="">Select a category</option>
+                                            @foreach ($categories as $category)
+                                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="priceInput" style="color: black;">Price</label>
+                                        <input type="number" class="form-control" id="priceInput" name="price"
+                                            placeholder="Enter price" style="color: black;">
+                                    </div>
+                                  </div>
+                              </div>
+                              <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary"
+                                      data-dismiss="modal">Close</button>
+                                  <button type="submit" class="btn btn-primary">Ajouter
+                                      Produit</button>
+                              </div>
+                          </div>
+                        </form>
+                  </div>
+              </div>
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header d-flex justify-content-between align-items-center">
                                 <h4 class="card-title">Table Product</h4>
-                                <a href="#"><button type="button" class="btn btn-info btn-circle btn-xl" >
+                                <a href="#"><button type="button" class="btn btn-info btn-circle btn-xl" data-toggle="modal"
+                                    data-target="#exampleModal" >
                                     <i class="fa fa-plus"></i>
                                 </button></a>
                             </div>
@@ -143,13 +207,13 @@
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
-                                                    Id Produit
-                                                </th>
-                                                <th class="text-center">
                                                     image
                                                 </th>
                                                 <th class="text-center">
                                                     Name
+                                                </th>
+                                                <th class="text-center">
+                                                    Categorie
                                                 </th>
                                                 <th class="text-center">
                                                   Prix
@@ -157,23 +221,23 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                          
+                                            @foreach ($products as $product)
                                             <tr>
                                                 <td class="text-center">
-                                                    1
+                                                    <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" style="height:50px;width:50px;">
+
                                                 </td>
                                                 <td class="text-center">
-                                                    <img src="#" class="" alt="Cinque Terre"
-                                                        style="height:50px;width:50px;">
+                                                    {{ $product->name }} 
                                                 </td>
                                                 <td class="text-center">
-                                                    ddddd
+                                                    {{ $product->category->name }}
                                                 </td>
                                                 <td class="text-center">
-                                                   100MAD
+                                                    {{ $product->price }} MAD
                                                 </td>
                                             </tr>
-                                            
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
@@ -290,7 +354,20 @@
                         });
                 </script>
 
+    {{-- --------------------------------- script de change image ----------------------------------- --}}
+    <script>
+        function displaySelectedImage(event, imgElementId) {
+            const selectedImageElement = document.getElementById(imgElementId);
+            if (event.target.files && event.target.files[0]) {
+                const reader = new FileReader();
 
+                reader.onload = function(e) {
+                    selectedImageElement.src = e.target.result;
+                }
+                reader.readAsDataURL(event.target.files[0]);
+            }
+        }
+    </script>
 
 
 </body>
