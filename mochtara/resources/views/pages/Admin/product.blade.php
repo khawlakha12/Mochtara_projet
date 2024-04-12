@@ -218,6 +218,9 @@
                                                 <th class="text-center">
                                                   Prix
                                                 </th>
+                                                <th class="text-center">
+                                                    Gérer
+                                                  </th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -236,7 +239,38 @@
                                                 <td class="text-center">
                                                     {{ $product->price }} MAD
                                                 </td>
+                                                <td class="text-center">
+                                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#editModal{{ $product->id }}">Modifier</a>
+                                                    <form action="{{ route('products.destroy', $product->id) }}" method="POST" style="display: inline-block;">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Supprimer</button>
+                                                    </form>
+                                                    
+                                                </td>
                                             </tr>
+                                            <div class="modal fade" id="editModal{{ $product->id }}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel{{ $product->id }}" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="editModalLabel{{ $product->id }}">Edit Product</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <form id="editForm{{ $product->id }}">
+                                                                @csrf
+                                                                <div class="form-group">
+                                                                    <label for="name{{ $product->id }}">Product Name</label>
+                                                                    <input type="text" class="form-control" id="name{{ $product->id }}" name="name" value="{{ $product->name }}" required>
+                                                                </div>
+                                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -369,6 +403,35 @@
         }
     </script>
 
+<script>
+    $(document).ready(function() {
+        $('form[id^="editForm"]').on('submit', function(e) {
+            e.preventDefault();
+            var formId = this.id;
+            var productId = formId.replace('editForm', ''); // Extract the product ID
+            var newName = $('#name' + productId).val();
+    
+            $.ajax({
+                url: '/products/' + productId + '/update', // Adjust URL as needed
+                method: 'POST',
+                data: {
+                    _token: '{{ csrf_token() }}',
+                    name: newName,
+                },
+                success: function(response) {
+                    // Handle success - maybe close modal and show a success message
+                    $('#editModal' + productId).modal('hide');
+                    alert('Product updated successfully!');
+                },
+                error: function(response) {
+                    // Handle error
+                    alert('Error updating product');
+                }
+            });
+        });
+    });
+    </script>
+    
 
 </body>
 

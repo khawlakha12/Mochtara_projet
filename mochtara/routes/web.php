@@ -77,10 +77,13 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 //-----------------------------Shop---------------------------------//
 Route::get('/search/products', [ProductController::class, 'search'])->name('search.products');
 
-//-----------------------------Contact---------------------------------//
-
-Route::post('/new_product', [ProductController::class, 'addProduct'])->name('addProduct');
+//-----------------------------Products---------------------------------//
 Route::get('/new_product', [ProductController::class, 'showProducts'])->name('showProducts');
+Route::post('/new_product', [ProductController::class, 'addProduct'])->name('addProduct');
+Route::delete('/new_product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
+
+
 //-----------------------------Test Angular---------------------------------//
 Route::get('/angular', function() {
     return view('Angular.angular');
