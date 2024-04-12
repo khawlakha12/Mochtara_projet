@@ -86,13 +86,6 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navigation">
                         <ul class="navbar-nav ml-auto">
-                            <li class="search-bar input-group">
-                                <button class="btn btn-link" id="search-button" data-toggle="modal"
-                                    data-target="#searchModal"><i class="tim-icons icon-zoom-split"></i>
-                                    <span class="d-lg-none d-md-block">Search</span>
-                                </button>
-                            </li>
-
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
@@ -138,7 +131,7 @@
                     <div class="col-md-12">
                         <div class="card ">
                             <div class="card-header d-flex justify-content-between align-items-center">
-                                <h4 class="card-title mb-0">Table produits</h4>
+                                <h4 class="card-title mb-0">Categories</h4>
                                 <button type="button" class="btn btn-info btn-circle btn-xl" data-toggle="modal"
                                     data-target="#exampleModal">
                                     <i class="fa fa-plus"></i>
