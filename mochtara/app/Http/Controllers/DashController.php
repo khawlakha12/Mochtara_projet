@@ -56,11 +56,20 @@ public function deleteCategory(Category $category)
 // -----------------------------designs------------------------------ //
 public function store(Request $request)
 {
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'price' => 'required|numeric',
+        'image' => 'required|image'
+    ]);
+
     if ($request->hasFile('image')) {
         $path = $request->file('image')->store('designs', 'public');
         Design::create([
-            'img' => $path
+            'img' => $path,
+            'name' => $request->name,
+            'price' => $request->price
         ]);
+
         return back()->with('success', 'Design saved successfully.');
     } else {
         return back()->with('error', 'No image was uploaded.');

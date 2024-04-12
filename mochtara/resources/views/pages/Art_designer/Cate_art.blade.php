@@ -40,7 +40,7 @@
                                                         style="height:50px;width:50px;">
                                                 </td>
                                                 <td class="text-center">
-                                                    Design1
+                                                    {{$design->price}}MAD
                                                 </td>
                                                 <td class="text-center">
                                                     <form action="{{ route('designs.destroy', $design->id) }}" method="POST">

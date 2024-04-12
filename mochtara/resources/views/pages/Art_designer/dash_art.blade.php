@@ -71,8 +71,39 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-center" style="width: 100%;">
-                            <a href="#"><button type="submit" class="bn30">Save</button></a>
+                            <a href="#"><button type="button" class="bn30" data-toggle="modal" data-target="#saveDesignModal">Save</button>
+                            </a>
                         </div>
+                        <!-- Modal for entering name and price -->
+<div class="modal fade" id="saveDesignModal" tabindex="-1" role="dialog" aria-labelledby="saveDesignModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="saveDesignModalLabel">Enter Design Details</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="saveDesignForm">
+            <div class="form-group">
+              <label for="designName">Name</label>
+              <input type="text" class="form-control" id="designName" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="designPrice">Price</label>
+              <input type="number" step="0.01" class="form-control" id="designPrice" name="price" required>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary" onclick="submitDesign()">Save Design</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
                 </form>
             </div>
 
@@ -322,7 +353,30 @@
     scrollImages();
 </script>
 
-
+<script>
+    function submitDesign() {
+        // Get the values from the inputs
+        var name = document.getElementById('designName').value;
+        var price = document.getElementById('designPrice').value;
+        var form = document.querySelector('form[action="{{ route('designs.store') }}"]');
+        var inputName = document.createElement('input');
+        inputName.type = 'hidden';
+        inputName.name = 'name';
+        inputName.value = name;
+        var inputPrice = document.createElement('input');
+        inputPrice.type = 'hidden';
+        inputPrice.name = 'price';
+        inputPrice.value = price;
+        
+        // Append these inputs to the form
+        form.appendChild(inputName);
+        form.appendChild(inputPrice);
+        
+        // Submit the form
+        form.submit();
+    }
+    </script>
+    
 
 </body>
 
