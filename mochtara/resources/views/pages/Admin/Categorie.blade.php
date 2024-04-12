@@ -292,35 +292,31 @@
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
-                                                    Id Design
+                                                    Name
                                                 </th>
                                                 <th class="text-center">
                                                     image
                                                 </th>
                                                 <th class="text-center">
-                                                    title
-                                                </th>
-                                                <th class="text-center">
-                                                    Supprime
+                                                    Prix
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($designs as $design)
                                             <tr>
                                                 <td class="text-center">
-                                                    1
+                                                    {{$design->name}}
                                                 </td>
                                                 <td class="text-center">
-                                                    <img src="img/design2.png" class="" alt="Cinque Terre"
+                                                    <img src="{{ asset('storage/' . $design->img) }}" class="" alt="Cinque Terre"
                                                         style="height:50px;width:50px;">
                                                 </td>
                                                 <td class="text-center">
-                                                    Design1
-                                                </td>
-                                                <td class="text-center">
-                                                    <button class="btn btn-danger btn-block"> Supprimer </button>
+                                                    {{$design->price}}MAD
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

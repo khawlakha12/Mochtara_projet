@@ -88,11 +88,11 @@
           <form id="saveDesignForm">
             <div class="form-group">
               <label for="designName">Name</label>
-              <input type="text" class="form-control" id="designName" name="name" required>
+              <input type="text" class="form-control" id="designName" name="name" style="color: black;" required>
             </div>
             <div class="form-group">
               <label for="designPrice">Price</label>
-              <input type="number" step="0.01" class="form-control" id="designPrice" name="price" required>
+              <input type="number" step="0.01" class="form-control" id="designPrice" style="color: black;"name="price" required>
             </div>
           </form>
         </div>
@@ -355,7 +355,7 @@
 
 <script>
     function submitDesign() {
-        // Get the values from the inputs
+
         var name = document.getElementById('designName').value;
         var price = document.getElementById('designPrice').value;
         var form = document.querySelector('form[action="{{ route('designs.store') }}"]');
@@ -368,11 +368,9 @@
         inputPrice.name = 'price';
         inputPrice.value = price;
         
-        // Append these inputs to the form
         form.appendChild(inputName);
         form.appendChild(inputPrice);
-        
-        // Submit the form
+
         form.submit();
     }
     </script>
