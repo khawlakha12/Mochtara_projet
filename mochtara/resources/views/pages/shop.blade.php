@@ -142,11 +142,13 @@
     <section class="mt-4 flex justify-center ">
         <div class="search-box">
             <button class="btn-search"><i class="fas fa-search"></i></button>
-            <input type="text" class="input-search" placeholder="Type to Search...">
+            <input type="text" class="input-search" placeholder="Type to Search..." id="searchInput">
         </div>
     </section>
     <!-- ======= Gallery Section ======= -->
+    <div id="productContainer">
     <x-product />
+</div>
 </main>
 <x-footer />
 
@@ -158,6 +160,23 @@
 </div>
 
 <x-link_script />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    $('#searchInput').on('keyup', function() {
+        var query = $(this).val(); // Get the value of the search input
+        $.ajax({
+            url: "{{ route('search.products') }}", // Adjust the route as needed
+            method: 'GET',
+            data: { search: query },
+            success: function(response) {
+                $('#productContainer').html(response); // Update the product container with the response
+            }
+        });
+    });
+});
+</script>
+
 
 </body>
 

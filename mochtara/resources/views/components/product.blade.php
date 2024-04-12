@@ -8,54 +8,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        /* Style général du modal pour le fond et le texte */
 .modal-content {
-  background-color: #000; /* Fond noir */
-  color: #fff; /* Texte blanc */
+  background-color: #000;
+  color: #fff; 
 }
 
-/* Style pour les titres à l'intérieur du modal */
+
 .modal-title, .Price, h3 {
   color: #fff;
 }
 
-/* Style pour le bouton 'Close' */
 .btn-close {
-  filter: invert(1); /* Inverse les couleurs pour mieux voir le bouton sur fond noir */
+  filter: invert(1); 
 }
 
-/* Style pour les boutons 'Save changes' et 'Close' */
 .modal-footer .btn {
-  border-color: #fff; /* Bordure blanche */
+  border-color: #fff; 
 }
 
-/* Style pour les boutons 'Pre-Order' */
 .Button.Primary {
-  background-color: #27a776; /* Arrière-plan vert */
-  color: #000; /* Texte noir */
+  background-color: #27a776; 
+  color: #000; 
   border: none;
 }
-
-/* Style pour le texte et les petites notes */
 p, small {
   color: #fff;
 }
-
-/* Style pour les étiquettes des options */
 label {
   color: #fff;
 }
 
-/* Style pour le fond des champs de sélection et des entrées */
 input[type="radio"], select {
-  background-color: #333; /* Gris foncé */
+  background-color: #333; 
   color: #fff;
   border: 1px solid #777;
 }
-
-/* Style pour les étiquettes des champs de sélection et des entrées */
 .TagToggle label, #quantity-list label {
-  background-color: #444; /* Gris un peu plus clair */
+  background-color: #444;
   color: #fff;
   padding: 5px 10px;
   border-radius: 5px;
@@ -75,7 +64,7 @@ input[type="radio"], select {
                 class="absolute top-0 left-0 w-28 translate-y-4 -translate-x-6 -rotate-45 bg-black text-center text-sm text-white">Sale</span>
             <div class="mt-3 px-3 pb-5">
                 <a href="#">
-                    <h5 class="text-lg font-semibold tracking-tight text-slate-900">Nike Air MX Super 5000</h5>
+                    <h5 class="text-lg font-semibold tracking-tight text-slate-900" name="name">Nike Air MX Super 5000</h5>
                 </a>
                 <div class="mt-2.5 mb-3 flex items-center">
                     <span class="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">5.0</span>

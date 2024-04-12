@@ -7,6 +7,7 @@ use App\Http\Controllers\loginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\DashController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,20 +57,25 @@ Route::get('/profile_designer', function() {
     return view('pages.Art_designer.profile');
 });
 Route::get('/new_product', function() {
-    return view('pages.Art_designer.product');
+    return view('pages.Admin.product');
 });
+
 //---------------------------Register---------------------------------//
 Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
 Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
+
 //---------------------------Login---------------------------------//
 Route::get('/log', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/log', [loginController::class, 'login'])->name('login.submit');
+
 //-----------------------------Forgot Password---------------------------------//
 Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
 Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
 Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
 Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 //-----------------------------Shop---------------------------------//
+Route::get('/search/products', [ProductController::class, 'search'])->name('search.products');
 
 //-----------------------------Contact---------------------------------//
 
@@ -78,13 +84,16 @@ Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('
 Route::get('/angular', function() {
     return view('Angular.angular');
 });
+
 //-----------------------------Crud Users---------------------------------//
 Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
 Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('user.delete');
+
 //-----------------------------Crud categories---------------------------------//
 Route::post('/add-category', [DashController::class, 'addCategory'])->name('add.categorie');
 Route::get('/Categories', [DashController::class, 'ShowCategorie'])->name('categorie');
 Route::delete('/categories/{category}', [DashController::class, 'deleteCategory'])->name('categories.delete');
+
 //-----------------------------Design---------------------------------//
 Route::get('/Categ', [DashController::class, 'show_design']);
 Route::delete('/new_design/{id}', [DashController::class, 'destroy_design'])->name('designs.destroy');

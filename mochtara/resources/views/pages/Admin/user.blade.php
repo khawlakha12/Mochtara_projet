@@ -53,11 +53,11 @@
             </a>
           </li>
           <li>
-            <a href="/arabe">
-              <i class="tim-icons icon-world"></i>
-              <p>RTL Support</p>
+            <a href="/new_product">
+                <i class="fas fa-box"></i>
+                <p>Product</p>
             </a>
-          </li>
+        </li>
         </ul>
       </div>
     </div>
