@@ -120,8 +120,8 @@
 
     <style>
         .pagination {
-          width: 490px;
-          height: 66px;
+          width: 400px;
+          height: 60px;
           background: #27a776;
           border-radius: 50px;
           box-shadow: inset 5px 5px 1px #717171, inset -5px -5px 1px #ffffff;
@@ -131,12 +131,12 @@
           margin: 0 auto; 
         }
         
-        ul {
+        .x {
           margin: 0 auto;
           text-align: center;
         }
         
-        ul li {
+        .x li {
           display: inline-block;
           list-style-type: none;
           margin-left: 5px;
@@ -151,12 +151,12 @@
           transition: all .5s ease-in-out;
         }
         
-        ul li:hover,
-        button:hover {
+        .x li:hover,
+        .y:hover {
           transform: scale(0.96);
         }
         
-        button {
+        .y {
           line-height: 35px;
           width: 75px;
           border: 0;
@@ -166,7 +166,7 @@
           transition: all .5s ease-in-out;
         }
         
-        ul .active {
+        .x .active {
           background-image: linear-gradient(90deg, #090909, #020202);
           background-repeat: no-repeat;
           color: #fff;
@@ -178,11 +178,11 @@
             padding: 1em 1.2em;
           }
         
-          button {
+          .y {
             width: 60px;
           }
         
-          ul li:last-child {
+          .x li:last-child {
             display: none;
           }
         }
@@ -219,9 +219,9 @@
     <x-product />
 </div>
 <div class="pagination">
-    <button id="previous">Prev</button>
-    <ul id="pagination-controls"></ul>
-    <button id="next">Next</button>
+    <button class="y" id="previous">Prev</button>
+    <ul class="x" id="pagination-controls"></ul>
+    <button class="y" id="next">Next</button>
 </div>
 
 </main>
@@ -276,10 +276,10 @@
         });
     });
 </script>
-    
+ {{-- -------------------Pagination------------------- --}}   
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const productsPerPage = 4;
+        const productsPerPage = 12;
         const container = document.getElementById('products-container');
         const products = Array.from(container.getElementsByClassName('product'));
         const paginationControls = document.getElementById('pagination-controls');
@@ -287,7 +287,7 @@
     
         function renderPaginationControls() {
             const pageCount = Math.ceil(products.length / productsPerPage);
-            paginationControls.innerHTML = ''; // Clear existing controls
+            paginationControls.innerHTML = ''; 
             for (let i = 1; i <= pageCount; i++) {
                 const li = document.createElement('li');
                 li.textContent = i;
@@ -331,7 +331,7 @@
         };
     
         renderPaginationControls();
-        showPage(1); // Show first page initially
+        showPage(1); 
     });
     </script>
     
