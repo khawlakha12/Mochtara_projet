@@ -53,8 +53,6 @@
         border-radius: 10px;
         padding: 5px 10px;
     }
-</style>
-<style>
     .search-box {
         width: fit-content;
         height: fit-content;
@@ -175,6 +173,39 @@
         });
     });
 </script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Attach click event to all category links
+        document.querySelectorAll('.category-link').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var selectedCategory = this.dataset.category; // Get the category from data-category attribute
+    
+                // Iterate over all product divs
+                document.querySelectorAll('.product').forEach(function(product) {
+                    if (product.dataset.category === selectedCategory) {
+                        product.style.display = ''; // Show this product
+                    } else {
+                        product.style.display = 'none'; // Hide this product
+                    }
+                });
+            });
+        });
+    
+        // Optionally, you can add an 'All' category functionality
+        var allLink = document.createElement('li');
+        allLink.innerHTML = '<a href="javascript:void(0);" class="category-link" data-category="all">All</a>';
+        document.querySelector('ul').appendChild(allLink);
+    
+        allLink.addEventListener('click', function() {
+            // Show all products
+            document.querySelectorAll('.product').forEach(function(product) {
+                product.style.display = '';
+            });
+        });
+    });
+    </script>
     
     
 

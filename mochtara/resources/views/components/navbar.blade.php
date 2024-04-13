@@ -43,7 +43,7 @@
           <li class="dropdown"><a href="/shop"><span>shop</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>
             <ul>
               @foreach($categories as $category)
-              <li><a href="#">{{ $category->name }}</a></li>
+              <li><a  href="javascript:void(0);" class="category-link" data-category="{{ $category->name }}">{{ $category->name }}</a></li>
               @endforeach
             </ul>
           </li>

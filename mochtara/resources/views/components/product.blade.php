@@ -13,7 +13,7 @@
 <body>
 
         @foreach ($products as $product)
-        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;">
+        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;"data-category="{{ $product->category->name }}">
 
             <a href="#">
                 <img class=" rounded-t-lg object-cover" style="height: 60%;width:95%;"
