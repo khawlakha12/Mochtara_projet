@@ -174,32 +174,25 @@
     });
 </script>
 
-
+{{-- -------------------Filter par Catégorie------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Attach click event to all category links
         document.querySelectorAll('.category-link').forEach(function(link) {
             link.addEventListener('click', function() {
-                var selectedCategory = this.dataset.category; // Get the category from data-category attribute
-    
-                // Iterate over all product divs
+                var selectedCategory = this.dataset.category; 
                 document.querySelectorAll('.product').forEach(function(product) {
                     if (product.dataset.category === selectedCategory) {
-                        product.style.display = ''; // Show this product
+                        product.style.display = ''; 
                     } else {
-                        product.style.display = 'none'; // Hide this product
+                        product.style.display = 'none'; 
                     }
                 });
             });
         });
-    
-        // Optionally, you can add an 'All' category functionality
         var allLink = document.createElement('li');
         allLink.innerHTML = '<a href="javascript:void(0);" class="category-link" data-category="all">All</a>';
         document.querySelector('ul').appendChild(allLink);
-    
         allLink.addEventListener('click', function() {
-            // Show all products
             document.querySelectorAll('.product').forEach(function(product) {
                 product.style.display = '';
             });

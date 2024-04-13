@@ -13,10 +13,10 @@
 <body>
 
         @foreach ($products as $product)
-        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;"data-category="{{ $product->category->name }}">
+        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;" data-category="{{ $product->category->name }}">
 
-            <a href="#">
-                <img class=" rounded-t-lg object-cover" style="height: 60%;width:95%;"
+            <a href="#" style="display: flex; justify-content: center; align-items: center; width: 100%; height: 60%; margin: auto; text-decoration: none;">
+                <img class="rounded-t-lg" style="width: 90%; height: 95%; object-fit: cover; border-radius: 8px;"
                     src="{{ asset('storage/' . $product->image) }}"
                     alt="{{ $product->name }}" />
             </a>
