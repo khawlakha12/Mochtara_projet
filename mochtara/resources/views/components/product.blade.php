@@ -7,57 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <style>
-        .modal-content {
-            background-color: #000;
-            color: #fff;
-        }
-
-
-        .modal-title,
-        .Price,
-        h3 {
-            color: #fff;
-        }
-
-        .btn-close {
-            filter: invert(1);
-        }
-
-        .modal-footer .btn {
-            border-color: #fff;
-        }
-
-        .Button.Primary {
-            background-color: #27a776;
-            color: #000;
-            border: none;
-        }
-
-        p,
-        small {
-            color: #fff;
-        }
-
-        label {
-            color: #fff;
-        }
-
-        input[type="radio"],
-        select {
-            background-color: #333;
-            color: #fff;
-            border: 1px solid #777;
-        }
-
-        .TagToggle label,
-        #quantity-list label {
-            background-color: #444;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-    </style>
+    
 </head>
 
 <body>

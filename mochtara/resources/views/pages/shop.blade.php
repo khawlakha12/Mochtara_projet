@@ -160,7 +160,7 @@
 </div>
 
 <x-link_script />
-
+{{-- -------------------Recherche name------------------- --}}
 <script>
     document.getElementById('searchInput').addEventListener('keyup', function() {
         let searchValue = this.value.toLowerCase();
@@ -174,7 +174,7 @@
             }
         });
     });
-    </script>
+</script>
     
     
 
