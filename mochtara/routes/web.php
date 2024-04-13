@@ -82,6 +82,8 @@ Route::get('/new_product', [ProductController::class, 'showProducts'])->name('sh
 Route::post('/new_product', [ProductController::class, 'addProduct'])->name('addProduct');
 Route::delete('/new_product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
+Route::get('/new_product', [ProductController::class, 'search'])->name('products.search');
+
 
 
 //-----------------------------Test Angular---------------------------------//

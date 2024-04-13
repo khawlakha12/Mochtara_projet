@@ -51,5 +51,18 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('showProducts')->with('success', 'Product deleted successfully.');
     }
+    public function search(Request $request)
+    {
+        \Log::info('Received search query', ['query' => $request->query('query')]);
+        $query = $request->query('query');
+    
+        $products = Product::where('name', 'LIKE', '%' . $query . '%')
+                           ->orWhere('price', 'LIKE', '%' . $query . '%')
+                           ->get();
+    
+        \Log::info('Products found', ['count' => $products->count()]); 
+        return view('pages.shop', ['products' => $products]);
+    }
+    
 
 }

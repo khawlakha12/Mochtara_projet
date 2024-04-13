@@ -141,12 +141,12 @@
     <!-- ======= Search Section ======= -->
     <section class="mt-4 flex justify-center ">
         <div class="search-box">
-            <button class="btn-search"><i class="fas fa-search"></i></button>
-            <input type="text" class="input-search" placeholder="Type to Search..." id="searchInput">
+            <button class="btn-search" ><i class="fas fa-search"></i></button>
+            <input type="text" class="input-search" id="searchInput" placeholder="Type to Search...">
         </div>
     </section>
     <!-- ======= Gallery Section ======= -->
-    <div id="productContainer">
+    <div class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-10 mb-5">
     <x-product />
 </div>
 </main>
@@ -160,23 +160,23 @@
 </div>
 
 <x-link_script />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
-$(document).ready(function() {
-    $('#searchInput').on('keyup', function() {
-        var query = $(this).val(); // Get the value of the search input
-        $.ajax({
-            url: "{{ route('search.products') }}", // Adjust the route as needed
-            method: 'GET',
-            data: { search: query },
-            success: function(response) {
-                $('#productContainer').html(response); // Update the product container with the response
+    document.getElementById('searchInput').addEventListener('keyup', function() {
+        let searchValue = this.value.toLowerCase();
+        let products = document.querySelectorAll('.product'); 
+        products.forEach(function(product) {
+            let productName = product.querySelector('[name="name"]').textContent.toLowerCase();
+            if (productName.includes(searchValue)) {
+                product.style.display = ''; 
+            } else {
+                product.style.display = 'none'; 
             }
         });
     });
-});
-</script>
-
+    </script>
+    
+    
 
 </body>
 

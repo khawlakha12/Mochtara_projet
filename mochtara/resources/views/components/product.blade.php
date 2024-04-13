@@ -61,10 +61,10 @@
 </head>
 
 <body>
-    <section id="Projects"
-        class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2 justify-items-center justify-center gap-x-14 mt-10 mb-5">
+
         @foreach ($products as $product)
-        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md " style="height: 74%;width:78%;">
+        <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;">
+
             <a href="#">
                 <img class=" rounded-t-lg object-cover" style="height: 60%;width:95%;"
                     src="{{ asset('storage/' . $product->image) }}"
@@ -183,7 +183,7 @@
                 </div>
             </div>
         </div>
-    </section>
+
 </body>
 
 </html>
