@@ -50,6 +50,13 @@
         height: auto;
     }
 </style>
+<style>
+    #imageContainer img {
+    width: 100%;  /* Make the image take up the full container width */
+    height: 100%; /* Make the image take up the full container height */
+    object-fit: contain; /* Preserve the aspect ratio of the image */
+}
+</style>
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500" ng-app="">
@@ -58,15 +65,14 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 d-flex justify-content-center align-items-center me-md-4">
                     <x-designs />
-                    <div class="flex flex-col">
-                        <img src="https://ih1.redbubble.net/image.118280665.8973/sticker,375x360.u2.png" alt=""
-                            class="image-select mr-2 mb-2 h-24 w-24">
-                        <img src="https://ih1.redbubble.net/image.1608462008.4940/raf,360x360,075,t,fafafa:ca443f4786.jpg"
-                            alt="" class="image-select mr-2 mb-2 h-24 w-24">
-                        <img src="https://w7.pngwing.com/pngs/212/521/png-transparent-long-sleeved-t-shirt-sticker-stickers-text-fashion-unisex.png"
-                            alt="" class="image-select mr-2 mb-2 h-24 w-24">
+                    <div class="flex flex-col overflow-y-scroll h-[400px]">
+                        @foreach ($designs as $design)
+                        <img src="{{ asset('storage/' . $design->img) }}" alt="{{ $design->name ?? 'Design Image' }}"
+                            class="image-select mr-2 mb-2 h-24 w-24 border border-with">
+                            @endforeach
                     </div>
-                    <div class="card-body bg-white rounded" style="height: 70%;">
+                    
+                    <div class="card-body bg-white rounded" style="height: 400px;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
                             <div id="inputOrImageContainer"
@@ -128,6 +134,7 @@
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <x-link_script />
+
 {{--------------------------------styled text----------------------------}}
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
@@ -186,20 +193,21 @@
         document.querySelectorAll('.image-select').forEach(image => {
             image.addEventListener('click', function() {
                 const imageContainer = document.getElementById('imageContainer');
-                imageContainer.innerHTML = '';
-
+                imageContainer.innerHTML = ''; 
+    
                 const selectedImage = document.createElement('img');
                 selectedImage.src = this.src;
-                selectedImage.classList.add('h-32', 'w-48');
-
+                selectedImage.classList.add('img-fluid');
+    
                 imageContainer.appendChild(selectedImage);
                 imageContainer.style.display = 'block';
-
+    
                 document.getElementById('styledText').style.display = 'none';
             });
         });
     });
-</script>
+    </script>
+    
 
 
 <script>
