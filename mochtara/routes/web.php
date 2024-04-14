@@ -96,7 +96,7 @@ Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('
 //-----------------------------Crud categories---------------------------------//
 Route::post('/add-category', [DashController::class, 'addCategory'])->name('add.categorie');
 Route::get('/Categories', [DashController::class, 'ShowCategorie'])->name('categorie');
-Route::delete('/categories/{category}', [DashController::class, 'deleteCategory'])->name('categories.delete');
+Route::delete('/categories', [DashController::class, 'deleteCategory'])->name('categories.delete');
 
 //-----------------------------Design---------------------------------//
 Route::get('/Categ', [DashController::class, 'show_design']);

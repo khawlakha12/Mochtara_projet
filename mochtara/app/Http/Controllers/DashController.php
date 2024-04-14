@@ -47,12 +47,13 @@ public function ShowCategorie()
 
     return view('pages.Admin.Categorie', compact('categories'));
 }
-public function deleteCategory(Category $category)
-{
-    $category->delete();
+public function deleteCategory($id)
+    {
+        $category = Category::findOrFail($id); 
+        $category->delete();
 
-    return back()->with('success', 'Catégorie supprimée avec succès.');
-}
+        return redirect()->route('categorie')->with('success', 'Category deleted successfully.');
+    }
 // -----------------------------designs------------------------------ //
 public function store(Request $request)
 {

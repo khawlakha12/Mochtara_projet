@@ -244,30 +244,39 @@
                                                     <td class="text-center">
                                                         <select class="selectpicker">
                                                             <optgroup label="Colors">
-                                                                @foreach(json_decode($category->colors) as $color)
-                                                                <option>{{ $color }}</option>
-                                                                @endforeach
+                                                                @if($category->colors)
+                                                                    @foreach(json_decode($category->colors, true) as $color)
+                                                                        <option>{{ $color }}</option>
+                                                                    @endforeach
+                                                                @else
+                                                                    <option>No Colors</option>
+                                                                @endif
                                                             </optgroup>
                                                         </select>
                                                     </td>
                                                     <td class="text-center">
                                                         <select class="selectpicker">
                                                             <optgroup label="Sizes">
-                                                                @foreach(json_decode($category->sizes) as $size)
-                                                                <option>{{ $size }}</option>
-                                                                @endforeach
+                                                                @if($category->sizes)
+                                                                    @foreach(json_decode($category->sizes, true) as $size)
+                                                                        <option>{{ $size }}</option>
+                                                                    @endforeach
+                                                                @else
+                                                                    <option>No Sizes</option>
+                                                                @endif
                                                             </optgroup>
                                                         </select>
                                                     </td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('categories.delete', $category) }}" method="POST" onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?');">
+                                                        <form action="{{ route('categories.delete', $category->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');">
                                                             @csrf
                                                             @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger btn-block"> Supprimer </button>
+                                                            <button type="submit" class="btn btn-danger btn-block">Delete</button>
                                                         </form>
                                                     </td>
                                                 </tr>
                                                 @endforeach
+                                                
                                             </tbody>
                                     </table>
                                 </div>

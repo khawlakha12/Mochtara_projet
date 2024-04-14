@@ -185,8 +185,10 @@
             }
         }
     </style>
+   
 </head>
 <body>
+
     <fieldset class="TagList inline-wrap gap-2">
         <div class="TagToggle block">
             <input type="radio" name="taglist-radio" value="size-s" id="taglist-radio-size-s" required />
@@ -209,7 +211,7 @@
             <label for="taglist-radio-size-2xl">2XL</label>
         </div>
     </fieldset>
-    </form>
+
 </body>
 
 </html>

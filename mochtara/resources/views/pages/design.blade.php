@@ -38,7 +38,7 @@
     }
 
     .styled-element {
-        border: 2px dashed black;
+       
         color: white;
         width: auto;
         box-sizing: border-box;
@@ -52,9 +52,9 @@
 </style>
 <style>
     #imageContainer img {
-    width: 100%;  /* Make the image take up the full container width */
-    height: 100%; /* Make the image take up the full container height */
-    object-fit: contain; /* Preserve the aspect ratio of the image */
+    width: 100%; 
+    height: 100%; 
+    object-fit: contain; 
 }
 </style>
 <x-navbar />
@@ -121,13 +121,15 @@
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
                             style="height: 32%;width:27%;text-align: center;background-position: center center;"></h1>
-                        <img src="img/pa_tshirt.png" alt="image" class="img-fluid">
+                        <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" class="img-fluid">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <x-size />
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <x-size /> 
+                    <button class="btn" style="background-color: #27a776; color: white; margin-top: 20px;">Click Me!</button>
                 </div>
             </div>
+            
         </div>
     </div>
 </main>
