@@ -43,7 +43,7 @@
                                                     {{$design->price}}MAD
                                                 </td>
                                                 <td class="text-center">
-                                                    <form action="{{ route('designs.destroy', $design->id) }}" method="POST">
+                                                    <form action="{{ route('categories.delete', ['id' => $category->id]) }}" method="POST">
                                                         @csrf
                                                         @method('DELETE')
                                                     <button type="submit" class="btn btn-danger btn-block"> Supprimer </button>

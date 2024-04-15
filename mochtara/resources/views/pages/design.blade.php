@@ -66,21 +66,8 @@
 }
 </style>
 <x-navbar />
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hoverDiv = document.getElementById('border'); 
-        const moveDiv = document.querySelector('.tomove'); 
-    
-        hoverDiv.addEventListener('click', function() {
 
-            if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
-                moveDiv.style.transform = 'translateX(0%)'; 
-            } else {
-                moveDiv.style.transform = 'translateX(100%)'; 
-            }
-        });
-    });
-    </script>
+
     
 <main id="main" data-aos="fade" data-aos-delay="1500" style="position: relative; overflow-x:hidden;" ng-app="">
     <div onmouseout="hovredireturn()" id="border" onmouseover="hovredi()" class="hovermebaby" style="position: absolute; height: 40px; width: 35px; top: 350px; right: 0; z-index: 100;background:#27a776;" >
@@ -91,9 +78,9 @@
         </svg>
     </div>
     
-    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 200px;background: #fff;z-index: 10;" class="flex tomove ">
+    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 300px;background: #fff;z-index: 10;" class="flex tomove ">
         @foreach($categories as $category)
-<img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776;border:#fff 1px;height:50px;width:50px;margin-left:10px;">
+<img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776;border:#fff 1px;height:50px;width:50px;margin-left:10px;"data-image-url="{{ asset('storage/' . $category->image) }}" class="image-sele">
 @endforeach
     </div>
     <div class="page-header d-flex align-items-center">
@@ -107,7 +94,7 @@
                             class="image-select mr-2 mb-2 h-24 w-24 border border-with">
                             @endforeach
                     </div>
-                    
+
                     <div class="card-body bg-white rounded" style="height: 400px;">
                         <div class="d-flex justify-content-center align-items-center position-relative"
                             style="height: 100%;">
@@ -157,7 +144,7 @@
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
                             style="height: 32%;width:27%;text-align: center;background-position: center center;"></h1>
-                        <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" class="img-fluid">
+                        <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" id="main-image" class="img-fluid">
                     </div>
                 </div>
                 <div class="d-flex justify-content-center align-items-center">
@@ -246,8 +233,35 @@
     });
     </script>
     
-
-
+{{-- --------------------------------afficher pour choisir catégorie for design-------------------------- --}}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hoverDiv = document.getElementById('border'); 
+            const moveDiv = document.querySelector('.tomove'); 
+        
+            hoverDiv.addEventListener('click', function() {
+    
+                if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
+                    moveDiv.style.transform = 'translateX(0%)'; 
+                } else {
+                    moveDiv.style.transform = 'translateX(100%)'; 
+                }
+            });
+            
+        });
+    </script>
+{{-- --------------------------------choisir autre caterie for design-------------------------- --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.image-sele').forEach(item => {
+            item.addEventListener('click', function () {
+                const mainImage = document.getElementById('main-image'); 
+                mainImage.src = this.getAttribute('data-image-url');
+                mainImage.alt = this.alt;
+            });
+        });
+    });
+</script>
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const inputContainer = document.getElementById('inputOrImageContainer');
