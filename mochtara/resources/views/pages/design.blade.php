@@ -56,10 +56,46 @@
     height: 100%; 
     object-fit: contain; 
 }
+#border {
+    border-right: none; 
+}
+
+#border {
+    border-top-left-radius: 8px; 
+    border-bottom-left-radius: 8px; 
+}
 </style>
 <x-navbar />
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hoverDiv = document.getElementById('border'); 
+        const moveDiv = document.querySelector('.tomove'); 
+    
+        hoverDiv.addEventListener('click', function() {
 
-<main id="main" data-aos="fade" data-aos-delay="1500" ng-app="">
+            if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
+                moveDiv.style.transform = 'translateX(0%)'; 
+            } else {
+                moveDiv.style.transform = 'translateX(100%)'; 
+            }
+        });
+    });
+    </script>
+    
+<main id="main" data-aos="fade" data-aos-delay="1500" style="position: relative; overflow-x:hidden;" ng-app="">
+    <div onmouseout="hovredireturn()" id="border" onmouseover="hovredi()" class="hovermebaby" style="position: absolute; height: 40px; width: 35px; top: 350px; right: 0; z-index: 100;background:#27a776;" >
+        <svg id="blue_copy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="height: 40px;width:40px;">
+            <g id="Layer_8_copy_4">
+                <path d="M58.644,27.26v8.294c0,0.571-0.305,1.1-0.8,1.385L37.632,48.608c-1.066,0.616-1.066,2.155,0,2.771l20.212,11.669c0.495,0.286,0.8,0.814,0.8,1.385v8.294c0,1.231-1.333,2.001-2.399,1.385L16.869,51.379c-1.066-0.616-1.066-2.155,0-2.771l39.375-22.733C57.311,25.259,58.644,26.029,58.644,27.26z" fill="#000000" />
+            </g>
+        </svg>
+    </div>
+    
+    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 200px;background: #fff;z-index: 10;" class="flex tomove ">
+        @foreach($categories as $category)
+<img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776;border:#fff 1px;height:50px;width:50px;margin-left:10px;">
+@endforeach
+    </div>
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
@@ -124,9 +160,9 @@
                         <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" class="img-fluid">
                     </div>
                 </div>
-                <div class="d-flex flex-column justify-content-center align-items-center">
+                <div class="d-flex justify-content-center align-items-center">
                     <x-size /> 
-                    <button class="btn" style="background-color: #27a776; color: white; margin-top: 20px;">Click Me!</button>
+                   
                 </div>
             </div>
             
