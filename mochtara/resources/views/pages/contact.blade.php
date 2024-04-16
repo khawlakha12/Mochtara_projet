@@ -232,16 +232,15 @@ N'hésitez pas à choisir l'une de ces questions ou à en poser d'autres. Nous s
     
 function sendMessage() {
     const messageInput = document.getElementById('message');
-    const message = messageInput.value.trim().toLowerCase(); 
+    const message = messageInput.value.trim().toLowerCase();
 
     if (message) {
         addMessageToChat(message, 'user');
 
-
-        setTimeout(() => { 
-        } else if (message.includes("Hello")) {
-                addMessageToChat("Bonjour mon client,  Comment puis-je vous aider.", 'system');
-            if (message.includes("c'est quoi mochtara")) {
+        setTimeout(() => {
+            if (message.includes("hello") || message.includes("bonjour") || message.includes("salam")) {
+                addMessageToChat("Bonjour mon client, Comment puis-je vous aider ?", 'system');
+            } else if (message.includes("c'est quoi mochtara")) {
                 addMessageToChat("Le design chez Mochtara est simple. Commencez avec un t-shirt/un sweat à capuche/un sweat-shirt/etc. à partir de notre vaste inventaire et personnalisez-le rapidement à l'aide de notre studio de design intuitif. Téléchargez vos illustrations ou votre design, ainsi que des modèles de conception pour créer votre propre chemise en un rien de temps.", 'system');
             } else if (message.includes("délai maximum pour finaliser une commande")) {
                 addMessageToChat("Le délai maximum pour finaliser une commande est généralement de 14 jours.", 'system');
@@ -256,7 +255,7 @@ function sendMessage() {
             }
         }, 1000);
 
-        messageInput.value = ''; 
+        messageInput.value = '';
     }
 }
 
