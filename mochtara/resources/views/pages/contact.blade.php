@@ -3,6 +3,99 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 
+
+<style>
+    .chat-message {
+    background-color: #4caf50; 
+    color: white;            
+    padding: 10px 15px;      
+    border-radius: 20px;      
+    margin: 5px 0;          
+    max-width: 80%;         
+    word-wrap: break-word;  
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.1);
+    align-self: flex-start;  
+}
+
+.chat-messages .chat-message {
+    align-self: flex-end;
+    background-color: #27a776; 
+}
+
+.chat-message {
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+    transform: translateY(20px);
+    opacity: 0;
+}
+
+.chat-messages .chat-message {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+    .chat-container {
+        width: 450px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .chat-header {
+        background-color: #CE1785;
+        color: #fff;
+        padding: 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .chat-header h2 {
+        margin: 0;
+    }
+
+    .chat-messages {
+        height: 200px;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    .chat-input {
+        display: flex;
+        padding: 10px;
+    }
+
+    .chat-input input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    .chat-input button {
+        padding: 5px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #CE1785;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .chat-input button:hover {
+        background-color: #14C90D;
+    }
+    .chat-message.user {
+    align-self: flex-end; 
+    background-color: #CE1785; 
+}
+
+.chat-message.system {
+    align-self: flex-start; 
+    background-color: #4caf50; 
+}
+
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500">
@@ -79,17 +172,44 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>  
-                                  <div class="col-lg-3 info-item">
-                        <i class="bi bi-headphones "></i>
+                    </form>
+                    <div class="col-lg-3 info-item">
+                        <i class="bi bi-headphones" data-bs-toggle="modal" data-bs-target="#chatModal"
+                            style="cursor: pointer;"></i>
+                    </div>
+
+                    <!-- Fenêtre modale de chat -->
+                    <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="chatModalLabel">Chat</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="chat-container">
+                                        <div class="chat-messages" id="chat-messages">
+
+                                        </div>
+                                        <div class="chat-input">
+
+                                            <input type="text" id="message" placeholder="Type your message">
+                                            <button onclick="sendMessage()">Send</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
             </div>
- 
+
     </section>
     <!-- End Contact Section -->
-  </main>
+</main>
 <!-- ======= Footer ======= -->
 <x-footer />
 <!-- End Footer -->
@@ -99,6 +219,41 @@
     <div class="line"></div>
 </div>
 <x-link_script />
+<script>
+  function sendMessage() {
+    const messageInput = document.getElementById('message');
+    const message = messageInput.value.trim();
+
+    if (message) {
+        addMessageToChat(message, 'user'); // Function to add user message
+
+        // Check for the "hello" trigger
+        if (message.toLowerCase() === "hello") {
+            setTimeout(() => { // Simulate a delay for the response
+                addMessageToChat('Hello', 'system');
+            }, 500);
+        }
+
+        messageInput.value = ''; // Clear the input field
+    }
+}
+
+function addMessageToChat(message, sender) {
+    const chatMessages = document.getElementById('chat-messages');
+    const messageElement = document.createElement('div');
+    messageElement.textContent = message;
+    messageElement.classList.add('chat-message', sender); // Add classes for styling
+    chatMessages.appendChild(messageElement);
+
+    chatMessages.scrollTop = chatMessages.scrollHeight; // Scroll to the bottom
+
+    const messages = chatMessages.innerHTML;
+    localStorage.setItem('chatMessages', messages);
+}
+
+
+
+</script>
 </body>
 
 </html>
