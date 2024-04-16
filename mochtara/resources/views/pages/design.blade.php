@@ -78,7 +78,7 @@
         </svg>
     </div>
     
-    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 300px;background: #fff;z-index: 10;" class="flex tomove ">
+    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 200px;background: #fff;z-index: 10;" class="flex tomove ">
         @foreach($categories as $category)
 <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776;border:#fff 1px;height:50px;width:50px;margin-left:10px;"data-image-url="{{ asset('storage/' . $category->image) }}" class="image-sele">
 @endforeach
@@ -234,12 +234,12 @@
     </script>
     
 {{-- --------------------------------afficher pour choisir catégorie for design-------------------------- --}}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hoverDiv = document.getElementById('border'); 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hoverDiv = document.getElementById('border'); 
             const moveDiv = document.querySelector('.tomove'); 
         
-            hoverDiv.addEventListener('click', function() {
+        hoverDiv.addEventListener('click', function() {
     
                 if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
                     moveDiv.style.transform = 'translateX(0%)'; 
@@ -249,7 +249,7 @@
             });
             
         });
-    </script>
+</script>
 {{-- --------------------------------choisir autre caterie for design-------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -262,6 +262,9 @@
         });
     });
 </script>
+
+
+
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const inputContainer = document.getElementById('inputOrImageContainer');

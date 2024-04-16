@@ -179,12 +179,6 @@
                             <p>Designs</p>
                         </a>
                     </li>
-                    <li>
-                        <a href="/new_product">
-                            <i class="fas fa-box"></i>
-                            <p>Product</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

@@ -110,36 +110,15 @@ transform: translateY(-50%) rotate(180deg);
         </button>
         <div class="wiper-wrapper">
             <ul class="wiper-track">
-                <li class="wiper-item" style="">
+              @foreach ($designs as $design)
+                <li class="wiper-item active-swipe" style="">
                     <img class="wiper__image"
-                        src="https://assets.adidas.com/images/w_1880,f_auto,q_auto/6762a332a8df4f4895aeaf2c0093904b_9366/IC7640_21_model.jpg"
+                        src="{{ asset('storage/' . $design->img) }}"
                         alt="background-image" />
-                    <button class="swiper__image-button">MAD 120</button>
+                    <button class="swiper__image-button"> {{$design->price}}MAD</button>
                 </li>
-                <li class="wiper-item active-swipe">
-                    <img class="wiper__image"
-                        src="https://contents.mediadecathlon.com/p1962363/k$8221dddd52ee031463ec655e322a64ae/t-shirt-coton-extensible-fitness-slim-blanc.jpg?&f=452x452"
-                        alt="background-image" />
-                    <button class="swiper__image-button">MAD 120</button>
-                </li>
-                <li class="wiper-item">
-                    <img class="wiper__image"
-                        src="https://dynamic.zacdn.com/SrWMQqjBt-558I_SowwnPE1cvcY=/filters:quality(70):format(webp):proportion(0.2)/https://static-ph.zacdn.com/p/mango-man-0618-5813023-1.jpg"
-                        alt="background-image" />
-                    <button class="swiper__image-button">MAD 120</button>
-                </li>
-                <li class="wiper-item">
-                    <img class="wiper__image"
-                        src="https://www.gluestore.com.au/cdn/shop/products/20221020-IMG_7796_1600x.jpg?v=1666317739"
-                        alt="background-image" />
-                    <button class="swiper__image-button">MAD 120</button>
-                </li>
-                <li class="wiper-item">
-                    <img class="wiper__image"
-                        src="https://media.boohoo.com/i/boohoo/mzz52998_sage%20silver_xl/masculin-sage%20silver-t-shirt-oversize-ras-du-cou/?w=900&qlt=default&fmt.jp2.qlt=70&fmt=auto&sm=fit"
-                        alt="background-image" />
-                    <button class="swiper__image-button">MAD 120</button>
-                </li>
+                @endforeach
+               
             </ul>
         </div>
         <button class="wiper-button wiper-button__left">
