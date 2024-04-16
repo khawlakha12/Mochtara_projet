@@ -20,7 +20,7 @@
                 </div>
             </div>
         </div>
-    </div><!-- End Page Header -->
+    </div>
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
         <div class="container">
@@ -33,7 +33,7 @@
                             <p>Safi City , Morroco, NY 535022</p>
                         </div>
                     </div>
-                </div><!-- End Info Item -->
+                </div>
                 <div class="col-lg-3">
                     <div class="info-item d-flex">
                         <i class="bi bi-envelope flex-shrink-0"></i>
@@ -42,7 +42,7 @@
                             <p>kharbouchikhawla603@gmail.com</p>
                         </div>
                     </div>
-                </div><!-- End Info Item -->
+                </div>
                 <div class="col-lg-3">
                     <div class="info-item d-flex">
                         <i class="bi bi-phone flex-shrink-0"></i>
@@ -51,7 +51,7 @@
                             <p>+212 606265540</p>
                         </div>
                     </div>
-                </div><!-- End Info Item -->
+                </div>
             </div>
             <div class="row justify-content-center mt-4">
                 <div class="col-lg-9">
@@ -79,11 +79,14 @@
                             <div class="sent-message">Your message has been sent. Thank you!</div>
                         </div>
                         <div class="text-center"><button type="submit">Send Message</button></div>
-                    </form>
-                </div><!-- End Contact Form -->
+                    </form>  
+                                  <div class="col-lg-3 info-item">
+                        <i class="bi bi-headphones "></i>
+                    </div>
+                </div>
+
             </div>
-          {{-----------------------------------------------------}}
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+ 
     </section>
     <!-- End Contact Section -->
   </main>
