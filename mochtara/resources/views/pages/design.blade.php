@@ -67,8 +67,6 @@
 </style>
 <x-navbar />
 
-
-    
 <main id="main" data-aos="fade" data-aos-delay="1500" style="position: relative; overflow-x:hidden;" ng-app="">
     <div onmouseout="hovredireturn()" id="border" onmouseover="hovredi()" class="hovermebaby" style="position: absolute; height: 40px; width: 35px; top: 350px; right: 0; z-index: 100;background:#27a776;" >
         <svg id="blue_copy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="height: 40px;width:40px;">
