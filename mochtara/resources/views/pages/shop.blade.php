@@ -267,7 +267,7 @@
             });
         });
         var allLink = document.createElement('li');
-        allLink.innerHTML = '<a href="javascript:void(0);" class="category-link" data-category="all">All</a>';
+        allLink.innerHTML = '<a href="javascript:void(0);" class="category-link" data-category="all"></a>';
         document.querySelector('ul').appendChild(allLink);
         allLink.addEventListener('click', function() {
             document.querySelectorAll('.product').forEach(function(product) {
