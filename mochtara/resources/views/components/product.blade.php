@@ -65,7 +65,7 @@
                     </p>
                     <a href="#"
                         class="inline-flex items-center justify-center rounded-md  px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
-                        style="background: #27a776;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        style="background: #27a776;" data-hs-overlay="#hs-vertically-centered-modal"0>
                         <img src="svg_icon/barcode_code_icon_194645.ico" alt="Shopping" class="mr-2 h-4 w-6">
                         <span class="text-base">Acheter</span>
                     </a>
@@ -73,6 +73,8 @@
                 </div>
             </div>
         </div>
+
+        
         @endforeach
 
 </body>
