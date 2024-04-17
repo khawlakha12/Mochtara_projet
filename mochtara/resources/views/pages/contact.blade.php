@@ -238,7 +238,7 @@
             setTimeout(() => {
                 if (message.includes("hello") || message.includes("bonjour") || message.includes("salam")) {
                     addMessageToChat("Bonjour mon client, Comment puis-je vous aider ?", 'system');
-                } else if (message.includes("c'est quoi mochtara")) {
+                } else if (message.includes("c'est quoi mochtara")|| message.includes("Achnahiya Mochtara")|| message.includes("ما هي مشترى")) {
                     addMessageToChat(
                         "Le design chez Mochtara est simple. Commencez avec un t-shirt/un sweat à capuche/un sweat-shirt/etc. à partir de notre vaste inventaire et personnalisez-le rapidement à l'aide de notre studio de design intuitif. Téléchargez vos illustrations ou votre design, ainsi que des modèles de conception pour créer votre propre chemise en un rien de temps.",
                         'system');
