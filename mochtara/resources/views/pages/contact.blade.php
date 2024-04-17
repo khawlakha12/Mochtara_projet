@@ -5,88 +5,67 @@
 
 
 <style>
-.chat-message {
+   .chat-message {
     padding: 10px 15px;
     border-radius: 20px;
     margin: 5px;
     max-width: 80%;
     word-wrap: break-word;
-}
-
-.chat-message.user {
-    align-self: flex-end; 
-    background-color: #CE1785; 
-    color: white;
-}
-
-.chat-message.system {
-    align-self: flex-start; 
-    background-color: #4caf50; 
-    color: white;
-}
-
-
-.chat-messages .chat-message {
-    align-self: flex-end;
-    background-color: #27a776; 
-}
-
-.chat-message {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     transform: translateY(20px);
     opacity: 0;
 }
 
-.chat-messages .chat-message {
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #CE1785;  
+    color: white;
     transform: translateY(0);
     opacity: 1;
 }
 
-    .chat-container {
-        width: 450px;
-        background-color: #fff;
-        border: 1px solid #ccc;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
+.chat-message.system {
+    align-self: flex-start;
+    background-color: #4caf50;  /* Green color for system */
+    color: white;
+    transform: translateY(0);
+    opacity: 1;
+}
 
-    .chat-header {
-        background-color: #CE1785;
-        color: #fff;
-        padding: 10px;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-    }
+.chat-container {
+    width: 450px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
 
-    .chat-header h2 {
-        margin: 0;
-    }
+.chat-input {
+    display: flex;
+    padding: 10px;
+}
 
-    .chat-input {
-        display: flex;
-        padding: 10px;
-    }
+.chat-input input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
 
-    .chat-input input {
-        flex: 1;
-        padding: 5px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-right: 10px;
-    }
+.chat-input button {
+    padding: 5px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #CE1785;
+    color: #fff;
+    cursor: pointer;
+}
 
-    .chat-input button {
-        padding: 5px 15px;
-        border: none;
-        border-radius: 4px;
-        background-color: #CE1785;
-        color: #fff;
-        cursor: pointer;
-    }
+.chat-input button:hover {
+    background-color: #14C90D;
+}
 
-    .chat-input button:hover {
-        background-color: #14C90D;
-    }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <x-navbar />
@@ -214,61 +193,71 @@
 <x-link_script />
 
 <script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const chatModal = document.getElementById('chatModal');
-    chatModal.addEventListener('shown.bs.modal', function () {
-        addMessageToChat(`Bonjour et bienvenue chez Mochtara ! Si vous avez des questions sur notre service, n’hésitez pas à nous les poser.
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatModal = document.getElementById('chatModal');
+        chatModal.addEventListener('shown.bs.modal', function() {
+            addMessageToChat(`Bonjour et bienvenue chez Mochtara ! Si vous avez des questions sur notre service, n’hésitez pas à nous les poser.
 
-1. C'est quoi Mochtara ?
-2. Quel est le délai maximum pour finaliser une commande ? 
-3. Comment contacter l'équipe de Mochtara ? 
-4. Quelle option est la moins chère en termes de design ? 
-5. Quelle est la dernière création en matière de design ?
+                              1. C'est quoi Mochtara ?
+                              2. Quel est le délai maximum pour finaliser une commande ? 
+                              3. Comment contacter l'équipe de Mochtara ? 
+                              4. Quelle option est la moins chère en termes de design ? 
+                              5. Quelle est la dernière création en matière de design ?
 
-N'hésitez pas à choisir l'une de ces questions ou à en poser d'autres. Nous sommes ici pour vous aider !`, 'system');
+                           N'hésitez pas à choisir l'une de ces questions ou à en poser d'autres. Nous sommes ici pour vous aider !`, 'system');
+        });
     });
-});
 
-    
-function sendMessage() {
-    const messageInput = document.getElementById('message');
-    const message = messageInput.value.trim().toLowerCase();
 
-    if (message) {
-        addMessageToChat(message, 'user');
+    function sendMessage() {
+        const messageInput = document.getElementById('message');
+        const message = messageInput.value.trim().toLowerCase();
 
-        setTimeout(() => {
-            if (message.includes("hello") || message.includes("bonjour") || message.includes("salam")) {
-                addMessageToChat("Bonjour mon client, Comment puis-je vous aider ?", 'system');
-            } else if (message.includes("c'est quoi mochtara")) {
-                addMessageToChat("Le design chez Mochtara est simple. Commencez avec un t-shirt/un sweat à capuche/un sweat-shirt/etc. à partir de notre vaste inventaire et personnalisez-le rapidement à l'aide de notre studio de design intuitif. Téléchargez vos illustrations ou votre design, ainsi que des modèles de conception pour créer votre propre chemise en un rien de temps.", 'system');
-            } else if (message.includes("délai maximum pour finaliser une commande")) {
-                addMessageToChat("Le délai maximum pour finaliser une commande est généralement de 14 jours.", 'system');
-            } else if (message.includes("contacter l'équipe de mochtara")) {
-                addMessageToChat("Vous pouvez nous contacter via notre email: kharbouchikhawla603@gmail.com ou par téléphone au +212 606-265540.", 'system');
-            } else if (message.includes("moins cher de design")) {
-                addMessageToChat("Nos offres de design standard sont les plus économiques.", 'system');
-            } else if (message.includes("dernière création en matière de design")) {
-                addMessageToChat("Notre dernière création est le 'Design Zephyr', un concept moderne et épuré.", 'system');
-            } else {
-                addMessageToChat("Je suis désolé, je n'ai pas de réponse à cette question. Veuillez contacter équipe mochtara pour plus information.", 'system');
-            }
-        }, 1000);
+        if (message) {
+            addMessageToChat(message, 'user');
 
-        messageInput.value = '';
+            setTimeout(() => {
+                if (message.includes("hello") || message.includes("bonjour") || message.includes("salam")) {
+                    addMessageToChat("Bonjour mon client, Comment puis-je vous aider ?", 'system');
+                } else if (message.includes("c'est quoi mochtara")) {
+                    addMessageToChat(
+                        "Le design chez Mochtara est simple. Commencez avec un t-shirt/un sweat à capuche/un sweat-shirt/etc. à partir de notre vaste inventaire et personnalisez-le rapidement à l'aide de notre studio de design intuitif. Téléchargez vos illustrations ou votre design, ainsi que des modèles de conception pour créer votre propre chemise en un rien de temps.",
+                        'system');
+                } else if (message.includes("délai maximum pour finaliser une commande")) {
+                    addMessageToChat(
+                        "Le délai maximum pour finaliser une commande est généralement de 14 jours.",
+                        'system');
+                } else if (message.includes("contacter l'équipe de mochtara")) {
+                    addMessageToChat(
+                        "Vous pouvez nous contacter via notre email: kharbouchikhawla603@gmail.com ou par téléphone au +212 606-265540.",
+                        'system');
+                } else if (message.includes("moins cher de design")) {
+                    addMessageToChat("Nos offres de design standard sont les plus économiques.", 'system');
+                } else if (message.includes("dernière création en matière de design")) {
+                    addMessageToChat(
+                        "Notre dernière création est le 'Design Zephyr', un concept moderne et épuré.",
+                        'system');
+                } else {
+                    addMessageToChat(
+                        "Je suis désolé, je n'ai pas de réponse à cette question. Veuillez contacter équipe mochtara pour plus information.",
+                        'system');
+                }
+            }, 1000);
+
+            messageInput.value = '';
+        }
     }
-}
 
-function addMessageToChat(message, sender) {
-    const chatMessages = document.getElementById('chat-messages');
-    const messageElement = document.createElement('div');
-    messageElement.textContent = message;
-    messageElement.classList.add('chat-message', sender);
-    chatMessages.appendChild(messageElement);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-}
-    </script>
-    
+    function addMessageToChat(message, sender) {
+        const chatMessages = document.getElementById('chat-messages');
+        const messageElement = document.createElement('div');
+        messageElement.textContent = message;
+        messageElement.classList.add('chat-message', sender);
+        chatMessages.appendChild(messageElement);
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+</script>
+
 
 </body>
 
