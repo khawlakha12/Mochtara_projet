@@ -5,67 +5,89 @@
 
 
 <style>
-   .chat-message {
-    padding: 10px 15px;
-    border-radius: 20px;
-    margin: 5px;
-    max-width: 80%;
-    word-wrap: break-word;
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-    transform: translateY(20px);
-    opacity: 0;
-}
+    .modal-dialog {
+        margin: 0 auto;
+        max-width: none;
+    }
 
-.chat-message.user {
-    align-self: flex-end;
-    background-color: #CE1785;  
-    color: white;
-    transform: translateY(0);
-    opacity: 1;
-}
+    .modal-content {
+        background: none;
+        border: none;
+        box-shadow: none;
+    }
 
-.chat-message.system {
-    align-self: flex-start;
-    background-color: #4caf50;  /* Green color for system */
-    color: white;
-    transform: translateY(0);
-    opacity: 1;
-}
+    .chat-message {
+        padding: 10px 15px;
+        border-radius: 20px;
+        margin: 5px;
+        max-width: 80%;
+        word-wrap: break-word;
+        transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        transform: translateY(20px);
+        opacity: 0;
+    }
 
-.chat-container {
-    width: 450px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+    .chat-message.user {
+        align-self: flex-end;
+        background-color: #CE1785;
+        color: white;
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-.chat-input {
-    display: flex;
-    padding: 10px;
-}
+    .chat-message.system {
+        align-self: flex-start;
+        background-color: #4caf50;
+        color: white;
+        transform: translateY(0);
+        opacity: 1;
+    }
 
-.chat-input input {
-    flex: 1;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-}
+    .chat-container {
+        width: 450px;
+        height: 500px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+    }
 
-.chat-input button {
-    padding: 5px 15px;
-    border: none;
-    border-radius: 4px;
-    background-color: #CE1785;
-    color: #fff;
-    cursor: pointer;
-}
+    .chat-messages {
+        flex: 1;
+        overflow: hidden;
+        overflow-y: auto;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 
-.chat-input button:hover {
-    background-color: #14C90D;
-}
+    .chat-input {
+        border-top: 1px solid #ccc;
+        padding: 10px;
+    }
 
+    .chat-input input {
+        flex: 1;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-right: 10px;
+        width: 80%;
+    }
+
+    .chat-input button {
+        padding: 5px 15px;
+        border: none;
+        border-radius: 4px;
+        background-color: #CE1785;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .chat-input button:hover {
+        background-color: #14C90D;
+    }
 </style>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
 <x-navbar />
@@ -154,29 +176,24 @@
                     <div class="modal fade" id="chatModal" tabindex="-1" aria-labelledby="chatModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="chatModalLabel">Chat</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="chat-container">
-                                        <div class="chat-messages" id="chat-messages">
+                            <div class="modal-body">
+                                <div class="chat-container">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="chat-messages" id="chat-messages">
 
-                                        </div>
-                                        <div class="chat-input">
-
-                                            <input type="text" id="message" placeholder="Type your message">
-                                            <button onclick="sendMessage()">Send</button>
-                                        </div>
+                                    </div>
+                                    <div class="chat-input">
+                                        <input type="text" id="message" placeholder="Type your message">
+                                        <button onclick="sendMessage()">Send</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-
             </div>
 
     </section>
@@ -196,7 +213,8 @@
     document.addEventListener('DOMContentLoaded', function() {
         const chatModal = document.getElementById('chatModal');
         chatModal.addEventListener('shown.bs.modal', function() {
-            addMessageToChat(`Bonjour et bienvenue chez Mochtara ! Si vous avez des questions sur notre service, n’hésitez pas à nous les poser.
+            addMessageToChat(
+                `Bonjour et bienvenue chez Mochtara ! Si vous avez des questions sur notre service, n’hésitez pas à nous les poser.
 
                               1. C'est quoi Mochtara ?
                               2. Quel est le délai maximum pour finaliser une commande ? 
@@ -204,7 +222,8 @@
                               4. Quelle option est la moins chère en termes de design ? 
                               5. Quelle est la dernière création en matière de design ?
 
-                           N'hésitez pas à choisir l'une de ces questions ou à en poser d'autres. Nous sommes ici pour vous aider !`, 'system');
+                           N'hésitez pas à choisir l'une de ces questions ou à en poser d'autres. Nous sommes ici pour vous aider !`,
+                'system');
         });
     });
 
