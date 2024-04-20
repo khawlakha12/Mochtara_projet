@@ -1,3 +1,24 @@
+<style>
+    #pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    #pagination button {
+        margin: 5px;
+        padding: 8px 16px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        outline: none;
+    }
+    #pagination button:hover {
+        background-color: #0056b3;
+    }
+</style>
+
 <x-links_art />
             <!-- End Navbar -->
             <div class="content">
@@ -12,7 +33,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
+                                    <table class="table tablesorter " id="designTable">
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
@@ -53,6 +74,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div id="pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -166,6 +188,43 @@
                             application: "black-dashboard-free"
                         });
                 </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        const rowsPerPage = 5;
+                        const rows = Array.from(document.querySelector('#designTable tbody').rows);
+                        const paginationWrapper = document.getElementById('pagination');
+                    
+                        function setupPagination(rows, wrapper, rowsPerPage) {
+                            wrapper.innerHTML = ""; // Clear previous pagination buttons
+                    
+                            let pageCount = Math.ceil(rows.length / rowsPerPage);
+                            for (let i = 1; i <= pageCount; i++) {
+                                let btn = document.createElement('button');
+                                btn.innerText = i;
+                                btn.addEventListener('click', function () {
+                                    displayPage(i);
+                                });
+                                wrapper.appendChild(btn);
+                            }
+                        }
+                    
+                        function displayPage(page) {
+                            const start = (page - 1) * rowsPerPage;
+                            const end = start + rowsPerPage;
+                            rows.forEach((row, index) => {
+                                if (index >= start && index < end) {
+                                    row.style.display = '';
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            });
+                        }
+                    
+                        setupPagination(rows, paginationWrapper, rowsPerPage);
+                        displayPage(1); // Display the first page initially
+                    });
+                    </script>
+                    
 </body>
 
 </html>
