@@ -84,6 +84,7 @@ Route::delete('/new_product/{product}', [ProductController::class, 'destroy'])->
 Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
 
 
+
 //-----------------------------Test Angular---------------------------------//
 Route::get('/angular', function() {
     return view('Angular.angular');

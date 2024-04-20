@@ -12,6 +12,9 @@
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
 
 <!-- Lien CDN pour le JavaScript de Bootstrap Select -->
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
@@ -165,6 +168,16 @@
                                               id="exampleInputEmail1" name="name" aria-describedby="emailHelp"
                                               placeholder="Enter Name" style="color: black;">
                                       </div>
+                                      <div class="form-group">
+                                        <label for="sizeSelect" style="color: black;">Sizes</label>
+                                        <select class="form-control" id="sizeSelect" name="sizes[]" multiple style="width:100%;">
+                                            <option value="">Select Sizes</option>
+                                            @foreach ($sizes as $size)
+                                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                            @endforeach
+                                        </select>
+                                    </div>
+                                    
                                       <div class="form-group">
                                         <label for="categorySelect" style="color: black;">Category</label>
                                         <select class="form-control" id="categorySelect" name="category_id">
@@ -402,6 +415,12 @@
             }
         }
     </script>
+    <script>
+        $(document).ready(function() {
+            $('#colorSelect').select2();
+            $('#sizeSelect').select2();
+        });
+    </script>
 {{-- ------------------------------modifier name------------------------------------- --}}
 <script>
     $(document).ready(function() {
@@ -429,7 +448,9 @@
     });
     </script>
     
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
 </body>
 
 </html>
