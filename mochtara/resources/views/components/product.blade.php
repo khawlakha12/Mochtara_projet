@@ -15,12 +15,10 @@
         left: 0;
         top: 0;
         width: 100%; 
-        height: 100%; 
-        overflow: auto;
-        background-color: rgb(0,0,0);
+        overflow: hidden;
+        background: rgb(0,0,0);
         background-color: rgba(0,0,0,0.4); 
     }
-
     .modal-content {
         background-color: #fefefe;
         margin: 15% auto; 
@@ -35,51 +33,8 @@
         from {top: -300px; opacity: 0}
         to {top: 0; opacity: 1}
     }
-
-    .close {
-        color: #000000;
-        font-size: 20px;
-    }
-
     .close:hover{
-        color: #f44747;
-        text-decoration: none;
-        cursor: pointer;
-    }
-    select {
-        display: block;
-        width: 100%;
-        padding: 0.5rem;
-        font-size: 1rem;
-        line-height: 1.5;
-        color: #000000;
-        background-color: #fff;
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: 0.25rem;
-        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-    }
-
-    select:focus {
-        border-color: #80bdff;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
-    }
-    .button {
-        background-color: #4CAF50; 
-        border: none;
-        padding: 10px 24px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        transition-duration: 0.4s;
-        cursor: pointer;
-    }
-
-    .button:hover {
-        background-color: #89f18f;
+        color: red;
     }
 </style>
 
@@ -151,17 +106,17 @@
             </div>
         </div>
         <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal">
-            <div class="modal-content bg-white p-6 mx-auto border shadow-lg rounded-md"">
-                <span class="close">&times;</span>
+            <div class="modal-content bg-white p-6 mx-auto border shadow-lg rounded-md">
+                <button style="display: inline-flex; align-items: center; justify-content: center;color:aliceblue;:1px #00000 ;width:30px;height:30px;border-radius:10px;background:black;font-size: 20px;" class="close">&times;</button>
                 <div class="container mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt="ecommerce"
+                        <img alt="{{$product->name}}"
                             class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
                             src="{{ asset('storage/' . $product->image) }}">
                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ $product->category->name }}
+                            <h2 style="display: inline-block; color: white; background-color: black; border: 2px solid black; border-radius: 0.75rem; padding: 0.5rem; margin: 0 auto; font-size: 0.875rem; font-family: 'title-font', sans-serif; width: fit-content;">{{ $product->category->name }}
                             </h2>
-                            <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $product->name }}</h1>
+                            <h1 style="margin-top:20px;"class="text-gray-900 text-2xl font-bold title-font  mb-1">{{ $product->name }}</h1>
                             <div class="flex mb-4">
 
                             </div>
@@ -193,20 +148,20 @@
                                 </div>
                             </div>
                            
-                            <div class="flex justify-between items-center">
-                                <span class="title-font font-medium text-2xl text-gray-900">{{ $product->price }} MAD</span>
-                                <button class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
-                                style="     background-color: #4CAF50; 
+                            <div class="ana flex justify-between items-center">
+                                <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
+                                <button class="inline-flex items-center justify-center rounded-md text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
+                                style="     background-color: #021803; 
                                 border: none;
-                                padding: 10px 24px;
+                                padding: 10px 10px;
                                 text-align: center;
                                 text-decoration: none;
                                 display: inline-block;
                                 font-size: 16px;
-                                margin: 4px 2px;
+                                margin: 2px 2px;
                                 transition-duration: 0.4s;
                                 cursor: pointer;">
-                            <span class="text-base">ajouter achat</span>
+                            <span class="text-base font-bold text-white">achater</span>
                         </button>
                             </div>
         
