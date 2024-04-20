@@ -8,55 +8,81 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+    .modal {
+        display: none; 
+        position: fixed; 
+        z-index: 2; 
+        left: 0;
+        top: 0;
+        width: 100%; 
+        height: 100%; 
+        overflow: auto;
+        background-color: rgb(0,0,0);
+        background-color: rgba(0,0,0,0.4); 
+    }
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 60%;
-            height: 80%;
-        }
+    .modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; 
+        padding: 20px;
+        border: 1px solid #888;
+        width: 50%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        animation-name: animatetop;
+        animation-duration: 0.4s
+    }
+    @keyframes animatetop {
+        from {top: -300px; opacity: 0}
+        to {top: 0; opacity: 1}
+    }
 
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
+    .close {
+        color: #000000;
+        font-size: 20px;
+    }
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .select-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
+    .close:hover{
+        color: #f44747;
+        text-decoration: none;
+        cursor: pointer;
+    }
+    select {
+        display: block;
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #000000;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
 
-.select-container span {
-    margin-right: 10px; 
-}
+    select:focus {
+        border-color: #80bdff;
+        outline: 0;
+        box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    }
+    .button {
+        background-color: #4CAF50; 
+        border: none;
+        padding: 10px 24px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
 
-.select-container .relative {
-    flex-grow: 1;
-}
-    </style>
+    .button:hover {
+        background-color: #89f18f;
+    }
+</style>
+
 </head>
 
 <body>
@@ -125,7 +151,7 @@
             </div>
         </div>
         <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal">
-            <div class="modal-content">
+            <div class="modal-content bg-white p-6 mx-auto border shadow-lg rounded-md"">
                 <span class="close">&times;</span>
                 <div class="container mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
@@ -133,18 +159,20 @@
                             class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
                             src="{{ asset('storage/' . $product->image) }}">
                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ $product->category->name }}</h2>
+                            <h2 class="text-sm title-font text-gray-500 tracking-widest">{{ $product->category->name }}
+                            </h2>
                             <h1 class="text-gray-900 text-3xl title-font font-medium mb-1">{{ $product->name }}</h1>
                             <div class="flex mb-4">
-                        
+
                             </div>
                             <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                                 <div class="flex ml-6 items-center">
                                     <span class="mr-3 "style="color:black">Size</span>
                                     <div class="relative">
-                                        <select class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
+                                        <select
+                                            class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
                                             @foreach ($product->sizes as $size)
-                                            <option>{{ $size->name }}</option>
+                                                <option>{{ $size->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -152,7 +180,8 @@
                                 <div class="flex ml-6 items-center">
                                     <span class="mr-3" style="color:black">Quantity</span>
                                     <div class="relative">
-                                        <select class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
+                                        <select
+                                            class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
                                             <option>1</option>
                                             <option>2</option>
                                             <option>3</option>
@@ -163,48 +192,58 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="flex">
+                           
+                            <div class="flex justify-between items-center">
                                 <span class="title-font font-medium text-2xl text-gray-900">{{ $product->price }} MAD</span>
-                                <!-- Any buttons or additional options like add to cart would go here -->
+                                <button class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
+                                style="     background-color: #4CAF50; 
+                                border: none;
+                                padding: 10px 24px;
+                                text-align: center;
+                                text-decoration: none;
+                                display: inline-block;
+                                font-size: 16px;
+                                margin: 4px 2px;
+                                transition-duration: 0.4s;
+                                cursor: pointer;">
+                            <span class="text-base">ajouter achat</span>
+                        </button>
                             </div>
+        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
     @endforeach
 
-      <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Add click event listener to all buy buttons
-    document.querySelectorAll('[id^="hs-vertically-centered-modal-"]').forEach(modal => {
-        const modalId = modal.id;
-        const button = document.querySelector(`a[href="#${modalId}"]`);
-        const closeButton = modal.querySelector('.close');
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
-        // Open modal on button click
-        button.addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent default anchor behavior
-            modal.style.display = 'block'; // Show the modal
-        });
+            document.querySelectorAll('[id^="hs-vertically-centered-modal-"]').forEach(modal => {
+                const modalId = modal.id;
+                const button = document.querySelector(`a[href="#${modalId}"]`);
+                const closeButton = modal.querySelector('.close');
 
-        // Close modal on close button click
-        closeButton.addEventListener('click', function() {
-            modal.style.display = 'none'; // Hide the modal
-        });
-    });
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    modal.style.display = 'block';
+                });
 
-    // Optional: Close modals on window click
-    window.onclick = function(event) {
-        document.querySelectorAll('.modal').forEach(modal => {
-            if (event.target === modal) {
-                modal.style.display = "none";
-            }
+                closeButton.addEventListener('click', function() {
+                    modal.style.display = 'none';
+                });
+            });
+
+            window.onclick = function(event) {
+                document.querySelectorAll('.modal').forEach(modal => {
+                    if (event.target === modal) {
+                        modal.style.display = "none";
+                    }
+                });
+            };
         });
-    };
-});
-</script>
+    </script>
 
 
 
