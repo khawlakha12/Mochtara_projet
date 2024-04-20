@@ -114,7 +114,7 @@
                     <p class="flex flex-col">
                         <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
                     </p>
-                    <a href="#"
+                    <a href="#hs-vertically-centered-modal-{{ $product->id }}"
                         class="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
                         style="background: #27a776;" data-hs-overlay="#hs-vertically-centered-modal">
                         <img src="svg_icon/barcode_code_icon_194645.ico" alt="Shopping" class="mr-2 h-4 w-6">
@@ -124,7 +124,7 @@
                 </div>
             </div>
         </div>
-        <div id="hs-vertically-centered-modal" class="modal">
+        <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal">
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <div class="container mx-auto">
@@ -174,27 +174,39 @@
         </div>
         
     @endforeach
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var btn = document.querySelector('a[data-hs-overlay="#hs-vertically-centered-modal"]');
-            var modal = document.getElementById('hs-vertically-centered-modal');
-            var close = modal.getElementsByClassName('close')[0];
 
-            btn.onclick = function() {
-                modal.style.display = "block";
-            }
+      <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // Add click event listener to all buy buttons
+    document.querySelectorAll('[id^="hs-vertically-centered-modal-"]').forEach(modal => {
+        const modalId = modal.id;
+        const button = document.querySelector(`a[href="#${modalId}"]`);
+        const closeButton = modal.querySelector('.close');
 
-            close.onclick = function() {
+        // Open modal on button click
+        button.addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent default anchor behavior
+            modal.style.display = 'block'; // Show the modal
+        });
+
+        // Close modal on close button click
+        closeButton.addEventListener('click', function() {
+            modal.style.display = 'none'; // Hide the modal
+        });
+    });
+
+    // Optional: Close modals on window click
+    window.onclick = function(event) {
+        document.querySelectorAll('.modal').forEach(modal => {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
-
-            window.onclick = function(event) {
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
         });
-    </script>
+    };
+});
+</script>
+
+
 
 </body>
 
