@@ -36,12 +36,43 @@
     .close:hover{
         color: red;
     }
+    #toggleButton {
+        position: absolute;
+        height: 40px;
+        width: 35px;
+        top: 50%;
+        right: 0;
+        z-index: 100;
+        background: #27a776;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    #infoPanel {
+        position: fixed;
+        top: 0;
+        right: -300px; 
+        width: 300px;
+        height: 100%;
+        background-color: #27a776;
+        color: white;
+        transition: right 0.5s;
+        z-index: 99;
+    }
+</style>
+
 </style>
 
 </head>
 
 <body>
-
+    <button onclick="toggleDiv()" id="toggleButton" onmouseover="hovredi()" class="hovermebaby" style="position: absolute; height: 40px; width: 35px; top: 50%; right: 0; z-index: 100;background:#27a776;border-top-left-radius: 10px;  border-bottom-left-radius: 10px;" >
+        <svg fill="#000000" width="35px" height="30px" viewBox="0 0 1000 1000" xmlns="http://www.w3.org/2000/svg"><path d="M891 308H340q-6 0-10.5-4t-5.5-10l-32-164q-2-14-12-22.5T256 99H110q-15 0-25.5 10.5T74 135v5q0 15 10.5 26t25.5 11h102q4 0 7 2.5t4 6.5l102 544q3 19 20 28 8 5 18 5h17q-22 25-21 58.5t25 56.5 57.5 23 58-23 25.5-56.5-22-58.5h186q-23 25-21.5 58.5T693 878t57.5 23 57.5-23 25-56.5-21-58.5h17q15 0 25.5-10.5T865 727v-8q0-15-11-25.5T828 683H409q-6 0-10.5-4t-5.5-9l-10-54q-1-8 4-14t12-5h460q13 0 22.5-8t11.5-21l33-219q3-16-7.5-28.5T891 308z"/></svg>
+    </button>
+    <div id="infoPanel" style="position: fixed; top: 0; right: -100%; width: 100%; height: 50%; background-color: #27a776; color: white; transition: right 0.5s; z-index: 99;margin-top:5%;">
+        <button onclick="toggleDiv()" style="border: #fefefe 2px solide ;color: ">Close Panel</button>
+    </div>
+    
     @foreach ($products as $product)
         <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;"
             data-category="{{ $product->category->name }}">
@@ -200,7 +231,22 @@
         });
     </script>
 
-
+<script>
+    function toggleDiv() {
+        var panel = document.getElementById("infoPanel");
+        var button = document.getElementById("toggleButton"); 
+    
+        if (panel.style.right === "0px") {
+            panel.style.right = "-300px"; 
+            button.style.display = "block"; 
+        } else {
+            panel.style.right = "0px"; 
+            button.style.display = "none"; 
+        }
+    }
+    </script>
+    
+    
 
 </body>
 

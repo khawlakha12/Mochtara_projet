@@ -49,8 +49,6 @@
         width: 100%;
         height: auto;
     }
-</style>
-<style>
     #imageContainer img {
     width: 100%; 
     height: 100%; 
@@ -65,6 +63,7 @@
     border-bottom-left-radius: 8px; 
 }
 </style>
+
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500" style="position: relative; overflow-x:hidden;" ng-app="">
