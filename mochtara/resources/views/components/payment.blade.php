@@ -53,7 +53,7 @@ input:focus{border-bottom:1px solid #1abc9c; outline:none;}
     
 <div class="container">
     <div class="card1">
-      <button class="proceed"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
+      <button class="proceed" style="display: flex; justify-content: center; align-items: center; width: 50px; height: 50px;"><svg class="sendicon" width="24" height="24" viewBox="0 0 24 24">
     <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path>
   </svg></button>
      <img src="https://seeklogo.com/images/V/VISA-logo-62D5B26FE1-seeklogo.com.png" class="logo-card">

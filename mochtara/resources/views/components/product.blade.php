@@ -83,8 +83,8 @@
     </button>
     <div id="infoPanel"
         style="position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #000; color: white; transition: right 0.5s; z-index: 99; display: flex; justify-content: center; align-items: center; margin-top :5%;overflow: ;">
-        <button onclick="toggleDiv()" style="border: 2px solid white; color: white; background: none;">Close
-            Panel</button>
+        <button onclick="toggleDiv()" style="border: 2px solid white; color: white; background: #27a776;width:30px;height:30px; border-radius:10px;font-size:25px;display:flex;justify-content: center; align-items: center;">
+            &times;</button>
             <x-payment />
 
     </div>
