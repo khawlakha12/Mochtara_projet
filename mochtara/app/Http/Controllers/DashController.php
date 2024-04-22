@@ -53,7 +53,9 @@ public function deleteCategory($id)
         $category->delete();
 
         return redirect()->route('categorie')->with('success', 'Category deleted successfully.');
+        
     }
+
 // -----------------------------designs------------------------------ //
 public function store(Request $request)
 {

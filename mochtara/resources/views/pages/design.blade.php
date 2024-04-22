@@ -62,6 +62,42 @@
     border-top-left-radius: 8px; 
     border-bottom-left-radius: 8px; 
 }
+.button {
+  --green: #1BFD9C;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.button:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.button:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+}
+
+.button:hover:before {
+  transform: translateX(15em);
+}
 </style>
 
 <x-navbar />
@@ -75,11 +111,14 @@
         </svg>
     </div>
     
-    <div style=" display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px;right: 0;height: 100px;width: 200px;background: #fff;z-index: 10;" class="flex tomove ">
+    <div id="categorySelector" style="display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px; right: 0; height: 100px; width: 200px; background: #fff; z-index: 10;" class="flex tomove">
         @foreach($categories as $category)
-<img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776;border:#fff 1px;height:50px;width:50px;margin-left:10px;"data-image-url="{{ asset('storage/' . $category->image) }}" class="image-sele">
-@endforeach
+            <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776; border:#fff 1px; height:50px; width:50px; margin-left:10px;"
+            data-image-url="{{ asset('storage/' . $category->image) }}"
+            data-sizes="{{ json_encode($category->sizes) }}" class="image-sele">
+        @endforeach
     </div>
+    
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
@@ -144,10 +183,13 @@
                         <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" id="main-image" class="img-fluid">
                     </div>
                 </div>
-                <div class="d-flex justify-content-center align-items-center">
-                    <x-size /> 
-                   
+                <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 20px; min-height: 100px;">
+                    <div>
+                        <x-size /> 
+                    </div>
+                    <button type="button" class="button " style="margin-top:5%;">Print</button>
                 </div>
+                
             </div>
             
         </div>
@@ -260,7 +302,8 @@
     });
 </script>
 
-
+    
+    
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
