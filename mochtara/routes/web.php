@@ -111,3 +111,6 @@ Route::post('/designs', [DashController::class, 'store'])->name('designs.store')
 
 
 //-----------------------------Middlewires---------------------------------//
+use App\Http\Controllers\EmailController;
+
+Route::post('/sendemail', [EmailController::class, 'sendEmail']);
