@@ -18,26 +18,25 @@
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
     <style>
         #pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-#pagination button {
-    margin: 5px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    outline: none;
-}
+        #pagination button {
+            margin: 5px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            outline: none;
+        }
 
-#pagination button:hover {
-    background-color: #0056b3;
-}
-
+        #pagination button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 
@@ -164,7 +163,8 @@
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
-                                    <form action="{{ route('add.categorie') }}" method="POST" enctype="multipart/form-data">
+                                    <form action="{{ route('add.categorie') }}" method="POST"
+                                        enctype="multipart/form-data">
                                         @csrf
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -194,8 +194,9 @@
                                                         <label for="exampleInputEmail1"
                                                             style="color:black">Name</label>
                                                         <input type="text" class="form-control"
-                                                            id="exampleInputEmail1" name="name" aria-describedby="emailHelp"
-                                                            placeholder="Enter Name" style="color: black;">
+                                                            id="exampleInputEmail1" name="name"
+                                                            aria-describedby="emailHelp" placeholder="Enter Name"
+                                                            style="color: black;">
                                                     </div>
                                                     <!-- Multi Select for Colors -->
                                                     <div class="form-group">
@@ -235,13 +236,14 @@
 
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    @if(session('success'))
-                                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                      <strong>{{ session('success') }}</strong>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                      </button>
-                                    </div>
+                                    @if (session('success'))
+                                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                            <strong>{{ session('success') }}</strong>
+                                            <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
                                     @endif
                                     <table class="table tablesorter " id="">
                                         <thead class=" text-primary">
@@ -263,20 +265,21 @@
                                                 </th>
 
                                             </tr>
-                                        </thead>               
-                                            <tbody>
-                                                @foreach($categories as $category)
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($categories as $category)
                                                 <tr>
                                                     <td class="text-center">
-                                                        <img src="{{ asset('storage/' . $category->image) }}" class="" alt="{{ $category->name }}"
+                                                        <img src="{{ asset('storage/' . $category->image) }}"
+                                                            class="" alt="{{ $category->name }}"
                                                             style="height:50px;width:50px;">
                                                     </td>
                                                     <td class="text-center">{{ $category->name }}</td>
                                                     <td class="text-center">
                                                         <select class="selectpicker">
                                                             <optgroup label="Colors">
-                                                                @if($category->colors)
-                                                                    @foreach(json_decode($category->colors, true) as $color)
+                                                                @if ($category->colors)
+                                                                    @foreach (json_decode($category->colors, true) as $color)
                                                                         <option>{{ $color }}</option>
                                                                     @endforeach
                                                                 @else
@@ -288,8 +291,8 @@
                                                     <td class="text-center">
                                                         <select class="selectpicker">
                                                             <optgroup label="Sizes">
-                                                                @if($category->sizes)
-                                                                    @foreach(json_decode($category->sizes, true) as $size)
+                                                                @if ($category->sizes)
+                                                                    @foreach (json_decode($category->sizes, true) as $size)
                                                                         <option>{{ $size }}</option>
                                                                     @endforeach
                                                                 @else
@@ -299,16 +302,19 @@
                                                         </select>
                                                     </td>
                                                     <td class="text-center">
-                                                        <form action="{{ route('categories.delete', $category->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this category?');">
+                                                        <form action="{{ route('categories.delete', $category->id) }}"
+                                                            method="POST"
+                                                            onsubmit="return confirm('Are you sure you want to delete this category?');">
                                                             @csrf
                                                             @method('DELETE')
-                                                            <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                                                            <button type="submit"
+                                                                class="btn btn-danger btn-block">Delete</button>
                                                         </form>
                                                     </td>
                                                 </tr>
-                                                @endforeach
-                                                
-                                            </tbody>
+                                            @endforeach
+
+                                        </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -337,18 +343,19 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($designs as $design)
-                                            <tr>
-                                                <td class="text-center">
-                                                    {{$design->name}}
-                                                </td>
-                                                <td class="text-center">
-                                                    <img src="{{ asset('storage/' . $design->img) }}" class="" alt="Cinque Terre"
-                                                        style="height:50px;width:50px;">
-                                                </td>
-                                                <td class="text-center">
-                                                    {{$design->price}}MAD
-                                                </td>
-                                            </tr>
+                                                <tr>
+                                                    <td class="text-center">
+                                                        {{ $design->name }}
+                                                    </td>
+                                                    <td class="text-center">
+                                                        <img src="{{ asset('storage/' . $design->img) }}"
+                                                            class="" alt="Cinque Terre"
+                                                            style="height:50px;width:50px;">
+                                                    </td>
+                                                    <td class="text-center">
+                                                        {{ $design->price }}MAD
+                                                    </td>
+                                                </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
@@ -489,43 +496,43 @@
                     }
                 </script>
                 {{-- ------------------------------pagination------------------------------------- --}}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const rowsPerPage = 5;
-        const rows = Array.from(document.querySelector('#productTable tbody').rows);
-        const paginationWrapper = document.getElementById('pagination');
-    
-        function setupPagination(rows, wrapper, rowsPerPage) {
-            wrapper.innerHTML = "";
-    
-            let pageCount = Math.ceil(rows.length / rowsPerPage);
-            for (let i = 1; i <= pageCount; i++) {
-                let btn = document.createElement('button');
-                btn.innerText = i;
-                btn.className = 'pagination-btn'; 
-                btn.addEventListener('click', function() {
-                    displayPage(i);
-                });
-                wrapper.appendChild(btn);
-            }
-        }
-    
-        function displayPage(page) {
-            const start = (page - 1) * rowsPerPage;
-            const end = start + rowsPerPage;
-            rows.forEach((row, index) => {
-                if (index >= start && index < end) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        }
-    
-        setupPagination(rows, paginationWrapper, rowsPerPage);
-        displayPage(1); 
-    });
-    </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const rowsPerPage = 5;
+                        const rows = Array.from(document.querySelector('#productTable tbody').rows);
+                        const paginationWrapper = document.getElementById('pagination');
+
+                        function setupPagination(rows, wrapper, rowsPerPage) {
+                            wrapper.innerHTML = "";
+
+                            let pageCount = Math.ceil(rows.length / rowsPerPage);
+                            for (let i = 1; i <= pageCount; i++) {
+                                let btn = document.createElement('button');
+                                btn.innerText = i;
+                                btn.className = 'pagination-btn';
+                                btn.addEventListener('click', function() {
+                                    displayPage(i);
+                                });
+                                wrapper.appendChild(btn);
+                            }
+                        }
+
+                        function displayPage(page) {
+                            const start = (page - 1) * rowsPerPage;
+                            const end = start + rowsPerPage;
+                            rows.forEach((row, index) => {
+                                if (index >= start && index < end) {
+                                    row.style.display = '';
+                                } else {
+                                    row.style.display = 'none';
+                                }
+                            });
+                        }
+
+                        setupPagination(rows, paginationWrapper, rowsPerPage);
+                        displayPage(1);
+                    });
+                </script>
 
 </body>
 

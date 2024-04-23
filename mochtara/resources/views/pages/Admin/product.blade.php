@@ -204,7 +204,6 @@
                                       <div class="form-group">
                                         <label for="categorySelect" style="color: black;">Category</label>
                                         <select class="form-control" id="categorySelect" name="category_id">
-                                            <option value="">Select a category</option>
                                             @foreach ($categories as $category)
                                             <option value="{{ $category->id }}">{{ $category->name }}</option>
                                             @endforeach
