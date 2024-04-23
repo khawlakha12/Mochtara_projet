@@ -79,7 +79,7 @@
                     <li>
                         <a href="/liste_clients">
                             <i class="tim-icons icon-puzzle-10"></i>
-                            <p>Table Clients/Commande</p>
+                            <p>Clients/Commande</p>
                         </a>
                     </li>
                     <li class="active ">
@@ -481,7 +481,7 @@
         });
     });
     </script>
-
+{{-- ------------------------------pagination------------------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const rowsPerPage = 5;
