@@ -20,6 +20,29 @@
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
+    <style>
+        #pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#pagination button {
+    margin: 5px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+}
+
+#pagination button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
 </head>
 
 <body class="">
@@ -115,6 +138,7 @@
                     </div>
                 </div>
             </nav>
+            
             <div class="modal modal-search fade" id="searchModal" tabindex="-1" role="dialog"
                 aria-labelledby="searchModal" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -171,7 +195,6 @@
                                       <div class="form-group">
                                         <label for="sizeSelect" style="color: black;">Sizes</label>
                                         <select class="form-control" id="sizeSelect" name="sizes[]" multiple style="width:100%;">
-                                            <option value="">Select Sizes</option>
                                             @foreach ($sizes as $size)
                                                 <option value="{{ $size->id }}">{{ $size->name }}</option>
                                             @endforeach
@@ -217,7 +240,16 @@
                             </div>
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table class="table tablesorter " id="">
+                                    @if(session('success'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>{{ session('success') }}</strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+@endif
+
+                                    <table class="table tablesorter " id="productTable">
                                         <thead class=" text-primary">
                                             <tr>
                                                 <th class="text-center">
@@ -288,6 +320,7 @@
                                             @endforeach
                                         </tbody>
                                     </table>
+                                    <div id="pagination"></div>
                                 </div>
                             </div>
                         </div>
@@ -448,6 +481,45 @@
         });
     });
     </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const rowsPerPage = 5;
+        const rows = Array.from(document.querySelector('#productTable tbody').rows);
+        const paginationWrapper = document.getElementById('pagination');
+    
+        function setupPagination(rows, wrapper, rowsPerPage) {
+            wrapper.innerHTML = "";
+    
+            let pageCount = Math.ceil(rows.length / rowsPerPage);
+            for (let i = 1; i <= pageCount; i++) {
+                let btn = document.createElement('button');
+                btn.innerText = i;
+                btn.className = 'pagination-btn'; 
+                btn.addEventListener('click', function() {
+                    displayPage(i);
+                });
+                wrapper.appendChild(btn);
+            }
+        }
+    
+        function displayPage(page) {
+            const start = (page - 1) * rowsPerPage;
+            const end = start + rowsPerPage;
+            rows.forEach((row, index) => {
+                if (index >= start && index < end) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        }
+    
+        setupPagination(rows, paginationWrapper, rowsPerPage);
+        displayPage(1); 
+    });
+    </script>
+    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

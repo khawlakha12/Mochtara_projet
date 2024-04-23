@@ -108,3 +108,6 @@ Route::get('/new_design', function() {
     return view('pages.Art_designer.dash_art');
 });
 Route::post('/designs', [DashController::class, 'store'])->name('designs.store');
+
+
+//-----------------------------Middlewires---------------------------------//
