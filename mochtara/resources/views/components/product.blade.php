@@ -73,118 +73,119 @@
     </style>
     <style>
         .button {
-  --width: 100px;
-  --height: 35px;
-  --tooltip-height: 35px;
-  --tooltip-width: 90px;
-  --gap-between-tooltip-to-button: 18px;
-  --button-color: #27a776;
-  --tooltip-color: #fff;
-  width: var(--width);
-  height: var(--height);
-  background: var(--button-color);
-  position: relative;
-  text-align: center;
-  border-radius: 0.45em;
-  font-family: "Arial";
-  transition: background 0.3s;
-}
+            --width: 100px;
+            --height: 35px;
+            --tooltip-height: 35px;
+            --tooltip-width: 90px;
+            --gap-between-tooltip-to-button: 18px;
+            --button-color: #27a776;
+            --tooltip-color: #fff;
+            width: var(--width);
+            height: var(--height);
+            background: var(--button-color);
+            position: relative;
+            text-align: center;
+            border-radius: 0.45em;
+            font-family: "Arial";
+            transition: background 0.3s;
+        }
 
-.button::before {
-  position: absolute;
-  content: attr(data-tooltip);
-  width: var(--tooltip-width);
-  height: var(--tooltip-height);
-  background-color: #555;
-  font-size: 0.9rem;
-  color: #fff;
-  border-radius: .25em;
-  line-height: var(--tooltip-height);
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-  left: calc(50% - var(--tooltip-width) / 2);
-}
+        .button::before {
+            position: absolute;
+            content: attr(data-tooltip);
+            width: var(--tooltip-width);
+            height: var(--tooltip-height);
+            background-color: #555;
+            font-size: 0.9rem;
+            color: #fff;
+            border-radius: .25em;
+            line-height: var(--tooltip-height);
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+            left: calc(50% - var(--tooltip-width) / 2);
+        }
 
-.button::after {
-  position: absolute;
-  content: '';
-  width: 0;
-  height: 0;
-  border: 10px solid transparent;
-  border-top-color: #555;
-  left: calc(50% - 10px);
-  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
-}
+        .button::after {
+            position: absolute;
+            content: '';
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #555;
+            left: calc(50% - 10px);
+            bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+        }
 
-.button::after,.button::before {
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.5s;
-}
+        .button::after,
+        .button::before {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s;
+        }
 
-.text {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .text {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.button-wrapper,.text,.icon {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  color: #fff;
-}
+        .button-wrapper,
+        .text,
+        .icon {
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            left: 0;
+            color: #fff;
+        }
 
-.text {
-  top: 0
-}
+        .text {
+            top: 0
+        }
 
-.text,.icon {
-  transition: top 0.5s;
-}
+        .text,
+        .icon {
+            transition: top 0.5s;
+        }
 
-.icon {
-  color: #fff;
-  top: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+        .icon {
+            color: #fff;
+            top: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.icon svg {
-  width: 24px;
-  height: 24px;
-}
+        .icon svg {
+            width: 24px;
+            height: 24px;
+        }
 
-.button:hover {
-  background: #27a776;
-}
+        .button:hover {
+            background: #27a776;
+        }
 
-.button:hover .text {
-  top: -100%;
-}
+        .button:hover .text {
+            top: -100%;
+        }
 
-.button:hover .icon {
-  top: 0;
-}
+        .button:hover .icon {
+            top: 0;
+        }
 
-.button:hover:before,.button:hover:after {
-  opacity: 1;
-  visibility: visible;
-}
+        .button:hover:before,
+        .button:hover:after {
+            opacity: 1;
+            visibility: visible;
+        }
 
-.button:hover:after {
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-}
+        .button:hover:after {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+        }
 
-.button:hover:before {
-  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-}
-
-
-
-
+        .button:hover:before {
+            bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+        }
     </style>
 </head>
 
@@ -197,13 +198,16 @@
         </svg>
     </button>
     <style>
-        
+
     </style>
-    <div id="infoPanel"
-    onclick="toggleDiv()"
-    style="position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #ffffff63; backdrop-filter: blur(5px); color: white; transition: right 0.5s; z-index: 99; display: flex; justify-content: center; align-items: center; margin-top: 5%; overflow-y: auto;">
-    <x-payment />
-</div>
+    <div id="infoPanel" onclick="toggleDiv()"
+        style="position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #ffffff63; backdrop-filter: blur(5px); color: white; transition: right 0.5s; z-index: 99; display: flex; justify-content: center; align-items: center; margin-top: 5%; overflow-y: auto;">
+        @if(isset($commandes))
+        <x-payment :commandes="$commandes"/>
+    @else
+        <p>No commandes data available.</p>
+    @endif
+    </div>
 
 
     @foreach ($products as $product)
@@ -254,23 +258,28 @@
                             d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z">
                         </path>
                     </svg>
-                    </div>
+                </div>
                 <div class="flex items-center justify-between">
                     <p class="flex flex-col">
                         <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
                     </p>
-                    <a href="#hs-vertically-centered-modal-{{ $product->id }}" ><div data-tooltip="{{ $product->price }}DH" class="button">
-                        <div class="button-wrapper">
-                          <div class="text">Acheter</div>
-                            <span class="icon">
-                              <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
-                        </svg>
-                            </span>
-                          </div>
-                        </div></a>
-                        
-                        
+                    <a href="#hs-vertically-centered-modal-{{ $product->id }}">
+                        <div data-tooltip="{{ $product->price }}DH" class="button">
+                            <div class="button-wrapper">
+                                <div class="text">Acheter</div>
+                                <span class="icon">
+                                    <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16"
+                                        width="16" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z">
+                                        </path>
+                                    </svg>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+
                 </div>
             </div>
         </div>
@@ -297,83 +306,87 @@
                             </div>
                             <form action="{{ route('commande.store') }}" method="POST">
                                 @csrf
-                            <input type="hidden" name="product_id" value="{{ $product->id }}">
-                            <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
-                                <div class="flex ml-6 items-center">
-                                    <span class="mr-3 "style="color:black">Size</span>
-                                    <div class="relative">
-                                        <select name="size_id" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" style="color:black">
-                                            @foreach ($product->sizes as $size)
-                                                <option value="{{ $size->id }}">{{ $size->name }}</option>
-                                            @endforeach
-                                        </select>
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
+                                    <div class="flex ml-6 items-center">
+                                        <span class="mr-3 "style="color:black">Size</span>
+                                        <div class="relative">
+                                            <select name="size_id"
+                                                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
+                                                style="color:black">
+                                                @foreach ($product->sizes as $size)
+                                                    <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="flex ml-6 items-center">
+                                        <span class="mr-3" style="color:black">Quantity</span>
+                                        <div class="relative">
+                                            <select name="quantity"
+                                                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>5</option>
+                                                <option>6</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="flex ml-6 items-center">
-                                    <span class="mr-3" style="color:black">Quantity</span>
-                                    <div class="relative">
-                                        <select name="quantity"
-                                            class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                        </select>
-                                    </div>
+                                <div class="ana flex justify-between items-center">
+                                    <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
+                                    <button type="submit"
+                                        class="inline-flex items-center justify-center rounded-md text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
+                                        style="     background-color: #021803; 
+                                   border: none;
+                                    padding: 10px 10px;
+                                    text-align: center;
+                                      text-decoration: none;
+                                    display: inline-block;
+                                   font-size: 16px;
+                                      margin: 2px 2px;
+                                    transition-duration: 0.4s;
+                                    cursor: pointer;">
+                                        <span class="text-base font-bold text-white">achater</span>
+                                    </button>
                                 </div>
-                            </div>
-
-                            <div class="ana flex justify-between items-center">
-                                <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
-                                <button type="submit"
-                                    class="inline-flex items-center justify-center rounded-md text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
-                                    style="     background-color: #021803; 
-                                border: none;
-                                padding: 10px 10px;
-                                text-align: center;
-                                text-decoration: none;
-                                display: inline-block;
-                                font-size: 16px;
-                                margin: 2px 2px;
-                                transition-duration: 0.4s;
-                                cursor: pointer;">
-                                    <span class="text-base font-bold text-white">achater</span>
-                                </button>
-                            </div>
-                        
+                            </form>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
-    </form>
+        
     @endforeach
 
     <script>
         function addToPayment(button) {
             const productId = button.getAttribute('data-product-id');
-        
+
             fetch('/add-to-payment', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                },
-                body: JSON.stringify({ product_id: productId })
-            })
-            .then(response => response.json())
-            .then(data => {
-                console.log('Success:', data);
-                window.location.href = '/payment'; // Redirect to the payment page
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-            });
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                    },
+                    body: JSON.stringify({
+                        product_id: productId
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    window.location.href = '/payment'; // Redirect to the payment page
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
         }
-        </script>
-        
+    </script>
+
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -405,26 +418,28 @@
 
     <script>
         var perm = true
-        function  setperm(){
+
+        function setperm() {
             perm = false
         }
-        function toggleDiv() {
-            if(perm){
-               
-                var panel = document.getElementById("infoPanel");
-            var button = document.getElementById("toggleButton");
 
-            if (panel.style.right === "0px") {
-                panel.style.right = "-100%";
-                button.style.display = "block";
+        function toggleDiv() {
+            if (perm) {
+
+                var panel = document.getElementById("infoPanel");
+                var button = document.getElementById("toggleButton");
+
+                if (panel.style.right === "0px") {
+                    panel.style.right = "-100%";
+                    button.style.display = "block";
+                } else {
+                    panel.style.right = "0px";
+                    button.style.display = "none";
+                }
             } else {
-                panel.style.right = "0px";
-                button.style.display = "none";
-            }
-            }else{
                 perm = true
             }
-            
+
         }
     </script>
 

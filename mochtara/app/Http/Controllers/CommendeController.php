@@ -8,21 +8,29 @@ use App\Models\Commande;
 class CommendeController extends Controller
 {
     public function store(Request $request)
-{
-    $validatedData = $request->validate([
-        'product_id' => 'required|integer',
-        'size_id' => 'required|integer',
-        'quantity' => 'required|integer'
-    ]);
-
-    $commande = Commande::create($validatedData);
-
-
-    \Log::info('Commande Created: ', $validatedData);
-
-    return redirect()->route('commande.store')->with('success', 'Commande placed successfully!');
+    {
+        $validatedData = $request->validate([
+            'product_id' => 'required|integer',
+            'size_id' => 'required|integer',
+            'quantity' => 'required|integer'
+        ]);
+    
+        $commande = Commande::create($validatedData);
+    
+        \Log::info('Commande Created: ', $validatedData);
+    
+        return redirect()->route('shop.show')->with('success', 'Commande placed successfully!');
+    }
+    
+public function showCommandes() {
+    $commandes = Commande::with('product')->get();
+    return view('component.payment', compact('commandes'));
 }
 
+public function showShop() {
+    $commandes = Commande::with('product')->get(); 
+    return view('pages.shop', compact('commandes'));
+}
 
 
 }

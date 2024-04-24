@@ -9,7 +9,7 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EmailController;
-
+use App\Http\Controllers\CommendeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -118,7 +118,10 @@ Route::post('/designs', [DashController::class, 'store'])->name('designs.store')
 Route::post('/sendemail', [EmailController::class, 'sendEmail']);
 
 
-use App\Http\Controllers\CommendeController;
 
-Route::post('/shop', [CommendeController::class, 'store'])->name('commande.store');
 
+
+Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('commandes.show');
+Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
+
+Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
