@@ -202,11 +202,8 @@
     </style>
     <div id="infoPanel" onclick="toggleDiv()"
         style="position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #ffffff63; backdrop-filter: blur(5px); color: white; transition: right 0.5s; z-index: 99; display: flex; justify-content: center; align-items: center; margin-top: 5%; overflow-y: auto;">
-        @if(isset($commandes))
-        <x-payment :commandes="$commandes"/>
-    @else
-        <p>No commandes data available.</p>
-    @endif
+        <x-payment/>
+
     </div>
 
 

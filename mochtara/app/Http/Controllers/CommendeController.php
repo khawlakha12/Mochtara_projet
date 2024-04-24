@@ -22,11 +22,11 @@ class CommendeController extends Controller
         return redirect()->route('shop.show')->with('success', 'Commande placed successfully!');
     }
     
-public function showCommandes() {
-    $commandes = Commande::with('product')->get();
-    return view('component.payment', compact('commandes'));
-}
-
+    public function showCommandes() {
+        $commandes = Commande::with('product')->get();
+        \Log::info('Commandes data:', ['data' => $commandes]);
+        return view('components.payment', compact('commandes'));
+    }
 public function showShop() {
     $commandes = Commande::with('product')->get(); 
     return view('pages.shop', compact('commandes'));
