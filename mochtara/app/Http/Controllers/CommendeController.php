@@ -20,7 +20,7 @@ class CommendeController extends Controller
 
     \Log::info('Commande Created: ', $validatedData);
 
-    return redirect()->route('home')->with('success', 'Commande placed successfully!');
+    return redirect()->route('commande.store')->with('success', 'Commande placed successfully!');
 }
 
 

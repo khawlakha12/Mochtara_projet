@@ -120,5 +120,5 @@ Route::post('/sendemail', [EmailController::class, 'sendEmail']);
 
 use App\Http\Controllers\CommendeController;
 
-Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
+Route::post('/shop', [CommendeController::class, 'store'])->name('commande.store');
 

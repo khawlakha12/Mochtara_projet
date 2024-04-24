@@ -191,6 +191,15 @@
 <x-navbar />
 
 <!-- ======= Hero Section ======= -->
+@if (session('success'))
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <strong>{{ session('success') }}</strong>
+    <button type="button" class="close" data-dismiss="alert"
+        aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+@endif
 <section id="hero" class="hero d-flex flex-column justify-content-center align-items-center" data-aos="fade"
     data-aos-delay="1500">
     <div class="container">
@@ -201,15 +210,7 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
-@if (session('success'))
-<div class="alert alert-warning alert-dismissible fade show" role="alert">
-    <strong>{{ session('success') }}</strong>
-    <button type="button" class="close" data-dismiss="alert"
-        aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-@endif
+
 <main id="main" data-aos="fade" data-aos-delay="1500">
     <!-- ======= Tandence Section ======= -->
     <section id="gallery" class="gallery">
