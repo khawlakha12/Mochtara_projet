@@ -244,7 +244,9 @@
             onclick="setperm()">
             <div style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80%; overflow: auto; margin-bottom: 20px;">
                
-
+                @php
+                $totalPrice = 0;
+            @endphp
                 @foreach ($commandes as $commande)
                 <div style="display: flex; align-items: center; border: 1px solid #27a776; border-radius: 5px; padding: 10px; box-shadow: 0 0 20px #27a776; width: 80%; margin-bottom: 20px;">
                     <img src="{{ asset('storage/' . $commande->product->image) }}" style="height: 50px; width: 50px; border-radius: 10px; margin-right: 20px;" alt="{{ $commande->product->name }}">
@@ -257,6 +259,9 @@
                         <div class="checkmark"></div>
                     </label>
                 </div>
+                @php
+        $totalPrice += $commande->product->price;
+    @endphp
             @endforeach
             
 
@@ -265,7 +270,7 @@
             
             <div style=" display: flex;align-items: center;justify-content: space-between;">
                 <h1 style="margin-right:20px;">Total :</h1>
-                <h1>200 MAD </h1>
+                <h1>{{ $totalPrice }} MAD </h1>
             </div>
         </div>
 
