@@ -8,6 +8,8 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\EmailController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -111,6 +113,12 @@ Route::post('/designs', [DashController::class, 'store'])->name('designs.store')
 
 
 //-----------------------------Middlewires---------------------------------//
-use App\Http\Controllers\EmailController;
+
 
 Route::post('/sendemail', [EmailController::class, 'sendEmail']);
+
+
+use App\Http\Controllers\CommendeController;
+
+Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
+

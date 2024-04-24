@@ -274,6 +274,7 @@
                 </div>
             </div>
         </div>
+
         <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal">
             <div class="modal-content bg-white p-6 mx-auto border shadow-lg rounded-md">
                 <button
@@ -294,14 +295,16 @@
                             <div class="flex mb-4">
 
                             </div>
+                            <form action="{{ route('commande.store') }}" method="POST">
+                                @csrf
+                            <input type="hidden" name="product_id" value="{{ $product->id }}">
                             <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                                 <div class="flex ml-6 items-center">
                                     <span class="mr-3 "style="color:black">Size</span>
                                     <div class="relative">
-                                        <select
-                                            class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
+                                        <select name="size_id" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10" style="color:black">
                                             @foreach ($product->sizes as $size)
-                                                <option>{{ $size->name }}</option>
+                                                <option value="{{ $size->id }}">{{ $size->name }}</option>
                                             @endforeach
                                         </select>
                                     </div>
@@ -309,7 +312,7 @@
                                 <div class="flex ml-6 items-center">
                                     <span class="mr-3" style="color:black">Quantity</span>
                                     <div class="relative">
-                                        <select
+                                        <select name="quantity"
                                             class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
                                             <option>1</option>
                                             <option>2</option>
@@ -324,7 +327,7 @@
 
                             <div class="ana flex justify-between items-center">
                                 <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
-                                <button
+                                <button type="submit"
                                     class="inline-flex items-center justify-center rounded-md text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
                                     style="     background-color: #021803; 
                                 border: none;
@@ -339,13 +342,38 @@
                                     <span class="text-base font-bold text-white">achater</span>
                                 </button>
                             </div>
-
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </form>
     @endforeach
+
+    <script>
+        function addToPayment(button) {
+            const productId = button.getAttribute('data-product-id');
+        
+            fetch('/add-to-payment', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                },
+                body: JSON.stringify({ product_id: productId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                window.location.href = '/payment'; // Redirect to the payment page
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+        </script>
+        
 
     <script>
         document.addEventListener("DOMContentLoaded", function() {
