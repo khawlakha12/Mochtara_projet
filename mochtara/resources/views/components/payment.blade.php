@@ -247,18 +247,21 @@
                 @php
                 $totalPrice = 0;
             @endphp
-                @foreach ($commandes as $commande)
-                <div style="display: flex; align-items: center; border: 1px solid #27a776; border-radius: 5px; padding: 10px; box-shadow: 0 0 20px #27a776; width: 80%; margin-bottom: 20px;">
-                    <img src="{{ asset('storage/' . $commande->product->image) }}" style="height: 50px; width: 50px; border-radius: 10px; margin-right: 20px;" alt="{{ $commande->product->name }}">
-                    <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
-                        <h2>{{ $commande->product->price }} MAD</h2>
-                        <h5>{{ $commande->product->name }}</h5>
-                    </div>
-                    <label class="container">
-                        <input type="checkbox" checked="checked">
-                        <div class="checkmark"></div>
-                    </label>
-                </div>
+               @foreach ($commandes as $commande)
+               <div style="display: flex; align-items: center; border: 1px solid #27a776; border-radius: 5px; padding: 10px; box-shadow: 0 0 20px #27a776; width: 80%; margin-bottom: 20px;">
+                   <img src="{{ asset('storage/' . $commande->product->image) }}" style="height: 50px; width: 50px; border-radius: 10px; margin-right: 20px;" alt="{{ $commande->product->name }}">
+                   <div style="display: flex; flex-direction: column; align-items: center; justify-content: space-between;">
+                       <h2>{{ $commande->product->price }} MAD</h2>
+                       <h5>{{ $commande->product->name }}</h5>
+                   </div>
+                   <div style="margin-left: auto; display: flex; align-items: center;">
+                       <label class="container">
+                           <input type="checkbox" checked="checked">
+                           <div class="checkmark"></div>
+                       </label>
+                   </div>
+               </div>
+               
                 @php
         $totalPrice += $commande->product->price;
     @endphp
