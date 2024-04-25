@@ -259,14 +259,34 @@
                             <h2>{{ $commande->product->price }} MAD</h2>
                             <h5>{{ $commande->product->name }}</h5>
                         </div>
-                        <div style="margin-left: auto; display: flex; align-items: center;">
-                            <label class="container">
-                                <input type="checkbox" checked="checked">
-                                <div class="checkmark"></div>
-                            </label>
-                        </div>
+                        <button onclick="deleteCommande({{ $commande->id }})" style="background: none; border: none; color: red; cursor: pointer;">
+                            Delete
+                        </button>
                     </div>
-
+                    <script>
+                        function deleteCommande(commandeId) {
+                            if (confirm('Are you sure you want to delete this item?')) {
+                                $.ajax({
+                                    url: '/delete-commande/' + commandeId,
+                                    type: 'POST',
+                                    data: {
+                                        _token: '{{ csrf_token() }}', // CSRF token
+                                        _method: 'DELETE' // Method spoofing to simulate DELETE request
+                                    },
+                                    success: function(result) {
+                                        if(result.success) {
+                                            $('#commande-' + commandeId).fadeOut(500, function() { $(this).remove(); });
+                                        } else {
+                                            alert('Error: ' + result.error);
+                                        }
+                                    },
+                                    error: function() {
+                                        alert('Error deleting item.');
+                                    }
+                                });
+                            }
+                        }
+                        </script>
                     @php
                         $totalPrice += $commande->product->price;
                     @endphp
@@ -285,7 +305,7 @@
 
     </section>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>

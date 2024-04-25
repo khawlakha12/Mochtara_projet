@@ -32,5 +32,14 @@ public function showShop() {
     return view('pages.shop', compact('commandes'));
 }
 
+public function deleteCommande($id) {
+    $commande = Commande::find($id);
+    if ($commande) {
+        $commande->delete();
+        return response()->json(['success' => true]);
+    } else {
+        return response()->json(['success' => false, 'error' => 'Commande not found']);
+    }
+}
 
 }

@@ -123,3 +123,4 @@ Route::post('/sendemail', [EmailController::class, 'sendEmail']);
 Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('commandes.show');
 Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
 Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
+Route::delete('/delete-commande/{id}', [CommendeController::class, 'deleteCommande'])->name('commande.delete');
