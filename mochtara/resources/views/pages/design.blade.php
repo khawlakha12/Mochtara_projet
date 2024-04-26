@@ -196,7 +196,9 @@
                     <div>
                         <x-size /> 
                     </div>
-                    <button type="submit" id="printButton"  class="button " style="margin-top:5%;">Print</button>
+                    @auth
+                    <button type="submit" id="printButton" class="button" style="margin-top:5%;">Print</button>
+                @endauth
                 </div>
                 
             </div>

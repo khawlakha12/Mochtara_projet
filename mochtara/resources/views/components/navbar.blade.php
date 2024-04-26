@@ -53,7 +53,14 @@
       <div class="header-social-links">
         <a href="#" class="facebook"><i class="bi bi-whatsapp"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
+        <a href="@auth {{ url('/profile') }} @else # @endauth" class="linkedin">
+          @auth
+              <i class="bi bi-person-circle"></i>
+          @else
+              <i class="bi bi-linkedin"></i>
+          @endauth
+      </a>
+      
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
