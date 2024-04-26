@@ -270,8 +270,8 @@
                                     url: '/delete-commande/' + commandeId,
                                     type: 'POST',
                                     data: {
-                                        _token: '{{ csrf_token() }}', // CSRF token
-                                        _method: 'DELETE' // Method spoofing to simulate DELETE request
+                                        _token: '{{ csrf_token() }}', 
+                                        _method: 'DELETE' 
                                     },
                                     success: function(result) {
                                         if(result.success) {

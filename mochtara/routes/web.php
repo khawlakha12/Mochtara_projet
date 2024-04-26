@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\DesignClient;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\RegistrationController;
@@ -124,3 +125,5 @@ Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('co
 Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
 Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
 Route::delete('/delete-commande/{id}', [CommendeController::class, 'deleteCommande'])->name('commande.delete');
+
+

@@ -110,6 +110,15 @@
             </g>
         </svg>
     </div>
+    @if (session('success'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>{{ session('success') }}</strong>
+        <button type="button" class="close" data-dismiss="alert"
+            aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+@endif
     
     <div id="categorySelector" style="display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px; right: 0; height: 100px; width: 200px; background: #fff; z-index: 10;" class="flex tomove">
         @foreach($categories as $category)
@@ -187,13 +196,15 @@
                     <div>
                         <x-size /> 
                     </div>
-                    <button type="button" class="button " style="margin-top:5%;">Print</button>
+                    <button type="submit" id="printButton"  class="button " style="margin-top:5%;">Print</button>
                 </div>
                 
             </div>
             
         </div>
     </div>
+   
+    
 </main>
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -289,7 +300,7 @@
             
         });
 </script>
-{{-- --------------------------------choisir autre caterie for design-------------------------- --}}
+{{-- --------------------------------choisir autre categorie for design-------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('.image-sele').forEach(item => {
@@ -302,7 +313,26 @@
     });
 </script>
 
-    
+    <script>
+        document.getElementById('printButton').addEventListener('click', function() {
+    fetch('/print', {  // Adjust the URL based on your actual route
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'  // Include CSRF token for Laravel POST requests
+        },
+        body: JSON.stringify({
+            design_id: selectedDesignId,  // Assuming these variables hold the required values
+            category_id: selectedCategoryId,
+            price: selectedPrice
+        })
+    })
+    .then(response => response.json())
+    .then(data => console.log(data.message))
+    .catch(error => console.error('Error:', error));
+});
+
+    </script>
     
 
 <script>
