@@ -154,7 +154,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="/new_design" class="simple-text logo-mini">
-
+                        <img src="img/LOGOdash.png" alt="">
                     </a>
                     <a href="/new_design" class="simple-text logo-normal">
                         Mochtara

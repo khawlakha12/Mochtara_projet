@@ -43,7 +43,7 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a href="/admin" class="simple-text logo-mini">
-
+                        <img src="img/LOGOdash.png" alt="">
                     </a>
                     <a href="/admin" class="simple-text logo-normal">
                         Mochtara

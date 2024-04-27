@@ -34,7 +34,15 @@
                         no time.</p>
                     <a class="btn bilingual-btn" style="background: #27a776;" href="/design" role="button"> اطبع الان
                         Print Now </a>
-
+                        <script>
+                            function checkLoginAndRedirect() {
+                                @auth
+                                    window.location.href = '/design';
+                                @else
+                                    window.location.href = '/register';
+                                @endauth
+                            }
+                            </script>
                 </div>
             </div>
         </div>

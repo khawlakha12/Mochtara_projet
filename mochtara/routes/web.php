@@ -26,40 +26,40 @@ use App\Http\Controllers\CommendeController;
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
-Route::get('/admin', function() {
+Route::get('/admin', function () {
     return view('pages.Admin.Dashboard');
 });
-Route::get('/shop', function() {
+Route::get('/shop', function () {
     return view('pages.shop');
 });
-Route::get('/design', function() {
+Route::get('/design', function () {
     return view('pages.design');
 });
-Route::get('/contact', function() {
+Route::get('/contact', function () {
     return view('pages.contact');
 });
-Route::get('/ser', function() {
+Route::get('/ser', function () {
     return view('pages.service');
 });
-Route::get('/form', function() {
+Route::get('/form', function () {
     return view('pages.form');
 });
-Route::get('/profil', function() {
+Route::get('/profil', function () {
     return view('pages.Admin.user');
 });
 
-Route::get('/arabe', function() {
+Route::get('/arabe', function () {
     return view('pages.Admin.rtl');
 });
 
-Route::get('/Categ', function() {
+Route::get('/Categ', function () {
     return view('pages.Art_designer.Cate_art');
 });
 
-Route::get('/profile_designer', function() {
+Route::get('/profile_designer', function () {
     return view('pages.Art_designer.profile');
 });
-Route::get('/new_product', function() {
+Route::get('/new_product', function () {
     return view('pages.Admin.product');
 });
 
@@ -89,7 +89,7 @@ Route::post('/products/{product}/update', [ProductController::class, 'update'])-
 
 
 //-----------------------------Test Angular---------------------------------//
-Route::get('/angular', function() {
+Route::get('/angular', function () {
     return view('Angular.angular');
 });
 
@@ -107,23 +107,23 @@ Route::delete('/categories/{id}', [DashController::class, 'deleteCategory'])->na
 //-----------------------------Design---------------------------------//
 Route::get('/Categ', [DashController::class, 'show_design']);
 Route::delete('/new_design/{id}', [DashController::class, 'destroy_design'])->name('designs.destroy');
-Route::get('/new_design', function() {
+Route::get('/new_design', function () {
     return view('pages.Art_designer.dash_art');
 });
 Route::post('/designs', [DashController::class, 'store'])->name('designs.store');
 
 
 //-----------------------------Middlewires---------------------------------//
+Route::get('/design', function () { return view('pages.design');})->middleware('check.login');
+Route::get('/register', function () {return view('pages.Auth.register');})->name('register');
+Route::get('/design', function () { return view('pages.design');})->middleware('auth');
 
 
-Route::post('/sendemail', [EmailController::class, 'sendEmail']);
-
-
-
-
+//-----------------------------Commendes---------------------------------//
 Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('commandes.show');
 Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
 Route::post('/commande/store', [CommendeController::class, 'store'])->name('commande.store');
 Route::delete('/delete-commande/{id}', [CommendeController::class, 'deleteCommande'])->name('commande.delete');
 
-
+//-----------------------------Contact email---------------------------------//
+Route::post('/sendemail', [EmailController::class, 'sendEmail']);
