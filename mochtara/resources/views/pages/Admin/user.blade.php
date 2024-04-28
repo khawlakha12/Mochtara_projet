@@ -130,7 +130,7 @@
                     <div class="col-md-12">
                       <div class="form-group">
                         <label>Address email</label>
-                        <input type="email" class="form-control" placeholder="Address email" value="khawlakha@gmail.com">
+                        <input type="email" class="form-control" placeholder="Address email" value="{{ Auth::user()->email }}">
                       </div>
                     </div>
                   </div>
@@ -138,7 +138,7 @@
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
                         <label>First Name</label>
-                        <input type="text" class="form-control" placeholder="Company" value="Mike">
+                        <input type="text" class="form-control" placeholder="Company" value="{{ Auth::user()->name }}">
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
@@ -166,7 +166,7 @@
                     <div class="col-md-4 px-md-1">
                       <div class="form-group">
                         <label>Role</label>
-                        <input type="text" class="form-control" placeholder="Country" value="Admin">
+                        <input type="text" class="form-control" placeholder="Country" value="{{ Auth::user()->role }}">
                       </div>
                     </div>
                   </div>
@@ -196,10 +196,10 @@
                     <div class="block block-four"></div>
                     <a href="javascript:void(0)">
                       <img class="avatar" src="assets-dah/img/emilyz.jpg" alt="...">
-                      <h5 class="title">Mike Andrew</h5>
+                      <h5 class="title">{{ Auth::user()->name }}</h5>
                     </a>
                     <p class="description">
-                      Admin
+                      {{ Auth::user()->role }}
                     </p>
                   </div>
                 </p>
