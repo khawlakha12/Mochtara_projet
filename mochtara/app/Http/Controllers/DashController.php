@@ -11,10 +11,12 @@ use Illuminate\Support\Facades\Redirect;
 class DashController extends Controller
 {
     public function showUsers()
-{
-    $users = User::all(); 
-    return view('pages.Admin.tables', ['users' => $users]); 
-}
+    {
+        $users = User::all(); 
+        \Log::info($users);
+
+        return view('pages.Admin.tables', ['users' => $users]);
+    }
 public function deleteUser($id)
 {
     $user = User::findOrFail($id);

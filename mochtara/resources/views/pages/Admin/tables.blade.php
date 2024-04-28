@@ -246,7 +246,8 @@
                                                         </form>
                                                     </td>
                                                 </tr>
-                                            @endforeach
+                                                @endforeach
+                                                
                                         </tbody>
                                     </table>
                                     <div id="pagination"></div>
