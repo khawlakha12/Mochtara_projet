@@ -3,15 +3,14 @@
 use App\Models\DesignClient;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\RegistrationController;
+
 use App\Http\Controllers\loginController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
-use App\Http\Controllers\Auth\ResetPasswordController;
+use App\Http\Controllers\PasswordResetController;
 use App\Http\Controllers\DashController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\CommendeController;
-
+use App\Http\Controllers\RegistrationController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,10 +47,6 @@ Route::get('/profil', function () {
     return view('pages.Admin.user');
 });
 
-Route::get('/arabe', function () {
-    return view('pages.Admin.rtl');
-});
-
 Route::get('/Categ', function () {
     return view('pages.Art_designer.Cate_art');
 });
@@ -64,18 +59,17 @@ Route::get('/new_product', function () {
 });
 
 //---------------------------Register---------------------------------//
-Route::get('/register', [RegistrationController::class, 'showRegistrationForm'])->name('register');
-Route::post('/register', [RegistrationController::class, 'register'])->name('register.submit');
+Route::get('/register', function () {
+    return view('pages.Auth.register');
+})->name('register');
+Route::post('/register', [RegistrationController::class, 'register'])->name('register');
 
 //---------------------------Login---------------------------------//
 Route::get('/log', [loginController::class, 'showLoginForm'])->name('login');
 Route::post('/log', [loginController::class, 'login'])->name('login.submit');
 
 //-----------------------------Forgot Password---------------------------------//
-Route::get('password/reset', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('password/email', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('password/reset/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('password/reset', [ResetPasswordController::class, 'reset'])->name('password.update');
+
 
 //-----------------------------Shop---------------------------------//
 Route::get('/search/products', [ProductController::class, 'search'])->name('search.products');
@@ -117,8 +111,21 @@ Route::post('/designs', [DashController::class, 'store'])->name('designs.store')
 Route::get('/design', function () { return view('pages.design');})->middleware('check.login');
 Route::get('/register', function () {return view('pages.Auth.register');})->name('register');
 Route::get('/design', function () { return view('pages.design');})->middleware('auth');
-
-
+Route::middleware(['auth', 'check.admin.role'])->group(function () {
+  Route::get('/admin', function () { return view('pages.Admin.Dashboard');
+})->name('admin');});
+Route::middleware(['auth', 'check.admin.role'])->group(function () {
+    Route::get('/Categories', function () { return view('pages.Admin.Categorie');
+  })->name('admin');});
+  Route::middleware(['auth', 'check.admin.role'])->group(function () {
+    Route::get('/liste_clients', function () { return view('pages.Admin.tables');
+  })->name('admin');});
+  Route::middleware(['auth', 'check.admin.role'])->group(function () {
+    Route::get('/new_product', function () { return view('pages.Admin.product');
+  })->name('admin');});
+  Route::middleware(['auth', 'check.admin.role'])->group(function () {
+    Route::get('/profil', function () { return view('pages.Admin.user');
+  })->name('admin');});
 //-----------------------------Commendes---------------------------------//
 Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('commandes.show');
 Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
@@ -127,3 +134,9 @@ Route::delete('/delete-commande/{id}', [CommendeController::class, 'deleteComman
 
 //-----------------------------Contact email---------------------------------//
 Route::post('/sendemail', [EmailController::class, 'sendEmail']);
+
+Route::post('logout', function () { Auth::logout();return redirect('/');})->name('logout');
+
+Route::get('/reset_password', function () {return view('pages.Auth.password');})->name('reset_password');
+Route::post('password/email', [PasswordResetController::class, 'sendEmail'])->name('password.email');
+Route::get('password/reset/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');

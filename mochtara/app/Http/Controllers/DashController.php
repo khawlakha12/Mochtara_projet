@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Category;
 use App\Models\Design;
+use App\Models\Role;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 
@@ -90,5 +91,13 @@ public function show_design()
     
         return back()->with('success', 'Design successfully deleted.');
     }
+
+
+    public function showRole()
+{
+    
+    return view('pages.Admin.tables', compact('roles'));
+}
+
     
 }

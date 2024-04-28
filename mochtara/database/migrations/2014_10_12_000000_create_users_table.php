@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->enum('gender', ['male', 'female', 'other']);
             $table->string('password');
+            $table->string('role')->default('client');
             $table->timestamps(); 
         });
     }

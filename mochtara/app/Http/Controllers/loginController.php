@@ -27,4 +27,12 @@ class loginController extends Controller
             'email' => 'Les informations de connexion fournies ne correspondent pas à nos enregistrements.',
         ])->withInput($request->only('email', 'remember'));
     }
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/');
+    }
 }

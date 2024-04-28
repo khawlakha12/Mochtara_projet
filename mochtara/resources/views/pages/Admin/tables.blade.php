@@ -34,6 +34,51 @@
         #pagination button:hover {
             background-color: #0056b3;
         }
+
+        .checkbox-wrapper input[type="checkbox"] {
+            visibility: hidden;
+            display: none;
+        }
+
+        .checkbox-wrapper *,
+        .checkbox-wrapper ::after,
+        .checkbox-wrapper ::before {
+            box-sizing: border-box;
+            user-select: none;
+        }
+
+        .checkbox-wrapper {
+            position: relative;
+            display: block;
+            overflow: hidden;
+        }
+
+        .checkbox-wrapper .label {
+            cursor: pointer;
+        }
+
+        .checkbox-wrapper .check {
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            opacity: 0;
+        }
+
+        .checkbox-wrapper .label svg {
+            vertical-align: middle;
+        }
+
+        .checkbox-wrapper .path1 {
+            stroke-dasharray: 400;
+            stroke-dashoffset: 400;
+            transition: .5s stroke-dashoffset;
+            opacity: 0;
+        }
+
+        .checkbox-wrapper .check:checked+label svg g path {
+            stroke-dashoffset: 0;
+            opacity: 1;
+        }
     </style>
 </head>
 
@@ -135,7 +180,8 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="SEARCH">
+                            <input type="text" class="form-control" id="inlineFormInputGroup"
+                                placeholder="SEARCH">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <i class="tim-icons icon-simple-remove"></i>
                             </button>
@@ -400,6 +446,9 @@
                         displayPage(1);
                     });
                 </script>
+
+
+
 </body>
 
 </html>

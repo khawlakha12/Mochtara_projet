@@ -54,16 +54,33 @@
         <a href="#" class="facebook"><i class="bi bi-whatsapp"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="@auth {{ url('/profile') }} @else # @endauth" class="linkedin">
-          @auth
-              <i class="bi bi-person-circle"></i>
-          @else
-              <i class="bi bi-linkedin"></i>
-          @endauth
+         <!-- Dropdown Trigger -->
+<a href="#" class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  @auth
+      <i class="bi bi-person-circle"></i> <!-- Authenticated user icon -->
+  @else
+      <i class="bi bi-linkedin"></i>
+  @endauth
+</a>
+<!-- Dropdown Menu -->
+@auth
+  <div class="dropdown-menu dropdown-navbar" style="background: black;margin-left:20px;" aria-labelledby="navbarDropdownMenuLink">
+      <div class="dropdown-divider"></div>
+      <a class="" href="javascript:void(0)" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+          Log out
       </a>
-      
+      <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+  </div>
+@endauth   
       </div>
       <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
       <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
 
     </div>
   </header>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
