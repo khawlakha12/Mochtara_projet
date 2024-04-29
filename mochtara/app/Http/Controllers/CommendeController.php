@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\Commande;
+use App\Models\Product;
+use App\Models\Size;
 
 class CommendeController extends Controller
 {
@@ -14,16 +17,25 @@ class CommendeController extends Controller
             'size_id' => 'required|integer',
             'quantity' => 'required|integer'
         ]);
-    
-        $commande = Commande::create($validatedData);
-    
+
+        $product = Product::findOrFail($validatedData['product_id']);
+        $size = Size::findOrFail($validatedData['size_id']);
+
+        $commande = new Commande();
+        $commande->product_id = $product->id;
+        $commande->size_id = $size->id;
+        $commande->quantity = $validatedData['quantity'];
+        $commande->user_id = Auth::id();
+        $commande->save();
+
         \Log::info('Commande Created: ', $validatedData);
-    
+
         return redirect()->route('shop.show')->with('success', 'Commande placed successfully!');
     }
-    
+
     public function showCommandes() {
-        $commandes = Commande::with('product')->get();
+        $userId = Auth::id(); 
+        $commandes = Commande::where('user_id', $userId)->with('product')->get();
         \Log::info('Commandes data:', ['data' => $commandes]);
         return view('components.payment', compact('commandes'));
     }

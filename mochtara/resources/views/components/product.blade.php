@@ -206,7 +206,6 @@
 
     </div>
 
-
     @foreach ($products as $product)
         <div class="relative m-10 overflow-hidden rounded-lg bg-white shadow-md product" style="height: 74%;width:78%;"
             data-category="{{ $product->category->name }}">
