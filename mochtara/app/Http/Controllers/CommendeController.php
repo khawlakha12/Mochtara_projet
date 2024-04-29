@@ -33,11 +33,13 @@ class CommendeController extends Controller
         return redirect()->route('shop.show')->with('success', 'Commande placed successfully!');
     }
 
-    public function showCommandes() {
-        $userId = Auth::id(); 
-        $commandes = Commande::where('user_id', $userId)->with('product')->get();
-        \Log::info('Commandes data:', ['data' => $commandes]);
-        return view('components.payment', compact('commandes'));
+    public function showCommandes()
+    {
+        $user = Auth::user();
+        if ($user && $user->commandes) {
+            return view('components.payment', ['commandes' => $user->commandes]);
+        }
+        abort(404);
     }
 public function showShop() {
     $commandes = Commande::with('product')->get(); 

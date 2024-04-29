@@ -194,7 +194,9 @@
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 20px; min-height: 100px;">
                     <div>
-                        <x-size /> 
+                        <div id="sizesContainer" style="position: absolute; top: 460px; left: 0; right: 0; text-align: center;">
+                            <!-- Les boutons de tailles seront ajoutés ici -->
+                        </div>
                     </div>
                     @auth
                     <button type="submit" id="printButton" class="button" style="margin-top:5%;">Print</button>
@@ -317,14 +319,14 @@
 
     <script>
         document.getElementById('printButton').addEventListener('click', function() {
-    fetch('/print', {  // Adjust the URL based on your actual route
+     fetch('/print', { 
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'  // Include CSRF token for Laravel POST requests
+            'X-CSRF-TOKEN': '{{ csrf_token() }}'  
         },
         body: JSON.stringify({
-            design_id: selectedDesignId,  // Assuming these variables hold the required values
+            design_id: selectedDesignId,  
             category_id: selectedCategoryId,
             price: selectedPrice
         })
@@ -381,7 +383,6 @@
         });
         </script>
         
-
 </body>
 
 </html>

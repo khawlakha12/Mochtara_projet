@@ -248,7 +248,8 @@
                 @php
                     $totalPrice = 0;
                 @endphp
-                @foreach ($commandes as $commande)
+                           @if (Auth::user() && Auth::user()->commandes)
+                           @foreach (Auth::user()->commandes as $commande)
                     <div
                         style="display: flex; align-items: center; border: 1px solid #27a776; border-radius: 5px; padding: 10px; box-shadow: 0 0 20px #27a776; width: 80%; margin-bottom: 20px;">
                         <img src="{{ asset('storage/' . $commande->product->image) }}"
@@ -290,7 +291,11 @@
                     @php
                         $totalPrice += $commande->product->price;
                     @endphp
-                @endforeach
+               @endforeach
+               @endif
+               @if (Auth::user() && Auth::user()->commandes)
+                 
+               @endif
 
 
 

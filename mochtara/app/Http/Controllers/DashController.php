@@ -50,6 +50,7 @@ public function ShowCategorie()
 
     return view('pages.Admin.Categorie', compact('categories'));
 }
+
 public function deleteCategory($id)
     {
         $category = Category::findOrFail($id); 

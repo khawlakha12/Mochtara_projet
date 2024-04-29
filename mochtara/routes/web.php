@@ -155,3 +155,4 @@ Route::post('logout', function () { Auth::logout();return redirect('/');})->name
 Route::get('/reset_password', function () {return view('pages.Auth.password');})->name('reset_password');
 Route::post('password/email', [PasswordResetController::class, 'sendEmail'])->name('password.email');
 Route::get('password/reset/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
+
