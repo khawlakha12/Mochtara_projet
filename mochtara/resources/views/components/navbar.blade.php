@@ -54,15 +54,14 @@
         <a href="#" class="facebook"><i class="bi bi-whatsapp"></i></a>
         <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
         <a href="@auth {{ url('/profile') }} @else # @endauth" class="linkedin">
-         <!-- Dropdown Trigger -->
 <a href="#" class="dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
   @auth
-      <i class="bi bi-person-circle"></i> <!-- Authenticated user icon -->
+      <i class="bi bi-person-circle"></i> 
   @else
       <i class="bi bi-linkedin"></i>
   @endauth
 </a>
-<!-- Dropdown Menu -->
+
 @auth
   <div class="dropdown-menu dropdown-navbar" style="background: black;margin-left:20px;" aria-labelledby="navbarDropdownMenuLink">
       <div class="dropdown-divider"></div>
