@@ -186,6 +186,48 @@
         .button:hover:before {
             bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
         }
+
+        .butto{
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 1rem;
+  border-radius: 10px;
+  background: #050506;
+  background-size: 300%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.butto:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+  
+}
+
+.butto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    #27a776 10.8%,
+    #3bb183 94.3%
+  );
+  transition: all 0.475s;
+}
+
     </style>
 </head>
 
@@ -202,7 +244,7 @@
     </style>
     <div id="infoPanel" onclick="toggleDiv()"
         style="position: fixed; top: 0; right: -100%; width: 100%; height: 100%; background: #ffffff63; backdrop-filter: blur(5px); color: white; transition: right 0.5s; z-index: 99; display: flex; justify-content: center; align-items: center; margin-top: 5%; overflow-y: auto;">
-        <x-payment/>
+        <x-payment />
 
     </div>
 
@@ -333,20 +375,11 @@
                                 </div>
                                 <div class="ana flex justify-between items-center">
                                     <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
-                                    <button type="submit"
-                                        class="inline-flex items-center justify-center rounded-md text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 focus:ring-blue-300 w-1/2"
-                                        style="     background-color: #021803; 
-                                   border: none;
-                                    padding: 10px 10px;
-                                    text-align: center;
-                                      text-decoration: none;
-                                    display: inline-block;
-                                   font-size: 16px;
-                                      margin: 2px 2px;
-                                    transition-duration: 0.4s;
-                                    cursor: pointer;">
-                                        <span class="text-base font-bold text-white">achater</span>
+                                    @auth
+                                    <button class="butto" type="submit">
+                                        <span class="button-content">Acheter </span>
                                     </button>
+                                    
                                 </div>
                             </form>
                         </div>
@@ -355,9 +388,9 @@
                 </div>
             </div>
         </div>
-        
     @endforeach
-
+   
+        
     <script>
         function addToPayment(button) {
             const productId = button.getAttribute('data-product-id');
