@@ -153,7 +153,7 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                        <img src="assets-dash/img/anime3.png" alt="Profile Photo">
+                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">
@@ -449,7 +449,39 @@
                 </script>
 
 
-
+{{------------------------------- fixé image profile ------------------------------}}
+<script>
+    const images = document.querySelectorAll('.replaceable-image');
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            document.getElementById('fileInput').click();
+        });
+    });
+  
+    function replaceAllImages() {
+        const file = document.getElementById('fileInput').files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+  
+                images.forEach(image => {
+                    image.src = e.target.result;
+                    localStorage.setItem(image.id, e.target.result);
+                });
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+  
+    window.onload = function() {
+        images.forEach(image => {
+            const savedImage = localStorage.getItem(image.id);
+            if (savedImage) {
+                image.src = savedImage;
+            }
+        });
+    }
+  </script>
 </body>
 
 </html>

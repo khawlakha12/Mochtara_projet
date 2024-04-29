@@ -207,7 +207,7 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                        <img src="assets-dash/img/anime3.png" alt="Profile Photo">
+                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">

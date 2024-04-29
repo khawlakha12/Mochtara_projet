@@ -85,7 +85,7 @@
               <li class="dropdown nav-item">
                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
-                    <img src="assets-dah/img/anime3.png" alt="Profile Photo">
+                    <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
                   </div>
                   <b class="caret d-none d-lg-block d-xl-block"></b>
                   <p class="d-lg-none">
@@ -137,14 +137,14 @@
                   <div class="row">
                     <div class="col-md-6 pr-md-1">
                       <div class="form-group">
-                        <label>First Name</label>
+                        <label>Full Name</label>
                         <input type="text" class="form-control" placeholder="Company" value="{{ Auth::user()->name }}">
                       </div>
                     </div>
                     <div class="col-md-6 pl-md-1">
                       <div class="form-group">
-                        <label>Last Name</label>
-                        <input type="text" class="form-control" placeholder="Last Name" value="Andrew">
+                        <label>Role</label>
+                        <input type="text" class="form-control" placeholder="Country" value="{{ Auth::user()->role }}">
                       </div>
                     </div>
                   </div>
@@ -165,8 +165,7 @@
                     </div>
                     <div class="col-md-4 px-md-1">
                       <div class="form-group">
-                        <label>Role</label>
-                        <input type="text" class="form-control" placeholder="Country" value="{{ Auth::user()->role }}">
+                        
                       </div>
                     </div>
                   </div>
@@ -195,7 +194,8 @@
                     <div class="block block-three"></div>
                     <div class="block block-four"></div>
                     <a href="javascript:void(0)">
-                      <img class="avatar" src="assets-dah/img/emilyz.jpg" alt="...">
+                      <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image" style="width: 200px; height: 200px; cursor: pointer;border-radius:90%;margin-bottom:10px;">
+                      <input type="file" id="fileInput" style="display:none;" accept="image/*" onchange="replaceAllImages()">
                       <h5 class="title">{{ Auth::user()->name }}</h5>
                     </a>
                     <p class="description">
@@ -371,6 +371,39 @@
         application: "black-dashboard-free"
       });
   </script>
+
+<script>
+  const images = document.querySelectorAll('.replaceable-image');
+  images.forEach(image => {
+      image.addEventListener('click', function() {
+          document.getElementById('fileInput').click();
+      });
+  });
+
+  function replaceAllImages() {
+      const file = document.getElementById('fileInput').files[0];
+      if (file) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+
+              images.forEach(image => {
+                  image.src = e.target.result;
+                  localStorage.setItem(image.id, e.target.result);
+              });
+          };
+          reader.readAsDataURL(file);
+      }
+  }
+
+  window.onload = function() {
+      images.forEach(image => {
+          const savedImage = localStorage.getItem(image.id);
+          if (savedImage) {
+              image.src = savedImage;
+          }
+      });
+  }
+</script>
 </body>
 
 </html>
