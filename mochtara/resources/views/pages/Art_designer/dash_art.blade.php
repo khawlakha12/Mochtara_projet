@@ -377,22 +377,23 @@
     
 {{------------------------------- fixé image profile ------------------------------}}
 <script>
-    const images = document.querySelectorAll('.replaceable-image');
+    const images = document.querySelectorAll('.replaceable-img');
+    const role = 'designer'; // This should ideally be set dynamically from the server-side
+
     images.forEach(image => {
         image.addEventListener('click', function() {
-            document.getElementById('fileInput').click();
+            document.getElementById('Input').click();
         });
     });
   
     function replaceAllImages() {
-        const file = document.getElementById('fileInput').files[0];
+        const file = document.getElementById('Input').files[0];
         if (file) {
             const reader = new FileReader();
             reader.onload = function(e) {
-  
                 images.forEach(image => {
                     image.src = e.target.result;
-                    localStorage.setItem(image.id, e.target.result);
+                    localStorage.setItem(image.id + '-' + role, e.target.result);
                 });
             };
             reader.readAsDataURL(file);
@@ -401,13 +402,14 @@
   
     window.onload = function() {
         images.forEach(image => {
-            const savedImage = localStorage.getItem(image.id);
+            const savedImage = localStorage.getItem(image.id + '-' + role);
             if (savedImage) {
                 image.src = savedImage;
             }
         });
     }
-  </script>
+</script>
+
 </body>
 
 </html>

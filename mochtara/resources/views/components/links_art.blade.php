@@ -174,7 +174,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="/Categ">
+                        <a href="/Designer">
                             <i class="fas fa-tshirt"></i>
                             <p>Designs</p>
                         </a>
@@ -194,7 +194,7 @@
                                 <span class="navbar-toggler-bar bar3"></span>
                             </button>
                         </div>
-                        <a class="navbar-brand" href="/Categ">Design</a>
+                        <a class="navbar-brand" href="/Designer">Design</a>
                     </div>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -207,7 +207,7 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
+                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-img">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">

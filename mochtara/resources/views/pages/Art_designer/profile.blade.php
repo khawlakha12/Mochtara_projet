@@ -18,36 +18,36 @@
 <body class="">
     <div class="wrapper">
         <div class="sidebar">
-            <div class="sidebar-wrapper">
-                <div class="logo">
-                    <a href="/new_design" class="simple-text logo-mini">
-
-                    </a>
-                    <a href="/new_design" class="simple-text logo-normal">
-                        Mochtara
-                    </a>
-                </div>
-                <ul class="nav">
-                    <li>
-                        <a href="/new_design">
-                            <i class="tim-icons icon-chart-pie-36"></i>
-                            <p>Dashboard</p>
-                        </a>
-                    </li>
-                    <li class="active">
-                        <a href="/profile_designer">
-                            <i class="tim-icons icon-single-02"></i>
-                            <p>User Profile</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/categ">
-                            <i class="fas fa-tshirt"></i>
-                            <p>Designs</p>
-                        </a>
-                    </li>
-                </ul>
+          <div class="sidebar-wrapper">
+            <div class="logo">
+                <a href="/new_design" class="simple-text logo-mini">
+                    <img src="img/LOGOdash.png" alt="">
+                </a>
+                <a href="/new_design" class="simple-text logo-normal">
+                    Mochtara
+                </a>
             </div>
+            <ul class="nav">
+                <li>
+                    <a href="/new_design">
+                        <i class="tim-icons icon-chart-pie-36"></i>
+                        <p>Dashboard</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/profile_designer">
+                        <i class="tim-icons icon-single-02"></i>
+                        <p>User Profile</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Designer">
+                        <i class="fas fa-tshirt"></i>
+                        <p>Designs</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
         </div>
         <div class="main-panel">
             <!-- Navbar -->
@@ -80,7 +80,7 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                      <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
+                                      <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-img">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">
@@ -199,8 +199,8 @@
                                     <div class="block block-three"></div>
                                     <div class="block block-four"></div>
                                     <a href="javascript:void(0)">
-                                      <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image" style="width: 200px; height: 200px; cursor: pointer;border-radius:90%;margin-bottom:10px;">
-                                      <input type="file" id="fileInput" style="display:none;" accept="image/*" onchange="replaceAllImages()">
+                                      <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-img" style="width: 200px; height: 200px; cursor: pointer;border-radius:90%;margin-bottom:10px;">
+                                      <input type="file" id="Input" style="display:none;" accept="image/*" onchange="replaceAllImages()">
                                         <h5 class="title">{{ Auth::user()->name }}</h5>
                                     </a>
                                     <p class="description">
@@ -381,22 +381,23 @@
 
 {{------------------------------- fixé image profile ------------------------------}}
 <script>
-  const images = document.querySelectorAll('.replaceable-image');
+  const images = document.querySelectorAll('.replaceable-img');
+  const role = 'designer'; // This should ideally be set dynamically from the server-side
+
   images.forEach(image => {
       image.addEventListener('click', function() {
-          document.getElementById('fileInput').click();
+          document.getElementById('Input').click();
       });
   });
 
   function replaceAllImages() {
-      const file = document.getElementById('fileInput').files[0];
+      const file = document.getElementById('Input').files[0];
       if (file) {
           const reader = new FileReader();
           reader.onload = function(e) {
-
               images.forEach(image => {
                   image.src = e.target.result;
-                  localStorage.setItem(image.id, e.target.result);
+                  localStorage.setItem(image.id + '-' + role, e.target.result);
               });
           };
           reader.readAsDataURL(file);
@@ -405,13 +406,14 @@
 
   window.onload = function() {
       images.forEach(image => {
-          const savedImage = localStorage.getItem(image.id);
+          const savedImage = localStorage.getItem(image.id + '-' + role);
           if (savedImage) {
               image.src = savedImage;
           }
       });
   }
 </script>
+
 </body>
 
 </html>

@@ -47,7 +47,7 @@ Route::get('/profil', function () {
     return view('pages.Admin.user');
 });
 
-Route::get('/Categ', function () {
+Route::get('/Designer', function () {
     return view('pages.Art_designer.Cate_art');
 });
 
@@ -99,7 +99,7 @@ Route::delete('/categories/{id}', [DashController::class, 'deleteCategory'])->na
 
 
 //-----------------------------Design---------------------------------//
-Route::get('/Categ', [DashController::class, 'show_design']);
+Route::get('/Designer', [DashController::class, 'show_design']);
 Route::delete('/new_design/{id}', [DashController::class, 'destroy_design'])->name('designs.destroy');
 Route::get('/new_design', function () {
     return view('pages.Art_designer.dash_art');
@@ -126,6 +126,20 @@ Route::middleware(['auth', 'check.admin.role'])->group(function () {
   Route::middleware(['auth', 'check.admin.role'])->group(function () {
     Route::get('/profil', function () { return view('pages.Admin.user');
   })->name('admin');});
+
+
+Route::group(['middleware' => ['auth', 'role:designer']], function () {
+    Route::get('/new_design', function () {
+        return view('pages.Art_designer.dash_art');
+    });
+    Route::get('/profile_designer', function () {
+        return view('pages.Art_designer.profile');
+    });
+});
+Route::get('/Designer', function () {
+    return view('pages.Art_designer.Cate_art');
+})->middleware('auth');
+
 //-----------------------------Commendes---------------------------------//
 Route::get('/commandes', [CommendeController::class, 'showCommandes'])->name('commandes.show');
 Route::get('/shop', [CommendeController::class, 'showShop'])->name('shop.show');
