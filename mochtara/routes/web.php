@@ -80,13 +80,6 @@ Route::post('/new_product', [ProductController::class, 'addProduct'])->name('add
 Route::delete('/new_product/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::post('/products/{product}/update', [ProductController::class, 'update'])->name('products.update');
 
-
-
-//-----------------------------Test Angular---------------------------------//
-Route::get('/angular', function () {
-    return view('Angular.angular');
-});
-
 //-----------------------------Crud Users---------------------------------//
 Route::get('/liste_clients', [DashController::class, 'showUsers'])->name('users.show');
 Route::get('/liste_clients/{id}', [DashController::class, 'deleteUser'])->name('user.delete');
@@ -156,3 +149,4 @@ Route::get('/reset_password', function () {return view('pages.Auth.password');})
 Route::post('password/email', [PasswordResetController::class, 'sendEmail'])->name('password.email');
 Route::get('password/reset/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
 
+Route::post('/saveDesign', [ProductController::class, 'saveDesign'])->name('saveDesign');

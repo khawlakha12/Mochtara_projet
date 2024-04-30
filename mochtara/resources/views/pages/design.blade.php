@@ -98,6 +98,36 @@
 .button:hover:before {
   transform: translateX(15em);
 }
+button {
+  height: 40px;
+  width: 50px;
+  border: #fff 1px solid;
+  padding: 17px 40px;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: rgba(27, 253, 156, 0.6 ) 0 0 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 15px;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  letter-spacing: 3px;
+  background-color: rgba(27, 253, 156, 0.6 );
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgba(27, 253, 156, 0.6 ) 0px 7px 29px 0px;
+}
+
+button:active {
+  letter-spacing: 3px;
+  background-color: hsl(261deg 80% 48%);
+  color: hsl(0, 0%, 100%);
+  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+  transform: translateY(10px);
+  transition: 100ms;
+}
+
 </style>
 
 <x-navbar />
@@ -124,7 +154,7 @@
         @foreach($categories as $category)
             <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776; border:#fff 1px; height:50px; width:50px; margin-left:10px;"
             data-image-url="{{ asset('storage/' . $category->image) }}"
-            data-sizes="{{ json_encode($category->sizes) }}" class="image-sele">
+             class="image-sele">
         @endforeach
     </div>
     
@@ -194,13 +224,15 @@
                 </div>
                 <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 20px; min-height: 100px;">
                     <div>
-                        <div id="sizesContainer" style="position: absolute; top: 460px; left: 0; right: 0; text-align: center;">
-                            <!-- Les boutons de tailles seront ajoutés ici -->
-                        </div>
+                        <button type="submit" name="size" value="S">S</button>
+                        <button type="submit" name="size" value="M">M</button>
+                        <button type="submit" name="size" value="L">L</button>
+                        <button type="submit" name="size" value="XL">XL</button>
+                        <button type="submit" name="size" value="XXL">XXL</button>
                     </div>
-                    @auth
+                   @auth
                     <button type="submit" id="printButton" class="button" style="margin-top:5%;">Print</button>
-                @endauth
+                    @endauth
                 </div>
                 
             </div>

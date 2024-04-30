@@ -187,47 +187,44 @@
             bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
         }
 
-        .butto{
-  position: relative;
-  overflow: hidden;
-  height: 3rem;
-  padding: 0 1rem;
-  border-radius: 10px;
-  background: #050506;
-  background-size: 300%;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
+        .butto {
+            position: relative;
+            overflow: hidden;
+            height: 3rem;
+            padding: 0 1rem;
+            border-radius: 10px;
+            background: #050506;
+            background-size: 300%;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
 
-.butto:hover::before {
-  transform: scaleX(1);
-}
+        .butto:hover::before {
+            transform: scaleX(1);
+        }
 
-.button-content {
-  position: relative;
-  z-index: 1;
-  
-}
+        .button-content {
+            position: relative;
+            z-index: 1;
 
-.butto::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: scaleX(0);
-  transform-origin: 0 50%;
-  width: 100%;
-  height: inherit;
-  border-radius: inherit;
-  background: linear-gradient(
-    82.3deg,
-    #27a776 10.8%,
-    #3bb183 94.3%
-  );
-  transition: all 0.475s;
-}
+        }
 
+        .butto::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: 0 50%;
+            width: 100%;
+            height: inherit;
+            border-radius: inherit;
+            background: linear-gradient(82.3deg,
+                    #27a776 10.8%,
+                    #3bb183 94.3%);
+            transition: all 0.475s;
+        }
     </style>
 </head>
 
@@ -316,81 +313,59 @@
                             </div>
                         </div>
                     </a>
-
-
                 </div>
             </div>
         </div>
-
-        <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal">
+        <div id="hs-vertically-centered-modal-{{ $product->id }}" class="modal" style="display: none;">
             <div class="modal-content bg-white p-6 mx-auto border shadow-lg rounded-md">
-                <button
-                    style="display: inline-flex; align-items: center; justify-content: center;color:aliceblue;:1px #00000 ;width:30px;height:30px;border-radius:10px;background:black;font-size: 20px;"
-                    class="close">&times;</button>
+                <button onclick="document.getElementById('hs-vertically-centered-modal-{{ $product->id }}').style.display = 'none';" class="close" style="display: inline-flex; align-items: center; justify-content: center; color: aliceblue; background: black; width: 30px; height: 30px; border-radius: 10px; font-size: 20px;">&times;</button>
                 <div class="container mx-auto">
                     <div class="lg:w-4/5 mx-auto flex flex-wrap">
-                        <img alt="{{ $product->name }}"
-                            class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200"
-                            src="{{ asset('storage/' . $product->image) }}">
+                        <img alt="{{ $product->name }}" class="lg:w-1/2 w-full object-cover object-center rounded border border-gray-200" src="{{ asset('storage/' . $product->image) }}">
                         <div class="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                            <h2
-                                style="display: inline-block; color: white; background-color: black; border: 2px solid black; border-radius: 0.75rem; padding: 0.5rem; margin: 0 auto; font-size: 0.875rem; font-family: 'title-font', sans-serif; width: fit-content;">
-                                {{ $product->category->name }}
-                            </h2>
-                            <h1 style="margin-top:20px;"class="text-gray-900 text-2xl font-bold title-font  mb-1">
-                                {{ $product->name }}</h1>
-                            <div class="flex mb-4">
-
-                            </div>
+                            <h2 class="product-category" style="display: inline-block; color: white; background-color: black; border: 2px solid black; border-radius: 0.75rem; padding: 0.5rem; font-size: 0.875rem; font-family: 'title-font', sans-serif; width: fit-content;">{{ $product->category->name }}</h2>
+                            <h1 class="text-gray-900 text-2xl font-bold title-font mb-1">{{ $product->name }}</h1>
                             <form action="{{ route('commande.store') }}" method="POST">
                                 @csrf
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <div class="flex mt-6 items-center pb-5 border-b-2 border-gray-200 mb-5">
                                     <div class="flex ml-6 items-center">
-                                        <span class="mr-3 "style="color:black">Size</span>
-                                        <div class="relative">
-                                            <select name="size_id"
-                                                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"
-                                                style="color:black">
-                                                @foreach ($product->sizes as $size)
-                                                    <option value="{{ $size->id }}">{{ $size->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        <span class="mr-3" style="color:black">Size</span>
+                                        <select name="size_id" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
+                                            @foreach ($product->sizes as $size)
+                                                <option value="{{ $size->id }}">{{ $size->name }}</option>
+                                            @endforeach
+                                        </select>
                                     </div>
                                     <div class="flex ml-6 items-center">
                                         <span class="mr-3" style="color:black">Quantity</span>
-                                        <div class="relative">
-                                            <select name="quantity"
-                                                class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10"style="color:black">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>5</option>
-                                                <option>6</option>
-                                            </select>
-                                        </div>
+                                        <select name="quantity" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4</option>
+                                            <option>5</option>
+                                            <option>6</option>
+                                        </select>
                                     </div>
                                 </div>
-                                <div class="ana flex justify-between items-center">
+                                <div class="flex justify-between items-center">
                                     <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>
                                     @auth
-                                    <button class="butto" type="submit">
-                                        <span class="button-content">Acheter </span>
-                                    </button>
-                                    
+                                        <button class="butto" type="submit">
+                                            <span class="button-content">Acheter</span>
+                                        </button>
+                                    @endauth
                                 </div>
                             </form>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
     @endforeach
-   
-        
+
+
     <script>
         function addToPayment(button) {
             const productId = button.getAttribute('data-product-id');
