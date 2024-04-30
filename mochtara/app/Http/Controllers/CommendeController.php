@@ -14,8 +14,7 @@ class CommendeController extends Controller
     {
         $validatedData = $request->validate([
             'product_id' => 'required|integer',
-            'size_id' => 'required|integer',
-            'quantity' => 'required|integer'
+            'size_id' => 'required|integer'
         ]);
 
         $product = Product::findOrFail($validatedData['product_id']);
@@ -24,7 +23,6 @@ class CommendeController extends Controller
         $commande = new Commande();
         $commande->product_id = $product->id;
         $commande->size_id = $size->id;
-        $commande->quantity = $validatedData['quantity'];
         $commande->user_id = Auth::id();
         $commande->save();
 

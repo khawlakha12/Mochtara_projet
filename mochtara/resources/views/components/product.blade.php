@@ -337,17 +337,6 @@
                                             @endforeach
                                         </select>
                                     </div>
-                                    <div class="flex ml-6 items-center">
-                                        <span class="mr-3" style="color:black">Quantity</span>
-                                        <select name="quantity" class="rounded border appearance-none border-gray-400 py-2 focus:outline-none focus:border-red-500 text-base pl-3 pr-10">
-                                            <option>1</option>
-                                            <option>2</option>
-                                            <option>3</option>
-                                            <option>4</option>
-                                            <option>5</option>
-                                            <option>6</option>
-                                        </select>
-                                    </div>
                                 </div>
                                 <div class="flex justify-between items-center">
                                     <span class="text-base font-bold text-slate-900">{{ $product->price }} MAD</span>

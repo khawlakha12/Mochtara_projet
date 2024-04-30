@@ -9,7 +9,7 @@ class Commande extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['product_id', 'size_id', 'quantity'];
+    protected $fillable = ['product_id', 'size_id'];
 
 
     public function product()
