@@ -153,7 +153,8 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
+                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo"
+                                            class="replaceable-image">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">
@@ -166,11 +167,13 @@
                                     <li class="nav-link"><a href="javascript:void(0)"
                                             class="nav-item dropdown-item">Settings</a></li>
                                     <li class="dropdown-divider"></li>
-                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log
-                                        out</a></li>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                            @csrf
-                                        </form>
+                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log
+                                            out</a></li>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
                                 </ul>
                             </li>
                             <li class="separator d-lg-none"></li>
@@ -230,6 +233,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($users as $user)
+                                            @if($user->role === 'client')
                                                 <tr>
                                                     <td class="text-center">
                                                         {{ $user->name }}
@@ -238,7 +242,7 @@
                                                         {{ $user->email }}
                                                     </td>
                                                     <td class="text-center">
-                                                        3
+                                                        {{ $user->commandes->where('status', 'visible')->count() }}
                                                     </td>
                                                     <td class="text-center">
                                                         <form action="{{ route('user.delete', $user->id) }}"
@@ -249,8 +253,9 @@
                                                         </form>
                                                     </td>
                                                 </tr>
-                                                @endforeach
-                                                
+                                                @endif
+                                            @endforeach
+
                                         </tbody>
                                     </table>
                                     <div id="pagination"></div>
@@ -267,36 +272,41 @@
                                 <div class="table-responsive" id="productTable">
                                     <table class="table tablesorter " id="">
                                         <thead class=" text-primary">
-                                            <tr>
-                                                <th class="text-center">
-                                                    Client
-                                                </th>
-                                                <th class="text-center">
-                                                    Date
-                                                </th>
-                                                <th class="text-center">
-                                                    Category
-                                                </th>
-                                                <th class="text-center">
-                                                    Id Design
-                                                </th>
-                                            </tr>
+                                           
+                                            
+                                                <tr>
+                                                    <th class="text-center">
+                                                        Client
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Date
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Product
+                                                    </th>
+                                                    <th class="text-center">
+                                                        Size
+                                                    </th>
+                                                </tr>
                                         </thead>
                                         <tbody>
+                                            @foreach ($commandes as $commande)
+                                             @if($commande->status === 'visible')
                                             <tr>
                                                 <td class="text-center">
-                                                    Dakota Rice
+                                                    {{ $commande->user->name }} 
+                                                <td class="text-center">
+                                                    {{ $commande->created_at->format('d/m/Y') }} 
                                                 </td>
                                                 <td class="text-center">
-                                                    12/12/2024
+                                                    {{ $commande->product->name }} 
                                                 </td>
                                                 <td class="text-center">
-                                                    Hoodie
-                                                </td>
-                                                <td class="text-center">
-                                                    2
+                                                    {{ $commande->size->name }} 
                                                 </td>
                                             </tr>
+                                            @endif
+                                            @endforeach
                                         </tbody>
                                     </table>
                                     <div id="pagination"></div>
@@ -321,89 +331,7 @@
                 <script src="assets-dash/js/plugins/perfect-scrollbar.jquery.min.js"></script>
                 <script src="assets-dash/js/black-dashboard.min.js?v=1.0.0"></script>
                 <script src="assets-dash/demo/demo.js"></script>
-                <script>
-                    $(document).ready(function() {
-                        $().ready(function() {
-                            $sidebar = $('.sidebar');
-                            $navbar = $('.navbar');
-                            $main_panel = $('.main-panel');
-                            $full_page = $('.full-page');
-                            $sidebar_responsive = $('body > .navbar-collapse');
-                            sidebar_mini_active = true;
-                            white_color = false;
-                            window_width = $(window).width();
-                            fixed_plugin_open = $('.sidebar .sidebar-wrapper .nav li.active a p').html();
-                            $('.fixed-plugin a').click(function(event) {
-                                if ($(this).hasClass('switch-trigger')) {
-                                    if (event.stopPropagation) {
-                                        event.stopPropagation();
-                                    } else if (window.event) {
-                                        window.event.cancelBubble = true;
-                                    }
-                                }
-                            });
-                            $('.fixed-plugin .background-color span').click(function() {
-                                $(this).siblings().removeClass('active');
-                                $(this).addClass('active');
-                                var new_color = $(this).data('color');
-                                if ($sidebar.length != 0) {
-                                    $sidebar.attr('data', new_color);
-                                }
-                                if ($main_panel.length != 0) {
-                                    $main_panel.attr('data', new_color);
-                                }
-                                if ($full_page.length != 0) {
-                                    $full_page.attr('filter-color', new_color);
-                                }
-                                if ($sidebar_responsive.length != 0) {
-                                    $sidebar_responsive.attr('data', new_color);
-                                }
-                            });
-                            $('.switch-sidebar-mini input').on("switchChange.bootstrapSwitch", function() {
-                                var $btn = $(this);
-                                if (sidebar_mini_active == true) {
-                                    $('body').removeClass('sidebar-mini');
-                                    sidebar_mini_active = false;
-                                    blackDashboard.showSidebarMessage('Sidebar mini deactivated...');
-                                } else {
-                                    $('body').addClass('sidebar-mini');
-                                    sidebar_mini_active = true;
-                                    blackDashboard.showSidebarMessage('Sidebar mini activated...');
-                                }
-                                var simulateWindowResize = setInterval(function() {
-                                    window.dispatchEvent(new Event('resize'));
-                                }, 180);
-                                setTimeout(function() {
-                                    clearInterval(simulateWindowResize);
-                                }, 1000);
-                            });
-                            $('.switch-change-color input').on("switchChange.bootstrapSwitch", function() {
-                                var $btn = $(this);
-                                if (white_color == true) {
-                                    $('body').addClass('change-background');
-                                    setTimeout(function() {
-                                        $('body').removeClass('change-background');
-                                        $('body').removeClass('white-content');
-                                    }, 900);
-                                    white_color = false;
-                                } else {
-                                    $('body').addClass('change-background');
-                                    setTimeout(function() {
-                                        $('body').removeClass('change-background');
-                                        $('body').addClass('white-content');
-                                    }, 900);
-                                    white_color = true;
-                                }
-                            });
-                            $('.light-badge').click(function() {
-                                $('body').addClass('white-content');
-                            });
-                            $('.dark-badge').click(function() {
-                                $('body').removeClass('white-content');
-                            });
-                        });
-                    });
-                </script>
+    
                 <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
                 <script>
                     window.TrackJS &&
@@ -450,41 +378,6 @@
                         displayPage(1);
                     });
                 </script>
-
-
-{{------------------------------- fixé image profile ------------------------------}}
-<script>
-    const images = document.querySelectorAll('.replaceable-image');
-    images.forEach(image => {
-        image.addEventListener('click', function() {
-            document.getElementById('fileInput').click();
-        });
-    });
-  
-    function replaceAllImages() {
-        const file = document.getElementById('fileInput').files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-  
-                images.forEach(image => {
-                    image.src = e.target.result;
-                    localStorage.setItem(image.id, e.target.result);
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    }
-  
-    window.onload = function() {
-        images.forEach(image => {
-            const savedImage = localStorage.getItem(image.id);
-            if (savedImage) {
-                image.src = savedImage;
-            }
-        });
-    }
-  </script>
 </body>
 
 </html>

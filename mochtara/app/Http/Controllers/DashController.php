@@ -103,4 +103,17 @@ public function show_design()
 }
 
     
+public function updateRole(Request $request)
+{
+    $request->validate([
+        'user_id' => 'required|integer',
+        'role' => 'required|string'
+    ]);
+
+    $user = User::findOrFail($request->user_id);
+    $user->role = $request->role;
+    $user->save();
+
+    return redirect()->back()->with('success', 'Rôle mis à jour avec succès!');
+}
 }

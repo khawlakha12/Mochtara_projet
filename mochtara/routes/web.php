@@ -150,3 +150,8 @@ Route::post('password/email', [PasswordResetController::class, 'sendEmail'])->na
 Route::get('password/reset/{token}', [PasswordResetController::class, 'showResetForm'])->name('password.reset');
 
 Route::post('/saveDesign', [ProductController::class, 'saveDesign'])->name('saveDesign');
+
+Route::post('/process-checkout', [CommendeController::class,'processCheckout'])->name('checkout');
+
+
+Route::post('/update-role', [DashController::class, 'updateRole'])->name('user.update.role');

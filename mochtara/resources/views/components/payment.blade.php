@@ -209,47 +209,45 @@
 
     <section class="add-card page">
         <div>
-            <form class="form " onclick="setperm()">
+            <form method="POST" action="{{ route('checkout') }}" class="form"   onclick="setperm()">
+                @csrf
                 <label for="email" class="label">
                     <span class="title">Your email</span>
-                    <input class="input-field" type="email" name="email" title="Input title"
-                        placeholder="Enter your email" />
+                    <input class="input-field" type="email" name="email" required title="Input title" placeholder="Enter your email" />
                 </label>
                 <label for="name" class="label">
                     <span class="title">Card holder full name</span>
-                    <input class="input-field" type="text" name="input-name" title="Input title"
-                        placeholder="Enter your full name" />
+                    <input class="input-field" type="text" name="input-name" required title="Input title" placeholder="Enter your full name" />
                 </label>
                 <label for="serialCardNumber" class="label">
                     <span class="title">Card Number</span>
-                    <input id="serialCardNumber" class="input-field" type="number" name="input-name"
-                        title="Input title" placeholder="0000 0000 0000 0000" />
+                    <input id="serialCardNumber" class="input-field" type="number" name="serialCardNumber" required title="Input title" placeholder="0000 0000 0000 0000" pattern="\d{4} \d{4} \d{4} \d{4}" />
                 </label>
                 <div class="split">
                     <label for="ExDate" class="label">
                         <span class="title">Expiry Date</span>
-                        <input id="ExDate" class="input-field" type="text" name="input-name" title="Expiry Date"
-                            placeholder="01/23" />
+                        <input id="ExDate" class="input-field" type="text" name="ExDate" required title="Expiry Date" placeholder="MM/YY" pattern="\d{2}/\d{2}" />
                     </label>
                     <label for="cvv" class="label">
-                        <span class="title"> CVV</span>
-                        <input id="cvv" class="input-field" type="number" name="cvv" title="CVV"
-                            placeholder="CVV" />
+                        <span class="title">CVV</span>
+                        <input id="cvv" class="input-field" type="text" name="cvv" required title="CVV" placeholder="CVV" pattern="\d{3}" />
                     </label>
                 </div>
-                <input class="checkout-btn" type="button" value="Checkout" />
+                <input class="checkout-btn" type="submit" value="Checkout" id="checkoutButton"/>
             </form>
+            
+            
         </div>
         <div style="margin-left: 20px;width: 500px; display: flex; align-items: center;justify-content:center;height:490px;"
             class="form " onclick="setperm()">
             <div
                 style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 80%; overflow: auto; margin-bottom: 20px;">
-
                 @php
                     $totalPrice = 0;
                 @endphp
                            @if (Auth::user() && Auth::user()->commandes)
                            @foreach (Auth::user()->commandes as $commande)
+                           @if($commande->status === 'invisible')
                     <div
                         style="display: flex; align-items: center; border: 1px solid #27a776; border-radius: 5px; padding: 10px; box-shadow: 0 0 20px #27a776; width: 80%; margin-bottom: 20px;">
                         <img src="{{ asset('storage/' . $commande->product->image) }}"
@@ -288,27 +286,24 @@
                             }
                         }
                         </script>
+
                     @php
                         $totalPrice += $commande->product->price;
                     @endphp
+                     @endif
                @endforeach
                @endif
                @if (Auth::user() && Auth::user()->commandes)
                  
                @endif
-
-
-
             </div>
-
             <div style=" display: flex;align-items: center;justify-content: space-between;">
                 <h1 style="margin-right:20px;">Total :</h1>
                 <h1>{{ $totalPrice }} MAD </h1>
             </div>
         </div>
-
-
     </section>
+
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>

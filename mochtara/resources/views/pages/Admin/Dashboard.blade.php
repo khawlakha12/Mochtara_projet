@@ -11,9 +11,10 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
     <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
 
-<!-- Lien CDN pour le JavaScript de Bootstrap Select -->
+    <!-- Lien CDN pour le JavaScript de Bootstrap Select -->
     <link href="assets-dash/css/nucleo-icons.css" rel="stylesheet" />
     <link href="assets-dash/css/black-dashboard.css?v=1.0.0" rel="stylesheet" />
     <link href="assets-dash/demo/demo.css" rel="stylesheet" />
@@ -90,7 +91,8 @@
                             <li class="dropdown nav-item">
                                 <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
                                     <div class="photo">
-                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo" class="replaceable-image">
+                                        <img src="assets-dah/img/anime3.png" alt="Profile Photo"
+                                            class="replaceable-image">
                                     </div>
                                     <b class="caret d-none d-lg-block d-xl-block"></b>
                                     <p class="d-lg-none">
@@ -103,11 +105,13 @@
                                     <li class="nav-link"><a href="javascript:void(0)"
                                             class="nav-item dropdown-item">Settings</a></li>
                                     <li class="dropdown-divider"></li>
-                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log
+                                    <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item"
+                                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Log
                                             out</a></li>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                @csrf
-                                            </form>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                        style="display: none;">
+                                        @csrf
+                                    </form>
                                 </ul>
                             </li>
                             <li class="separator d-lg-none"></li>
@@ -231,85 +235,78 @@
                                 <div class="table-full-width table-responsive">
                                     <table class="table">
                                         <tbody>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="" checked="">
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="title">Imma in</p>
-                                                    <p class="text-muted">Chef projet</p>
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title=""
-                                                        data-toggle="modal" data-target="#exampleModal"
-                                                        class="btn btn-link" data-original-title="Edit Task">
-                                                        <i class="tim-icons icon-pencil"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <div class="form-check">
-                                                        <label class="form-check-label">
-                                                            <input class="form-check-input" type="checkbox"
-                                                                value="">
-                                                            <span class="form-check-sign">
-                                                                <span class="check"></span>
-                                                            </span>
-                                                        </label>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <p class="title">Minke michile</p>
-                                                    <p class="text-muted">Art Designer
-                                                    </p>
-                                                </td>
-                                                <td class="td-actions text-right">
-                                                    <button type="button" rel="tooltip" title=""
-                                                        class="btn btn-link" data-original-title="Edit Task">
-                                                        <i class="tim-icons icon-pencil"></i>
-                                                    </button>
-                                                </td>
-                                            </tr>
+                                            @foreach ($users as $user)
+                                                @if ($user->role === 'admin' || $user->role === 'designer')
+                                                    <tr>
+                                                        <td>
+                                                            <div class="form-check">
+                                                                <label class="form-check-label">
+                                                                    <input class="form-check-input" type="checkbox"
+                                                                        value="" checked="">
+                                                                    <span class="form-check-sign">
+                                                                        <span class="check"></span>
+                                                                    </span>
+                                                                </label>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <p class="title">{{ $user->name }}</p>
+                                                            <p class="text-muted">{{ $user->role }}</p>
+                                                        </td>
+                                                        <td class="td-actions text-right">
+                                                            <button type="button" rel="tooltip" title=""
+                                                                data-toggle="modal"
+                                                                data-target="#eModal{{ $user->id }}"
+                                                                class="btn btn-link" data-original-title="Edit Task">
+                                                                <i class="tim-icons icon-pencil"></i>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                @endif
+                                            @endforeach
                                         </tbody>
                                     </table>
-                                    <!-- Modal -->
-                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
-                                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+                                    <div class="modal fade" id="eModal{{ $user->id }}" tabindex="-1"
+                                        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Changer le role
+                                                    <h5 class="modal-title" id="exampleModalLabel">Changer le rôle
                                                     </h5>
                                                     <button type="button" class="close" data-dismiss="modal"
                                                         aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
-                                                <div class="modal-body">
-                                                    <select class="my-select selectpicker" data-container="body">
-                                                        <option>Mustard</option>
-                                                        <option>Ketchup</option>
-                                                        <option>Barbecue</option>
-                                                    </select>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save
-                                                        changes</button>
-                                                </div>
+                                                <form action="{{ route('user.update.role') }}" method="POST">
+                                                    @csrf
+                                                    <div class="modal-body">
+                                                        <input type="hidden" name="user_id"
+                                                            value="{{ $user->id }}">
+                                                        <select name="role" class="form-control">
+                                                            <option value="client"
+                                                                {{ $user->role == 'client' ? 'selected' : '' }}>client
+                                                            </option>
+                                                            <option value="admin"
+                                                                {{ $user->role == 'admin' ? 'selected' : '' }}>admin
+                                                            </option>
+                                                            <option value="designer"
+                                                                {{ $user->role == 'designer' ? 'selected' : '' }}>
+                                                                designer</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save
+                                                            changes</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -468,39 +465,39 @@
             });
     </script>
 
-{{------------------------------- fixé image profile ------------------------------}}
-<script>
-    const images = document.querySelectorAll('.replaceable-image');
-    images.forEach(image => {
-        image.addEventListener('click', function() {
-            document.getElementById('fileInput').click();
-        });
-    });
-  
-    function replaceAllImages() {
-        const file = document.getElementById('fileInput').files[0];
-        if (file) {
-            const reader = new FileReader();
-            reader.onload = function(e) {
-  
-                images.forEach(image => {
-                    image.src = e.target.result;
-                    localStorage.setItem(image.id, e.target.result);
-                });
-            };
-            reader.readAsDataURL(file);
-        }
-    }
-  
-    window.onload = function() {
+    {{-- ----------------------------- fixé image profile ---------------------------- --}}
+    <script>
+        const images = document.querySelectorAll('.replaceable-image');
         images.forEach(image => {
-            const savedImage = localStorage.getItem(image.id);
-            if (savedImage) {
-                image.src = savedImage;
-            }
+            image.addEventListener('click', function() {
+                document.getElementById('fileInput').click();
+            });
         });
-    }
-  </script>
+
+        function replaceAllImages() {
+            const file = document.getElementById('fileInput').files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+
+                    images.forEach(image => {
+                        image.src = e.target.result;
+                        localStorage.setItem(image.id, e.target.result);
+                    });
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        window.onload = function() {
+            images.forEach(image => {
+                const savedImage = localStorage.getItem(image.id);
+                if (savedImage) {
+                    image.src = savedImage;
+                }
+            });
+        }
+    </script>
 
 </body>
 
