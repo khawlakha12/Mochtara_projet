@@ -38,7 +38,7 @@
     }
 
     .styled-element {
-       
+
         color: white;
         width: auto;
         box-sizing: border-box;
@@ -49,115 +49,185 @@
         width: 100%;
         height: auto;
     }
+
     #imageContainer img {
-    width: 100%; 
-    height: 100%; 
-    object-fit: contain; 
-}
-#border {
-    border-right: none; 
-}
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
 
-#border {
-    border-top-left-radius: 8px; 
-    border-bottom-left-radius: 8px; 
-}
-.button {
-  --green: #1BFD9C;
-  font-size: 15px;
-  padding: 0.7em 2.7em;
-  letter-spacing: 0.06em;
-  position: relative;
-  font-family: inherit;
-  border-radius: 0.6em;
-  overflow: hidden;
-  transition: all 0.3s;
-  line-height: 1.4em;
-  border: 2px solid var(--green);
-  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
-  color: var(--green);
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
-}
+    #border {
+        border-right: none;
+    }
 
-.button:hover {
-  color: #82ffc9;
-  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
-}
+    #border {
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
 
-.button:before {
-  content: "";
-  position: absolute;
-  left: -4em;
-  width: 4em;
-  height: 100%;
-  top: 0;
-  transition: transform .4s ease-in-out;
-  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
-}
+    .button {
+        --green: #1BFD9C;
+        font-size: 15px;
+        padding: 0.7em 2.7em;
+        letter-spacing: 0.06em;
+        position: relative;
+        font-family: inherit;
+        border-radius: 0.6em;
+        overflow: hidden;
+        transition: all 0.3s;
+        line-height: 1.4em;
+        border: 2px solid var(--green);
+        background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%, transparent 60%, rgba(27, 253, 156, 0.1) 100%);
+        color: var(--green);
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+    }
 
-.button:hover:before {
-  transform: translateX(15em);
-}
-button {
-  height: 40px;
-  width: 50px;
-  border: #fff 1px solid;
-  padding: 17px 40px;
-  cursor: pointer;
-  background-color: white;
-  box-shadow: rgba(27, 253, 156, 0.6 ) 0 0 10px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  font-size: 15px;
-  transition: all 0.5s ease;
-}
+    .button:hover {
+        color: #82ffc9;
+        box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+    }
 
-button:hover {
-  letter-spacing: 3px;
-  background-color: rgba(27, 253, 156, 0.6 );
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgba(27, 253, 156, 0.6 ) 0px 7px 29px 0px;
-}
+    .button:before {
+        content: "";
+        position: absolute;
+        left: -4em;
+        width: 4em;
+        height: 100%;
+        top: 0;
+        transition: transform .4s ease-in-out;
+        background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%, rgba(27, 253, 156, 0.1) 60%, transparent 100%);
+    }
 
-button:active {
-  letter-spacing: 3px;
-  background-color: hsl(261deg 80% 48%);
-  color: hsl(0, 0%, 100%);
-  box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
-  transform: translateY(10px);
-  transition: 100ms;
-}
+    .button:hover:before {
+        transform: translateX(15em);
+    }
 
+    button {
+        height: 40px;
+        width: 50px;
+        border: #fff 1px solid;
+        padding: 17px 40px;
+        cursor: pointer;
+        background-color: white;
+        box-shadow: rgba(27, 253, 156, 0.6) 0 0 10px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        font-size: 15px;
+        transition: all 0.5s ease;
+    }
+
+    button:hover {
+        letter-spacing: 3px;
+        background-color: rgba(27, 253, 156, 0.6);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgba(27, 253, 156, 0.6) 0px 7px 29px 0px;
+    }
+
+    button:active {
+        letter-spacing: 3px;
+        background-color: hsl(261deg 80% 48%);
+        color: hsl(0, 0%, 100%);
+        box-shadow: rgb(93 24 220) 0px 0px 0px 0px;
+        transform: translateY(10px);
+        transition: 100ms;
+    }
+
+    .print {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 5px;
+        background: #ebeef1;
+        font-family: "Montserrat", sans-serif;
+        box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        cursor: pointer;
+        width: 10%;
+        border: none;
+    }
+
+    .print:after {
+        content: " ";
+        width: 0%;
+        height: 100%;
+        background: rgba(27, 253, 156, 0.6);
+        position: absolute;
+        transition: all 0.4s ease-in-out;
+        right: 0;
+    }
+
+    .print:hover::after {
+        right: auto;
+        left: 0;
+        width: 100%;
+    }
+
+    .print span {
+        text-align: center;
+        text-decoration: none;
+        width: 100%;
+        padding: 18px 25px;
+        color: #060505;
+        font-size: 1.125em;
+        font-weight: 700;
+        letter-spacing: 0.3em;
+        z-index: 20;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .print:hover span {
+        color: #183153;
+        animation: scaleUp 0.3s ease-in-out;
+    }
+
+    @keyframes scaleUp {
+        0% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(0.95);
+        }
+
+        100% {
+            transform: scale(1);
+        }
+    }
 </style>
 
 <x-navbar />
 
 <main id="main" data-aos="fade" data-aos-delay="1500" style="position: relative; overflow-x:hidden;" ng-app="">
-    <div onmouseout="hovredireturn()" id="border" onmouseover="hovredi()" class="hovermebaby" style="position: absolute; height: 40px; width: 35px; top: 350px; right: 0; z-index: 100;background:#27a776;" >
+    <div onmouseout="hovredireturn()" id="border" onmouseover="hovredi()" class="hovermebaby"
+        style="position: absolute; height: 40px; width: 35px; top: 350px; right: 0; z-index: 100;background:#27a776;">
         <svg id="blue_copy" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="height: 40px;width:40px;">
             <g id="Layer_8_copy_4">
-                <path d="M58.644,27.26v8.294c0,0.571-0.305,1.1-0.8,1.385L37.632,48.608c-1.066,0.616-1.066,2.155,0,2.771l20.212,11.669c0.495,0.286,0.8,0.814,0.8,1.385v8.294c0,1.231-1.333,2.001-2.399,1.385L16.869,51.379c-1.066-0.616-1.066-2.155,0-2.771l39.375-22.733C57.311,25.259,58.644,26.029,58.644,27.26z" fill="#000000" />
+                <path
+                    d="M58.644,27.26v8.294c0,0.571-0.305,1.1-0.8,1.385L37.632,48.608c-1.066,0.616-1.066,2.155,0,2.771l20.212,11.669c0.495,0.286,0.8,0.814,0.8,1.385v8.294c0,1.231-1.333,2.001-2.399,1.385L16.869,51.379c-1.066-0.616-1.066-2.155,0-2.771l39.375-22.733C57.311,25.259,58.644,26.029,58.644,27.26z"
+                    fill="#000000" />
             </g>
         </svg>
     </div>
     @if (session('success'))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong>{{ session('success') }}</strong>
-        <button type="button" class="close" data-dismiss="alert"
-            aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-@endif
-    
-    <div id="categorySelector" style="display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px; right: 0; height: 100px; width: 200px; background: #fff; z-index: 10;" class="flex tomove">
-        @foreach($categories as $category)
-            <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}" style="background: #27a776; border:#fff 1px; height:50px; width:50px; margin-left:10px;"
-            data-image-url="{{ asset('storage/' . $category->image) }}"
-             class="image-sele">
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong>{{ session('success') }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    @endif
+
+    <div id="categorySelector"
+        style="display: flex; align-items: center; justify-content: center; transform: translateX(100%); position: absolute; top: 350px; right: 0; height: 100px; width: 200px; background: #fff; z-index: 10;"
+        class="flex tomove">
+        @foreach ($categories as $category)
+            <img src="{{ asset('storage/' . $category->image) }}" alt="{{ $category->name }}"
+                style="background: #27a776; border:#fff 1px; height:50px; width:50px; margin-left:10px;"
+                data-image-url="{{ asset('storage/' . $category->image) }}" class="image-sele">
         @endforeach
     </div>
-    
+
     <div class="page-header d-flex align-items-center">
         <div class="container position-relative">
             <div class="row justify-content-center">
@@ -165,9 +235,10 @@ button:active {
                     <x-designs />
                     <div class="flex flex-col overflow-y-scroll h-[400px]">
                         @foreach ($designs as $design)
-                        <img src="{{ asset('storage/' . $design->img) }}" alt="{{ $design->name ?? 'Design Image' }}"
-                            class="image-select mr-2 mb-2 h-24 w-24 border border-with">
-                            @endforeach
+                            <img src="{{ asset('storage/' . $design->img) }}"
+                                alt="{{ $design->name ?? 'Design Image' }}"
+                                class="image-select mr-2 mb-2 h-24 w-24 border border-with">
+                        @endforeach
                     </div>
 
                     <div class="card-body bg-white rounded" style="height: 400px;">
@@ -198,7 +269,8 @@ button:active {
                             </button>
                             <button type="button" class="position-absolute" id="changeButton"
                                 style="background:#27a776; margin-left:10px; margin-bottom:10px; bottom: 0; left: 0; border-radius: 50%; width: 35px; height: 35px; display: flex; justify-content: center; align-items: center; padding: 0;">
-                                <img src="https://cdn-icons-png.flaticon.com/512/5953/5953659.png " alt="" title="" class="img-small" style="width: 20px; height: 20px;">
+                                <img src="https://cdn-icons-png.flaticon.com/512/5953/5953659.png " alt=""
+                                    title="" class="img-small" style="width: 20px; height: 20px;">
                             </button>
                             <div id="styleOptions" class="position-absolute"
                                 style="display:none; flex-direction: column; right: 0px; border-radius: 5px; padding: 10px;">
@@ -215,14 +287,17 @@ button:active {
                 <div class="col-md-5 justify-content-center">
                     <div class="container">
                         <h1 id="styledText" class="styled-element"
-                            style="height: 32%;width:27%;color:#000000;text-align:center;text-wrap: balance;">@{{ Your_text }}
+                            style="height: 32%;width:27%;color:#000000;text-align:center;text-wrap: balance;">
+                            @{{ Your_text }}
                         </h1>
                         <h1 id="imageContainer" class="styled-element"
                             style="height: 32%;width:27%;text-align: center;background-position: center center;"></h1>
-                        <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072" alt="image" id="main-image" class="img-fluid">
+                        <img src="https://www.centraltshirts.com/cdn/shop/files/AdultHoodie-NoL.png?v=1709139072"
+                            alt="image" id="main-image" class="img-fluid">
                     </div>
                 </div>
-                <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 20px; min-height: 100px;">
+                <div class="d-flex flex-column justify-content-center align-items-center"
+                    style="gap: 20px; min-height: 100px;">
                     <div>
                         <button type="submit" name="size" value="S">S</button>
                         <button type="submit" name="size" value="M">M</button>
@@ -230,23 +305,25 @@ button:active {
                         <button type="submit" name="size" value="XL">XL</button>
                         <button type="submit" name="size" value="XXL">XXL</button>
                     </div>
-                   @auth
-                    <button type="submit" id="printButton" class="button" style="margin-top:5%;">Print</button>
+                    @auth
+                        <button class="print">
+                            <span>BUTTON</span>
+                        </button>
                     @endauth
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
-   
-    
+
+
 </main>
 <x-footer />
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 <x-link_script />
 
-{{--------------------------------styled text----------------------------}}
+{{-- ------------------------------styled text-------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', (event) => {
         document.getElementById('styleButton').addEventListener('click', function() {
@@ -304,44 +381,44 @@ button:active {
         document.querySelectorAll('.image-select').forEach(image => {
             image.addEventListener('click', function() {
                 const imageContainer = document.getElementById('imageContainer');
-                imageContainer.innerHTML = ''; 
-    
+                imageContainer.innerHTML = '';
+
                 const selectedImage = document.createElement('img');
                 selectedImage.src = this.src;
                 selectedImage.classList.add('img-fluid');
-    
+
                 imageContainer.appendChild(selectedImage);
                 imageContainer.style.display = 'block';
-    
+
                 document.getElementById('styledText').style.display = 'none';
             });
         });
     });
-    </script>
-    
+</script>
+
 {{-- --------------------------------afficher pour choisir catégorie for design-------------------------- --}}
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const hoverDiv = document.getElementById('border'); 
-            const moveDiv = document.querySelector('.tomove'); 
-        
+        const hoverDiv = document.getElementById('border');
+        const moveDiv = document.querySelector('.tomove');
+
         hoverDiv.addEventListener('click', function() {
-    
-                if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
-                    moveDiv.style.transform = 'translateX(0%)'; 
-                } else {
-                    moveDiv.style.transform = 'translateX(100%)'; 
-                }
-            });
-            
+
+            if (moveDiv.style.transform === 'translateX(100%)' || moveDiv.style.transform === '') {
+                moveDiv.style.transform = 'translateX(0%)';
+            } else {
+                moveDiv.style.transform = 'translateX(100%)';
+            }
         });
+
+    });
 </script>
 {{-- --------------------------------choisir autre categorie for design-------------------------- --}}
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
         document.querySelectorAll('.image-sele').forEach(item => {
-            item.addEventListener('click', function () {
-                const mainImage = document.getElementById('main-image'); 
+            item.addEventListener('click', function() {
+                const mainImage = document.getElementById('main-image');
                 mainImage.src = this.getAttribute('data-image-url');
                 mainImage.alt = this.alt;
             });
@@ -349,34 +426,12 @@ button:active {
     });
 </script>
 
-    <script>
-        document.getElementById('printButton').addEventListener('click', function() {
-     fetch('/print', { 
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': '{{ csrf_token() }}'  
-        },
-        body: JSON.stringify({
-            design_id: selectedDesignId,  
-            category_id: selectedCategoryId,
-            price: selectedPrice
-        })
-    })
-    .then(response => response.json())
-    .then(data => console.log(data.message))
-    .catch(error => console.error('Error:', error));
-});
-
-    </script>
-    
-
 <script>
     document.addEventListener('DOMContentLoaded', () => {
         const inputContainer = document.getElementById('inputOrImageContainer');
         const imageContainer = document.getElementById('imageContainer');
         const styledText = document.getElementById('styledText');
-    
+
         document.getElementById('changeButton').addEventListener('click', function() {
             if (imageContainer.innerHTML !== '') {
                 imageContainer.innerHTML = '';
@@ -395,26 +450,26 @@ button:active {
             styledText.innerText = this.value;
         });
     });
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.image-select').forEach(image => {
-                image.addEventListener('click', function() {
-                    const styledText = document.getElementById('styledText');
-                    styledText.style.backgroundImage = `url('${this.src}')`;
-                    styledText.innerText = '';
-                });
-            });
-            document.getElementById('changeButton').addEventListener('click', function() {
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.image-select').forEach(image => {
+            image.addEventListener('click', function() {
                 const styledText = document.getElementById('styledText');
-                if (styledText.style.backgroundImage !== '') {
-                    styledText.style.backgroundImage = ''; 
-                    styledText.innerHTML = "@{{ Your_text }} "; 
-                }
+                styledText.style.backgroundImage = `url('${this.src}')`;
+                styledText.innerText = '';
             });
         });
-        </script>
-        
+        document.getElementById('changeButton').addEventListener('click', function() {
+            const styledText = document.getElementById('styledText');
+            if (styledText.style.backgroundImage !== '') {
+                styledText.style.backgroundImage = '';
+                styledText.innerHTML = "@{{ Your_text }} ";
+            }
+        });
+    });
+</script>
+
 </body>
 
 </html>

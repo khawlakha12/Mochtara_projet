@@ -168,6 +168,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/">
+                            <i class="fas fa-home"></i>
+                            <p>home</p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/profile_designer">
                             <i class="tim-icons icon-single-02"></i>
                             <p>User Profile</p>

@@ -232,7 +232,7 @@
 {{------------------------------- fixé image profile ------------------------------}}
 <script>
     const images = document.querySelectorAll('.replaceable-img');
-    const role = 'designer'; // This should ideally be set dynamically from the server-side
+    const role = 'designer'; 
 
     images.forEach(image => {
         image.addEventListener('click', function() {

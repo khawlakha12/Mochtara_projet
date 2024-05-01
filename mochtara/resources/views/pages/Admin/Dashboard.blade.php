@@ -40,6 +40,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="/">
+                            <i class="fas fa-home"></i>
+                            <p>home</p>
+                        </a>
+                    </li>
+                    <li>
                         <a href="/profil">
                             <i class="tim-icons icon-single-02"></i>
                             <p>User Profile</p>
@@ -63,6 +69,7 @@
                             <p>Product</p>
                         </a>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -256,56 +263,57 @@
                                                         <td class="td-actions text-right">
                                                             <button type="button" rel="tooltip" title=""
                                                                 data-toggle="modal"
-                                                                data-target="#eModal{{ $user->id }}"
+                                                                data-target="#eModal{{$user->id}}"
                                                                 class="btn btn-link" data-original-title="Edit Task">
                                                                 <i class="tim-icons icon-pencil"></i>
                                                             </button>
                                                         </td>
                                                     </tr>
+                                                    <div class="modal fade" id="eModal{{$user->id}}" tabindex="-1"
+                                                    role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="exampleModalLabel">Changer le rôle
+                                                                </h5>
+                                                                <button type="button" class="close" data-dismiss="modal"
+                                                                    aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <form action="{{ route('user.update.role') }}" method="POST">
+                                                                @csrf
+                                                                <div class="modal-body">
+                                                                    <input type="hidden" name="user_id"
+                                                                        value="{{ $user->id }}">
+                                                                    <select name="role" class="form-control">
+                                                                        <option value="client"
+                                                                            {{ $user->role == 'client' ? 'selected' : '' }}>client
+                                                                        </option>
+                                                                        <option value="admin"
+                                                                            {{ $user->role == 'admin' ? 'selected' : '' }}>admin
+                                                                        </option>
+                                                                        <option value="designer"
+                                                                            {{ $user->role == 'designer' ? 'selected' : '' }}>
+                                                                            designer</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-secondary"
+                                                                        data-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                                 @endif
                                             @endforeach
                                         </tbody>
                                     </table>
 
-                                    <div class="modal fade" id="eModal{{ $user->id }}" tabindex="-1"
-                                        role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="exampleModalLabel">Changer le rôle
-                                                    </h5>
-                                                    <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <form action="{{ route('user.update.role') }}" method="POST">
-                                                    @csrf
-                                                    <div class="modal-body">
-                                                        <input type="hidden" name="user_id"
-                                                            value="{{ $user->id }}">
-                                                        <select name="role" class="form-control">
-                                                            <option value="client"
-                                                                {{ $user->role == 'client' ? 'selected' : '' }}>client
-                                                            </option>
-                                                            <option value="admin"
-                                                                {{ $user->role == 'admin' ? 'selected' : '' }}>admin
-                                                            </option>
-                                                            <option value="designer"
-                                                                {{ $user->role == 'designer' ? 'selected' : '' }}>
-                                                                designer</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-dismiss="modal">Close</button>
-                                                        <button type="submit" class="btn btn-primary">Save
-                                                            changes</button>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
+
 
                                 </div>
                             </div>
