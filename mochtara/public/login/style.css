@@ -143,11 +143,10 @@ button {
   height: 35px;
   padding: 5px;
   border-radius: 25px;
-
   background: none;
   border: 2px solid #000;
 }
-/* Responsiveness:Start */
+
 @media screen and (max-width: 780px) {
   .content {
     flex-direction: column;
@@ -174,4 +173,4 @@ button {
     border-radius: 0px;
   }
 }
-/* Responsiveness:End */
+

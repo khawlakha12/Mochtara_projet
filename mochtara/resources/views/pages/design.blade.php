@@ -307,7 +307,7 @@
                     </div>
                     @auth
                         <button class="print">
-                            <span>BUTTON</span>
+                            <span>Print</span>
                         </button>
                     @endauth
                 </div>

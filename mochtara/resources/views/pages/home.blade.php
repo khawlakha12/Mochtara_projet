@@ -15,11 +15,11 @@
     <section class="sample-page">
         <div class="container" data-aos="fade-up" style="margin-top: 100px; margin-bottom:100px;">
             <div class="row align-items-center">
-                <!-- Image on the Left -->
+                
                 <div class="col-md-6">
                     <img src="img/home.png" class="img-fluid" alt="design">
                 </div>
-                <!-- Text on the Right -->
+                
                 <div class="col-md-6 text-center" style="margin-top: 40px;">
                     <h2><em>Welcome to Mochtara</em></h2>
                     <p class="font-normal text-base leading-6 text-gray-600 dark:text-white">أول موقع مغربي يمكن من

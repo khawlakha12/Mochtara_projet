@@ -218,7 +218,7 @@
                                                             <option>Yellow</option>
                                                         </select>
                                                     </div>
-                                                    <!-- Multi Select for Sizes -->
+                                                   
                                                     <div class="form-group mt-3">
                                                         <label for="sizeSelect" style="color:black">Sizes</label>
                                                         <select class="form-control" id="sizeSelect" name="sizes[]"
